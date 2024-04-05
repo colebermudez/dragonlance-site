@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vogler</title>
+        <base href="../../../" />
+        <meta id="root-path" root-path="../../../" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0" />
+        <meta charset="UTF-8" />
+        <meta name="description" content="Dragonlance - Vogler" />
+        <meta property="og:title" content="Vogler" />
+        <meta property="og:description" content="Dragonlance - Vogler" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="locations/solamnia-and-the-northern-wastes/hinterlund/vogler.html" />
+        <meta property="og:image" content="lib/media/pasted-image-20240326114732.png" />
+        <meta property="og:site_name" content="Dragonlance" />
+        <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml" />
+        <script async="" id="webpage-script" src="lib/scripts/webpage.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <script async="" id="minisearch-script" src="lib/scripts/minisearch.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <link rel="icon" href="lib/media/favicon.png" />
+        <style>
+            body {
+                --line-width: 40em;
+                --line-width-adaptive: 40em;
+                --file-line-width: 40em;
+                --sidebar-width: min(20em, 80vw);
+                --collapse-arrow-size: 11px;
+                --tree-horizontal-spacing: 0.6em;
+                --tree-vertical-spacing: 0.6em;
+                --sidebar-margin: 12px;
+            }
+            .sidebar {
+                height: 100%;
+                min-width: calc(var(--sidebar-width) + var(--divider-width-hover));
+                max-width: calc(var(--sidebar-width) + var(--divider-width-hover));
+                font-size: 14px;
+                z-index: 10;
+                position: relative;
+                overflow: hidden;
+                transition: min-width ease-in-out, max-width ease-in-out;
+                transition-duration: 0.2s;
+                contain: size;
+            }
+            .sidebar-left {
+                left: 0;
+            }
+            .sidebar-right {
+                right: 0;
+            }
+            .sidebar.is-collapsed {
+                min-width: 0;
+                max-width: 0;
+            }
+            body.floating-sidebars .sidebar {
+                position: absolute;
+            }
+            .sidebar-content {
+                height: 100%;
+                min-width: calc(var(--sidebar-width) - var(--divider-width-hover));
+                top: 0;
+                padding: var(--sidebar-margin);
+                padding-top: 4em;
+                line-height: var(--line-height-tight);
+                background-color: var(--background-secondary);
+                transition: background-color, border-right, border-left, box-shadow;
+                transition-duration: var(--color-fade-speed);
+                transition-timing-function: ease-in-out;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+            }
+            .sidebar:not(.is-collapsed) .sidebar-content {
+                min-width: calc(max(100%, var(--sidebar-width)) - 3px);
+                max-width: calc(max(100%, var(--sidebar-width)) - 3px);
+            }
+            .sidebar-left .sidebar-content {
+                left: 0;
+                border-top-right-radius: var(--radius-l);
+                border-bottom-right-radius: var(--radius-l);
+            }
+            .sidebar-right .sidebar-content {
+                right: 0;
+                border-top-left-radius: var(--radius-l);
+                border-bottom-left-radius: var(--radius-l);
+            }
+            .sidebar:has(.sidebar-content:empty):has(.topbar-content:empty) {
+                display: none;
+            }
+            .sidebar-topbar {
+                height: 2em;
+                width: var(--sidebar-width);
+                top: var(--sidebar-margin);
+                padding-inline: var(--sidebar-margin);
+                z-index: 1;
+                position: fixed;
+                display: flex;
+                align-items: center;
+                transition: width ease-in-out;
+                transition-duration: inherit;
+            }
+            .sidebar.is-collapsed .sidebar-topbar {
+                width: calc(2.3em + var(--sidebar-margin) * 2);
+            }
+            .sidebar .sidebar-topbar.is-collapsed {
+                width: 0;
+            }
+            .sidebar-left .sidebar-topbar {
+                left: 0;
+            }
+            .sidebar-right .sidebar-topbar {
+                right: 0;
+            }
+            .topbar-content {
+                overflow: hidden;
+                overflow: clip;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                transition: inherit;
+            }
+            .sidebar.is-collapsed .topbar-content {
+                width: 0;
+                transition: inherit;
+            }
+            .clickable-icon.sidebar-collapse-icon {
+                background-color: transparent;
+                color: var(--icon-color-focused);
+                padding: 0 !important;
+                margin: 0 !important;
+                height: 100% !important;
+                width: 2.3em !important;
+                margin-inline: 0.14em !important;
+                position: absolute;
+            }
+            .sidebar-left .clickable-icon.sidebar-collapse-icon {
+                transform: rotateY(180deg);
+                right: var(--sidebar-margin);
+            }
+            .sidebar-right .clickable-icon.sidebar-collapse-icon {
+                transform: rotateY(180deg);
+                left: var(--sidebar-margin);
+            }
+            .clickable-icon.sidebar-collapse-icon svg.svg-icon {
+                width: 100%;
+                height: 100%;
+            }
+            .sidebar-section-header {
+                margin: 0 0 1em 0;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                font-weight: 600;
+            }
+            body {
+                transition: background-color var(--color-fade-speed) ease-in-out;
+            }
+            .webpage-container {
+                display: flex;
+                flex-direction: row;
+                height: 100%;
+                width: 100%;
+                align-items: stretch;
+                justify-content: center;
+            }
+            .document-container {
+                opacity: 1;
+                flex-basis: 100%;
+                max-width: 100%;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transition: opacity 0.2s ease-in-out;
+                contain: inline-size;
+            }
+            .hide {
+                opacity: 0;
+                transition: opacity 0.2s ease-in-out;
+            }
+            .document-container > .markdown-preview-view {
+                margin: var(--sidebar-margin);
+                margin-bottom: 0;
+                width: 100%;
+                width: -webkit-fill-available;
+                width: -moz-available;
+                width: fill-available;
+                background-color: var(--background-primary);
+                transition: background-color var(--color-fade-speed) ease-in-out;
+                border-top-right-radius: var(--window-radius, var(--radius-m));
+                border-top-left-radius: var(--window-radius, var(--radius-m));
+                overflow-x: hidden !important;
+                overflow-y: auto !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                contain: inline-size;
+            }
+            .document-container > .markdown-preview-view > .markdown-preview-sizer {
+                padding-bottom: 80vh !important;
+                width: 100% !important;
+                max-width: var(--line-width) !important;
+                flex-basis: var(--line-width) !important;
+                transition: background-color var(--color-fade-speed) ease-in-out;
+                contain: inline-size;
+            }
+            .markdown-rendered img:not([width]),
+            .view-content img:not([width]) {
+                max-width: 100%;
+                outline: 0;
+            }
+            .document-container > .view-content.embed {
+                display: flex;
+                padding: 1em;
+                height: 100%;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+            }
+            .document-container > .view-content.embed > * {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+            }
+            :has(> :is(.math, table)) {
+                overflow-x: auto !important;
+            }
+            .document-container > .view-content {
+                overflow-x: auto;
+                contain: content;
+                padding: 0;
+                margin: 0;
+                height: 100%;
+            }
+            .scroll-highlight {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 1000;
+                background-color: hsla(var(--color-accent-hsl), 0.25);
+                opacity: 0;
+                padding: 1em;
+                inset: 50%;
+                translate: -50% -50%;
+                border-radius: var(--radius-s);
+            }
+        </style>
+        <script defer="">
+            async function loadIncludes() {
+                if ("file:" != location.protocol) {
+                    let e = document.querySelectorAll("include");
+                    for (let t = 0; t < e.length; t++) {
+                        let o = e[t],
+                            l = o.getAttribute("src");
+                        try {
+                            const e = await fetch(l);
+                            if (!e.ok) {
+                                console.log("Could not include file: " + l), o?.remove();
+                                continue;
+                            }
+                            let t = await e.text(),
+                                n = document.createRange().createContextualFragment(t),
+                                i = Array.from(n.children);
+                            for (let e of i)
+                                e.classList.add("hide"),
+                                    (e.style.transition = "opacity 0.5s ease-in-out"),
+                                    setTimeout(() => {
+                                        e.classList.remove("hide");
+                                    }, 10);
+                            o.before(n), o.remove(), console.log("Included file: " + l);
+                        } catch (e) {
+                            o?.remove(), console.log("Could not include file: " + l, e);
+                            continue;
+                        }
+                    }
+                } else {
+                    if (document.querySelectorAll("include").length > 0) {
+                        var e = document.createElement("div");
+                        (e.id = "error"),
+                            (e.textContent = "Web server exports must be hosted on an http / web server to be viewed correctly."),
+                            (e.style.position = "fixed"),
+                            (e.style.top = "50%"),
+                            (e.style.left = "50%"),
+                            (e.style.transform = "translate(-50%, -50%)"),
+                            (e.style.fontSize = "1.5em"),
+                            (e.style.fontWeight = "bold"),
+                            (e.style.textAlign = "center"),
+                            document.body.appendChild(e),
+                            document.querySelector(".document-container")?.classList.remove("hide");
+                    }
+                }
+            }
+            document.addEventListener("DOMContentLoaded", () => {
+                loadIncludes();
+            });
+            let isFileProtocol = "file:" == location.protocol;
+            function waitLoadScripts(e, t) {
+                let o = e.map((e) => document.getElementById(e + "-script")),
+                    l = 0;
+                !(function e() {
+                    let n = o[l];
+                    l++, (n && "true" != n.getAttribute("loaded")) || (l < o.length && e()), l < o.length ? n.addEventListener("load", e) : t();
+                })();
+            }
+        </script>
+        <link rel="stylesheet" href="lib/styles/obsidian.css" />
+        <link rel="preload" href="lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="lib/styles/other-plugins.css" /></noscript>
+        <link rel="stylesheet" href="lib/styles/theme.css" />
+        <link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css" /></noscript>
+        <link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css" /></noscript>
+        <link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="lib/styles/main-styles.css" /></noscript>
+    </head>
+    <body class="publish css-settings-manager theme-light show-inline-title sizing-readable check-color check-bg wotc-beyond">
+        <script defer="">
+            let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            "dark" == theme ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light")) : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")),
+                window.innerWidth < 480
+                    ? document.body.classList.add("is-phone")
+                    : window.innerWidth < 768
+                    ? document.body.classList.add("is-tablet")
+                    : window.innerWidth < 1024
+                    ? document.body.classList.add("is-small-screen")
+                    : document.body.classList.add("is-large-screen");
+        </script>
+        <div class="webpage-container workspace">
+            <div class="sidebar-left sidebar">
+                <div class="sidebar-handle"></div>
+                <div class="sidebar-topbar">
+                    <div class="topbar-content">
+                        <label class="theme-toggle-container" for="theme_toggle">
+                            <input class="theme-toggle-input" type="checkbox" id="theme_toggle" />
+                            <div class="toggle-background"></div>
+                        </label>
+                    </div>
+                    <div class="clickable-icon sidebar-collapse-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                            <path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
+                            <path d="M10 4V20"></path>
+                            <path d="M4 7H7"></path>
+                            <path d="M4 10H7"></path>
+                            <path d="M4 13H7"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="sidebar-content">
+                    <div class="search-input-container">
+                        <input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..." />
+                        <div class="search-input-clear-button" aria-label="Clear search"></div>
+                    </div>
+                    <include src="lib/html/file-tree.html"></include>
+                </div>
+                <script defer="">
+                    let ls = document.querySelector(".sidebar-left");
+                    ls.classList.add("is-collapsed");
+                    if (window.innerWidth > 768) ls.classList.remove("is-collapsed");
+                    ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));
+                </script>
+            </div>
+            <div class="document-container markdown-reading-view hide">
+                <div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width">
+                    <style id="MJX-CHTML-styles"></style>
+                    <div class="markdown-preview-sizer markdown-preview-section">
+                        <h1 class="page-title heading inline-title" id="Vogler"><p>Vogler</p></h1>
+                        <div>
+                            <p></p>
+                            <div src="lib/media/pasted-image-20240326114732.png" class="internal-embed media-embed image-embed is-loaded"><img src="lib/media/pasted-image-20240326114732.png" /></div>
+                            <p></p>
+                        </div>
+                        <div class="heading-wrapper">
+                            <h2 data-heading="Vogler Gazetteer" class="heading" id="Vogler_Gazetteer">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Vogler Gazetteer
+                            </h2>
+                            <div class="heading-children">
+                                <div>
+                                    <p>
+                                        The Solamnic village of Vogler rests at the foot of a partially built bridge on the Vingaard River. Fishers, lumberers, hunters, and farmers live here peacefully, only occasionally interrupted by
+                                        bandits or predators from the Northern Wastes. In addition to a volunteer militia maintained by Mayor Raven Uth Vogler, the village is ostensibly under the protection of Hinterlund’s capital,
+                                        Maelgoth. This protection takes the form of a retired Knight of Solamnia, Becklin Uth Viharin, who’s stationed at the crumbling Thornwall Keep—now more a historic landmark than a true fortification.
+                                    </p>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="The Kingfisher Festival" class="heading" id="The_Kingfisher_Festival">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        The Kingfisher Festival
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div>
+                                            <p>
+                                                The Kingfisher Festival is an annual celebration commemorating Solamnia’s victory over the forces of Istar during a clash near the town centuries ago. The festival takes its name from the
+                                                kingfisher, a symbol of the Knights of Solamnia and a bird the fishers of Vogler consider lucky. Festivities culminate with the locals’ reenactment of the Battle of High Hill, a clash between
+                                                Istarian and Solamnic soldiers.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="heading-wrapper">
+                            <h2 data-heading="Locations in Vogler" class="heading" id="Locations_in_Vogler">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Locations in Vogler
+                            </h2>
+                            <div class="heading-children">
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="The Brass Crab" class="heading" id="The_Brass_Crab">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        The Brass Crab
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div>
+                                            <p>
+                                                The Brass Crab is a modest single-story inn on the village wharf, and its exterior vaguely resembles its namesake. Its proprietor, an Ergothian woman named Yalme (neutral good,
+                                                human&nbsp;commoner), has an odd love of bad storytellers and inept musicians. One wall of the circular common room features a faded mural of two enormous crabs locked in combat, inlaid with
+                                                brass details. The mural’s origins are lost to time, but if asked, Yalme says she named the crabs Fancy and Gorgeous George. Four short halls branch off the common room, each lined with rooms
+                                                for rent.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="The Fishbowl" class="heading" id="The_Fishbowl">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        The Fishbowl
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div>
+                                            <p>
+                                                After a long day on the river, many of Vogler’s fishers gather at the Fishbowl to tell tales, quench their thirst, and indulge in baked fish pies. The cramped but well-kept tavern is known for
+                                                its savory baked goods more than its weak ale. The Fishbowl’s proprietor is the elderly Elthar (neutral good, human&nbsp;commoner)), whom most locals call Uncle.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="High Hill" class="heading" id="High_Hill">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        High Hill
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div>
+                                            <p>
+                                                High Hill stands a mile north of Vogler. Centuries ago, Solamnic and Istarian forces clashed here, and legends claim the spirits of fallen knights haunt the hill and watch over the town. Each
+                                                year, the Kingfisher Festival’s reenactment of the battle serves as a reminder of the village’s history and nominally honors any spirits lingering at the battlefield.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="Market" class="heading" id="Market">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Market
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div>
+                                            <p>
+                                                Across from Vogler’s busy wharf spreads the village market. Amid this collection of stalls, vendors sell fresh river fish, fishing supplies, crafts, the bounty of local farms, and all manner
+                                                of mundane equipment. One notable stall is that of Froswin (chaotic good, kender&nbsp;commoner), who sells intricate fish-bone puppets she designs in the shapes of animals and sea serpents.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="Mayor’s Home" class="heading" id="Mayor’s_Home">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Mayor’s Home
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div>
+                                            <p>
+                                                Vogler’s down-to-earth mayor, Raven Uth Vogler (neutral good, human&nbsp;scout), lives in a two-story house on the village circle. Raven is a practical, empathetic leader in her thirties who
+                                                grew up on the river. She keeps a pair of guest rooms—lavishly decorated with mounted fish—where she frequently hosts villagers going through tough times.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="Mercenary Camp" class="heading" id="Mercenary_Camp">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Mercenary Camp
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div>
+                                            <p>
+                                                Along the road north of Vogler, a mile past High Hill, lies a mercenary camp. Known as the Ironclad Regiment, the soldiers here are under the command of Captain Ridomir “Cudgel” Ironsmile
+                                                Cudgel is a friend of the deceased Ispin Greenshield and many others in town, and she brought her company to Vogler a week ago to attend Ispin’s funeral. She volunteered her band to take part
+                                                in the annual reenactment of the Battle of High Hill—her attempt to lift the village’s spirits after their loss.
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p>
+                                                During the day, Cudgel remains in the camp with her lieutenants—the half-ogre Gragonis and the human Jeyev Veldrews—along with several dozen mercenaries. The soldiers spend most of the day
+                                                participating in drills. At night, they keep to themselves, lounging and playing dice. They’re under strict orders from Cudgel not to interfere with the locals.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="River Gate" class="heading" id="River_Gate">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        River Gate
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div>
+                                            <p>
+                                                Those who enter Vogler from the north pass through the unguarded River Gate, a 15-foot-tall wooden archway carved with two leaping fish on its frame. Over the years, locals have etched the
+                                                coin-sized scales of these fish with prayers for bountiful fishing. Two large wooden doors stand within the arch, but they haven’t been closed for years and are embedded in the surrounding
+                                                dirt.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="Thornwall Keep" class="heading" id="Thornwall_Keep">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Thornwall Keep
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div>
+                                            <p>
+                                                The ruins of an ancient Solamnic keep perch on a rocky rise at the western edge of town. Thornwall Keep’s steward, the knight Becklin Uth Viharin maintains the keep. Partially ruined walls
+                                                surround the keep’s three-story tower. The tower’s ground level holds a small library and a collection of local relics: over forty pieces of rusty tools and armor. The second floor holds the
+                                                quarters of Becklin’s squire, Darrett Highwater. Becklin’s austere room lies on the uppermost story; from there, a ladder leads to the keep’s crenelated roof.
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p>
+                                                Vogler’s resident tinker gnome, Than, built an elaborate catapult-like contraption on the roof of the keep. A friend of Becklin and Darrett, Than occasionally drops by to fine-tune this
+                                                device, called a gnomeflinger. Though it looks like a weapon of war, the contraption is a mode of rapid transportation originally devised by the tinker gnomes of Mount Nevermind. Becklin
+                                                tolerates the gnomeflinger—and the noise of Than’s occasional early-morning tinkering—because she sees the catapult-shaped device as a deterrent against attack.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="Village Circle" class="heading" id="Village_Circle">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Village Circle
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div>
+                                            <p>
+                                                The homes and shops in Vogler cluster around a grassy patch shaded by an ancient tree. This green is encircled by a dirt road that branches off into streets leading north out of the village
+                                                and south to the ferry across the Vingaard, and others radiating out into the town. The village circle serves as a public space, meeting spot, and festival ground. An iron bell hangs atop a
+                                                tall pole near the mayor’s house. The local militia is largely composed of retired farmers and fishers who exhibit more zeal than skill in the village’s defense, but they all take the bell’s
+                                                sounding very seriously.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="Vogler’s Crossing" class="heading" id="Vogler’s_Crossing">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Vogler’s Crossing
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div>
+                                            <p>
+                                                South of Vogler, an incomplete stone bridge begins to stretch across the Vingaard River. Half-constructed before the Cataclysm using techniques lost in the ages since, the bridge looks like a
+                                                glorified pier—a remnant of once-promised glory. A simple ferry system of ropes and winches follows the bridge’s supports and connects with posts on the opposite shore. Simple rafts and skiffs
+                                                allow travelers and even small wagons to cross the river. The process is safe but slow, taking approximately 10 minutes for a raft to cross the broad river. Travelers can make use of the
+                                                crossing themselves or hire a ferrier to aid them for 1 sp.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="Westide House" class="heading" id="Westide_House">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Westide House
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div>
+                                            <p>
+                                                The horseshoe-shaped structure known as Westide House is only slightly larger than the other homes in Vogler, but its owner speaks of it as if it were an opulent country manor. This is the
+                                                home of Lord Bakaris Uth Estide (neutral evil, human&nbsp;noble) and his son, Bakaris the Younger. Lord Bakaris is a Solamnic noble who claims to be living in exile after raiders burned his
+                                                family home in Estwilde. In truth, Lord Bakaris and his son were driven from the region and sought anonymity in Vogler. They’ve been in the village for over a year, throwing their wealth
+                                                around and treating the people of Vogler as backward yokels.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="Wharf" class="heading" id="Wharf">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Wharf
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div>
+                                            <p>
+                                                Local fishers crowd these docks each dawn and dusk, rowing out with empty nets and returning with the day’s catch. At the end of the southernmost pier, a centuries-old wooden post bears an
+                                                eroded carving of a bird with a fish in its mouth. Many locals rub it for luck before seeking the morning catch.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="Wharfinger’s Office" class="heading" id="Wharfinger’s_Office">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Wharfinger’s Office
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div>
+                                            <p>
+                                                Wharfinger Umpton Lanth (lawful neutral, human&nbsp;guard) wakes up earlier than any other fisher in Vogler to inspect boats docked at the wharf and impose fines on those in poor repair.
+                                                Fishers and traders seeking to use the wharf must register with Umpton at his stuffy two-story office across from the market. The office is usually staffed by Umpton’s son Nesau (chaotic
+                                                neutral, human&nbsp;commoner), who—to his father’s consternation—is quick to forgive fines and forgo docking fees when his father isn’t present, making him quite popular in the village.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="heading-wrapper">
+                            <h2 data-heading="Vogler's Fate" class="heading" id="Vogler's_Fate">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Vogler's Fate
+                            </h2>
+                            <div class="heading-children">
+                                <div>
+                                    <p>
+                                        Unfortunately, In 352 AC, shortly after the Red Dragon Army launched their assault on the Kalaman region, Vogler was burned to the ground in a raid during the middle of the Kingfisher Festival. The
+                                        party helped the village evacuate to
+                                        <a class="internal-link" data-href="../Nightlund/Kalaman.md" href="locations/solamnia-and-the-northern-wastes/nightlund/kalaman.html" target="_self" rel="noopener">Kalaman</a>, where they regrouped
+                                        and planned their next steps.
+                                    </p>
+                                </div>
+                                <div>
+                                    <p>
+                                        After the events of the Siege of Kalaman where the Red Dragon Army was expelled from the region, the Vogler refugees either stayed in Kalaman, or moved to Malegoth. The party met the refugees in
+                                        Malegoth, especially with <a class="internal-link" data-href="../../../NPCs/Raven Uth Vogler.md" href="npcs/raven-uth-vogler.html" target="_self" rel="noopener">Raven</a>. There they proposed the
+                                        refugees occupy the newly reclaimed region of Nightlund around
+                                        <a class="internal-link" data-href="../Nightlund/Dargaard Keep.md" href="locations/solamnia-and-the-northern-wastes/nightlund/dargaard-keep.html" target="_self" rel="noopener">Dargaard Keep</a>.
+                                    </p>
+                                </div>
+                                <div class="mod-footer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-right sidebar">
+                <div class="sidebar-handle"></div>
+                <div class="sidebar-topbar">
+                    <div class="topbar-content"></div>
+                    <div class="clickable-icon sidebar-collapse-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                            <path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
+                            <path d="M10 4V20"></path>
+                            <path d="M4 7H7"></path>
+                            <path d="M4 10H7"></path>
+                            <path d="M4 13H7"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="sidebar-content">
+                    <div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0">
+                        <div class="tree-header">
+                            <span class="sidebar-section-header">Table Of Contents</span>
+                            <button class="clickable-icon collapse-tree-button" aria-label="Collapse All">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+                            </button>
+                        </div>
+                        <div class="tree-scroll-area tree-item-children nav-folder-children">
+                            <div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div>
+                            <<div class="tree-item" data-depth="1">
+                                <a class="tree-link" href="index.html">
+                                    <div class="tree-item-contents heading-link" heading-name="dragonlance-home"><span class="tree-item-title">Welcome to Dragonlance</span></div>
+                                </a>
+                            <div class="tree-item" data-depth="1">
+                                <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/solamnia-and-the-northern-wastes-regions.html#Solamnia and the Northern Wastes Regions">
+                                    <div class="tree-item-contents heading-link" heading-name="Solamnia and the Northern Wastes Regions"><span class="tree-item-title">Solamnia and the Northern Wastes Regions</span></div>
+                                </a>
+                            <div class="tree-item" data-depth="1">
+                                <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/hinterlund-locations.html#Hinterlund Locations">
+                                    <div class="tree-item-contents heading-link" heading-name="Hinterlund Locations"><span class="tree-item-title">Hinterlund Locations</span></div>
+                                </a>
+                                <div class="tree-item-children nav-folder-children">
+                                    <div class="tree-item" data-depth="6">
+                                        <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/hinterlund-locations.html#[Vogler](Locations/Solamnia%20and%20the%20Northern%20Wastes/Hinterlund/Vogler.md)">
+                                            <div class="tree-item-contents heading-link" heading-name="[Vogler](Locations/Solamnia%20and%20the%20Northern%20Wastes/Hinterlund/Vogler.md)">
+                                                <span class="tree-item-title">
+                                                    <a
+                                                        class="internal-link"
+                                                        data-href="Locations/Solamnia and the Northern Wastes/Hinterlund/Vogler.md"
+                                                        href="Locations/Solamnia and the Northern Wastes/Hinterlund/Vogler.md"
+                                                        target="_blank"
+                                                        rel="noopener"
+                                                    >
+                                                        Vogler
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </a>
+                                <div class="tree-item-children nav-folder-children">
+                                    <div class="tree-item mod-collapsible" data-depth="2">
+                                        <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/vogler.html#Vogler_Gazetteer">
+                                            <div class="tree-item-contents heading-link" heading-name="Vogler Gazetteer">
+                                                <div class="collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                <span class="tree-item-title">Vogler Gazetteer</span>
+                                            </div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children">
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/vogler.html#The_Kingfisher_Festival">
+                                                    <div class="tree-item-contents heading-link" heading-name="The Kingfisher Festival"><span class="tree-item-title">The Kingfisher Festival</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tree-item mod-collapsible" data-depth="2">
+                                        <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/vogler.html#Locations_in_Vogler">
+                                            <div class="tree-item-contents heading-link" heading-name="Locations in Vogler">
+                                                <div class="collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                <span class="tree-item-title">Locations in Vogler</span>
+                                            </div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children">
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/vogler.html#The_Brass_Crab">
+                                                    <div class="tree-item-contents heading-link" heading-name="The Brass Crab"><span class="tree-item-title">The Brass Crab</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/vogler.html#The_Fishbowl">
+                                                    <div class="tree-item-contents heading-link" heading-name="The Fishbowl"><span class="tree-item-title">The Fishbowl</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/vogler.html#High_Hill">
+                                                    <div class="tree-item-contents heading-link" heading-name="High Hill"><span class="tree-item-title">High Hill</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/vogler.html#Market">
+                                                    <div class="tree-item-contents heading-link" heading-name="Market"><span class="tree-item-title">Market</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/vogler.html#Mayor’s_Home">
+                                                    <div class="tree-item-contents heading-link" heading-name="Mayor’s Home"><span class="tree-item-title">Mayor’s Home</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/vogler.html#Mercenary_Camp">
+                                                    <div class="tree-item-contents heading-link" heading-name="Mercenary Camp"><span class="tree-item-title">Mercenary Camp</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/vogler.html#River_Gate">
+                                                    <div class="tree-item-contents heading-link" heading-name="River Gate"><span class="tree-item-title">River Gate</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/vogler.html#Thornwall_Keep">
+                                                    <div class="tree-item-contents heading-link" heading-name="Thornwall Keep"><span class="tree-item-title">Thornwall Keep</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/vogler.html#Village_Circle">
+                                                    <div class="tree-item-contents heading-link" heading-name="Village Circle"><span class="tree-item-title">Village Circle</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/vogler.html#Vogler’s_Crossing">
+                                                    <div class="tree-item-contents heading-link" heading-name="Vogler’s Crossing"><span class="tree-item-title">Vogler’s Crossing</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/vogler.html#Westide_House">
+                                                    <div class="tree-item-contents heading-link" heading-name="Westide House"><span class="tree-item-title">Westide House</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/vogler.html#Wharf">
+                                                    <div class="tree-item-contents heading-link" heading-name="Wharf"><span class="tree-item-title">Wharf</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/vogler.html#Wharfinger’s_Office">
+                                                    <div class="tree-item-contents heading-link" heading-name="Wharfinger’s Office"><span class="tree-item-title">Wharfinger’s Office</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tree-item" data-depth="2">
+                                        <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/vogler.html#Vogler's_Fate">
+                                            <div class="tree-item-contents heading-link" heading-name="Vogler's Fate"><span class="tree-item-title">Vogler's Fate</span></div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script defer="">
+                    let rs = document.querySelector(".sidebar-right");
+                    rs.classList.add("is-collapsed");
+                    if (window.innerWidth > 768) rs.classList.remove("is-collapsed");
+                    rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
