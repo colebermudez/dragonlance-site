@@ -14,5 +14,6 @@ Information will be regularly updated with all available info after players reac
   - Fix Norther Wastes Links
   - Fix Palanthas Links
   - Fix Southlund Links
-- Add information on Church of Seiros
-- Add Session Notes
+- Fix NPC links
+  - Bakaris "The Younger" on main page
+  - Bakaris "The Younger" on all side bars
