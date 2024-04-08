@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Bakaris "The Younger" Uth Estide</title>
+        <title>Alois Rangeld</title>
         <base href="../" />
         <meta id="root-path" root-path="../" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0" />
         <meta charset="UTF-8" />
-        <meta name="description" content="Dragonlance - Bakaris " the="" younger"="" uth="" estide"=""> <meta property="og:title" content="Bakaris " the="" younger"="" uth="" estide"=""> <meta property="og:description" content="Dragonlance
-        - Bakaris " the="" younger"="" uth="" estide"="">
+        <meta name="description" content="Dragonlance - Alois Rangeld" />
+        <meta property="og:title" content="Alois Rangeld" />
+        <meta property="og:description" content="Dragonlance - Alois Rangeld" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="npcs/bakaris-" the-younger"-uth-estide.html"="">
+        <meta property="og:url" content="npcs/alois-rangeld.html" />
         <meta property="og:image" content="undefined" />
         <meta property="og:site_name" content="Dragonlance" />
         <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml" />
         <script async="" id="webpage-script" src="lib/scripts/webpage.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
-        <script async="" id="minisearch-script" src="lib/scripts/minisearch.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script>
+        <script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
         <link rel="icon" href="lib/media/favicon.png" />
+        <script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
         <style>
             body {
                 --line-width: 40em;
@@ -303,8 +310,6 @@
             }
         </script>
         <link rel="stylesheet" href="lib/styles/obsidian.css" />
-        <link rel="preload" href="lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-        <noscript><link rel="stylesheet" href="lib/styles/other-plugins.css" /></noscript>
         <link rel="stylesheet" href="lib/styles/theme.css" />
         <link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
         <noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css" /></noscript>
@@ -363,37 +368,135 @@
                 <div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width">
                     <style id="MJX-CHTML-styles"></style>
                     <div class="markdown-preview-sizer markdown-preview-section">
-                        <h1 class="page-title heading inline-title" id='Bakaris "The Younger" Uth Estide'><p>Bakaris "The Younger" Uth Estide</p></h1>
+                        <h1 class="page-title heading inline-title" id="Alois Rangeld"><p>Alois Rangeld</p></h1>
                         <div>
                             <p>
-                                Bakaris (neutral evil, human&nbsp;noble) shares the same name as his father, his father’s father, and so on for generations. Bakaris places inordinate value on his good looks, fashionable clothes, and
-                                athleticism, but he’s known more for his arrogance, pettiness, and short temper. He cares nothing for his family name, but he defers to his father—partly from unbroken childhood habit, and partly because all
-                                his privilege depends on his father’s wealth. Bakaris also has a violent streak. While living in Estwilde, he murdered the son of a local leader during a duel, and he and his father to Vogler to escape the
-                                consequences. Bakaris takes quiet pride in that killing, and he fantasizes about one day winning respect via the point of his sword. He loathes being called “the Younger,” a diminutive his father encourages.
+                                Alois is a knight who combines the virtues of loyalty and bravery with a love for laughter and good cheer. His upbeat personality often serves to uplift those around him, even in the darkest of times. Despite
+                                his penchant for jokes—often to the groans of his audience—Alois is a skilled warrior and a dedicated protector of the Church of Seiros. His past connection with Jeralt and his admiration for him play a
+                                significant role in his bond with the protagonist, Byleth.
                             </p>
                         </div>
-                        <div>
-                            <p>
-                                <em><strong>Personality Trait.</strong></em>&nbsp;“My blood, my looks, my skill; everything about me is better than you.”
-                            </p>
+                        <div class="heading-wrapper">
+                            <h3 data-heading="Personality Traits" class="heading" id="Personality_Traits">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Personality Traits
+                            </h3>
+                            <div class="heading-children">
+                                <div>
+                                    <ul>
+                                        <li data-line="0"><strong>Humorous</strong>: Alois is rarely seen without a smile on his face, ready with a joke or a pun to lighten the mood.</li>
+                                        <li data-line="1"><strong>Loyal</strong>: He is deeply loyal to the Church of Seiros, the Knights, and those he considers family, showing unwavering support and protection.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <p>
-                                <em><strong>Ideal.</strong></em>&nbsp;“I’ll force the world to recognize how great I am.”
-                            </p>
+                        <div class="heading-wrapper">
+                            <h3 data-heading="Ideals" class="heading" id="Ideals">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Ideals
+                            </h3>
+                            <div class="heading-children">
+                                <div>
+                                    <ul>
+                                        <li data-line="0"><strong>Protection</strong>: Alois believes in the importance of safeguarding his loved ones and the innocent, dedicating his life to defending the monastery and its ideals.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <p>
-                                <em><strong>Bond.</strong></em>&nbsp;“I’ve wasted too much time already; I owe it to myself to claim what I deserve.”
-                            </p>
+                        <div class="heading-wrapper">
+                            <h3 data-heading="Bonds" class="heading" id="Bonds">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Bonds
+                            </h3>
+                            <div class="heading-children">
+                                <div>
+                                    <ul>
+                                        <li data-line="0"><strong>The Knights of Seiros</strong>: His comrades in arms are like a second family to him, and he values the camaraderie and brotherhood among the knights.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <p>
-                                <em><strong>Flaw.</strong></em>&nbsp;“What I can’t get with my looks, I’ll take with my sword.”
-                            </p>
+                        <div class="heading-wrapper">
+                            <h3 data-heading="Flaws" class="heading" id="Flaws">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Flaws
+                            </h3>
+                            <div class="heading-children">
+                                <div>
+                                    <ul>
+                                        <li data-line="0">
+                                            <strong>Overzealousness</strong>: Sometimes, Alois's eagerness to protect and serve can lead him to act without thinking things through, potentially putting himself or others in unnecessary
+                                            danger.
+                                        </li>
+                                        <li data-line="1">
+                                            <strong>Try-hard Humor</strong>: His constant attempts at humor, though well-intentioned, can sometimes be ill-timed or fall flat, leading to awkward situations or even frustration among his
+                                            peers.
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mod-footer"></div>
+                            </div>
                         </div>
-                        <div><p>Status: Presumed Deceased</p></div>
-                        <div class="mod-footer"></div>
                     </div>
                 </div>
             </div>
@@ -412,6 +515,20 @@
                     </div>
                 </div>
                 <div class="sidebar-content">
+                    <div class="graph-view-wrapper">
+                        <div class="sidebar-section-header">Interactive Graph</div>
+                        <div class="graph-view-placeholder">
+                            <div class="graph-view-container">
+                                <div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                                        <polyline points="7 7 17 7 17 17"></polyline>
+                                    </svg>
+                                </div>
+                                <canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+                            </div>
+                        </div>
+                    </div>
                     <div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0">
                         <div class="tree-header">
                             <span class="sidebar-section-header">Table Of Contents</span>
@@ -421,6 +538,10 @@
                         </div>
                         <div class="tree-scroll-area tree-item-children nav-folder-children">
                             <div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div>
+                            <div class="tree-item" data-depth="1">
+                                <a class="tree-link" href="index.html">
+                                    <div class="tree-item-contents heading-link" heading-name="Welcome to Dragonlance"><span class="tree-item-title">Welcome to Dragonlance</span></div>
+                                </a>
                             <div class="tree-item" data-depth="1">
                                 <a class="tree-link" href="index.html">
                                     <div class="tree-item-contents heading-link" heading-name="dragonlance-home"><span class="tree-item-title">Welcome to Dragonlance</span></div>
@@ -562,7 +683,9 @@
                                                 <span class="tree-item-title"><a class="internal-link" data-href="NPCs/Raven Uth Vogler.md" href="NPCs/Raven Uth Vogler.md" target="_blank" rel="noopener">Raven Uth Vogler</a></span>
                                             </div>
                                         </a>
-                                <div class="tree-item-children nav-folder-children"></div>
+                                        <div class="tree-item-children nav-folder-children"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

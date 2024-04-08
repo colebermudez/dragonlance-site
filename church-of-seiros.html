@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Church of Seiros</title>
+        <base href="./" />
+        <meta id="root-path" root-path="./" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0" />
+        <meta charset="UTF-8" />
+        <meta name="description" content="Dragonlance - Church of Seiros" />
+        <meta property="og:title" content="Church of Seiros" />
+        <meta property="og:description" content="Dragonlance - Church of Seiros" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="church-of-seiros.html" />
+        <meta property="og:image" content="crest-of-seiros.webp" />
+        <meta property="og:site_name" content="Dragonlance" />
+        <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml" />
+        <script async="" id="webpage-script" src="lib/scripts/webpage.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script>
+        <script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <link rel="icon" href="lib/media/favicon.png" />
+        <script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <style>
+            body {
+                --line-width: 40em;
+                --line-width-adaptive: 40em;
+                --file-line-width: 40em;
+                --sidebar-width: min(20em, 80vw);
+                --collapse-arrow-size: 11px;
+                --tree-horizontal-spacing: 0.6em;
+                --tree-vertical-spacing: 0.6em;
+                --sidebar-margin: 12px;
+            }
+            .sidebar {
+                height: 100%;
+                min-width: calc(var(--sidebar-width) + var(--divider-width-hover));
+                max-width: calc(var(--sidebar-width) + var(--divider-width-hover));
+                font-size: 14px;
+                z-index: 10;
+                position: relative;
+                overflow: hidden;
+                transition: min-width ease-in-out, max-width ease-in-out;
+                transition-duration: 0.2s;
+                contain: size;
+            }
+            .sidebar-left {
+                left: 0;
+            }
+            .sidebar-right {
+                right: 0;
+            }
+            .sidebar.is-collapsed {
+                min-width: 0;
+                max-width: 0;
+            }
+            body.floating-sidebars .sidebar {
+                position: absolute;
+            }
+            .sidebar-content {
+                height: 100%;
+                min-width: calc(var(--sidebar-width) - var(--divider-width-hover));
+                top: 0;
+                padding: var(--sidebar-margin);
+                padding-top: 4em;
+                line-height: var(--line-height-tight);
+                background-color: var(--background-secondary);
+                transition: background-color, border-right, border-left, box-shadow;
+                transition-duration: var(--color-fade-speed);
+                transition-timing-function: ease-in-out;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+            }
+            .sidebar:not(.is-collapsed) .sidebar-content {
+                min-width: calc(max(100%, var(--sidebar-width)) - 3px);
+                max-width: calc(max(100%, var(--sidebar-width)) - 3px);
+            }
+            .sidebar-left .sidebar-content {
+                left: 0;
+                border-top-right-radius: var(--radius-l);
+                border-bottom-right-radius: var(--radius-l);
+            }
+            .sidebar-right .sidebar-content {
+                right: 0;
+                border-top-left-radius: var(--radius-l);
+                border-bottom-left-radius: var(--radius-l);
+            }
+            .sidebar:has(.sidebar-content:empty):has(.topbar-content:empty) {
+                display: none;
+            }
+            .sidebar-topbar {
+                height: 2em;
+                width: var(--sidebar-width);
+                top: var(--sidebar-margin);
+                padding-inline: var(--sidebar-margin);
+                z-index: 1;
+                position: fixed;
+                display: flex;
+                align-items: center;
+                transition: width ease-in-out;
+                transition-duration: inherit;
+            }
+            .sidebar.is-collapsed .sidebar-topbar {
+                width: calc(2.3em + var(--sidebar-margin) * 2);
+            }
+            .sidebar .sidebar-topbar.is-collapsed {
+                width: 0;
+            }
+            .sidebar-left .sidebar-topbar {
+                left: 0;
+            }
+            .sidebar-right .sidebar-topbar {
+                right: 0;
+            }
+            .topbar-content {
+                overflow: hidden;
+                overflow: clip;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                transition: inherit;
+            }
+            .sidebar.is-collapsed .topbar-content {
+                width: 0;
+                transition: inherit;
+            }
+            .clickable-icon.sidebar-collapse-icon {
+                background-color: transparent;
+                color: var(--icon-color-focused);
+                padding: 0 !important;
+                margin: 0 !important;
+                height: 100% !important;
+                width: 2.3em !important;
+                margin-inline: 0.14em !important;
+                position: absolute;
+            }
+            .sidebar-left .clickable-icon.sidebar-collapse-icon {
+                transform: rotateY(180deg);
+                right: var(--sidebar-margin);
+            }
+            .sidebar-right .clickable-icon.sidebar-collapse-icon {
+                transform: rotateY(180deg);
+                left: var(--sidebar-margin);
+            }
+            .clickable-icon.sidebar-collapse-icon svg.svg-icon {
+                width: 100%;
+                height: 100%;
+            }
+            .sidebar-section-header {
+                margin: 0 0 1em 0;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                font-weight: 600;
+            }
+            body {
+                transition: background-color var(--color-fade-speed) ease-in-out;
+            }
+            .webpage-container {
+                display: flex;
+                flex-direction: row;
+                height: 100%;
+                width: 100%;
+                align-items: stretch;
+                justify-content: center;
+            }
+            .document-container {
+                opacity: 1;
+                flex-basis: 100%;
+                max-width: 100%;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transition: opacity 0.2s ease-in-out;
+                contain: inline-size;
+            }
+            .hide {
+                opacity: 0;
+                transition: opacity 0.2s ease-in-out;
+            }
+            .document-container > .markdown-preview-view {
+                margin: var(--sidebar-margin);
+                margin-bottom: 0;
+                width: 100%;
+                width: -webkit-fill-available;
+                width: -moz-available;
+                width: fill-available;
+                background-color: var(--background-primary);
+                transition: background-color var(--color-fade-speed) ease-in-out;
+                border-top-right-radius: var(--window-radius, var(--radius-m));
+                border-top-left-radius: var(--window-radius, var(--radius-m));
+                overflow-x: hidden !important;
+                overflow-y: auto !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                contain: inline-size;
+            }
+            .document-container > .markdown-preview-view > .markdown-preview-sizer {
+                padding-bottom: 80vh !important;
+                width: 100% !important;
+                max-width: var(--line-width) !important;
+                flex-basis: var(--line-width) !important;
+                transition: background-color var(--color-fade-speed) ease-in-out;
+                contain: inline-size;
+            }
+            .markdown-rendered img:not([width]),
+            .view-content img:not([width]) {
+                max-width: 100%;
+                outline: 0;
+            }
+            .document-container > .view-content.embed {
+                display: flex;
+                padding: 1em;
+                height: 100%;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+            }
+            .document-container > .view-content.embed > * {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+            }
+            :has(> :is(.math, table)) {
+                overflow-x: auto !important;
+            }
+            .document-container > .view-content {
+                overflow-x: auto;
+                contain: content;
+                padding: 0;
+                margin: 0;
+                height: 100%;
+            }
+            .scroll-highlight {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 1000;
+                background-color: hsla(var(--color-accent-hsl), 0.25);
+                opacity: 0;
+                padding: 1em;
+                inset: 50%;
+                translate: -50% -50%;
+                border-radius: var(--radius-s);
+            }
+        </style>
+        <script defer="">
+            async function loadIncludes() {
+                if ("file:" != location.protocol) {
+                    let e = document.querySelectorAll("include");
+                    for (let t = 0; t < e.length; t++) {
+                        let o = e[t],
+                            l = o.getAttribute("src");
+                        try {
+                            const e = await fetch(l);
+                            if (!e.ok) {
+                                console.log("Could not include file: " + l), o?.remove();
+                                continue;
+                            }
+                            let t = await e.text(),
+                                n = document.createRange().createContextualFragment(t),
+                                i = Array.from(n.children);
+                            for (let e of i)
+                                e.classList.add("hide"),
+                                    (e.style.transition = "opacity 0.5s ease-in-out"),
+                                    setTimeout(() => {
+                                        e.classList.remove("hide");
+                                    }, 10);
+                            o.before(n), o.remove(), console.log("Included file: " + l);
+                        } catch (e) {
+                            o?.remove(), console.log("Could not include file: " + l, e);
+                            continue;
+                        }
+                    }
+                } else {
+                    if (document.querySelectorAll("include").length > 0) {
+                        var e = document.createElement("div");
+                        (e.id = "error"),
+                            (e.textContent = "Web server exports must be hosted on an http / web server to be viewed correctly."),
+                            (e.style.position = "fixed"),
+                            (e.style.top = "50%"),
+                            (e.style.left = "50%"),
+                            (e.style.transform = "translate(-50%, -50%)"),
+                            (e.style.fontSize = "1.5em"),
+                            (e.style.fontWeight = "bold"),
+                            (e.style.textAlign = "center"),
+                            document.body.appendChild(e),
+                            document.querySelector(".document-container")?.classList.remove("hide");
+                    }
+                }
+            }
+            document.addEventListener("DOMContentLoaded", () => {
+                loadIncludes();
+            });
+            let isFileProtocol = "file:" == location.protocol;
+            function waitLoadScripts(e, t) {
+                let o = e.map((e) => document.getElementById(e + "-script")),
+                    l = 0;
+                !(function e() {
+                    let n = o[l];
+                    l++, (n && "true" != n.getAttribute("loaded")) || (l < o.length && e()), l < o.length ? n.addEventListener("load", e) : t();
+                })();
+            }
+        </script>
+        <link rel="stylesheet" href="lib/styles/obsidian.css" />
+        <link rel="stylesheet" href="lib/styles/theme.css" />
+        <link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css" /></noscript>
+        <link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css" /></noscript>
+        <link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="lib/styles/main-styles.css" /></noscript>
+    </head>
+    <body class="publish css-settings-manager theme-light show-inline-title sizing-readable check-color check-bg wotc-beyond">
+        <script defer="">
+            let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            "dark" == theme ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light")) : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")),
+                window.innerWidth < 480
+                    ? document.body.classList.add("is-phone")
+                    : window.innerWidth < 768
+                    ? document.body.classList.add("is-tablet")
+                    : window.innerWidth < 1024
+                    ? document.body.classList.add("is-small-screen")
+                    : document.body.classList.add("is-large-screen");
+        </script>
+        <div class="webpage-container workspace">
+            <div class="sidebar-left sidebar">
+                <div class="sidebar-handle"></div>
+                <div class="sidebar-topbar">
+                    <div class="topbar-content">
+                        <label class="theme-toggle-container" for="theme_toggle">
+                            <input class="theme-toggle-input" type="checkbox" id="theme_toggle" />
+                            <div class="toggle-background"></div>
+                        </label>
+                    </div>
+                    <div class="clickable-icon sidebar-collapse-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                            <path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
+                            <path d="M10 4V20"></path>
+                            <path d="M4 7H7"></path>
+                            <path d="M4 10H7"></path>
+                            <path d="M4 13H7"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="sidebar-content">
+                    <div class="search-input-container">
+                        <input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..." />
+                        <div class="search-input-clear-button" aria-label="Clear search"></div>
+                    </div>
+                    <include src="lib/html/file-tree.html"></include>
+                </div>
+                <script defer="">
+                    let ls = document.querySelector(".sidebar-left");
+                    ls.classList.add("is-collapsed");
+                    if (window.innerWidth > 768) ls.classList.remove("is-collapsed");
+                    ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));
+                </script>
+            </div>
+            <div class="document-container markdown-reading-view hide">
+                <div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width">
+                    <style id="MJX-CHTML-styles"></style>
+                    <div class="markdown-preview-sizer markdown-preview-section">
+                        <h1 class="page-title heading inline-title" id="Church of Seiros"><p>Church of Seiros</p></h1>
+                        <div class="heading-wrapper">
+                            <h3 data-heading="Overview" class="heading" id="Overview">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Overview
+                            </h3>
+                            <div class="heading-children">
+                                <div>
+                                    <p>
+                                        After the Cataclysm reshaped the world of Krynn, the divine and the arcane were viewed with skepticism and fear by many. It was during these turbulent times that a new faith emerged in the
+                                        northwestern lands of Solamnia and spread into Northern Ergoth. This was the Church of Seiros, founded by a mysterious figure known as Seiros, who claimed to be guided by visions from a divine dragon.
+                                        The Church preached of strength, order, and protection under the wings of their sacred dragon, promising stability in a world that had seen much chaos.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="heading-wrapper">
+                            <h3 data-heading="Beliefs and Practices" class="heading" id="Beliefs_and_Practices">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Beliefs and Practices
+                            </h3>
+                            <div class="heading-children">
+                                <div>
+                                    <p>
+                                        The Church of Seiros worships a celestial dragon, believed to be a messenger of the gods, who bestowed Seiros with a sacred mission to bring order to the world. This dragon, unlike the gods of Krynn
+                                        who had turned their backs during the Cataclysm, offers a more immediate, tangible presence of divine power. The Church's teachings emphasize loyalty, discipline, and the pursuit of justice, aligning
+                                        closely with the chivalric ideals of the Knights of Solamnia.
+                                    </p>
+                                </div>
+                                <div>
+                                    <p>
+                                        Sacred rites within the Church involve offerings of rare incense and the singing of ancient hymns that are said to have been taught by the celestial dragon itself. These rituals are believed to bring
+                                        the faithful closer to understanding the divine will and receiving blessings of strength and wisdom.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="heading-wrapper">
+                            <h3 data-heading="Political Influence" class="heading" id="Political_Influence">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Political Influence
+                            </h3>
+                            <div class="heading-children">
+                                <div>
+                                    <p>
+                                        The Church of Seiros quickly gained political power due to its appeal to stability and order. In Solamnia, it found fertile ground among the nobility and the Knights, who saw in it a means to
+                                        reinforce their own ideals and authority. In Northern Ergoth, its influence spread through its humanitarian efforts, offering aid to those lands still recovering from the Cataclysm's devastation.
+                                    </p>
+                                </div>
+                                <div>
+                                    <p>
+                                        The Church established a council, led by figures known as the Archbishop and the Four Saints, who are said to be direct descendants or chosen by Seiros. This council wields significant influence,
+                                        guiding both spiritual matters and secular governance, often advising kings and lords.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="heading-wrapper">
+                            <h3 data-heading="Impact on Solamnia and Northern Ergoth" class="heading" id="Impact_on_Solamnia_and_Northern_Ergoth">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Impact on Solamnia and Northern Ergoth
+                            </h3>
+                            <div class="heading-children">
+                                <div>
+                                    <p>
+                                        In Solamnia, the Church has become a central part of the nobility's identity, intertwining with the Knights' code. It has reinforced the region's hierarchical structure, ensuring that the Church's
+                                        teachings are integrated into the education of the nobility and the training of the Knights. This has led to a resurgence in chivalric virtues, but also to a deepening divide between the nobility and
+                                        the common folk.
+                                    </p>
+                                </div>
+                                <div>
+                                    <p>
+                                        In Northern Ergoth, the Church's impact has been more mixed. While its aid and social services have been welcomed, its growing political power has caused tensions with traditional leaders and druidic
+                                        circles that see the Church's centralized authority as a threat to their more democratic and nature-centric ways.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="heading-wrapper">
+                            <h3 data-heading="Conflicts and Challenges" class="heading" id="Conflicts_and_Challenges">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Conflicts and Challenges
+                            </h3>
+                            <div class="heading-children">
+                                <div>
+                                    <p>
+                                        The Church of Seiros, with its message of divine order and its growing political power, has not been without controversy. In Solamnia, it faces criticism from those who view its teachings as too
+                                        rigid, potentially stifling personal freedom and creativity. In Northern Ergoth, the tension between the Church's centralized dogma and the local traditions of druidism and democracy represents a
+                                        simmering conflict that could erupt at any moment.
+                                    </p>
+                                </div>
+                                <div>
+                                    <p>
+                                        Moreover, the presence of a powerful religious institution with ties to a divine dragon invites interest and interference from the darker powers of Krynn. Cults dedicated to Takhisis, the Queen of
+                                        Darkness, see the Church of Seiros and its celestial dragon as a threat to their own apocalyptic goals, setting the stage for a celestial conflict played out on the mortal plane.
+                                    </p>
+                                </div>
+                                <div>
+                                    <p>
+                                        The Church's role in these regions is multifaceted, involving not just spiritual guidance but also participation in political, educational, and military matters. While many embrace the Church for its
+                                        stabilizing influence and its role in preserving peace, others view its power with suspicion and fear. The secrets held by Archbishop Rhea and the elite of the Church fuel rumors of hidden agendas and
+                                        ancient, possibly dangerous, powers at play.
+                                    </p>
+                                </div>
+                                <div>
+                                    <p>
+                                        As the Church navigates the delicate balance between faith, power, and the legacy of its saints, it faces both external threats and internal challenges. The struggle to maintain order in a world still
+                                        healing from past cataclysms, and the pursuit of a future that honors the vision of Seiros, are the driving forces behind the actions of Rhea and her followers.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="heading-wrapper">
+                            <h2 data-heading="Seiros and the Four Saints" class="heading" id="Seiros_and_the_Four_Saints">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Seiros and the Four Saints
+                            </h2>
+                            <div class="heading-children">
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="Seiros and the Role of the Church" class="heading" id="Seiros_and_the_Role_of_the_Church">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Seiros and the Role of the Church
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div>
+                                            <p>
+                                                Seiros, the progenitor of the faith, is more than a historical figure; she is a beacon of divine power and the embodiment of the Church's ideals. Legends speak of her as both a warrior and a
+                                                sage, wielding a sword said to be forged from the heavens and possessing wisdom that guided nations. It is her legacy that Archbishop Rhea, and the Church at large, strive to uphold.
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p>
+                                                The Church of Seiros is not just a religious institution but also a beacon of hope and a bulwark against chaos. It provides spiritual guidance to its followers, instills order, and defends
+                                                against the dark forces that seek to plunge the world into turmoil once again. Its doctrines emphasize valor, compassion, and justice, inspired by the deeds and teachings of Seiros.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="The Four Saints" class="heading" id="The_Four_Saints">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        The Four Saints
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div>
+                                            <p>
+                                                The Four Saints are venerated figures within the Church, each embodying specific virtues and aspects of the world. They were close companions of Seiros, instrumental in her battles and in the
+                                                founding of the Church. These saints are revered not only for their historical significance but also for their ongoing spiritual presence within the Church, guiding and protecting the
+                                                faithful.
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <ol>
+                                                <li data-line="0">
+                                                    <strong>Saint Cethleann</strong>: Patron of healing and mercy, Saint Cethleann is invoked in times of sickness and despair. Her followers are known for their skills in medicine and their
+                                                    charitable works.
+                                                </li>
+                                                <li data-line="2">
+                                                    <strong>Saint Cichol</strong>: The guardian of order and loyalty, Saint Cichol is the exemplar for knights and warriors. His teachings are integral to the martial disciplines practiced by
+                                                    the Church's defenders.
+                                                </li>
+                                                <li data-line="4">
+                                                    <strong>Saint Indech</strong>: Associated with wisdom and the natural world, Saint Indech's followers include scholars and those who seek to live in harmony with the earth. His teachings
+                                                    emphasize the importance of knowledge and understanding.
+                                                </li>
+                                                <li data-line="6">
+                                                    <strong>Saint Macuil</strong>: The saint of justice and strength, Saint Macuil's legacy is one of righteous fury against injustice. He is the patron of judges and those who seek to uphold
+                                                    the law.
+                                                </li>
+                                            </ol>
+                                        </div>
+                                        <div>
+                                            <p>
+                                                Together, these saints represent the foundational pillars upon which the Church of Seiros stands. Their lives and teachings continue to inspire and shape the Church's actions across Solamnia
+                                                and Northern Ergoth.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="Crest of Seiros" class="heading" id="Crest_of_Seiros">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Crest of Seiros
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div>
+                                            <p>
+                                                <span alt="crest-of-seiros.jpg" src="crest-of-seiros.jpg" class="internal-embed media-embed image-embed is-loaded"><img alt="crest-of-seiros.jpg" src="crest-of-seiros.jpg" /></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="Holy Symbol of Seiros" class="heading" id="Holy_Symbol_of_Seiros">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Holy Symbol of Seiros
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div>
+                                            <p>
+                                                <span alt="holy-symbol-of-seiros.png" src="holy-symbol-of-seiros.png" class="internal-embed media-embed image-embed is-loaded"><img alt="holy-symbol-of-seiros.png" src="holy-symbol-of-seiros.png" /></span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="heading-wrapper">
+                            <h2 data-heading="The Knights of Seiros" class="heading" id="The_Knights_of_Seiros">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                The Knights of Seiros
+                            </h2>
+                            <div class="heading-children">
+                                <div>
+                                    <p>
+                                        The Church of Seiros, rooted in the traditions and history within the realms of Solamnia and Northern Ergoth, upholds not just spiritual authority but also martial prowess through the esteemed Knights
+                                        of Seiros. These knights serve as the martial arm of the Church, embodying its doctrines through deeds of valor, justice, and unwavering loyalty. Their role extends beyond mere enforcement of the
+                                        Church's will; they are protectors of the faith, guardians against darkness, and symbols of the divine mandate that the Church of Seiros carries.
+                                    </p>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="Founding and Purpose" class="heading" id="Founding_and_Purpose">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Founding and Purpose
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div>
+                                            <p>
+                                                The Knights of Seiros were founded by Archbishop Rhea, inspired by the legendary exploits of Seiros herself, who was both a beacon of spiritual guidance and a formidable warrior. Rhea
+                                                envisioned a knightly order that would not only safeguard the Church and its followers but also act as a bulwark against the malevolent forces that threaten the peace and sanctity of Krynn.
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p>
+                                                Their purpose is twofold: to serve as the military might of the Church, defending it against all external threats, and to embody the virtues that Seiros preached—strength, wisdom, and
+                                                compassion. They are often seen as the hands of Seiros, executing her will across the land.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="Training and Initiation" class="heading" id="Training_and_Initiation">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Training and Initiation
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div>
+                                            <p>
+                                                Knights of Seiros undergo rigorous training, not only in martial arts but also in theology, ethics, and leadership. The initiation process is stringent, designed to test not only physical
+                                                prowess but also moral integrity and devotion to the Church's cause. Only those who exhibit unwavering faith, exceptional skill, and a pure heart are admitted into the order.
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p>
+                                                Upon initiation, knights receive a blessing from the Archbishop herself, along with a crest that symbolizes their commitment to the Church and its divine mission. This crest is not merely
+                                                decorative; it is said to carry a fragment of Seiros's power, offering protection to the bearer and marking them as a chosen protector of the faith.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="The Role of the Four Saints" class="heading" id="The_Role_of_the_Four_Saints">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        The Role of the Four Saints
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div><p>The Knights of Seiros are organized into four main cohorts, each named after and embodying the virtues of one of the Four Saints:</p></div>
+                                        <div>
+                                            <ul>
+                                                <li data-line="0"><strong>Cohort of Cethleann</strong>: Specializes in healing, support, and rescue missions. They are the benevolent arm of the order, providing aid to those in need.</li>
+                                                <li data-line="1"><strong>Cohort of Cichol</strong>: The backbone of the knightly order, focusing on traditional combat and strategy. They uphold the ideals of loyalty and order.</li>
+                                                <li data-line="2">
+                                                    <strong>Cohort of Indech</strong>: Known for their wisdom and cunning, this cohort specializes in reconnaissance, espionage, and magic. They seek to understand and outmaneuver the Church's
+                                                    adversaries.
+                                                </li>
+                                                <li data-line="3">
+                                                    <strong>Cohort of Macuil</strong>: The enforcers of divine justice, tasked with rooting out heresy and corruption. They are the most feared among the cohorts, known for their
+                                                    uncompromising pursuit of justice.
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="Legacy and Challenges" class="heading" id="Legacy_and_Challenges">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Legacy and Challenges
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div>
+                                            <p>
+                                                The Knights of Seiros are revered throughout Solamnia and Northern Ergoth, seen as paragons of virtue and strength. Their deeds are celebrated in songs and stories, and they are often welcomed
+                                                as heroes in the lands they protect. However, their close ties to the Church and their unwavering devotion to its teachings have sometimes placed them at odds with local authorities and other
+                                                knightly orders, leading to tensions and conflicts.
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <p>
+                                                Despite these challenges, the Knights of Seiros remain dedicated to their mission, guided by the teachings of Seiros and the wisdom of Archbishop Rhea. Their presence is a testament to the
+                                                Church's power and its commitment to safeguarding the world from darkness, serving as a reminder of the enduring legacy of Seiros and the divine protection she offers to all who follow her
+                                                path.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="Leadership" class="heading" id="Leadership">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Leadership
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div>
+                                            <p>
+                                                Although the leadership of the Knights of Seiros ultimately falls to
+                                                <a class="internal-link" data-href="NPCs/Lady Rhea.md" href="npcs/lady-rhea.html" target="_self" rel="noopener">Archbishop Rhea</a>, the knights are a somewhat autonomous group and have their
+                                                own commander, <a data-href="Alois Rangeld" href="npcs/alois-rangeld.html" class="internal-link" target="_self" rel="noopener">Alois Rangeld</a>, a veteran knight who's dedication and faith in
+                                                The Church of Seiros is unwavering.
+                                            </p>
+                                        </div>
+                                        <div class="mod-footer"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-right sidebar">
+                <div class="sidebar-handle"></div>
+                <div class="sidebar-topbar">
+                    <div class="topbar-content"></div>
+                    <div class="clickable-icon sidebar-collapse-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                            <path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
+                            <path d="M10 4V20"></path>
+                            <path d="M4 7H7"></path>
+                            <path d="M4 10H7"></path>
+                            <path d="M4 13H7"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="sidebar-content">
+                    <div class="graph-view-wrapper">
+                        <div class="sidebar-section-header">Interactive Graph</div>
+                        <div class="graph-view-placeholder">
+                            <div class="graph-view-container">
+                                <div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                                        <polyline points="7 7 17 7 17 17"></polyline>
+                                    </svg>
+                                </div>
+                                <canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0">
+                        <div class="tree-header">
+                            <span class="sidebar-section-header">Table Of Contents</span>
+                            <button class="clickable-icon collapse-tree-button" aria-label="Collapse All">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+                            </button>
+                        </div>
+                        <div class="tree-scroll-area tree-item-children nav-folder-children">
+                            <div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div>
+                            <div class="tree-item" data-depth="1">
+                                <a class="tree-link" href="dragonlance-home.html#Welcome to Dragonlance">
+                                    <div class="tree-item-contents heading-link" heading-name="Welcome to Dragonlance"><span class="tree-item-title">Welcome to Dragonlance</span></div>
+                                </a>
+                            <div class="tree-item" data-depth="1">
+                                <a class="tree-link" href="church-of-seiros.html#Church of Seiros">
+                                    <div class="tree-item-contents heading-link" heading-name="Church of Seiros"><span class="tree-item-title">Church of Seiros</span></div>
+                                </a>
+                                <div class="tree-item-children nav-folder-children">
+                                    <div class="tree-item" data-depth="3">
+                                        <a class="tree-link" href="church-of-seiros.html#Overview">
+                                            <div class="tree-item-contents heading-link" heading-name="Overview"><span class="tree-item-title">Overview</span></div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children"></div>
+                                    </div>
+                                    <div class="tree-item" data-depth="3">
+                                        <a class="tree-link" href="church-of-seiros.html#Beliefs_and_Practices">
+                                            <div class="tree-item-contents heading-link" heading-name="Beliefs and Practices"><span class="tree-item-title">Beliefs and Practices</span></div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children"></div>
+                                    </div>
+                                    <div class="tree-item" data-depth="3">
+                                        <a class="tree-link" href="church-of-seiros.html#Political_Influence">
+                                            <div class="tree-item-contents heading-link" heading-name="Political Influence"><span class="tree-item-title">Political Influence</span></div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children"></div>
+                                    </div>
+                                    <div class="tree-item" data-depth="3">
+                                        <a class="tree-link" href="church-of-seiros.html#Impact_on_Solamnia_and_Northern_Ergoth">
+                                            <div class="tree-item-contents heading-link" heading-name="Impact on Solamnia and Northern Ergoth"><span class="tree-item-title">Impact on Solamnia and Northern Ergoth</span></div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children"></div>
+                                    </div>
+                                    <div class="tree-item" data-depth="3">
+                                        <a class="tree-link" href="church-of-seiros.html#Conflicts_and_Challenges">
+                                            <div class="tree-item-contents heading-link" heading-name="Conflicts and Challenges"><span class="tree-item-title">Conflicts and Challenges</span></div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children"></div>
+                                    </div>
+                                    <div class="tree-item mod-collapsible" data-depth="2">
+                                        <a class="tree-link" href="church-of-seiros.html#Seiros_and_the_Four_Saints">
+                                            <div class="tree-item-contents heading-link" heading-name="Seiros and the Four Saints">
+                                                <div class="collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                <span class="tree-item-title">Seiros and the Four Saints</span>
+                                            </div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children">
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="church-of-seiros.html#Seiros_and_the_Role_of_the_Church">
+                                                    <div class="tree-item-contents heading-link" heading-name="Seiros and the Role of the Church"><span class="tree-item-title">Seiros and the Role of the Church</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="church-of-seiros.html#The_Four_Saints">
+                                                    <div class="tree-item-contents heading-link" heading-name="The Four Saints"><span class="tree-item-title">The Four Saints</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="church-of-seiros.html#Crest_of_Seiros">
+                                                    <div class="tree-item-contents heading-link" heading-name="Crest of Seiros"><span class="tree-item-title">Crest of Seiros</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="church-of-seiros.html#Holy_Symbol_of_Seiros![[Holy_Symbol_of_Seiros.webp]]">
+                                                    <div class="tree-item-contents heading-link" heading-name="Holy Symbol of Seiros![[holy-symbol-of-seiros.png]]">
+                                                        <span class="tree-item-title">
+                                                            <p>
+                                                                Holy Symbol of Seiros
+                                                                <span alt="holy-symbol-of-seiros.png" src="holy-symbol-of-seiros.png" class="internal-embed media-embed image-embed is-loaded">
+                                                                    <img
+                                                                        alt="holy-symbol-of-seiros.png"
+                                                                        src="app://c9b4343ed0eb8d49854fdd6f37e0eccab327/home/cole/Documents/obsidian/Dragonlance-Sync/Holy%20Symbol%20of%20Seiros.webp?1712434703454"
+                                                                    />
+                                                                </span>
+                                                            </p>
+                                                        </span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tree-item mod-collapsible" data-depth="2">
+                                        <a class="tree-link" href="church-of-seiros.html#The_Knights_of_Seiros">
+                                            <div class="tree-item-contents heading-link" heading-name="The Knights of Seiros">
+                                                <div class="collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                <span class="tree-item-title">The Knights of Seiros</span>
+                                            </div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children">
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="church-of-seiros.html#Founding_and_Purpose">
+                                                    <div class="tree-item-contents heading-link" heading-name="Founding and Purpose"><span class="tree-item-title">Founding and Purpose</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="church-of-seiros.html#Training_and_Initiation">
+                                                    <div class="tree-item-contents heading-link" heading-name="Training and Initiation"><span class="tree-item-title">Training and Initiation</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="church-of-seiros.html#The_Role_of_the_Four_Saints">
+                                                    <div class="tree-item-contents heading-link" heading-name="The Role of the Four Saints"><span class="tree-item-title">The Role of the Four Saints</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="church-of-seiros.html#Legacy_and_Challenges">
+                                                    <div class="tree-item-contents heading-link" heading-name="Legacy and Challenges"><span class="tree-item-title">Legacy and Challenges</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="church-of-seiros.html#Leadership">
+                                                    <div class="tree-item-contents heading-link" heading-name="Leadership"><span class="tree-item-title">Leadership</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script defer="">
+                    let rs = document.querySelector(".sidebar-right");
+                    rs.classList.add("is-collapsed");
+                    if (window.innerWidth > 768) rs.classList.remove("is-collapsed");
+                    rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
