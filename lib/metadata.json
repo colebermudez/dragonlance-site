@@ -1,1 +1,205 @@
-let graphData={graphOptions:{attractionForce:1,linkLength:10,repulsionForce:150,centralForce:3,edgePruning:100,minNodeRadius:3,maxNodeRadius:7},isInitialized:!0,paths:["character-sheets/big-bob.html","character-sheets/kyan-covverre.html","character-sheets/orion.html","character-sheets/orla.html","character-sheets/pryderion.html","character-sheets/tehv'in-velaryon.html","character-sheets/valphire-roseblood.html","locations/solamnia-and-the-northern-wastes/coastlund/citadel-of-karoc-tor.html","locations/solamnia-and-the-northern-wastes/coastlund/connersby.html","locations/solamnia-and-the-northern-wastes/coastlund/daron.html","locations/solamnia-and-the-northern-wastes/coastlund/deepdal.html","locations/solamnia-and-the-northern-wastes/coastlund/draco's-citadel.html","locations/solamnia-and-the-northern-wastes/coastlund/fount-of-wisdom.html","locations/solamnia-and-the-northern-wastes/coastlund/gander.html","locations/solamnia-and-the-northern-wastes/coastlund/godnest.html","locations/solamnia-and-the-northern-wastes/coastlund/gwyntarr.html","locations/solamnia-and-the-northern-wastes/coastlund/hargoth.html","locations/solamnia-and-the-northern-wastes/coastlund/ironrock.html","locations/solamnia-and-the-northern-wastes/coastlund/korval.html","locations/solamnia-and-the-northern-wastes/hinterlund/kalaman.html","locations/solamnia-and-the-northern-wastes/hinterlund/vogler.html","locations/solamnia-and-the-northern-wastes/hinterlund/wheelwatch-outpost.html","locations/solamnia-and-the-northern-wastes/nightlund/dargaard-keep.html","locations/solamnia-and-the-northern-wastes/northern-wastes/blue-pheonix-shrine.html","locations/solamnia-and-the-northern-wastes/northern-wastes/bluemaw-cave.html","locations/solamnia-and-the-northern-wastes/northern-wastes/camp-carrionclay.html","locations/solamnia-and-the-northern-wastes/northern-wastes/city-of-lost-names-(onyari).html","locations/solamnia-and-the-northern-wastes/northern-wastes/elven-encampment.html","locations/solamnia-and-the-northern-wastes/northern-wastes/heart's-hollow.html","locations/solamnia-and-the-northern-wastes/northern-wastes/sunward-fortress.html","locations/solamnia-and-the-northern-wastes/northern-wastes/wakenreth.html","locations/solamnia-and-the-northern-wastes/northern-wastes/wrecker's-edge.html","locations/solamnia-and-the-northern-wastes/palanthas/palanthas.html","locations/solamnia-and-the-northern-wastes/palanthas/the-high-clerist's-tower.html","npcs/claude-von-riegan.html","npcs/darrett-highwater.html","npcs/dimitri-alexandre-blaiddyd.html","npcs/edelgard-von-hresvelg.html","npcs/governor-fuline-thren.html","npcs/lady-rhea.html","npcs/manuela-casagranda.html","npcs/marshal-vendri.html","npcs/raistlin-majere.html","dragonlance-home.html"],nodeCount:44,linkSources:[43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43,43],linkTargets:[0,1,2,3,4,5,6,39,34,36,35,37,38,40,41,42,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,33,32],labels:["Big Bob","Kyan Covverre","Orion","Orla","Pryderion","Tehv'in Velaryon","Valphire Roseblood","Citadel of Karoc-Tor","Connersby","Daron","Deepdal","Draco's Citadel","Fount of Wisdom","Gander","Godnest","Gwyntarr","Hargoth","Ironrock","Korval","Kalaman","Vogler","Wheelwatch Outpost","Dargaard Keep","Blue Pheonix Shrine","Bluemaw Cave","Camp Carrionclay","City of Lost Names (Onyari)","Elven Encampment","Heart's Hollow","Sunward Fortress","Wakenreth","Wrecker's Edge","Palanthas","The High Clerist's Tower","Claude Von Riegan","Darrett Highwater","Dimitri Alexandre Blaiddyd","Edelgard Von Hresvelg","Governor Fuline Thren","Lady Rhea","Manuela Casagranda","Marshal Vendri","Raistlin Majere","Dragonlance - Home"],radii:[3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,3.229177934018388,7],linkCount:43}
+{
+  "vaultName": "Dragonlance",
+  "lastExport": 1712762242620,
+  "pluginVersion": "1.8.01",
+  "validBodyClasses": "publish css-settings-manager theme-light show-inline-title sizing-readable check-color check-bg wotc-beyond",
+  "useCustomHeadContent": false,
+  "useCustomFavicon": false,
+  "files": [
+    "Session Notes/DM Session Notes/DM 2. April 6th, 2024 The Boilers 1.md",
+    "lib/fonts/94f2f163d4b698242fef.otf",
+    "lib/fonts/72505e6a122c6acd5471.woff2",
+    "lib/fonts/2d5198822ab091ce4305.woff2",
+    "lib/fonts/c8ba52b05a9ef10f4758.woff2",
+    "lib/fonts/cb10ffd7684cd9836a05.woff2",
+    "lib/fonts/b5f0f109bc88052d4000.woff2",
+    "lib/fonts/cbe0ae49c52c920fd563.woff2",
+    "lib/fonts/535a6cf662596b3bd6a6.woff2",
+    "lib/fonts/70cc7ff27245e82ad414.ttf",
+    "lib/fonts/454577c22304619db035.ttf",
+    "lib/fonts/52ac8f3034507f1d9e53.ttf",
+    "lib/fonts/05b618077343fbbd92b7.ttf",
+    "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+    "lib/media/874d8b8e340f75575caa.svg",
+    "lib/html/file-tree.html",
+    "lib/scripts/webpage.js",
+    "lib/scripts/minisearch.js",
+    "lib/media/favicon.png",
+    "lib/styles/obsidian.css",
+    "lib/styles/theme.css",
+    "lib/styles/global-variable-styles.css",
+    "lib/styles/supported-plugins.css",
+    "lib/styles/main-styles.css"
+  ],
+  "mainDependencies": [
+    "lib/fonts/94f2f163d4b698242fef.otf",
+    "lib/fonts/72505e6a122c6acd5471.woff2",
+    "lib/fonts/2d5198822ab091ce4305.woff2",
+    "lib/fonts/c8ba52b05a9ef10f4758.woff2",
+    "lib/fonts/cb10ffd7684cd9836a05.woff2",
+    "lib/fonts/b5f0f109bc88052d4000.woff2",
+    "lib/fonts/cbe0ae49c52c920fd563.woff2",
+    "lib/fonts/535a6cf662596b3bd6a6.woff2",
+    "lib/fonts/70cc7ff27245e82ad414.ttf",
+    "lib/fonts/454577c22304619db035.ttf",
+    "lib/fonts/52ac8f3034507f1d9e53.ttf",
+    "lib/fonts/05b618077343fbbd92b7.ttf",
+    "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+    "lib/media/874d8b8e340f75575caa.svg",
+    "lib/html/file-tree.html",
+    "lib/scripts/webpage.js",
+    "lib/scripts/minisearch.js",
+    "lib/media/favicon.png",
+    "lib/styles/obsidian.css",
+    "lib/styles/theme.css",
+    "lib/styles/global-variable-styles.css",
+    "lib/styles/supported-plugins.css",
+    "lib/styles/main-styles.css"
+  ],
+  "fileInfo": {
+    "Session Notes/DM Session Notes/DM 2. April 6th, 2024 The Boilers 1.md": {
+      "modifiedTime": 1712762242620,
+      "sourceSize": 4752,
+      "exportedPath": "session-notes/dm-session-notes/dm-2.-april-6th,-2024-the-boilers-1.html",
+      "dependencies": []
+    },
+    "lib/fonts/94f2f163d4b698242fef.otf": {
+      "modifiedTime": 1712762242620,
+      "sourceSize": 66800,
+      "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
+      "dependencies": []
+    },
+    "lib/fonts/72505e6a122c6acd5471.woff2": {
+      "modifiedTime": 1712762242620,
+      "sourceSize": 104232,
+      "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/2d5198822ab091ce4305.woff2": {
+      "modifiedTime": 1712762242620,
+      "sourceSize": 104332,
+      "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
+      "modifiedTime": 1712762242620,
+      "sourceSize": 98868,
+      "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/cb10ffd7684cd9836a05.woff2": {
+      "modifiedTime": 1712762242620,
+      "sourceSize": 106876,
+      "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/b5f0f109bc88052d4000.woff2": {
+      "modifiedTime": 1712762242620,
+      "sourceSize": 105804,
+      "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/cbe0ae49c52c920fd563.woff2": {
+      "modifiedTime": 1712762242620,
+      "sourceSize": 106108,
+      "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/535a6cf662596b3bd6a6.woff2": {
+      "modifiedTime": 1712762242620,
+      "sourceSize": 111708,
+      "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/70cc7ff27245e82ad414.ttf": {
+      "modifiedTime": 1712762242620,
+      "sourceSize": 192740,
+      "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
+      "dependencies": []
+    },
+    "lib/fonts/454577c22304619db035.ttf": {
+      "modifiedTime": 1712762242620,
+      "sourceSize": 161376,
+      "exportedPath": "lib/fonts/454577c22304619db035.ttf",
+      "dependencies": []
+    },
+    "lib/fonts/52ac8f3034507f1d9e53.ttf": {
+      "modifiedTime": 1712762242620,
+      "sourceSize": 191568,
+      "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
+      "dependencies": []
+    },
+    "lib/fonts/05b618077343fbbd92b7.ttf": {
+      "modifiedTime": 1712762242620,
+      "sourceSize": 155288,
+      "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
+      "dependencies": []
+    },
+    "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
+      "modifiedTime": 1712762242620,
+      "sourceSize": 7876,
+      "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+      "dependencies": []
+    },
+    "lib/media/874d8b8e340f75575caa.svg": {
+      "modifiedTime": 1712762242620,
+      "sourceSize": 317,
+      "exportedPath": "lib/media/874d8b8e340f75575caa.svg",
+      "dependencies": []
+    },
+    "lib/html/file-tree.html": {
+      "modifiedTime": 1712762242620,
+      "sourceSize": 2341,
+      "exportedPath": "lib/html/file-tree.html",
+      "dependencies": []
+    },
+    "lib/scripts/webpage.js": {
+      "modifiedTime": 1712762242620,
+      "sourceSize": 47290,
+      "exportedPath": "lib/scripts/webpage.js",
+      "dependencies": []
+    },
+    "lib/scripts/minisearch.js": {
+      "modifiedTime": 1712762242620,
+      "sourceSize": 29422,
+      "exportedPath": "lib/scripts/minisearch.js",
+      "dependencies": []
+    },
+    "lib/media/favicon.png": {
+      "modifiedTime": 1712762242620,
+      "sourceSize": 1105,
+      "exportedPath": "lib/media/favicon.png",
+      "dependencies": []
+    },
+    "lib/styles/obsidian.css": {
+      "modifiedTime": 1712762242620,
+      "sourceSize": 157722,
+      "exportedPath": "lib/styles/obsidian.css",
+      "dependencies": []
+    },
+    "lib/styles/theme.css": {
+      "modifiedTime": 1712762242620,
+      "sourceSize": 699854,
+      "exportedPath": "lib/styles/theme.css",
+      "dependencies": []
+    },
+    "lib/styles/global-variable-styles.css": {
+      "modifiedTime": 1712762242620,
+      "sourceSize": 236,
+      "exportedPath": "lib/styles/global-variable-styles.css",
+      "dependencies": []
+    },
+    "lib/styles/supported-plugins.css": {
+      "modifiedTime": 1712762242620,
+      "sourceSize": 8552,
+      "exportedPath": "lib/styles/supported-plugins.css",
+      "dependencies": []
+    },
+    "lib/styles/main-styles.css": {
+      "modifiedTime": 1712762242620,
+      "sourceSize": 23130,
+      "exportedPath": "lib/styles/main-styles.css",
+      "dependencies": []
+    }
+  }
+}
