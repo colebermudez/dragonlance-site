@@ -13,4 +13,3 @@ Information will be regularly updated with all available info after players reac
 ### To-do for later
 - Fix sidebar alignment
 - Remove graph from all pages that have it
-- Figure out centering on interactive map
