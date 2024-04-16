@@ -14,7 +14,7 @@ Information will be regularly updated with all available info after players reac
 ### To-do for later
 - Fix sidebar alignment
 - Remove graph from all pages that have it
- - Ansalon Map
- - Session Notes
-  - March 23
-  - April 6
+  - Ansalon Map
+  - Session Notes
+    - March 23
+    - April 6
