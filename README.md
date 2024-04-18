@@ -13,8 +13,7 @@ Information will be regularly updated with all available info after players reac
 Example: WIP - Updated Northern Ergoth Locations
 ```
 ## To-do
-- Fix NPC page width
-- Fix NPC sidebar links (From .md to html links)
+- Fix PC page width
 - Update Northern Ergoth Locations when party arrives
 
 ### To-do for later
