@@ -6,6 +6,12 @@ https://krynns-vanguard.com/
 
 Information will be regularly updated with all available info after players reach and visit locations across the map and meet new NPCs.
 
+## Commit Structure from Commit 31 onwards
+```
+ <WIP, FIX, or ADD>  - <Description of Commit>
+
+Example: WIP - Updated Northern Ergoth Locations
+```
 ## To-do
 - Fix NPC page width
 - Fix NPC sidebar links (From .md to html links)
