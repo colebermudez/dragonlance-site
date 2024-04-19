@@ -12,8 +12,10 @@ Information will be regularly updated with all available info after players reac
 
 Example: WIP - Updated Northern Ergoth Locations
 ```
+
+- Fix PC page width (weird reload issue..fixed I guess???)
+
 ## To-do
-- Fix PC page width
 - Update Northern Ergoth Locations when party arrives
 
 ### To-do for later
