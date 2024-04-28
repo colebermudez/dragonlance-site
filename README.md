@@ -17,7 +17,7 @@ Example: WIP - Updated Northern Ergoth Locations
 - Update Northern Ergoth Locations when party arrives
 
 ### To-do for later
-- Fix sidebar alignment
+- Fix sidebar alignment (fix known but doesn't work in practice. Ansalon Map works but not PC pages)
 - Remove graph from all pages that have it
   - Ansalon Map
   - Session Notes
