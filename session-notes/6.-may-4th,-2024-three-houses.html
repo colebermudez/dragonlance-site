@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>6. May 4th, 2024 Three Houses</title>
+        <base href="../" />
+        <meta id="root-path" root-path="../" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0" />
+        <meta charset="UTF-8" />
+        <meta name="description" content="Dragonlance - 6. May 4th, 2024 Three Houses" />
+        <meta property="og:title" content="6. May 4th, 2024 Three Houses" />
+        <meta property="og:description" content="Dragonlance - 6. May 4th, 2024 Three Houses" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://krynns-vanguard.com/session-notes/6.-may-4th,-2024-three-houses.html" />
+        <meta property="og:image" content="undefined" />
+        <meta property="og:site_name" content="Dragonlance" />
+        <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://krynns-vanguard.com/lib/rss.xml" />
+        <script async="" id="webpage-script" src="lib/scripts/webpage.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <link rel="icon" href="lib/media/favicon.png" />
+        <style>
+            body {
+                --line-width: 40em;
+                --line-width-adaptive: 40em;
+                --file-line-width: 40em;
+                --sidebar-width: min(20em, 80vw);
+                --collapse-arrow-size: 11px;
+                --tree-horizontal-spacing: 0.6em;
+                --tree-vertical-spacing: 0.6em;
+                --sidebar-margin: 12px;
+            }
+            .sidebar {
+                height: 100%;
+                min-width: calc(var(--sidebar-width) + var(--divider-width-hover));
+                max-width: calc(var(--sidebar-width) + var(--divider-width-hover));
+                font-size: 14px;
+                z-index: 10;
+                position: relative;
+                overflow: hidden;
+                transition: min-width ease-in-out, max-width ease-in-out;
+                transition-duration: 0.2s;
+                contain: size;
+            }
+            .sidebar-left {
+                left: 0;
+            }
+            .sidebar-right {
+                right: 0;
+            }
+            .sidebar.is-collapsed {
+                min-width: 0;
+                max-width: 0;
+            }
+            body.floating-sidebars .sidebar {
+                position: absolute;
+            }
+            .sidebar-content {
+                height: 100%;
+                min-width: calc(var(--sidebar-width) - var(--divider-width-hover));
+                top: 0;
+                padding: var(--sidebar-margin);
+                padding-top: 4em;
+                line-height: var(--line-height-tight);
+                background-color: var(--background-secondary);
+                transition: background-color, border-right, border-left, box-shadow;
+                transition-duration: var(--color-fade-speed);
+                transition-timing-function: ease-in-out;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+            }
+            .sidebar:not(.is-collapsed) .sidebar-content {
+                min-width: calc(max(100%, var(--sidebar-width)) - 3px);
+                max-width: calc(max(100%, var(--sidebar-width)) - 3px);
+            }
+            .sidebar-left .sidebar-content {
+                left: 0;
+                border-top-right-radius: var(--radius-l);
+                border-bottom-right-radius: var(--radius-l);
+            }
+            .sidebar-right .sidebar-content {
+                right: 0;
+                border-top-left-radius: var(--radius-l);
+                border-bottom-left-radius: var(--radius-l);
+            }
+            .sidebar:has(.sidebar-content:empty):has(.topbar-content:empty) {
+                display: none;
+            }
+            .sidebar-topbar {
+                height: 2em;
+                width: var(--sidebar-width);
+                top: var(--sidebar-margin);
+                padding-inline: var(--sidebar-margin);
+                z-index: 1;
+                position: fixed;
+                display: flex;
+                align-items: center;
+                transition: width ease-in-out;
+                transition-duration: inherit;
+            }
+            .sidebar.is-collapsed .sidebar-topbar {
+                width: calc(2.3em + var(--sidebar-margin) * 2);
+            }
+            .sidebar .sidebar-topbar.is-collapsed {
+                width: 0;
+            }
+            .sidebar-left .sidebar-topbar {
+                left: 0;
+            }
+            .sidebar-right .sidebar-topbar {
+                right: 0;
+            }
+            .topbar-content {
+                overflow: hidden;
+                overflow: clip;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                transition: inherit;
+            }
+            .sidebar.is-collapsed .topbar-content {
+                width: 0;
+                transition: inherit;
+            }
+            .clickable-icon.sidebar-collapse-icon {
+                background-color: transparent;
+                color: var(--icon-color-focused);
+                padding: 0 !important;
+                margin: 0 !important;
+                height: 100% !important;
+                width: 2.3em !important;
+                margin-inline: 0.14em !important;
+                position: absolute;
+            }
+            .sidebar-left .clickable-icon.sidebar-collapse-icon {
+                transform: rotateY(180deg);
+                right: var(--sidebar-margin);
+            }
+            .sidebar-right .clickable-icon.sidebar-collapse-icon {
+                transform: rotateY(180deg);
+                left: var(--sidebar-margin);
+            }
+            .clickable-icon.sidebar-collapse-icon svg.svg-icon {
+                width: 100%;
+                height: 100%;
+            }
+            .sidebar-section-header {
+                margin: 0 0 1em 0;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                font-weight: 600;
+            }
+            body {
+                transition: background-color var(--color-fade-speed) ease-in-out;
+            }
+            .webpage-container {
+                display: flex;
+                flex-direction: row;
+                height: 100%;
+                width: 100%;
+                align-items: stretch;
+                justify-content: center;
+            }
+            .document-container {
+                opacity: 1;
+                flex-basis: 100%;
+                max-width: 100%;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transition: opacity 0.2s ease-in-out;
+                contain: inline-size;
+            }
+            .hide {
+                opacity: 0;
+                transition: opacity 0.2s ease-in-out;
+            }
+            .document-container > .markdown-preview-view {
+                margin: var(--sidebar-margin);
+                margin-bottom: 0;
+                width: 100%;
+                width: -webkit-fill-available;
+                width: -moz-available;
+                width: fill-available;
+                background-color: var(--background-primary);
+                transition: background-color var(--color-fade-speed) ease-in-out;
+                border-top-right-radius: var(--window-radius, var(--radius-m));
+                border-top-left-radius: var(--window-radius, var(--radius-m));
+                overflow-x: hidden !important;
+                overflow-y: auto !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                contain: inline-size;
+            }
+            .document-container > .markdown-preview-view > .markdown-preview-sizer {
+                padding-bottom: 80vh !important;
+                width: 100% !important;
+                max-width: var(--line-width) !important;
+                flex-basis: var(--line-width) !important;
+                transition: background-color var(--color-fade-speed) ease-in-out;
+                contain: inline-size;
+            }
+            .markdown-rendered img:not([width]),
+            .view-content img:not([width]) {
+                max-width: 100%;
+                outline: 0;
+            }
+            .document-container > .view-content.embed {
+                display: flex;
+                padding: 1em;
+                height: 100%;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+            }
+            .document-container > .view-content.embed > * {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+            }
+            :has(> :is(.math, table)) {
+                overflow-x: auto !important;
+            }
+            .document-container > .view-content {
+                overflow-x: auto;
+                contain: content;
+                padding: 0;
+                margin: 0;
+                height: 100%;
+            }
+            .scroll-highlight {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 1000;
+                background-color: hsla(var(--color-accent-hsl), 0.25);
+                opacity: 0;
+                padding: 1em;
+                inset: 50%;
+                translate: -50% -50%;
+                border-radius: var(--radius-s);
+            }
+        </style>
+        <script defer="">
+            async function loadIncludes() {
+                if ("file:" != location.protocol) {
+                    let e = document.querySelectorAll("include");
+                    for (let t = 0; t < e.length; t++) {
+                        let o = e[t],
+                            l = o.getAttribute("src");
+                        try {
+                            const e = await fetch(l);
+                            if (!e.ok) {
+                                console.log("Could not include file: " + l), o?.remove();
+                                continue;
+                            }
+                            let t = await e.text(),
+                                n = document.createRange().createContextualFragment(t),
+                                i = Array.from(n.children);
+                            for (let e of i)
+                                e.classList.add("hide"),
+                                    (e.style.transition = "opacity 0.5s ease-in-out"),
+                                    setTimeout(() => {
+                                        e.classList.remove("hide");
+                                    }, 10);
+                            o.before(n), o.remove(), console.log("Included file: " + l);
+                        } catch (e) {
+                            o?.remove(), console.log("Could not include file: " + l, e);
+                            continue;
+                        }
+                    }
+                } else {
+                    if (document.querySelectorAll("include").length > 0) {
+                        var e = document.createElement("div");
+                        (e.id = "error"),
+                            (e.textContent = "Web server exports must be hosted on an http / web server to be viewed correctly."),
+                            (e.style.position = "fixed"),
+                            (e.style.top = "50%"),
+                            (e.style.left = "50%"),
+                            (e.style.transform = "translate(-50%, -50%)"),
+                            (e.style.fontSize = "1.5em"),
+                            (e.style.fontWeight = "bold"),
+                            (e.style.textAlign = "center"),
+                            document.body.appendChild(e),
+                            document.querySelector(".document-container")?.classList.remove("hide");
+                    }
+                }
+            }
+            document.addEventListener("DOMContentLoaded", () => {
+                loadIncludes();
+            });
+            let isFileProtocol = "file:" == location.protocol;
+            function waitLoadScripts(e, t) {
+                let o = e.map((e) => document.getElementById(e + "-script")),
+                    l = 0;
+                !(function e() {
+                    let n = o[l];
+                    l++, (n && "true" != n.getAttribute("loaded")) || (l < o.length && e()), l < o.length ? n.addEventListener("load", e) : t();
+                })();
+            }
+        </script>
+        <link rel="stylesheet" href="lib/styles/obsidian.css" />
+        <link rel="stylesheet" href="lib/styles/theme.css" />
+        <link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css" /></noscript>
+        <link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css" /></noscript>
+        <link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="lib/styles/main-styles.css" /></noscript>
+    </head>
+    <body class="publish css-settings-manager theme-light show-inline-title sizing-readable check-color check-bg wotc-beyond">
+        <script defer="">
+            let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            "dark" == theme ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light")) : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")),
+                window.innerWidth < 480
+                    ? document.body.classList.add("is-phone")
+                    : window.innerWidth < 768
+                    ? document.body.classList.add("is-tablet")
+                    : window.innerWidth < 1024
+                    ? document.body.classList.add("is-small-screen")
+                    : document.body.classList.add("is-large-screen");
+        </script>
+        <div class="webpage-container workspace">
+            <div class="sidebar-left sidebar">
+                <div class="sidebar-handle"></div>
+                <div class="sidebar-topbar">
+                    <div class="topbar-content">
+                        <label class="theme-toggle-container" for="theme_toggle">
+                            <input class="theme-toggle-input" type="checkbox" id="theme_toggle" />
+                            <div class="toggle-background"></div>
+                        </label>
+                    </div>
+                    <div class="clickable-icon sidebar-collapse-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                            <path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
+                            <path d="M10 4V20"></path>
+                            <path d="M4 7H7"></path>
+                            <path d="M4 10H7"></path>
+                            <path d="M4 13H7"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="sidebar-content">
+                    <div class="search-input-container">
+                        <input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..." />
+                        <div class="search-input-clear-button" aria-label="Clear search"></div>
+                    </div>
+                    <include src="lib/html/file-tree.html"></include>
+                </div>
+                <script defer="">
+                    let ls = document.querySelector(".sidebar-left");
+                    ls.classList.add("is-collapsed");
+                    if (window.innerWidth > 768) ls.classList.remove("is-collapsed");
+                    ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));
+                </script>
+            </div>
+            <div class="document-container markdown-reading-view hide">
+                <div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width">
+                    <style id="MJX-CHTML-styles"></style>
+                    <div class="markdown-preview-sizer markdown-preview-section">
+                        <h1 class="page-title heading inline-title" id="6. May 4th, 2024 Three Houses">
+                            <ol start="6">
+                                <li>May 4th, 2024 Three Houses</li>
+                            </ol>
+                        </h1>
+                        <div class="heading-wrapper">
+                            <h2 data-heading="Reapember 21, 354 A.C." class="heading" id="Reapember_21,_354_A.C.">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Reapember 21, 354 A.C.
+                            </h2>
+                            <div class="heading-children">
+                                <div>
+                                    <p>
+                                        Krynn's Vanguard worked their way around The Monastery and talked to all three of the house leaders to determine who they wanted to take with them on their quest to snuff out "Those Who Slither in the
+                                        Dark". All of the house leaders introduced the students in their house in their own words.
+                                    </p>
+                                </div>
+                                <div>
+                                    <p>
+                                        The group also learned about a historical group known as the Ten Elites. And how their bloodlines pass down these barely researched traits known as 'marks'. These marks may or may not manifest in a
+                                        physical form, but being tied to the bloodline, give the barer power that would exceed what someone of their lineage would normally be capable of.
+                                    </p>
+                                </div>
+                                <div>
+                                    <p>
+                                        As fate would have it, along with the Church's influence, people who bare these 'marks' come from high ranking social positions and are favored not only by the people, but also by their own families.
+                                        Little is known about these marks and who gets them, but it is believed to be tied to the bloodline of the Ten Elites, and that not each decedent bares such a mark.
+                                    </p>
+                                </div>
+                                <div><p>After meeting with the leaders and asking them a few questions to decern their morals and ethics. They went back to a tavern in Gwynned to discuss an pick a leader to take with them.</p></div>
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="The Black Eagles" class="heading" id="The_Black_Eagles">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        The Black Eagles
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="heading-wrapper">
+                                            <h4 data-heading="Edelgard" class="heading" id="Edelgard">
+                                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                Edelgard
+                                            </h4>
+                                            <div class="heading-children">
+                                                <div>
+                                                    <p>"Some think I'm a bit distant. Arrogant even. But there's little to be done. One day, I must rise to become Abanasina's next emperor. It also seems that we may have similar goals."</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="heading-wrapper">
+                                            <h4 data-heading="Hubert" class="heading" id="Hubert">
+                                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                Hubert
+                                            </h4>
+                                            <div class="heading-children">
+                                                <div>
+                                                    <p>
+                                                        "Hubert is the heir of Marquis Vestra. He has served me since I was a child. You may think his blood runs a bit cold, but...actually that's rather accurate. Still, if you can get past
+                                                        that you'll see he's quite astute and reasonable."
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="heading-wrapper">
+                                            <h4 data-heading="Ferdinand" class="heading" id="Ferdinand">
+                                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                Ferdinand
+                                            </h4>
+                                            <div class="heading-children">
+                                                <div>
+                                                    <p>
+                                                        "Ferdinand, for some reason, thins of me as a bitter rival and is always trying to challenge me. It's terribly irritating.<br />
+                                                        His house is that of Duke Aegir, which produces Abanasinia's Prime Ministers. That family is...perhaps too pleases with its own status."
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="heading-wrapper">
+                                            <h4 data-heading="Lindhart" class="heading" id="Lindhart">
+                                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                Lindhart
+                                            </h4>
+                                            <div class="heading-children">
+                                                <div>
+                                                    <p>
+                                                        "Lindhart is remarkably intelligent, but he only wishes to apply himself to tasks that interest him and nothing else. He's also fond of...well, napping.<br />
+                                                        If he had any work ethic or sense of duty to speak of, I suppose he would be destined to become an official of the empire."
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="heading-wrapper">
+                                            <h4 data-heading="Caspar" class="heading" id="Caspar">
+                                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                Caspar
+                                            </h4>
+                                            <div class="heading-children">
+                                                <div>
+                                                    <p>
+                                                        "Caspar is the second son of Count Bergliez. He has no inheritance in his future, which is perhaps why he's always so eager to prove himself.<br />
+                                                        He's overly energetic and runs head first into any battle. If he ends up in your care, be sure to keep a close eye on him."
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="heading-wrapper">
+                                            <h4 data-heading="Bernadetta" class="heading" id="Bernadetta">
+                                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                Bernadetta
+                                            </h4>
+                                            <div class="heading-children">
+                                                <div>
+                                                    <p>
+                                                        "Bernadetta is Count Varley's only daughter. I suppose you could say she's a bit eccentric, but she seems like a gentle soul. I believe she's shut herself away in her quarters but it's
+                                                        no matter. I'm able to drag her to where she needs to be."
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="heading-wrapper">
+                                            <h4 data-heading="Dorothea" class="heading" id="Dorothea">
+                                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                Dorothea
+                                            </h4>
+                                            <div class="heading-children">
+                                                <div>
+                                                    <p>
+                                                        "Few commoners have joined the Black Eagle House, but Dorothea is an exception.<br />
+                                                        She's a songstress from a famous opera company in the empire. I'm not entirely sure what brought her to the Officer's Academy."
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="heading-wrapper">
+                                            <h4 data-heading="Petra" class="heading" id="Petra">
+                                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                Petra
+                                            </h4>
+                                            <div class="heading-children">
+                                                <div>
+                                                    <p>
+                                                        "To the east of Abanasinia is Schallsea. Petra is the granddaughter of their king.<br />
+                                                        Schallsea is a vassal state of the empire, which is how she came to be enrolled here. She's incredibly smart and studious, even if her speech is a bit out of the ordinary."
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="The Blue Lions" class="heading" id="The_Blue_Lions">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        The Blue Lions
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="heading-wrapper">
+                                            <h4 data-heading="Dimitri" class="heading" id="Dimitri">
+                                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                Dimitri
+                                            </h4>
+                                            <div class="heading-children">
+                                                <div><p>"I'm afraid my story hasn't been a pleasant one. I hope that doesn't color your view of me, but I understand if that can't be helped."</p></div>
+                                            </div>
+                                        </div>
+                                        <div class="heading-wrapper">
+                                            <h4 data-heading="Dedue" class="heading" id="Dedue">
+                                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                Dedue
+                                            </h4>
+                                            <div class="heading-children">
+                                                <div>
+                                                    <p>
+                                                        "Dedue was born in the Akal Province to the north and has been loyally working in my service for the past four years.<br />
+                                                        He's rather taciturn, but once you get to know him, you'll see he's a kind and good natured young man."
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="heading-wrapper">
+                                            <h4 data-heading="Felix" class="heading" id="Felix">
+                                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                Felix
+                                            </h4>
+                                            <div class="heading-children">
+                                                <div>
+                                                    <p>
+                                                        "He's the heir to House Fraldarius. He has a bit of a sharp tongue, but don't let that fool you. Deep down, he's a good guy.<br />
+                                                        He gravitates towards people who are skilled. Perhaps you would enjoy a friendly competition with him sometime."
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="heading-wrapper">
+                                            <h4 data-heading="Ashe" class="heading" id="Ashe">
+                                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                Ashe
+                                            </h4>
+                                            <div class="heading-children">
+                                                <div>
+                                                    <p>
+                                                        "He is the adoptive sone of Lord Lonato of Castle Gaspard, but I hear he was born a commoner. He has an extremely earnest personality, so I'm certain he will take any tips you give him
+                                                        with great enthusiasim."
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="heading-wrapper">
+                                            <h4 data-heading="Sylvain" class="heading" id="Sylvain">
+                                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                Sylvain
+                                            </h4>
+                                            <div class="heading-children">
+                                                <div>
+                                                    <p>
+                                                        "He is the heir to House Gautier. He is a capable person who highly values his friends. That said...Well he's always been a bit of a...skirt chaser so to speak. Pardon my bluntness. I
+                                                        speak with him about it often but it doesn't seem to help."
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="heading-wrapper">
+                                            <h4 data-heading="Mercedes" class="heading" id="Mercedes">
+                                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                Mercedes
+                                            </h4>
+                                            <div class="heading-children">
+                                                <div>
+                                                    <p>
+                                                        "I hear she was born to Imperial nobility but a twist of fate brought her to the Kingdom.<br />
+                                                        She may seem carefree on the surface, but she's actually a kind soul who pays close attention to everyone around her."
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="heading-wrapper">
+                                            <h4 data-heading="Annette" class="heading" id="Annette">
+                                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                Annette
+                                            </h4>
+                                            <div class="heading-children">
+                                                <div>
+                                                    <p>
+                                                        "Annette is Baron Dominic's niece. She is a talented student who scored extremely high marks at the Royal School of Sorcery.<br />
+                                                        She's cheerful and hardworking. Brilliant really. Though she can be a bit oblivious at times. I hear she caused an explosion in the kitchen last night."
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="heading-wrapper">
+                                            <h4 data-heading="Ingrid" class="heading" id="Ingrid">
+                                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                Ingrid
+                                            </h4>
+                                            <div class="heading-children">
+                                                <div>
+                                                    <p>
+                                                        "Ingrid is Count Galatea's daughter. She is also a childhood friend of Felix, Sylvain, and myself.<br />
+                                                        She is diligent, industrious, and principled. In truth, she is more knightly than most knights you will ever meet."
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="heading-wrapper">
+                                    <h3 data-heading="The Golden Deer" class="heading" id="The_Golden_Deer">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        The Golden Deer
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="heading-wrapper">
+                                            <h4 data-heading="Claude" class="heading" id="Claude">
+                                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                Claude
+                                            </h4>
+                                            <div class="heading-children">
+                                                <div>
+                                                    <p>
+                                                        "Piqued your interest? As luck would have it, I'm pretty curious about you as well. But what's life without a bit of mystery? Take us with you and we can spend that time learning about
+                                                        each other, little by little."
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="heading-wrapper">
+                                            <h4 data-heading="Lorenz" class="heading" id="Lorenz">
+                                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                Lorenz
+                                            </h4>
+                                            <div class="heading-children">
+                                                <div>
+                                                    <p>
+                                                        "He's the heir of the Glouster Territiory. If you haven't picked up on it, he's a bit arrogant and fancies himself a lady's man.<br />
+                                                        That said...deep down he's really devoted and honest...though, I wouldn't mind never hearing him talk about his noble obligations ever again."
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="heading-wrapper">
+                                            <h4 data-heading="Raphael" class="heading" id="Raphael">
+                                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                Raphael
+                                            </h4>
+                                            <div class="heading-children">
+                                                <div>
+                                                    <p>
+                                                        "He comes from a merchant family, but his parents died in an accident. Seems like he's had a rough life. Despite all that, he's just about the most cheerful guy you'll ever meet. His
+                                                        passions are training, eating, and...actually, that's about it."
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="heading-wrapper">
+                                            <h4 data-heading="Ignatz" class="heading" id="Ignatz">
+                                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                Ignatz
+                                            </h4>
+                                            <div class="heading-children">
+                                                <div>
+                                                    <p>
+                                                        "He's the second son of a merchant family. Since his brother will likely inherit the business, he's training to become a knight. If you ask me, doesn't seem like he truly wants to be a
+                                                        knight...he's probably just doing it to please his parents."
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="heading-wrapper">
+                                            <h4 data-heading="Lysithia" class="heading" id="Lysithia">
+                                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                Lysithia
+                                            </h4>
+                                            <div class="heading-children">
+                                                <div>
+                                                    <p>
+                                                        "She's the daughter of Count Ordelia, and is probably the youngest student here.<br />
+                                                        But watch out! She gets real angry if you treat her like a child. As for me, I do it on purpose. You have to make your own fun in this place."
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="heading-wrapper">
+                                            <h4 data-heading="Marianne" class="heading" id="Marianne">
+                                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                Marianne
+                                            </h4>
+                                            <div class="heading-children">
+                                                <div>
+                                                    <p>
+                                                        "Marianne is Margrave Edmund's daughter...and that's pretty much all I know about her.<br />
+                                                        She doesn't interact much with other students, so I wouldn't be surprised if a lot of folks here have never even heard her speak."
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="heading-wrapper">
+                                            <h4 data-heading="Hilda" class="heading" id="Hilda">
+                                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                Hilda
+                                            </h4>
+                                            <div class="heading-children">
+                                                <div>
+                                                    <p>
+                                                        "She's the only daughter of Duke Goneril. It seems her father and brother coddle her quite a bit. If you look up 'lazy' in the dictionary...her picture won't be there because she never
+                                                        got around to submitting it. Not too unusual for a noble, I guess."
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="heading-wrapper">
+                                            <h4 data-heading="Lionie" class="heading" id="Lionie">
+                                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                Lionie
+                                            </h4>
+                                            <div class="heading-children">
+                                                <div>
+                                                    <p>
+                                                        "She enrolled because she wants to be a mercenary. I think her father is a hunter.<br />
+                                                        She's pretty blunt and as stingy as they come. A habitual saver too. I think she's hoping to repay her village for helping to send her here."
+                                                    </p>
+                                                </div>
+                                                <div class="mod-footer"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-right sidebar">
+                <div class="sidebar-handle"></div>
+                <div class="sidebar-topbar">
+                    <div class="topbar-content"></div>
+                    <div class="clickable-icon sidebar-collapse-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                            <path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
+                            <path d="M10 4V20"></path>
+                            <path d="M4 7H7"></path>
+                            <path d="M4 10H7"></path>
+                            <path d="M4 13H7"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="sidebar-content">
+                    <div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0">
+                        <div class="tree-header">
+                            <span class="sidebar-section-header">Table Of Contents</span>
+                            <button class="clickable-icon collapse-tree-button" aria-label="Collapse All">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+                            </button>
+                        </div>
+                        <div class="tree-scroll-area tree-item-children nav-folder-children">
+                            <div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div>
+                            <div class="tree-item" data-depth="1">
+                                <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#6. May 4th, 2024 Three Houses">
+                                    <div
+                                        class="tree-item-contents heading-link"
+                                        heading-name="
+May 4th, 2024 Three Houses
+"
+                                    >
+                                        <span class="tree-item-title">May 4th, 2024 Three Houses</span>
+                                    </div>
+                                </a>
+                                <div class="tree-item-children nav-folder-children">
+                                    <div class="tree-item mod-collapsible" data-depth="2">
+                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Reapember_21,_354_A.C.">
+                                            <div class="tree-item-contents heading-link" heading-name="Reapember 21, 354 A.C.">
+                                                <div class="collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                <span class="tree-item-title">Reapember 21, 354 A.C.</span>
+                                            </div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children">
+                                            <div class="tree-item mod-collapsible" data-depth="3">
+                                                <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#The_Black_Eagles">
+                                                    <div class="tree-item-contents heading-link" heading-name="The Black Eagles">
+                                                        <div class="collapse-icon">
+                                                            <svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="currentColor"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round"
+                                                                class="svg-icon right-triangle"
+                                                            >
+                                                                <path d="M3 8L12 17L21 8"></path>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="tree-item-title">The Black Eagles</span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children">
+                                                    <div class="tree-item" data-depth="4">
+                                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Edelgard">
+                                                            <div class="tree-item-contents heading-link" heading-name="Edelgard"><span class="tree-item-title">Edelgard</span></div>
+                                                        </a>
+                                                        <div class="tree-item-children nav-folder-children"></div>
+                                                    </div>
+                                                    <div class="tree-item" data-depth="4">
+                                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Hubert">
+                                                            <div class="tree-item-contents heading-link" heading-name="Hubert"><span class="tree-item-title">Hubert</span></div>
+                                                        </a>
+                                                        <div class="tree-item-children nav-folder-children"></div>
+                                                    </div>
+                                                    <div class="tree-item" data-depth="4">
+                                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Ferdinand">
+                                                            <div class="tree-item-contents heading-link" heading-name="Ferdinand"><span class="tree-item-title">Ferdinand</span></div>
+                                                        </a>
+                                                        <div class="tree-item-children nav-folder-children"></div>
+                                                    </div>
+                                                    <div class="tree-item" data-depth="4">
+                                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Lindhart">
+                                                            <div class="tree-item-contents heading-link" heading-name="Lindhart"><span class="tree-item-title">Lindhart</span></div>
+                                                        </a>
+                                                        <div class="tree-item-children nav-folder-children"></div>
+                                                    </div>
+                                                    <div class="tree-item" data-depth="4">
+                                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Caspar">
+                                                            <div class="tree-item-contents heading-link" heading-name="Caspar"><span class="tree-item-title">Caspar</span></div>
+                                                        </a>
+                                                        <div class="tree-item-children nav-folder-children"></div>
+                                                    </div>
+                                                    <div class="tree-item" data-depth="4">
+                                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Bernadetta">
+                                                            <div class="tree-item-contents heading-link" heading-name="Bernadetta"><span class="tree-item-title">Bernadetta</span></div>
+                                                        </a>
+                                                        <div class="tree-item-children nav-folder-children"></div>
+                                                    </div>
+                                                    <div class="tree-item" data-depth="4">
+                                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Dorothea">
+                                                            <div class="tree-item-contents heading-link" heading-name="Dorothea"><span class="tree-item-title">Dorothea</span></div>
+                                                        </a>
+                                                        <div class="tree-item-children nav-folder-children"></div>
+                                                    </div>
+                                                    <div class="tree-item" data-depth="4">
+                                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Petra">
+                                                            <div class="tree-item-contents heading-link" heading-name="Petra"><span class="tree-item-title">Petra</span></div>
+                                                        </a>
+                                                        <div class="tree-item-children nav-folder-children"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tree-item mod-collapsible" data-depth="3">
+                                                <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#The_Blue_Lions">
+                                                    <div class="tree-item-contents heading-link" heading-name="The Blue Lions">
+                                                        <div class="collapse-icon">
+                                                            <svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="currentColor"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round"
+                                                                class="svg-icon right-triangle"
+                                                            >
+                                                                <path d="M3 8L12 17L21 8"></path>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="tree-item-title">The Blue Lions</span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children">
+                                                    <div class="tree-item" data-depth="4">
+                                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Dimitri">
+                                                            <div class="tree-item-contents heading-link" heading-name="Dimitri"><span class="tree-item-title">Dimitri</span></div>
+                                                        </a>
+                                                        <div class="tree-item-children nav-folder-children"></div>
+                                                    </div>
+                                                    <div class="tree-item" data-depth="4">
+                                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Dedue">
+                                                            <div class="tree-item-contents heading-link" heading-name="Dedue"><span class="tree-item-title">Dedue</span></div>
+                                                        </a>
+                                                        <div class="tree-item-children nav-folder-children"></div>
+                                                    </div>
+                                                    <div class="tree-item" data-depth="4">
+                                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Felix">
+                                                            <div class="tree-item-contents heading-link" heading-name="Felix"><span class="tree-item-title">Felix</span></div>
+                                                        </a>
+                                                        <div class="tree-item-children nav-folder-children"></div>
+                                                    </div>
+                                                    <div class="tree-item" data-depth="4">
+                                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Ashe">
+                                                            <div class="tree-item-contents heading-link" heading-name="Ashe"><span class="tree-item-title">Ashe</span></div>
+                                                        </a>
+                                                        <div class="tree-item-children nav-folder-children"></div>
+                                                    </div>
+                                                    <div class="tree-item" data-depth="4">
+                                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Sylvain">
+                                                            <div class="tree-item-contents heading-link" heading-name="Sylvain"><span class="tree-item-title">Sylvain</span></div>
+                                                        </a>
+                                                        <div class="tree-item-children nav-folder-children"></div>
+                                                    </div>
+                                                    <div class="tree-item" data-depth="4">
+                                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Mercedes">
+                                                            <div class="tree-item-contents heading-link" heading-name="Mercedes"><span class="tree-item-title">Mercedes</span></div>
+                                                        </a>
+                                                        <div class="tree-item-children nav-folder-children"></div>
+                                                    </div>
+                                                    <div class="tree-item" data-depth="4">
+                                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Annette">
+                                                            <div class="tree-item-contents heading-link" heading-name="Annette"><span class="tree-item-title">Annette</span></div>
+                                                        </a>
+                                                        <div class="tree-item-children nav-folder-children"></div>
+                                                    </div>
+                                                    <div class="tree-item" data-depth="4">
+                                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Ingrid">
+                                                            <div class="tree-item-contents heading-link" heading-name="Ingrid"><span class="tree-item-title">Ingrid</span></div>
+                                                        </a>
+                                                        <div class="tree-item-children nav-folder-children"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tree-item mod-collapsible" data-depth="3">
+                                                <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#The_Golden_Deer">
+                                                    <div class="tree-item-contents heading-link" heading-name="The Golden Deer">
+                                                        <div class="collapse-icon">
+                                                            <svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="24"
+                                                                height="24"
+                                                                viewBox="0 0 24 24"
+                                                                fill="none"
+                                                                stroke="currentColor"
+                                                                stroke-width="2"
+                                                                stroke-linecap="round"
+                                                                stroke-linejoin="round"
+                                                                class="svg-icon right-triangle"
+                                                            >
+                                                                <path d="M3 8L12 17L21 8"></path>
+                                                            </svg>
+                                                        </div>
+                                                        <span class="tree-item-title">The Golden Deer</span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children">
+                                                    <div class="tree-item" data-depth="4">
+                                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Claude">
+                                                            <div class="tree-item-contents heading-link" heading-name="Claude"><span class="tree-item-title">Claude</span></div>
+                                                        </a>
+                                                        <div class="tree-item-children nav-folder-children"></div>
+                                                    </div>
+                                                    <div class="tree-item" data-depth="4">
+                                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Lorenz">
+                                                            <div class="tree-item-contents heading-link" heading-name="Lorenz"><span class="tree-item-title">Lorenz</span></div>
+                                                        </a>
+                                                        <div class="tree-item-children nav-folder-children"></div>
+                                                    </div>
+                                                    <div class="tree-item" data-depth="4">
+                                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Raphael">
+                                                            <div class="tree-item-contents heading-link" heading-name="Raphael"><span class="tree-item-title">Raphael</span></div>
+                                                        </a>
+                                                        <div class="tree-item-children nav-folder-children"></div>
+                                                    </div>
+                                                    <div class="tree-item" data-depth="4">
+                                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Ignatz">
+                                                            <div class="tree-item-contents heading-link" heading-name="Ignatz"><span class="tree-item-title">Ignatz</span></div>
+                                                        </a>
+                                                        <div class="tree-item-children nav-folder-children"></div>
+                                                    </div>
+                                                    <div class="tree-item" data-depth="4">
+                                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Lysithia">
+                                                            <div class="tree-item-contents heading-link" heading-name="Lysithia"><span class="tree-item-title">Lysithia</span></div>
+                                                        </a>
+                                                        <div class="tree-item-children nav-folder-children"></div>
+                                                    </div>
+                                                    <div class="tree-item" data-depth="4">
+                                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Marianne">
+                                                            <div class="tree-item-contents heading-link" heading-name="Marianne"><span class="tree-item-title">Marianne</span></div>
+                                                        </a>
+                                                        <div class="tree-item-children nav-folder-children"></div>
+                                                    </div>
+                                                    <div class="tree-item" data-depth="4">
+                                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Hilda">
+                                                            <div class="tree-item-contents heading-link" heading-name="Hilda"><span class="tree-item-title">Hilda</span></div>
+                                                        </a>
+                                                        <div class="tree-item-children nav-folder-children"></div>
+                                                    </div>
+                                                    <div class="tree-item" data-depth="4">
+                                                        <a class="tree-link" href="session-notes/6.-may-4th,-2024-three-houses.html#Lionie">
+                                                            <div class="tree-item-contents heading-link" heading-name="Lionie"><span class="tree-item-title">Lionie</span></div>
+                                                        </a>
+                                                        <div class="tree-item-children nav-folder-children"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script defer="">
+                    let rs = document.querySelector(".sidebar-right");
+                    rs.classList.add("is-collapsed");
+                    if (window.innerWidth > 768) rs.classList.remove("is-collapsed");
+                    rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
