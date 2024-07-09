@@ -6,7 +6,10 @@ https://krynns-vanguard.com/
 
 Information will be regularly updated with all available info after players reach and visit locations across the map and meet new NPCs.
 
+## To-do
+- Fix NPC sidebar links (From .md to html links)
+- Update Northern Ergoth Locations when party arrives
 
 ### To-do for later
-- Fix sidebar alignment (fix known but doesn't work in practice. Ansalon Map works but not PC pages)
+- Fix sidebar alignment
 - Remove graph from all pages that have it

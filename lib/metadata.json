@@ -1,12 +1,15 @@
 {
   "vaultName": "Dragonlance",
-  "lastExport": 1712762242620,
+  "lastExport": 1720534816843,
   "pluginVersion": "1.8.01",
-  "validBodyClasses": "publish css-settings-manager theme-light show-inline-title sizing-readable check-color check-bg wotc-beyond",
+  "validBodyClasses": "publish css-settings-manager theme-light show-inline-title show-ribbon sizing-readable check-color check-bg wotc-beyond",
   "useCustomHeadContent": false,
   "useCustomFavicon": false,
   "files": [
-    "Session Notes/DM Session Notes/DM 2. April 6th, 2024 The Boilers 1.md",
+    "NPCs/NPC Pictures/Jeritza.webp",
+    "NPCs/Important NPCs.md",
+    "NPCs/Jeritza Von Hrym.md",
+    "Session Notes/12. July 6th, 2024 Rumors of a Reaper.md",
     "lib/fonts/94f2f163d4b698242fef.otf",
     "lib/fonts/72505e6a122c6acd5471.woff2",
     "lib/fonts/2d5198822ab091ce4305.woff2",
@@ -21,6 +24,7 @@
     "lib/fonts/05b618077343fbbd92b7.ttf",
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
     "lib/media/874d8b8e340f75575caa.svg",
+    "lib/media/3d6c1bdc4d87cde4de67.svg",
     "lib/html/file-tree.html",
     "lib/scripts/webpage.js",
     "lib/scripts/minisearch.js",
@@ -46,6 +50,7 @@
     "lib/fonts/05b618077343fbbd92b7.ttf",
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
     "lib/media/874d8b8e340f75575caa.svg",
+    "lib/media/3d6c1bdc4d87cde4de67.svg",
     "lib/html/file-tree.html",
     "lib/scripts/webpage.js",
     "lib/scripts/minisearch.js",
@@ -57,148 +62,192 @@
     "lib/styles/main-styles.css"
   ],
   "fileInfo": {
-    "Session Notes/DM Session Notes/DM 2. April 6th, 2024 The Boilers 1.md": {
-      "modifiedTime": 1712762242620,
-      "sourceSize": 4752,
-      "exportedPath": "session-notes/dm-session-notes/dm-2.-april-6th,-2024-the-boilers-1.html",
-      "dependencies": []
-    },
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1712762242620,
+      "modifiedTime": 1720534816843,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1712762242620,
+      "modifiedTime": 1720534816843,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1712762242620,
+      "modifiedTime": 1720534816843,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1712762242620,
+      "modifiedTime": 1720534816843,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1712762242620,
+      "modifiedTime": 1720534816843,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1712762242620,
+      "modifiedTime": 1720534816843,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1712762242620,
+      "modifiedTime": 1720534816843,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1712762242620,
+      "modifiedTime": 1720534816843,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1712762242620,
+      "modifiedTime": 1720534816843,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1712762242620,
+      "modifiedTime": 1720534816843,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1712762242620,
+      "modifiedTime": 1720534816843,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1712762242620,
+      "modifiedTime": 1720534816843,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1712762242620,
+      "modifiedTime": 1720534816843,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/874d8b8e340f75575caa.svg": {
-      "modifiedTime": 1712762242620,
+      "modifiedTime": 1720534816843,
       "sourceSize": 317,
       "exportedPath": "lib/media/874d8b8e340f75575caa.svg",
       "dependencies": []
     },
     "lib/html/file-tree.html": {
-      "modifiedTime": 1712762242620,
-      "sourceSize": 2341,
+      "modifiedTime": 1720534816843,
+      "sourceSize": 3970,
       "exportedPath": "lib/html/file-tree.html",
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
-      "modifiedTime": 1712762242620,
+      "modifiedTime": 1720534816843,
       "sourceSize": 47290,
       "exportedPath": "lib/scripts/webpage.js",
       "dependencies": []
     },
     "lib/scripts/minisearch.js": {
-      "modifiedTime": 1712762242620,
+      "modifiedTime": 1720534816843,
       "sourceSize": 29422,
       "exportedPath": "lib/scripts/minisearch.js",
       "dependencies": []
     },
     "lib/media/favicon.png": {
-      "modifiedTime": 1712762242620,
+      "modifiedTime": 1720534816843,
       "sourceSize": 1105,
       "exportedPath": "lib/media/favicon.png",
       "dependencies": []
     },
     "lib/styles/obsidian.css": {
-      "modifiedTime": 1712762242620,
-      "sourceSize": 157722,
+      "modifiedTime": 1720534816843,
+      "sourceSize": 130471,
       "exportedPath": "lib/styles/obsidian.css",
       "dependencies": []
     },
     "lib/styles/theme.css": {
-      "modifiedTime": 1712762242620,
+      "modifiedTime": 1720534816843,
       "sourceSize": 699854,
       "exportedPath": "lib/styles/theme.css",
       "dependencies": []
     },
     "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1712762242620,
+      "modifiedTime": 1720534816843,
       "sourceSize": 236,
       "exportedPath": "lib/styles/global-variable-styles.css",
       "dependencies": []
     },
     "lib/styles/supported-plugins.css": {
-      "modifiedTime": 1712762242620,
-      "sourceSize": 8552,
+      "modifiedTime": 1720534816843,
+      "sourceSize": 9398,
       "exportedPath": "lib/styles/supported-plugins.css",
       "dependencies": []
     },
     "lib/styles/main-styles.css": {
-      "modifiedTime": 1712762242620,
+      "modifiedTime": 1720534816843,
       "sourceSize": 23130,
       "exportedPath": "lib/styles/main-styles.css",
+      "dependencies": []
+    },
+    "NPCs/Important NPCs.md": {
+      "modifiedTime": 1720534816843,
+      "sourceSize": 1219,
+      "exportedPath": "npcs/important-npcs.html",
+      "dependencies": []
+    },
+    "npcs/npc-pictures/death-knight.jpg": {
+      "modifiedTime": 1717962760111,
+      "sourceSize": 1028207,
+      "exportedPath": "npcs/npc-pictures/death-knight.jpg",
+      "dependencies": []
+    },
+    "npcs/npc-pictures/flame-emperor.jpg": {
+      "modifiedTime": 1717962760111,
+      "sourceSize": 1075308,
+      "exportedPath": "npcs/npc-pictures/flame-emperor.jpg",
+      "dependencies": []
+    },
+    "lib/media/3d6c1bdc4d87cde4de67.svg": {
+      "modifiedTime": 1720534816843,
+      "sourceSize": 279,
+      "exportedPath": "lib/media/3d6c1bdc4d87cde4de67.svg",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Jeritza.webp": {
+      "modifiedTime": 1720534816843,
+      "sourceSize": 267240,
+      "exportedPath": "npcs/npc-pictures/jeritza.webp",
+      "dependencies": []
+    },
+    "NPCs/Jeritza Von Hrym.md": {
+      "modifiedTime": 1720534816843,
+      "sourceSize": 753,
+      "exportedPath": "npcs/jeritza-von-hrym.html",
+      "dependencies": [
+        "npcs/npc-pictures/jeritza.webp"
+      ]
+    },
+    "Session Notes/12. July 6th, 2024 Rumors of a Reaper.md": {
+      "modifiedTime": 1720534816843,
+      "sourceSize": 2511,
+      "exportedPath": "session-notes/12.-july-6th,-2024-rumors-of-a-reaper.html",
+      "dependencies": []
+    },
+    "npcs/npc-pictures/jeritza.webp": {
+      "modifiedTime": 1720534816843,
+      "sourceSize": 267240,
+      "exportedPath": "npcs/npc-pictures/jeritza.webp",
       "dependencies": []
     }
   }
