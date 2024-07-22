@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The History of the Marks</title>
+        <base href="./" />
+        <meta id="root-path" root-path="./" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0" />
+        <meta charset="UTF-8" />
+        <meta name="description" content="Dragonlance - The History of the Marks" />
+        <meta property="og:title" content="The History of the Marks" />
+        <meta property="og:description" content="Dragonlance - The History of the Marks" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://krynns-vanguard.com/the-history-of-the-marks.html" />
+        <meta property="og:image" content="https://krynns-vanguard.com/pictures/marks/pasted-image-20240721172740.png" />
+        <meta property="og:site_name" content="Dragonlance" />
+        <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://krynns-vanguard.com/lib/rss.xml" />
+        <script async="" id="webpage-script" src="lib/scripts/webpage.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <link rel="icon" href="lib/media/favicon.png" />
+        <style>
+            body {
+                --line-width: 40em;
+                --line-width-adaptive: 40em;
+                --file-line-width: 40em;
+                --sidebar-width: min(20em, 80vw);
+                --collapse-arrow-size: 11px;
+                --tree-horizontal-spacing: 0.6em;
+                --tree-vertical-spacing: 0.6em;
+                --sidebar-margin: 12px;
+            }
+            .sidebar {
+                height: 100%;
+                min-width: calc(var(--sidebar-width) + var(--divider-width-hover));
+                max-width: calc(var(--sidebar-width) + var(--divider-width-hover));
+                font-size: 14px;
+                z-index: 10;
+                position: relative;
+                overflow: hidden;
+                transition: min-width ease-in-out, max-width ease-in-out;
+                transition-duration: 0.2s;
+                contain: size;
+            }
+            .sidebar-left {
+                left: 0;
+            }
+            .sidebar-right {
+                right: 0;
+            }
+            .sidebar.is-collapsed {
+                min-width: 0;
+                max-width: 0;
+            }
+            body.floating-sidebars .sidebar {
+                position: absolute;
+            }
+            .sidebar-content {
+                height: 100%;
+                min-width: calc(var(--sidebar-width) - var(--divider-width-hover));
+                top: 0;
+                padding: var(--sidebar-margin);
+                padding-top: 4em;
+                line-height: var(--line-height-tight);
+                background-color: var(--background-secondary);
+                transition: background-color, border-right, border-left, box-shadow;
+                transition-duration: var(--color-fade-speed);
+                transition-timing-function: ease-in-out;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+            }
+            .sidebar:not(.is-collapsed) .sidebar-content {
+                min-width: calc(max(100%, var(--sidebar-width)) - 3px);
+                max-width: calc(max(100%, var(--sidebar-width)) - 3px);
+            }
+            .sidebar-left .sidebar-content {
+                left: 0;
+                border-top-right-radius: var(--radius-l);
+                border-bottom-right-radius: var(--radius-l);
+            }
+            .sidebar-right .sidebar-content {
+                right: 0;
+                border-top-left-radius: var(--radius-l);
+                border-bottom-left-radius: var(--radius-l);
+            }
+            .sidebar:has(.sidebar-content:empty):has(.topbar-content:empty) {
+                display: none;
+            }
+            .sidebar-topbar {
+                height: 2em;
+                width: var(--sidebar-width);
+                top: var(--sidebar-margin);
+                padding-inline: var(--sidebar-margin);
+                z-index: 1;
+                position: fixed;
+                display: flex;
+                align-items: center;
+                transition: width ease-in-out;
+                transition-duration: inherit;
+            }
+            .sidebar.is-collapsed .sidebar-topbar {
+                width: calc(2.3em + var(--sidebar-margin) * 2);
+            }
+            .sidebar .sidebar-topbar.is-collapsed {
+                width: 0;
+            }
+            .sidebar-left .sidebar-topbar {
+                left: 0;
+            }
+            .sidebar-right .sidebar-topbar {
+                right: 0;
+            }
+            .topbar-content {
+                overflow: hidden;
+                overflow: clip;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                transition: inherit;
+            }
+            .sidebar.is-collapsed .topbar-content {
+                width: 0;
+                transition: inherit;
+            }
+            .clickable-icon.sidebar-collapse-icon {
+                background-color: transparent;
+                color: var(--icon-color-focused);
+                padding: 0 !important;
+                margin: 0 !important;
+                height: 100% !important;
+                width: 2.3em !important;
+                margin-inline: 0.14em !important;
+                position: absolute;
+            }
+            .sidebar-left .clickable-icon.sidebar-collapse-icon {
+                transform: rotateY(180deg);
+                right: var(--sidebar-margin);
+            }
+            .sidebar-right .clickable-icon.sidebar-collapse-icon {
+                transform: rotateY(180deg);
+                left: var(--sidebar-margin);
+            }
+            .clickable-icon.sidebar-collapse-icon svg.svg-icon {
+                width: 100%;
+                height: 100%;
+            }
+            .sidebar-section-header {
+                margin: 0 0 1em 0;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                font-weight: 600;
+            }
+            body {
+                transition: background-color var(--color-fade-speed) ease-in-out;
+            }
+            .webpage-container {
+                display: flex;
+                flex-direction: row;
+                height: 100%;
+                width: 100%;
+                align-items: stretch;
+                justify-content: center;
+            }
+            .document-container {
+                opacity: 1;
+                flex-basis: 100%;
+                max-width: 100%;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transition: opacity 0.2s ease-in-out;
+                contain: inline-size;
+            }
+            .hide {
+                opacity: 0;
+                transition: opacity 0.2s ease-in-out;
+            }
+            .document-container > .markdown-preview-view {
+                margin: var(--sidebar-margin);
+                margin-bottom: 0;
+                width: 100%;
+                width: -webkit-fill-available;
+                width: -moz-available;
+                width: fill-available;
+                background-color: var(--background-primary);
+                transition: background-color var(--color-fade-speed) ease-in-out;
+                border-top-right-radius: var(--window-radius, var(--radius-m));
+                border-top-left-radius: var(--window-radius, var(--radius-m));
+                overflow-x: hidden !important;
+                overflow-y: auto !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                contain: inline-size;
+            }
+            .document-container > .markdown-preview-view > .markdown-preview-sizer {
+                padding-bottom: 80vh !important;
+                width: 100% !important;
+                max-width: var(--line-width) !important;
+                flex-basis: var(--line-width) !important;
+                transition: background-color var(--color-fade-speed) ease-in-out;
+                contain: inline-size;
+            }
+            .markdown-rendered img:not([width]),
+            .view-content img:not([width]) {
+                max-width: 100%;
+                outline: 0;
+            }
+            .document-container > .view-content.embed {
+                display: flex;
+                padding: 1em;
+                height: 100%;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+            }
+            .document-container > .view-content.embed > * {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+            }
+            :has(> :is(.math, table)) {
+                overflow-x: auto !important;
+            }
+            .document-container > .view-content {
+                overflow-x: auto;
+                contain: content;
+                padding: 0;
+                margin: 0;
+                height: 100%;
+            }
+            .scroll-highlight {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 1000;
+                background-color: hsla(var(--color-accent-hsl), 0.25);
+                opacity: 0;
+                padding: 1em;
+                inset: 50%;
+                translate: -50% -50%;
+                border-radius: var(--radius-s);
+            }
+        </style>
+        <script defer="">
+            async function loadIncludes() {
+                if ("file:" != location.protocol) {
+                    let e = document.querySelectorAll("include");
+                    for (let t = 0; t < e.length; t++) {
+                        let o = e[t],
+                            l = o.getAttribute("src");
+                        try {
+                            const e = await fetch(l);
+                            if (!e.ok) {
+                                console.log("Could not include file: " + l), o?.remove();
+                                continue;
+                            }
+                            let t = await e.text(),
+                                n = document.createRange().createContextualFragment(t),
+                                i = Array.from(n.children);
+                            for (let e of i)
+                                e.classList.add("hide"),
+                                    (e.style.transition = "opacity 0.5s ease-in-out"),
+                                    setTimeout(() => {
+                                        e.classList.remove("hide");
+                                    }, 10);
+                            o.before(n), o.remove(), console.log("Included file: " + l);
+                        } catch (e) {
+                            o?.remove(), console.log("Could not include file: " + l, e);
+                            continue;
+                        }
+                    }
+                } else {
+                    if (document.querySelectorAll("include").length > 0) {
+                        var e = document.createElement("div");
+                        (e.id = "error"),
+                            (e.textContent = "Web server exports must be hosted on an http / web server to be viewed correctly."),
+                            (e.style.position = "fixed"),
+                            (e.style.top = "50%"),
+                            (e.style.left = "50%"),
+                            (e.style.transform = "translate(-50%, -50%)"),
+                            (e.style.fontSize = "1.5em"),
+                            (e.style.fontWeight = "bold"),
+                            (e.style.textAlign = "center"),
+                            document.body.appendChild(e),
+                            document.querySelector(".document-container")?.classList.remove("hide");
+                    }
+                }
+            }
+            document.addEventListener("DOMContentLoaded", () => {
+                loadIncludes();
+            });
+            let isFileProtocol = "file:" == location.protocol;
+            function waitLoadScripts(e, t) {
+                let o = e.map((e) => document.getElementById(e + "-script")),
+                    l = 0;
+                !(function e() {
+                    let n = o[l];
+                    l++, (n && "true" != n.getAttribute("loaded")) || (l < o.length && e()), l < o.length ? n.addEventListener("load", e) : t();
+                })();
+            }
+        </script>
+        <link rel="stylesheet" href="lib/styles/obsidian.css" />
+        <link rel="stylesheet" href="lib/styles/theme.css" />
+        <link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css" /></noscript>
+        <link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css" /></noscript>
+        <link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="lib/styles/main-styles.css" /></noscript>
+    </head>
+    <body class="publish css-settings-manager theme-light show-inline-title show-ribbon sizing-readable check-color check-bg wotc-beyond">
+        <script defer="">
+            let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            "dark" == theme ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light")) : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")),
+                window.innerWidth < 480
+                    ? document.body.classList.add("is-phone")
+                    : window.innerWidth < 768
+                    ? document.body.classList.add("is-tablet")
+                    : window.innerWidth < 1024
+                    ? document.body.classList.add("is-small-screen")
+                    : document.body.classList.add("is-large-screen");
+        </script>
+        <div class="webpage-container workspace">
+            <div class="sidebar-left sidebar">
+                <div class="sidebar-handle"></div>
+                <div class="sidebar-topbar">
+                    <div class="topbar-content">
+                        <label class="theme-toggle-container" for="theme_toggle">
+                            <input class="theme-toggle-input" type="checkbox" id="theme_toggle" />
+                            <div class="toggle-background"></div>
+                        </label>
+                    </div>
+                    <div class="clickable-icon sidebar-collapse-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                            <path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
+                            <path d="M10 4V20"></path>
+                            <path d="M4 7H7"></path>
+                            <path d="M4 10H7"></path>
+                            <path d="M4 13H7"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="sidebar-content">
+                    <div class="search-input-container">
+                        <input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..." />
+                        <div class="search-input-clear-button" aria-label="Clear search"></div>
+                    </div>
+                    <include src="lib/html/file-tree.html"></include>
+                </div>
+                <script defer="">
+                    let ls = document.querySelector(".sidebar-left");
+                    ls.classList.add("is-collapsed");
+                    if (window.innerWidth > 768) ls.classList.remove("is-collapsed");
+                    ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));
+                </script>
+            </div>
+            <div class="document-container markdown-reading-view hide">
+                <div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width">
+                    <style id="MJX-CHTML-styles"></style>
+                    <div class="markdown-preview-sizer markdown-preview-section">
+                        <h1 class="page-title heading inline-title" id="The History of the Marks"><p dir="auto">The History of the Marks</p></h1>
+                        <div>
+                            <p dir="auto">
+                                The enigmatic Marks hold a paramount place in the lore of Ansalon, shaping the continent’s history, society, and power structures. These mystical emblems, inherited through bloodlines, grant their bearers
+                                extraordinary abilities and have deeply influenced Ansalon’s religious, political, and cultural development.
+                            </p>
+                        </div>
+                        <div class="heading-wrapper">
+                            <h2 data-heading="Origins and Mythology" dir="auto" class="heading" id="Origins_and_Mythology">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Origins and Mythology
+                            </h2>
+                            <div class="heading-children">
+                                <div>
+                                    <p dir="auto">
+                                        The origins of Marks trace back to ancient times, shrouded in myth and legend. According to the Church of Seiros, Marks were bestowed upon humanity by the goddess Sothis. These divine gifts were
+                                        believed to be symbols of the goddess’s favor, granting extraordinary powers and marking the bearers as exceptional individuals chosen to lead and protect Ansalon.
+                                    </p>
+                                </div>
+                                <div>
+                                    <p dir="auto">
+                                        The Church’s teachings recount the story of Nemesis, the so-called King of Liberation, who, along with his Ten Elites, wielded the power of Marks derived from Sothis herself. After betraying Sothis
+                                        and unleashing chaos, Nemesis and his Elites were defeated by Seiros, who established the Church to safeguard Ansalon and ensure that the power of Marks would be used justly.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="heading-wrapper">
+                            <h2 data-heading="The Role of Marks in Noble Lineages" dir="auto" class="heading" id="The_Role_of_Marks_in_Noble_Lineages">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                The Role of Marks in Noble Lineages
+                            </h2>
+                            <div class="heading-children">
+                                <div>
+                                    <p dir="auto">
+                                        Over time, Marks became deeply intertwined with Ansalon’s noble houses. The ability to pass on Marks through bloodlines created an aristocratic society where noble families were distinguished by their
+                                        possession of these powerful emblems. Marks granted not only physical and magical abilities but also significant social status and influence.
+                                    </p>
+                                </div>
+                                <div>
+                                    <p dir="auto">
+                                        Noble families often arranged marriages to preserve and propagate their Marks, ensuring that their descendants would inherit these coveted powers. This led to a rigid class structure, where those
+                                        without Marks, known as commoners, were often marginalized and excluded from positions of power.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="heading-wrapper">
+                            <h2 data-heading="The Church of Seiros and Mark Research" dir="auto" class="heading" id="The_Church_of_Seiros_and_Mark_Research">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                The Church of Seiros and Mark Research
+                            </h2>
+                            <div class="heading-children">
+                                <div>
+                                    <p dir="auto">
+                                        The Church of Seiros played a central role in the study and regulation of Marks. Garreg Mach Monastery, the headquarters of the Church, housed extensive archives and scholars dedicated to
+                                        understanding Marks and their origins. The Church’s influence ensured that Marks were revered as divine blessings, and it maintained strict control over Mark Stones, the physical manifestations of
+                                        Marks.
+                                    </p>
+                                </div>
+                                <div>
+                                    <p dir="auto">
+                                        Research into Marks was furthered by prominent scholars such as Saint Macuil, one of the Four Saints of the Church, who contributed significantly to the understanding of Marks and their applications.
+                                        Despite the Church’s efforts to regulate Mark knowledge, some individuals and factions pursued secret research, seeking to harness the power of Marks for their own ends.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="heading-wrapper">
+                            <h2 data-heading="Marks and Conflict" dir="auto" class="heading" id="Marks_and_Conflict">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Marks and Conflict
+                            </h2>
+                            <div class="heading-children">
+                                <div>
+                                    <p dir="auto">
+                                        Throughout Ansalon’s history, the power of Marks has been a double-edged sword. While they granted incredible abilities to their bearers, they also fueled conflicts and power struggles. Noble houses
+                                        often clashed over the possession and inheritance of Marks, leading to wars and rivalries that shaped the continent’s political landscape.
+                                    </p>
+                                </div>
+                                <div>
+                                    <p dir="auto">
+                                        The Tragedy of Duscur, a significant event in recent history, highlighted the destructive potential of Marks. The assassination of King Lambert of Solamnia and many of his retainers, allegedly due to
+                                        a plot involving Mark bearers, plunged the Holy Kingdom of Solamnia into turmoil and had lasting repercussions on its young prince, Dimitri.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="heading-wrapper">
+                            <h2 data-heading="The Modern Era and Edelgard’s Reforms" dir="auto" class="heading" id="The_Modern_Era_and_Edelgard’s_Reforms">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                The Modern Era and Edelgard’s Reforms
+                            </h2>
+                            <div class="heading-children">
+                                <div>
+                                    <p dir="auto">
+                                        In the contemporary era of Ansalon, the significance of Marks came under scrutiny, particularly with the rise of Edelgard von Hresvelg. As the heir to the Abanasinian Empire and a bearer of the Mark
+                                        of Seiros, Edelgard harbored a deep resentment towards the societal structures that Marks perpetuated. Her experiences and the secrets she uncovered led her to challenge the Church’s teachings and the
+                                        nobility’s reliance on Marks.
+                                    </p>
+                                </div>
+                                <div>
+                                    <p dir="auto">
+                                        Edelgard’s campaign aimed to dismantle the power of Marks and create a society where individuals were valued for their abilities and merits rather than their lineage. This radical vision sparked the
+                                        War of the Eagle and Lion, a continent-wide conflict that sought to reshape Ansalon’s future.
+                                    </p>
+                                </div>
+                                <div dir="ltr" style="overflow-x: auto;">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th dir="ltr">Mark</th>
+                                                <th dir="ltr">Original Bearer</th>
+                                                <th dir="ltr">Most Recent Bearers</th>
+                                                <th dir="ltr">Other Known Bearers</th>
+                                                <th dir="ltr">Symbol</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td dir="ltr">Blaiddyd</td>
+                                                <td dir="ltr">Blaiddyd</td>
+                                                <td dir="ltr">Dimitri</td>
+                                                <td dir="ltr">Loog, Klaus I, Lambert</td>
+                                                <td dir="ltr">
+                                                    <span alt="Pasted image 20240721172740.png" src="Pasted image 20240721172740.png" class="internal-embed media-embed image-embed is-loaded">
+                                                        <img alt="Pasted image 20240721172740.png" src="pictures/marks/pasted-image-20240721172740.png" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td dir="ltr">Charon</td>
+                                                <td dir="ltr">Charon</td>
+                                                <td dir="ltr">Lysithea</td>
+                                                <td dir="ltr">Catherine</td>
+                                                <td dir="ltr">
+                                                    <span alt="Pasted image 20240721172751.png" src="Pasted image 20240721172751.png" class="internal-embed media-embed image-embed is-loaded">
+                                                        <img alt="Pasted image 20240721172751.png" src="pictures/marks/pasted-image-20240721172751.png" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td dir="ltr">Daphnel</td>
+                                                <td dir="ltr">Daphnel</td>
+                                                <td dir="ltr">Ingrid</td>
+                                                <td dir="ltr">N/A</td>
+                                                <td dir="ltr">
+                                                    <span alt="Pasted image 20240721172800.png" src="Pasted image 20240721172800.png" class="internal-embed media-embed image-embed is-loaded">
+                                                        <img alt="Pasted image 20240721172800.png" src="pictures/marks/pasted-image-20240721172800.png" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td dir="ltr">Dominic</td>
+                                                <td dir="ltr">Dominic</td>
+                                                <td dir="ltr">Annette</td>
+                                                <td dir="ltr">Simon</td>
+                                                <td dir="ltr">
+                                                    <span alt="Pasted image 20240721172825.png" src="Pasted image 20240721172825.png" class="internal-embed media-embed image-embed is-loaded">
+                                                        <img alt="Pasted image 20240721172825.png" src="pictures/marks/pasted-image-20240721172825.png" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td dir="ltr">Fraldarius</td>
+                                                <td dir="ltr">Fraldarius</td>
+                                                <td dir="ltr">Felix</td>
+                                                <td dir="ltr">Rodrigue</td>
+                                                <td dir="ltr">
+                                                    <span alt="Pasted image 20240721172831.png" src="Pasted image 20240721172831.png" class="internal-embed media-embed image-embed is-loaded">
+                                                        <img alt="Pasted image 20240721172831.png" src="pictures/marks/pasted-image-20240721172831.png" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td dir="ltr">Gauiter</td>
+                                                <td dir="ltr">Gautier</td>
+                                                <td dir="ltr">Sylvain</td>
+                                                <td dir="ltr">Matthias</td>
+                                                <td dir="ltr">
+                                                    <span alt="Pasted image 20240721172840.png" src="Pasted image 20240721172840.png" class="internal-embed media-embed image-embed is-loaded">
+                                                        <img alt="Pasted image 20240721172840.png" src="pictures/marks/pasted-image-20240721172840.png" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td dir="ltr">Gloucester</td>
+                                                <td dir="ltr">Gloucester</td>
+                                                <td dir="ltr">Lysithea, Lorenz</td>
+                                                <td dir="ltr">Erwin</td>
+                                                <td dir="ltr">
+                                                    <span alt="Pasted image 20240721172846.png" src="Pasted image 20240721172846.png" class="internal-embed media-embed image-embed is-loaded">
+                                                        <img alt="Pasted image 20240721172846.png" src="pictures/marks/pasted-image-20240721172846.png" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td dir="ltr">Goneril</td>
+                                                <td dir="ltr">Goneril</td>
+                                                <td dir="ltr">Hilda</td>
+                                                <td dir="ltr">N/A</td>
+                                                <td dir="ltr">
+                                                    <span alt="Pasted image 20240721172852.png" src="Pasted image 20240721172852.png" class="internal-embed media-embed image-embed is-loaded">
+                                                        <img alt="Pasted image 20240721172852.png" src="pictures/marks/pasted-image-20240721172852.png" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td dir="ltr">Lamine</td>
+                                                <td dir="ltr">Lamine</td>
+                                                <td dir="ltr">Mercedes, Jeritza</td>
+                                                <td dir="ltr">N/A</td>
+                                                <td dir="ltr">
+                                                    <span alt="Pasted image 20240721172859.png" src="Pasted image 20240721172859.png" class="internal-embed media-embed image-embed is-loaded">
+                                                        <img alt="Pasted image 20240721172859.png" src="pictures/marks/pasted-image-20240721172859.png" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td dir="ltr">Reigan</td>
+                                                <td dir="ltr">Reigan</td>
+                                                <td dir="ltr">Claude</td>
+                                                <td dir="ltr">N/A</td>
+                                                <td dir="ltr">
+                                                    <span alt="Pasted image 20240721172905.png" src="Pasted image 20240721172905.png" class="internal-embed media-embed image-embed is-loaded">
+                                                        <img alt="Pasted image 20240721172905.png" src="pictures/marks/pasted-image-20240721172905.png" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td dir="ltr">The Beast</td>
+                                                <td dir="ltr">Maurice</td>
+                                                <td dir="ltr">Marianne</td>
+                                                <td dir="ltr">Wandering Beast</td>
+                                                <td dir="ltr">
+                                                    <span alt="Pasted image 20240721172910.png" src="Pasted image 20240721172910.png" class="internal-embed media-embed image-embed is-loaded">
+                                                        <img alt="Pasted image 20240721172910.png" src="pictures/marks/pasted-image-20240721172910.png" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td dir="ltr">Cethleann</td>
+                                                <td dir="ltr">Cethleann</td>
+                                                <td dir="ltr">Lindhardt</td>
+                                                <td dir="ltr">Waldemar</td>
+                                                <td dir="ltr">
+                                                    <span alt="Pasted image 20240721172917.png" src="Pasted image 20240721172917.png" class="internal-embed media-embed image-embed is-loaded">
+                                                        <img alt="Pasted image 20240721172917.png" src="pictures/marks/pasted-image-20240721172917.png" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td dir="ltr">Cichol</td>
+                                                <td dir="ltr">Cichol</td>
+                                                <td dir="ltr">Seteth, Ferdinand</td>
+                                                <td dir="ltr">Leopold, Ludwig</td>
+                                                <td dir="ltr">
+                                                    <span alt="Pasted image 20240721172922.png" src="Pasted image 20240721172922.png" class="internal-embed media-embed image-embed is-loaded">
+                                                        <img alt="Pasted image 20240721172922.png" src="pictures/marks/pasted-image-20240721172922.png" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td dir="ltr">Indech</td>
+                                                <td dir="ltr">The Immovable</td>
+                                                <td dir="ltr">Bernadetta, Hanneman</td>
+                                                <td dir="ltr">Grégoire</td>
+                                                <td dir="ltr">
+                                                    <span alt="Pasted image 20240721172928.png" src="Pasted image 20240721172928.png" class="internal-embed media-embed image-embed is-loaded">
+                                                        <img alt="Pasted image 20240721172928.png" src="pictures/marks/pasted-image-20240721172928.png" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td dir="ltr">Macuil</td>
+                                                <td dir="ltr">The Wind Caller</td>
+                                                <td dir="ltr">Monica</td>
+                                                <td dir="ltr">N/A</td>
+                                                <td dir="ltr">
+                                                    <span alt="Pasted image 20240721172934.png" src="Pasted image 20240721172934.png" class="internal-embed media-embed image-embed is-loaded">
+                                                        <img alt="Pasted image 20240721172934.png" src="pictures/marks/pasted-image-20240721172934.png" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td dir="ltr">Aubin</td>
+                                                <td dir="ltr">Aubin</td>
+                                                <td dir="ltr">Yuri</td>
+                                                <td dir="ltr">N/A</td>
+                                                <td dir="ltr">
+                                                    <span alt="Pasted image 20240721172940.png" src="Pasted image 20240721172940.png" class="internal-embed media-embed image-embed is-loaded">
+                                                        <img alt="Pasted image 20240721172940.png" src="pictures/marks/pasted-image-20240721172940.png" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td dir="ltr">Chevailer</td>
+                                                <td dir="ltr">Chevailer</td>
+                                                <td dir="ltr">Balthus</td>
+                                                <td dir="ltr">N/A</td>
+                                                <td dir="ltr">
+                                                    <span alt="Pasted image 20240721172945.png" src="Pasted image 20240721172945.png" class="internal-embed media-embed image-embed is-loaded">
+                                                        <img alt="Pasted image 20240721172945.png" src="pictures/marks/pasted-image-20240721172945.png" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td dir="ltr">Noa</td>
+                                                <td dir="ltr">Noa</td>
+                                                <td dir="ltr">Constance</td>
+                                                <td dir="ltr">N/A</td>
+                                                <td dir="ltr">
+                                                    <span alt="Pasted image 20240721172949.png" src="Pasted image 20240721172949.png" class="internal-embed media-embed image-embed is-loaded">
+                                                        <img alt="Pasted image 20240721172949.png" src="pictures/marks/pasted-image-20240721172949.png" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td dir="ltr">Timotheos</td>
+                                                <td dir="ltr">Timotheos</td>
+                                                <td dir="ltr">Hapi</td>
+                                                <td dir="ltr">N/A</td>
+                                                <td dir="ltr">
+                                                    <span alt="Pasted image 20240721172955.png" src="Pasted image 20240721172955.png" class="internal-embed media-embed image-embed is-loaded">
+                                                        <img alt="Pasted image 20240721172955.png" src="pictures/marks/pasted-image-20240721172955.png" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td dir="ltr">Ernest</td>
+                                                <td dir="ltr">Ernest</td>
+                                                <td dir="ltr">Anna</td>
+                                                <td dir="ltr">N/A</td>
+                                                <td dir="ltr">
+                                                    <span alt="Pasted image 20240721173003.png" src="Pasted image 20240721173003.png" class="internal-embed media-embed image-embed is-loaded">
+                                                        <img alt="Pasted image 20240721173003.png" src="pictures/marks/pasted-image-20240721173003.png" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td dir="ltr">Seiros</td>
+                                                <td dir="ltr">Seiros</td>
+                                                <td dir="ltr">Edelgard</td>
+                                                <td dir="ltr">Wilhelm I, Lycanon I, Aelfric, Jeralt</td>
+                                                <td dir="ltr">
+                                                    <span alt="Pasted image 20240721173009.png" src="Pasted image 20240721173009.png" class="internal-embed media-embed image-embed is-loaded">
+                                                        <img alt="Pasted image 20240721173009.png" src="pictures/marks/pasted-image-20240721173009.png" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td dir="ltr">Flames</td>
+                                                <td dir="ltr">Sothis</td>
+                                                <td dir="ltr">Pryderion</td>
+                                                <td dir="ltr">Nemesis, Ashen Demon</td>
+                                                <td dir="ltr">
+                                                    <span alt="Pasted image 20240721173015.png" src="Pasted image 20240721173015.png" class="internal-embed media-embed image-embed is-loaded">
+                                                        <img alt="Pasted image 20240721173015.png" src="pictures/marks/pasted-image-20240721173015.png" />
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="mod-footer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-right sidebar">
+                <div class="sidebar-handle"></div>
+                <div class="sidebar-topbar">
+                    <div class="topbar-content"></div>
+                    <div class="clickable-icon sidebar-collapse-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                            <path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
+                            <path d="M10 4V20"></path>
+                            <path d="M4 7H7"></path>
+                            <path d="M4 10H7"></path>
+                            <path d="M4 13H7"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="sidebar-content">
+                    <div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0">
+                        <div class="tree-header">
+                            <span class="sidebar-section-header">Table Of Contents</span>
+                            <button class="clickable-icon collapse-tree-button" aria-label="Collapse All">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+                            </button>
+                        </div>
+                        <div class="tree-scroll-area tree-item-children nav-folder-children">
+                            <div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div>
+                            <div class="tree-item" data-depth="1">
+                                <a class="tree-link" href="the-history-of-the-marks.html#The History of the Marks">
+                                    <div class="tree-item-contents heading-link" heading-name="The History of the Marks"><span class="tree-item-title">The History of the Marks</span></div>
+                                </a>
+                                <div class="tree-item-children nav-folder-children">
+                                    <div class="tree-item" data-depth="2">
+                                        <a class="tree-link" href="the-history-of-the-marks.html#Origins_and_Mythology">
+                                            <div class="tree-item-contents heading-link" heading-name="Origins and Mythology"><span class="tree-item-title">Origins and Mythology</span></div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children"></div>
+                                    </div>
+                                    <div class="tree-item" data-depth="2">
+                                        <a class="tree-link" href="the-history-of-the-marks.html#The_Role_of_Marks_in_Noble_Lineages">
+                                            <div class="tree-item-contents heading-link" heading-name="The Role of Marks in Noble Lineages"><span class="tree-item-title">The Role of Marks in Noble Lineages</span></div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children"></div>
+                                    </div>
+                                    <div class="tree-item" data-depth="2">
+                                        <a class="tree-link" href="the-history-of-the-marks.html#The_Church_of_Seiros_and_Mark_Research">
+                                            <div class="tree-item-contents heading-link" heading-name="The Church of Seiros and Mark Research"><span class="tree-item-title">The Church of Seiros and Mark Research</span></div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children"></div>
+                                    </div>
+                                    <div class="tree-item" data-depth="2">
+                                        <a class="tree-link" href="the-history-of-the-marks.html#Marks_and_Conflict">
+                                            <div class="tree-item-contents heading-link" heading-name="Marks and Conflict"><span class="tree-item-title">Marks and Conflict</span></div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children"></div>
+                                    </div>
+                                    <div class="tree-item" data-depth="2">
+                                        <a class="tree-link" href="the-history-of-the-marks.html#The_Modern_Era_and_Edelgard’s_Reforms">
+                                            <div class="tree-item-contents heading-link" heading-name="The Modern Era and Edelgard’s Reforms"><span class="tree-item-title">The Modern Era and Edelgard’s Reforms</span></div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script defer="">
+                    let rs = document.querySelector(".sidebar-right");
+                    rs.classList.add("is-collapsed");
+                    if (window.innerWidth > 768) rs.classList.remove("is-collapsed");
+                    rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));
+                </script>
+            </div>
+        </div>
+    </body>
+</html>

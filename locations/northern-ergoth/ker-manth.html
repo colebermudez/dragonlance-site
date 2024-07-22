@@ -312,7 +312,7 @@
         <link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
         <noscript><link rel="stylesheet" href="lib/styles/main-styles.css" /></noscript>
     </head>
-    <body class="publish css-settings-manager theme-light show-inline-title sizing-readable check-color check-bg wotc-beyond">
+    <body class="publish css-settings-manager theme-light show-inline-title show-ribbon sizing-readable check-color check-bg wotc-beyond">
         <script defer="">
             let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
             "dark" == theme ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light")) : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")),
@@ -362,8 +362,12 @@
                 <div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width">
                     <style id="MJX-CHTML-styles"></style>
                     <div class="markdown-preview-sizer markdown-preview-section">
-                        <h1 class="page-title heading inline-title" id="Ker-Manth"><p>Ker-Manth</p></h1>
-                        <div><p>This Human settlement in otherwise Goblin lands is populated by descendants of the Ackalite tribes, and is made up of about a dozen families who are far more peaceful than their Ackalite ancestors.</p></div>
+                        <h1 class="page-title heading inline-title" id="Ker-Manth"><p dir="auto">Ker-Manth</p></h1>
+                        <div>
+                            <p dir="auto">
+                                This Human settlement in otherwise Goblin lands is populated by descendants of the Ackalite tribes, and is made up of about a dozen families who are far more peaceful than their Ackalite ancestors.
+                            </p>
+                        </div>
                         <div class="mod-footer"></div>
                     </div>
                 </div>
