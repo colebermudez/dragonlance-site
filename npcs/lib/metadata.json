@@ -1,0 +1,570 @@
+{
+  "vaultName": "Dragonlance",
+  "lastExport": 1721864853134,
+  "pluginVersion": "1.8.01",
+  "validBodyClasses": "publish css-settings-manager theme-light show-inline-title show-ribbon sizing-readable check-color check-bg wotc-beyond",
+  "useCustomHeadContent": false,
+  "useCustomFavicon": false,
+  "files": [
+    "NPCs/NPC Pictures/Abasinian Empire/Arundel.webp",
+    "NPCs/NPC Pictures/Abasinian Empire/Death Knight.jpg",
+    "NPCs/NPC Pictures/Abasinian Empire/Flame Emperor.jpg",
+    "NPCs/NPC Pictures/Abasinian Empire/Jeritza.webp",
+    "NPCs/NPC Pictures/Abasinian Empire/Ladislava.webp",
+    "NPCs/NPC Pictures/Abasinian Empire/Metodey.png",
+    "NPCs/NPC Pictures/Abasinian Empire/Randolph.webp",
+    "NPCs/NPC Pictures/Black Eagles/Bernadetta.png",
+    "NPCs/NPC Pictures/Black Eagles/Caspar.png",
+    "NPCs/NPC Pictures/Black Eagles/Dorothea.png",
+    "NPCs/NPC Pictures/Black Eagles/Edelgard.webp",
+    "NPCs/NPC Pictures/Black Eagles/Edelgard.png",
+    "NPCs/NPC Pictures/Black Eagles/Ferdinand.png",
+    "NPCs/NPC Pictures/Black Eagles/Hubert.png",
+    "NPCs/NPC Pictures/Black Eagles/Lindhart.png",
+    "NPCs/NPC Pictures/Black Eagles/Petra.png",
+    "NPCs/NPC Pictures/Church of Seiros/Alois.png",
+    "NPCs/NPC Pictures/Church of Seiros/Catherine.webp",
+    "NPCs/NPC Pictures/Church of Seiros/Cryil.webp",
+    "NPCs/NPC Pictures/Church of Seiros/Flayn.png",
+    "NPCs/NPC Pictures/Church of Seiros/Gilbert.webp",
+    "NPCs/NPC Pictures/Church of Seiros/Golem.webp",
+    "NPCs/NPC Pictures/Church of Seiros/Hanneman.png",
+    "NPCs/NPC Pictures/Church of Seiros/Ivor.png",
+    "NPCs/NPC Pictures/Church of Seiros/Manuela.png",
+    "NPCs/NPC Pictures/Church of Seiros/Marius.png",
+    "NPCs/NPC Pictures/Church of Seiros/Rhea.png",
+    "NPCs/NPC Pictures/Church of Seiros/Seteth.png",
+    "NPCs/NPC Pictures/Church of Seiros/Shamir.webp",
+    "NPCs/NPC Pictures/Church of Seiros/The Immaculate One.jpg",
+    "NPCs/NPC Pictures/Dragonlance-Canon/Bakaris.jpg",
+    "NPCs/NPC Pictures/Dragonlance-Canon/Bakaris-younger.jpg",
+    "NPCs/NPC Pictures/Dragonlance-Canon/Becklin.jpg",
+    "NPCs/NPC Pictures/Dragonlance-Canon/Dalamar.jpg",
+    "NPCs/NPC Pictures/Dragonlance-Canon/Darrett.jpg",
+    "NPCs/NPC Pictures/Dragonlance-Canon/Nezrah.png",
+    "NPCs/NPC Pictures/Dragonlance-Canon/Raistlin.png",
+    "NPCs/NPC Pictures/Dragonlance-Canon/Raven.jpg",
+    "NPCs/NPC Pictures/Dragonlance-Canon/Thren.png",
+    "NPCs/NPC Pictures/Dragonlance-Canon/Vendri.png",
+    "NPCs/NPC Pictures/Holy Kingdom of Solamnia/Cornelia.webp",
+    "NPCs/NPC Pictures/Holy Kingdom of Solamnia/Dimitri.webp",
+    "NPCs/NPC Pictures/Holy Kingdom of Solamnia/Dimitri.png",
+    "NPCs/NPC Pictures/Holy Kingdom of Solamnia/Gwendal.webp",
+    "NPCs/NPC Pictures/Holy Kingdom of Solamnia/Rodrigue.webp",
+    "NPCs/NPC Pictures/Holy Kingdom of Solamnia/Titanus.webp",
+    "NPCs/NPC Pictures/Qualnesti Alliance/Acheron.webp",
+    "NPCs/NPC Pictures/Qualnesti Alliance/Claude.webp",
+    "NPCs/NPC Pictures/Qualnesti Alliance/Claude.png",
+    "NPCs/NPC Pictures/Qualnesti Alliance/Judith.webp",
+    "NPCs/NPC Pictures/Qualnesti Alliance/Nader.webp",
+    "Session Notes/10. June 1st, 2024 Connecting Threads.md",
+    "lib/fonts/94f2f163d4b698242fef.otf",
+    "lib/fonts/72505e6a122c6acd5471.woff2",
+    "lib/fonts/2d5198822ab091ce4305.woff2",
+    "lib/fonts/c8ba52b05a9ef10f4758.woff2",
+    "lib/fonts/cb10ffd7684cd9836a05.woff2",
+    "lib/fonts/b5f0f109bc88052d4000.woff2",
+    "lib/fonts/cbe0ae49c52c920fd563.woff2",
+    "lib/fonts/535a6cf662596b3bd6a6.woff2",
+    "lib/fonts/70cc7ff27245e82ad414.ttf",
+    "lib/fonts/454577c22304619db035.ttf",
+    "lib/fonts/52ac8f3034507f1d9e53.ttf",
+    "lib/fonts/05b618077343fbbd92b7.ttf",
+    "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+    "lib/media/874d8b8e340f75575caa.svg",
+    "lib/media/3d6c1bdc4d87cde4de67.svg",
+    "lib/html/file-tree.html",
+    "lib/scripts/webpage.js",
+    "lib/scripts/minisearch.js",
+    "lib/media/favicon.png",
+    "lib/styles/obsidian.css",
+    "lib/styles/theme.css",
+    "lib/styles/global-variable-styles.css",
+    "lib/styles/supported-plugins.css",
+    "lib/styles/main-styles.css"
+  ],
+  "mainDependencies": [
+    "lib/fonts/94f2f163d4b698242fef.otf",
+    "lib/fonts/72505e6a122c6acd5471.woff2",
+    "lib/fonts/2d5198822ab091ce4305.woff2",
+    "lib/fonts/c8ba52b05a9ef10f4758.woff2",
+    "lib/fonts/cb10ffd7684cd9836a05.woff2",
+    "lib/fonts/b5f0f109bc88052d4000.woff2",
+    "lib/fonts/cbe0ae49c52c920fd563.woff2",
+    "lib/fonts/535a6cf662596b3bd6a6.woff2",
+    "lib/fonts/70cc7ff27245e82ad414.ttf",
+    "lib/fonts/454577c22304619db035.ttf",
+    "lib/fonts/52ac8f3034507f1d9e53.ttf",
+    "lib/fonts/05b618077343fbbd92b7.ttf",
+    "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+    "lib/media/874d8b8e340f75575caa.svg",
+    "lib/media/3d6c1bdc4d87cde4de67.svg",
+    "lib/html/file-tree.html",
+    "lib/scripts/webpage.js",
+    "lib/scripts/minisearch.js",
+    "lib/media/favicon.png",
+    "lib/styles/obsidian.css",
+    "lib/styles/theme.css",
+    "lib/styles/global-variable-styles.css",
+    "lib/styles/supported-plugins.css",
+    "lib/styles/main-styles.css"
+  ],
+  "fileInfo": {
+    "NPCs/NPC Pictures/Abasinian Empire/Arundel.webp": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 375706,
+      "exportedPath": "npcs/npc-pictures/abasinian-empire/arundel.webp",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Abasinian Empire/Death Knight.jpg": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 1028207,
+      "exportedPath": "npcs/npc-pictures/abasinian-empire/death-knight.jpg",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Abasinian Empire/Flame Emperor.jpg": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 1075308,
+      "exportedPath": "npcs/npc-pictures/abasinian-empire/flame-emperor.jpg",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Abasinian Empire/Jeritza.webp": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 267240,
+      "exportedPath": "npcs/npc-pictures/abasinian-empire/jeritza.webp",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Abasinian Empire/Ladislava.webp": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 303984,
+      "exportedPath": "npcs/npc-pictures/abasinian-empire/ladislava.webp",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Abasinian Empire/Metodey.png": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 340132,
+      "exportedPath": "npcs/npc-pictures/abasinian-empire/metodey.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Abasinian Empire/Randolph.webp": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 309122,
+      "exportedPath": "npcs/npc-pictures/abasinian-empire/randolph.webp",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Black Eagles/Bernadetta.png": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 1890778,
+      "exportedPath": "npcs/npc-pictures/black-eagles/bernadetta.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Black Eagles/Caspar.png": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 1146300,
+      "exportedPath": "npcs/npc-pictures/black-eagles/caspar.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Black Eagles/Dorothea.png": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 1303166,
+      "exportedPath": "npcs/npc-pictures/black-eagles/dorothea.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Black Eagles/Edelgard.webp": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 381048,
+      "exportedPath": "npcs/npc-pictures/black-eagles/edelgard.webp",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Black Eagles/Edelgard.png": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 979425,
+      "exportedPath": "npcs/npc-pictures/black-eagles/edelgard.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Black Eagles/Ferdinand.png": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 1477550,
+      "exportedPath": "npcs/npc-pictures/black-eagles/ferdinand.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Black Eagles/Hubert.png": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 1102352,
+      "exportedPath": "npcs/npc-pictures/black-eagles/hubert.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Black Eagles/Lindhart.png": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 1457542,
+      "exportedPath": "npcs/npc-pictures/black-eagles/lindhart.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Black Eagles/Petra.png": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 1328192,
+      "exportedPath": "npcs/npc-pictures/black-eagles/petra.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Church of Seiros/Alois.png": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 956083,
+      "exportedPath": "npcs/npc-pictures/church-of-seiros/alois.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Church of Seiros/Catherine.webp": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 364846,
+      "exportedPath": "npcs/npc-pictures/church-of-seiros/catherine.webp",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Church of Seiros/Cryil.webp": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 298636,
+      "exportedPath": "npcs/npc-pictures/church-of-seiros/cryil.webp",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Church of Seiros/Flayn.png": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 1528573,
+      "exportedPath": "npcs/npc-pictures/church-of-seiros/flayn.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Church of Seiros/Gilbert.webp": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 384720,
+      "exportedPath": "npcs/npc-pictures/church-of-seiros/gilbert.webp",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Church of Seiros/Golem.webp": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 417906,
+      "exportedPath": "npcs/npc-pictures/church-of-seiros/golem.webp",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Church of Seiros/Hanneman.png": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 1248183,
+      "exportedPath": "npcs/npc-pictures/church-of-seiros/hanneman.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Church of Seiros/Ivor.png": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 1234675,
+      "exportedPath": "npcs/npc-pictures/church-of-seiros/ivor.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Church of Seiros/Manuela.png": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 1114025,
+      "exportedPath": "npcs/npc-pictures/church-of-seiros/manuela.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Church of Seiros/Marius.png": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 1788843,
+      "exportedPath": "npcs/npc-pictures/church-of-seiros/marius.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Church of Seiros/Rhea.png": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 1515370,
+      "exportedPath": "npcs/npc-pictures/church-of-seiros/rhea.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Church of Seiros/Seteth.png": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 1120942,
+      "exportedPath": "npcs/npc-pictures/church-of-seiros/seteth.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Church of Seiros/Shamir.webp": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 310740,
+      "exportedPath": "npcs/npc-pictures/church-of-seiros/shamir.webp",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Church of Seiros/The Immaculate One.jpg": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 1135438,
+      "exportedPath": "npcs/npc-pictures/church-of-seiros/the-immaculate-one.jpg",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Dragonlance-Canon/Bakaris.jpg": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 199345,
+      "exportedPath": "npcs/npc-pictures/dragonlance-canon/bakaris.jpg",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Dragonlance-Canon/Bakaris-younger.jpg": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 150415,
+      "exportedPath": "npcs/npc-pictures/dragonlance-canon/bakaris-younger.jpg",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Dragonlance-Canon/Becklin.jpg": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 191482,
+      "exportedPath": "npcs/npc-pictures/dragonlance-canon/becklin.jpg",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Dragonlance-Canon/Dalamar.jpg": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 255801,
+      "exportedPath": "npcs/npc-pictures/dragonlance-canon/dalamar.jpg",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Dragonlance-Canon/Darrett.jpg": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 185042,
+      "exportedPath": "npcs/npc-pictures/dragonlance-canon/darrett.jpg",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Dragonlance-Canon/Nezrah.png": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 992316,
+      "exportedPath": "npcs/npc-pictures/dragonlance-canon/nezrah.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Dragonlance-Canon/Raistlin.png": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 1838615,
+      "exportedPath": "npcs/npc-pictures/dragonlance-canon/raistlin.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Dragonlance-Canon/Raven.jpg": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 117962,
+      "exportedPath": "npcs/npc-pictures/dragonlance-canon/raven.jpg",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Dragonlance-Canon/Thren.png": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 1355003,
+      "exportedPath": "npcs/npc-pictures/dragonlance-canon/thren.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Dragonlance-Canon/Vendri.png": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 998894,
+      "exportedPath": "npcs/npc-pictures/dragonlance-canon/vendri.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Holy Kingdom of Solamnia/Cornelia.webp": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 392130,
+      "exportedPath": "npcs/npc-pictures/holy-kingdom-of-solamnia/cornelia.webp",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Holy Kingdom of Solamnia/Dimitri.webp": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 245454,
+      "exportedPath": "npcs/npc-pictures/holy-kingdom-of-solamnia/dimitri.webp",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Holy Kingdom of Solamnia/Dimitri.png": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 1475655,
+      "exportedPath": "npcs/npc-pictures/holy-kingdom-of-solamnia/dimitri.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Holy Kingdom of Solamnia/Gwendal.webp": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 385796,
+      "exportedPath": "npcs/npc-pictures/holy-kingdom-of-solamnia/gwendal.webp",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Holy Kingdom of Solamnia/Rodrigue.webp": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 779382,
+      "exportedPath": "npcs/npc-pictures/holy-kingdom-of-solamnia/rodrigue.webp",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Holy Kingdom of Solamnia/Titanus.webp": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 525254,
+      "exportedPath": "npcs/npc-pictures/holy-kingdom-of-solamnia/titanus.webp",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Qualnesti Alliance/Acheron.webp": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 385838,
+      "exportedPath": "npcs/npc-pictures/qualnesti-alliance/acheron.webp",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Qualnesti Alliance/Claude.webp": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 614586,
+      "exportedPath": "npcs/npc-pictures/qualnesti-alliance/claude.webp",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Qualnesti Alliance/Claude.png": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 1528940,
+      "exportedPath": "npcs/npc-pictures/qualnesti-alliance/claude.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Qualnesti Alliance/Judith.webp": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 295830,
+      "exportedPath": "npcs/npc-pictures/qualnesti-alliance/judith.webp",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Qualnesti Alliance/Nader.webp": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 442794,
+      "exportedPath": "npcs/npc-pictures/qualnesti-alliance/nader.webp",
+      "dependencies": []
+    },
+    "Session Notes/10. June 1st, 2024 Connecting Threads.md": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 1482,
+      "exportedPath": "session-notes/10.-june-1st,-2024-connecting-threads.html",
+      "dependencies": []
+    },
+    "lib/fonts/94f2f163d4b698242fef.otf": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 66800,
+      "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
+      "dependencies": []
+    },
+    "lib/fonts/72505e6a122c6acd5471.woff2": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 104232,
+      "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/2d5198822ab091ce4305.woff2": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 104332,
+      "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 98868,
+      "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/cb10ffd7684cd9836a05.woff2": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 106876,
+      "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/b5f0f109bc88052d4000.woff2": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 105804,
+      "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/cbe0ae49c52c920fd563.woff2": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 106108,
+      "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/535a6cf662596b3bd6a6.woff2": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 111708,
+      "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/70cc7ff27245e82ad414.ttf": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 192740,
+      "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
+      "dependencies": []
+    },
+    "lib/fonts/454577c22304619db035.ttf": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 161376,
+      "exportedPath": "lib/fonts/454577c22304619db035.ttf",
+      "dependencies": []
+    },
+    "lib/fonts/52ac8f3034507f1d9e53.ttf": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 191568,
+      "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
+      "dependencies": []
+    },
+    "lib/fonts/05b618077343fbbd92b7.ttf": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 155288,
+      "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
+      "dependencies": []
+    },
+    "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 7876,
+      "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+      "dependencies": []
+    },
+    "lib/media/874d8b8e340f75575caa.svg": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 317,
+      "exportedPath": "lib/media/874d8b8e340f75575caa.svg",
+      "dependencies": []
+    },
+    "lib/media/3d6c1bdc4d87cde4de67.svg": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 279,
+      "exportedPath": "lib/media/3d6c1bdc4d87cde4de67.svg",
+      "dependencies": []
+    },
+    "lib/html/file-tree.html": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 26054,
+      "exportedPath": "lib/html/file-tree.html",
+      "dependencies": []
+    },
+    "lib/scripts/webpage.js": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 47290,
+      "exportedPath": "lib/scripts/webpage.js",
+      "dependencies": []
+    },
+    "lib/scripts/minisearch.js": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 29422,
+      "exportedPath": "lib/scripts/minisearch.js",
+      "dependencies": []
+    },
+    "lib/media/favicon.png": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 1105,
+      "exportedPath": "lib/media/favicon.png",
+      "dependencies": []
+    },
+    "lib/styles/obsidian.css": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 130471,
+      "exportedPath": "lib/styles/obsidian.css",
+      "dependencies": []
+    },
+    "lib/styles/theme.css": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 699854,
+      "exportedPath": "lib/styles/theme.css",
+      "dependencies": []
+    },
+    "lib/styles/global-variable-styles.css": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 236,
+      "exportedPath": "lib/styles/global-variable-styles.css",
+      "dependencies": []
+    },
+    "lib/styles/supported-plugins.css": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 8552,
+      "exportedPath": "lib/styles/supported-plugins.css",
+      "dependencies": []
+    },
+    "lib/styles/main-styles.css": {
+      "modifiedTime": 1721864853134,
+      "sourceSize": 23130,
+      "exportedPath": "lib/styles/main-styles.css",
+      "dependencies": []
+    }
+  }
+}
