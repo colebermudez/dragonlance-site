@@ -24,7 +24,7 @@ let map = L.map("map", {
 let points = [
   [1750,990, "Garreg Mach Monatery"],
   [1675,1025, "The Monolith"],
-  [1300,1625, "Current Location"]
+  [1300,1625, "Current Location"],
 ];
 
 // Used to load and display a single image over
