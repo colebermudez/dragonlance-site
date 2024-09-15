@@ -2,7 +2,16 @@
 /**
  * Image instead of map
  */
-
+ 
+//config map
+let config = {
+  minZoom: 7,
+  maxZoom: 18,
+  // https://github.com/Leaflet/Leaflet.fullscreen
+  fullscreenControl: true,
+};
+// magnification with which the map will start
+const zoom = 18;
 
 let bounds = [
   [0, 0], // padding
@@ -15,8 +24,8 @@ let bounds = [
 // May be used for maps of flat surfaces (e.g. game maps).
 let map = L.map("map", {
   crs: L.CRS.Simple,
-  maxZoom: 18,
-  minZoom: -1.6,
+  //maxZoom: 18,
+  //minZoom: -1.6,
   maxBounds: bounds,
 });
 
