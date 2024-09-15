@@ -17,8 +17,6 @@ let map = L.map("map", {
   crs: L.CRS.Simple,
   maxZoom: 18,
   minZoom: -1.6,
-  //https://github.com/Leaflet/Leaflet.fullscreen
-  fullscreenControl: true,
   maxBounds: bounds,
 });
 
