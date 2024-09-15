@@ -3,12 +3,6 @@
  * Image instead of map
  */
  
-//config map
-let config = {
-  fullscreenControl: true,
-};
-// magnification with which the map will start
-const zoom = 18;
 
 let bounds = [
   [0, 0], // padding
