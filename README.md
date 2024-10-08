@@ -8,7 +8,6 @@ Information will be regularly updated with all available info after players reac
 
 ## To-do
 - Fix NPC sidebar links (From .md to html links)
-- Update Northern Ergoth Locations when party arrives
 
 ### To-do for later
 - Fix sidebar alignment
