@@ -307,12 +307,10 @@
         <link rel="stylesheet" href="lib/styles/theme.css" />
         <link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
         <noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css" /></noscript>
-        <link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-        <noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css" /></noscript>
         <link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
         <noscript><link rel="stylesheet" href="lib/styles/main-styles.css" /></noscript>
     </head>
-    <body class="publish css-settings-manager theme-light show-inline-title show-ribbon sizing-readable check-color check-bg wotc-beyond">
+    <body class="publish css-settings-manager theme-light show-inline-title show-ribbon check-color check-bg wotc-beyond">
         <script defer="">
             let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
             "dark" == theme ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light")) : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")),
@@ -382,7 +380,7 @@
                             <p dir="auto"><strong>Flaws:</strong> Overconfident and reckless. Nader often rushes headfirst into battle without fully considering the consequences, relying on his strength to carry him through.</p>
                         </div>
                         <div class="el-p">
-                            <p dir="auto"><strong>Status:</strong> Alive</p>
+                            <p dir="auto"><strong>Status:</strong> Alive; Unknown Location</p>
                         </div>
                         <div class="mod-footer mod-ui"></div>
                     </div>
