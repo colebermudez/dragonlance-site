@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lemish Locations</title>
+        <base href="../../" />
+        <meta id="root-path" root-path="../../" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0" />
+        <meta charset="UTF-8" />
+        <meta name="description" content="Dragonlance - Lemish Locations" />
+        <meta property="og:title" content="Lemish Locations" />
+        <meta property="og:description" content="Dragonlance - Lemish Locations" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://krynns-vanguard.com/locations/lemish/lemish-locations.html" />
+        <meta property="og:image" content="undefined" />
+        <meta property="og:site_name" content="Dragonlance" />
+        <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://krynns-vanguard.com/lib/rss.xml" />
+        <script async="" id="webpage-script" src="lib/scripts/webpage.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <link rel="icon" href="lib/media/favicon.png" />
+        <style>
+            body {
+                --line-width: 40em;
+                --line-width-adaptive: 40em;
+                --file-line-width: 40em;
+                --sidebar-width: min(20em, 80vw);
+                --collapse-arrow-size: 11px;
+                --tree-horizontal-spacing: 0.6em;
+                --tree-vertical-spacing: 0.6em;
+                --sidebar-margin: 12px;
+            }
+            .sidebar {
+                height: 100%;
+                min-width: calc(var(--sidebar-width) + var(--divider-width-hover));
+                max-width: calc(var(--sidebar-width) + var(--divider-width-hover));
+                font-size: 14px;
+                z-index: 10;
+                position: relative;
+                overflow: hidden;
+                transition: min-width ease-in-out, max-width ease-in-out;
+                transition-duration: 0.2s;
+                contain: size;
+            }
+            .sidebar-left {
+                left: 0;
+            }
+            .sidebar-right {
+                right: 0;
+            }
+            .sidebar.is-collapsed {
+                min-width: 0;
+                max-width: 0;
+            }
+            body.floating-sidebars .sidebar {
+                position: absolute;
+            }
+            .sidebar-content {
+                height: 100%;
+                min-width: calc(var(--sidebar-width) - var(--divider-width-hover));
+                top: 0;
+                padding: var(--sidebar-margin);
+                padding-top: 4em;
+                line-height: var(--line-height-tight);
+                background-color: var(--background-secondary);
+                transition: background-color, border-right, border-left, box-shadow;
+                transition-duration: var(--color-fade-speed);
+                transition-timing-function: ease-in-out;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+            }
+            .sidebar:not(.is-collapsed) .sidebar-content {
+                min-width: calc(max(100%, var(--sidebar-width)) - 3px);
+                max-width: calc(max(100%, var(--sidebar-width)) - 3px);
+            }
+            .sidebar-left .sidebar-content {
+                left: 0;
+                border-top-right-radius: var(--radius-l);
+                border-bottom-right-radius: var(--radius-l);
+            }
+            .sidebar-right .sidebar-content {
+                right: 0;
+                border-top-left-radius: var(--radius-l);
+                border-bottom-left-radius: var(--radius-l);
+            }
+            .sidebar:has(.sidebar-content:empty):has(.topbar-content:empty) {
+                display: none;
+            }
+            .sidebar-topbar {
+                height: 2em;
+                width: var(--sidebar-width);
+                top: var(--sidebar-margin);
+                padding-inline: var(--sidebar-margin);
+                z-index: 1;
+                position: fixed;
+                display: flex;
+                align-items: center;
+                transition: width ease-in-out;
+                transition-duration: inherit;
+            }
+            .sidebar.is-collapsed .sidebar-topbar {
+                width: calc(2.3em + var(--sidebar-margin) * 2);
+            }
+            .sidebar .sidebar-topbar.is-collapsed {
+                width: 0;
+            }
+            .sidebar-left .sidebar-topbar {
+                left: 0;
+            }
+            .sidebar-right .sidebar-topbar {
+                right: 0;
+            }
+            .topbar-content {
+                overflow: hidden;
+                overflow: clip;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                transition: inherit;
+            }
+            .sidebar.is-collapsed .topbar-content {
+                width: 0;
+                transition: inherit;
+            }
+            .clickable-icon.sidebar-collapse-icon {
+                background-color: transparent;
+                color: var(--icon-color-focused);
+                padding: 0 !important;
+                margin: 0 !important;
+                height: 100% !important;
+                width: 2.3em !important;
+                margin-inline: 0.14em !important;
+                position: absolute;
+            }
+            .sidebar-left .clickable-icon.sidebar-collapse-icon {
+                transform: rotateY(180deg);
+                right: var(--sidebar-margin);
+            }
+            .sidebar-right .clickable-icon.sidebar-collapse-icon {
+                transform: rotateY(180deg);
+                left: var(--sidebar-margin);
+            }
+            .clickable-icon.sidebar-collapse-icon svg.svg-icon {
+                width: 100%;
+                height: 100%;
+            }
+            .sidebar-section-header {
+                margin: 0 0 1em 0;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                font-weight: 600;
+            }
+            body {
+                transition: background-color var(--color-fade-speed) ease-in-out;
+            }
+            .webpage-container {
+                display: flex;
+                flex-direction: row;
+                height: 100%;
+                width: 100%;
+                align-items: stretch;
+                justify-content: center;
+            }
+            .document-container {
+                opacity: 1;
+                flex-basis: 100%;
+                max-width: 100%;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transition: opacity 0.2s ease-in-out;
+                contain: inline-size;
+            }
+            .hide {
+                opacity: 0;
+                transition: opacity 0.2s ease-in-out;
+            }
+            .document-container > .markdown-preview-view {
+                margin: var(--sidebar-margin);
+                margin-bottom: 0;
+                width: 100%;
+                width: -webkit-fill-available;
+                width: -moz-available;
+                width: fill-available;
+                background-color: var(--background-primary);
+                transition: background-color var(--color-fade-speed) ease-in-out;
+                border-top-right-radius: var(--window-radius, var(--radius-m));
+                border-top-left-radius: var(--window-radius, var(--radius-m));
+                overflow-x: hidden !important;
+                overflow-y: auto !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                contain: inline-size;
+            }
+            .document-container > .markdown-preview-view > .markdown-preview-sizer {
+                padding-bottom: 80vh !important;
+                width: 100% !important;
+                max-width: var(--line-width) !important;
+                flex-basis: var(--line-width) !important;
+                transition: background-color var(--color-fade-speed) ease-in-out;
+                contain: inline-size;
+            }
+            .markdown-rendered img:not([width]),
+            .view-content img:not([width]) {
+                max-width: 100%;
+                outline: 0;
+            }
+            .document-container > .view-content.embed {
+                display: flex;
+                padding: 1em;
+                height: 100%;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+            }
+            .document-container > .view-content.embed > * {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+            }
+            :has(> :is(.math, table)) {
+                overflow-x: auto !important;
+            }
+            .document-container > .view-content {
+                overflow-x: auto;
+                contain: content;
+                padding: 0;
+                margin: 0;
+                height: 100%;
+            }
+            .scroll-highlight {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 1000;
+                background-color: hsla(var(--color-accent-hsl), 0.25);
+                opacity: 0;
+                padding: 1em;
+                inset: 50%;
+                translate: -50% -50%;
+                border-radius: var(--radius-s);
+            }
+        </style>
+        <script defer="">
+            async function loadIncludes() {
+                if ("file:" != location.protocol) {
+                    let e = document.querySelectorAll("include");
+                    for (let t = 0; t < e.length; t++) {
+                        let o = e[t],
+                            l = o.getAttribute("src");
+                        try {
+                            const e = await fetch(l);
+                            if (!e.ok) {
+                                console.log("Could not include file: " + l), o?.remove();
+                                continue;
+                            }
+                            let t = await e.text(),
+                                n = document.createRange().createContextualFragment(t),
+                                i = Array.from(n.children);
+                            for (let e of i)
+                                e.classList.add("hide"),
+                                    (e.style.transition = "opacity 0.5s ease-in-out"),
+                                    setTimeout(() => {
+                                        e.classList.remove("hide");
+                                    }, 10);
+                            o.before(n), o.remove(), console.log("Included file: " + l);
+                        } catch (e) {
+                            o?.remove(), console.log("Could not include file: " + l, e);
+                            continue;
+                        }
+                    }
+                } else {
+                    if (document.querySelectorAll("include").length > 0) {
+                        var e = document.createElement("div");
+                        (e.id = "error"),
+                            (e.textContent = "Web server exports must be hosted on an http / web server to be viewed correctly."),
+                            (e.style.position = "fixed"),
+                            (e.style.top = "50%"),
+                            (e.style.left = "50%"),
+                            (e.style.transform = "translate(-50%, -50%)"),
+                            (e.style.fontSize = "1.5em"),
+                            (e.style.fontWeight = "bold"),
+                            (e.style.textAlign = "center"),
+                            document.body.appendChild(e),
+                            document.querySelector(".document-container")?.classList.remove("hide");
+                    }
+                }
+            }
+            document.addEventListener("DOMContentLoaded", () => {
+                loadIncludes();
+            });
+            let isFileProtocol = "file:" == location.protocol;
+            function waitLoadScripts(e, t) {
+                let o = e.map((e) => document.getElementById(e + "-script")),
+                    l = 0;
+                !(function e() {
+                    let n = o[l];
+                    l++, (n && "true" != n.getAttribute("loaded")) || (l < o.length && e()), l < o.length ? n.addEventListener("load", e) : t();
+                })();
+            }
+        </script>
+        <link rel="stylesheet" href="lib/styles/obsidian.css" />
+        <link rel="stylesheet" href="lib/styles/theme.css" />
+        <link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css" /></noscript>
+        <link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="lib/styles/main-styles.css" /></noscript>
+    </head>
+    <body class="publish css-settings-manager theme-light show-inline-title show-ribbon check-color check-bg wotc-beyond">
+        <script defer="">
+            let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            "dark" == theme ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light")) : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")),
+                window.innerWidth < 480
+                    ? document.body.classList.add("is-phone")
+                    : window.innerWidth < 768
+                    ? document.body.classList.add("is-tablet")
+                    : window.innerWidth < 1024
+                    ? document.body.classList.add("is-small-screen")
+                    : document.body.classList.add("is-large-screen");
+        </script>
+        <div class="webpage-container workspace">
+            <div class="sidebar-left sidebar">
+                <div class="sidebar-handle"></div>
+                <div class="sidebar-topbar">
+                    <div class="topbar-content">
+                        <label class="theme-toggle-container" for="theme_toggle">
+                            <input class="theme-toggle-input" type="checkbox" id="theme_toggle" />
+                            <div class="toggle-background"></div>
+                        </label>
+                    </div>
+                    <div class="clickable-icon sidebar-collapse-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                            <path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
+                            <path d="M10 4V20"></path>
+                            <path d="M4 7H7"></path>
+                            <path d="M4 10H7"></path>
+                            <path d="M4 13H7"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="sidebar-content">
+                    <div class="search-input-container">
+                        <input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..." />
+                        <div class="search-input-clear-button" aria-label="Clear search"></div>
+                    </div>
+                    <include src="lib/html/file-tree.html"></include>
+                </div>
+                <script defer="">
+                    let ls = document.querySelector(".sidebar-left");
+                    ls.classList.add("is-collapsed");
+                    if (window.innerWidth > 768) ls.classList.remove("is-collapsed");
+                    ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));
+                </script>
+            </div>
+            <div class="document-container markdown-reading-view hide">
+                <div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width">
+                    <style id="MJX-CHTML-styles"></style>
+                    <div class="markdown-preview-sizer markdown-preview-section">
+                        <h1 class="page-title heading inline-title" id="Lemish Locations"><p dir="auto">Lemish Locations</p></h1>
+                        <div class="el-p">
+                            <p dir="auto">
+                                Lemish is a human land that is bordered by Solamnia in the west and north, Throt in the east, and New Sea in the south. Its major geographical features are the Southern Dargaard Mountains on its eastern
+                                border, Godsfell Woods on the northeast corner, the Darkwoods are a large forest that take up most of the land, and the Garnet Mountains on its southwestern border with Solamnia. Seventy-five percent of the
+                                land is covered in thick forests.
+                            </p>
+                        </div>
+                        <div class="el-p">
+                            <p dir="auto">
+                                The Great Seven Gods Highway brought a lot of trade through Lemish prior to the Cataclysm. It entered into Lemish from the south and went east to Sanction. At least one Grand Master even hailed from this
+                                Solamnic province in 1634 PC by the name of Gregori uth Telan. The nation was ruled by the Dictator of Lemish.
+                            </p>
+                        </div>
+                        <div class="el-h2 heading-wrapper">
+                            <h2 data-heading="Cities" dir="auto" class="heading" id="Cities">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Cities
+                            </h2>
+                            <div class="heading-children">
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Caermish]]" dir="auto" class="heading" id="[[Caermish]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a data-href="Caermish" href="locations/lemish/cities/caermish.html" class="internal-link" target="_self" rel="noopener nofollow">Caermish</a>
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Castle Camlargo]]" dir="auto" class="heading" id="[[Castle_Camlargo]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a data-href="Castle Camlargo" href="locations/lemish/cities/castle-camlargo.html" class="internal-link" target="_self" rel="noopener nofollow">Castle Camlargo</a>
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Chisel]]" dir="auto" class="heading" id="[[Chisel]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a data-href="Chisel" href="locations/lemish/cities/chisel.html" class="internal-link" target="_self" rel="noopener nofollow">Chisel</a>
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Corbie]]" dir="auto" class="heading" id="[[Corbie]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a data-href="Corbie" href="locations/lemish/cities/corbie.html" class="internal-link" target="_self" rel="noopener nofollow">Corbie</a>
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Dun Ringhill]]" dir="auto" class="heading" id="[[Dun_Ringhill]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a data-href="Dun Ringhill" href="locations/lemish/cities/dun-ringhill.html" class="internal-link" target="_self" rel="noopener nofollow">Dun Ringhill</a>
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Elmwood]]" dir="auto" class="heading" id="[[Elmwood]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a data-href="Elmwood" href="locations/lemish/cities/elmwood.html" class="internal-link" target="_self" rel="noopener nofollow">Elmwood</a>
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Fangoth]]" dir="auto" class="heading" id="[[Fangoth]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a data-href="Fangoth" href="locations/lemish/cities/fangoth.html" class="internal-link" target="_self" rel="noopener nofollow">Fangoth</a>
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Fearfold]]" dir="auto" class="heading" id="[[Fearfold]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a data-href="Fearfold" href="locations/lemish/cities/fearfold.html" class="internal-link" target="_self" rel="noopener nofollow">Fearfold</a>
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Lathe]]" dir="auto" class="heading" id="[[Lathe]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a data-href="Lathe" href="locations/lemish/cities/lathe.html" class="internal-link" target="_self" rel="noopener nofollow">Lathe</a>
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Pine Rift]]" dir="auto" class="heading" id="[[Pine_Rift]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a data-href="Pine Rift" href="locations/lemish/cities/pine-rift.html" class="internal-link" target="_self" rel="noopener nofollow">Pine Rift</a>
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Vex]]" dir="auto" class="heading" id="[[Vex]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a data-href="Vex" href="locations/lemish/cities/vex.html" class="internal-link" target="_self" rel="noopener nofollow">Vex</a>
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Walmish]]" dir="auto" class="heading" id="[[Walmish]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a data-href="Walmish" href="locations/lemish/cities/walmish.html" class="internal-link" target="_self" rel="noopener nofollow">Walmish</a>
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Wayfold]]" dir="auto" class="heading" id="[[Wayfold]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a data-href="Wayfold" href="locations/lemish/cities/wayfold.html" class="internal-link" target="_self" rel="noopener nofollow">Wayfold</a>
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="el-h2 heading-wrapper">
+                            <h2 data-heading="Geography" dir="auto" class="heading" id="Geography">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Geography
+                            </h2>
+                            <div class="heading-children">
+                                <div class="el-p">
+                                    <p dir="auto"><a data-href="Caves of Darkness" href="locations/lemish/geography/caves-of-darkness.html" class="internal-link" target="_self" rel="noopener nofollow">Caves of Darkness</a></p>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Crusher's Bay]]" dir="auto" class="heading" id="[[Crusher's_Bay]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a data-href="Crusher's Bay" href="locations/lemish/geography/crusher's-bay.html" class="internal-link" target="_self" rel="noopener nofollow">Crusher's Bay</a>
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Darkwoods]]" dir="auto" class="heading" id="[[Darkwoods]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a data-href="Darkwoods" href="locations/lemish/geography/darkwoods.html" class="internal-link" target="_self" rel="noopener nofollow">Darkwoods</a>
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Fang River]]" dir="auto" class="heading" id="[[Fang River]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a data-href="Fang Rivers" href="locations/lemish/geography/fang-river.html" class="internal-link" target="_self" rel="noopener nofollow">Fang River</a>
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Godsfell Woods]]" dir="auto" class="heading" id="[[Godsfell_Woods]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a data-href="Godsfell Woods" href="locations/lemish/geography/godsfell-woods.html" class="internal-link" target="_self" rel="noopener nofollow">Godsfell Woods</a>
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Order of Majere Monastery]]" dir="auto" class="heading" id="[[Order_of_Majere_Monastery]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a data-href="Order of Majere Monastery" href="locations/lemish/geography/order-of-majere-monastery.html" class="internal-link" target="_self" rel="noopener nofollow">Order of Majere Monastery</a>
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Salarain River]]" dir="auto" class="heading" id="[[Salarain_River]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a data-href="Salarain River" href="locations/lemish/geography/salarain-river.html" class="internal-link" target="_self" rel="noopener nofollow">Salarain River</a>
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="el-h2 heading-wrapper">
+                            <h2 data-heading="Ruins" dir="auto" class="heading" id="Ruins">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Ruins
+                            </h2>
+                            <div class="heading-children">
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Aym]]" dir="auto" class="heading" id="[[Aym]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a data-href="Aym" href="locations/lemish/ruins/aym.html" class="internal-link" target="_self" rel="noopener nofollow">Aym</a>
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Fayd]]" dir="auto" class="heading" id="[[Fayd]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a data-href="Fayd" href="locations/lemish/ruins/fayd.html" class="internal-link" target="_self" rel="noopener nofollow">Fayd</a>
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Seven Gods Highway]]" dir="auto" class="heading" id="[[Seven_Gods_Highway]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a data-href="Seven Gods Highway" href="locations/lemish/ruins/seven-gods-highway.html" class="internal-link" target="_self" rel="noopener nofollow">Seven Gods Highway</a>
+                                    </h6>
+                                    <div class="heading-children"><div class="mod-footer mod-ui"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-right sidebar">
+                <div class="sidebar-handle"></div>
+                <div class="sidebar-topbar">
+                    <div class="topbar-content"></div>
+                    <div class="clickable-icon sidebar-collapse-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                            <path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
+                            <path d="M10 4V20"></path>
+                            <path d="M4 7H7"></path>
+                            <path d="M4 10H7"></path>
+                            <path d="M4 13H7"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="sidebar-content">
+                    <div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0">
+                        <div class="tree-header">
+                            <span class="sidebar-section-header">Table Of Contents</span>
+                            <button class="clickable-icon collapse-tree-button" aria-label="Collapse All">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+                            </button>
+                        </div>
+                        <div class="tree-scroll-area tree-item-children nav-folder-children">
+                            <div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div>
+                            <div class="tree-item" data-depth="1">
+                                <a class="tree-link" href="locations/lemish/lemish-locations.html#Lemish Locations">
+                                    <div class="tree-item-contents heading-link" heading-name="Lemish Locations"><span class="tree-item-title">Lemish Locations</span></div>
+                                </a>
+                                <div class="tree-item-children nav-folder-children">
+                                    <div class="tree-item mod-collapsible" data-depth="2">
+                                        <a class="tree-link" href="locations/lemish/lemish-locations.html#Cities">
+                                            <div class="tree-item-contents heading-link" heading-name="Cities">
+                                                <div class="collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                <span class="tree-item-title">Cities</span>
+                                            </div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children">
+                                            <div class="tree-item" data-depth="6">
+                                                <a class="tree-link" href="locations/lemish/lemish-locations.html#[[Caermish]]">
+                                                    <div class="tree-item-contents heading-link" heading-name="[[Caermish]]">
+                                                        <span class="tree-item-title"><a data-href="Caermish" href="Caermish" class="internal-link" target="_blank" rel="noopener nofollow">Caermish</a></span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a class="tree-link" href="locations/lemish/lemish-locations.html#[[Castle_Camlargo]]">
+                                                    <div class="tree-item-contents heading-link" heading-name="[[Castle Camlargo]]">
+                                                        <span class="tree-item-title"><a data-href="Castle Camlargo" href="Castle Camlargo" class="internal-link" target="_blank" rel="noopener nofollow">Castle Camlargo</a></span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a class="tree-link" href="locations/lemish/lemish-locations.html#[[Chisel]]">
+                                                    <div class="tree-item-contents heading-link" heading-name="[[Chisel]]">
+                                                        <span class="tree-item-title"><a data-href="Chisel" href="Chisel" class="internal-link" target="_blank" rel="noopener nofollow">Chisel</a></span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a class="tree-link" href="locations/lemish/lemish-locations.html#[[Corbie]]">
+                                                    <div class="tree-item-contents heading-link" heading-name="[[Corbie]]">
+                                                        <span class="tree-item-title"><a data-href="Corbie" href="Corbie" class="internal-link" target="_blank" rel="noopener nofollow">Corbie</a></span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a class="tree-link" href="locations/lemish/lemish-locations.html#[[Dun_Ringhill]]">
+                                                    <div class="tree-item-contents heading-link" heading-name="[[Dun Ringhill]]">
+                                                        <span class="tree-item-title"><a data-href="Dun Ringhill" href="Dun Ringhill" class="internal-link" target="_blank" rel="noopener nofollow">Dun Ringhill</a></span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a class="tree-link" href="locations/lemish/lemish-locations.html#[[Elmwood]]">
+                                                    <div class="tree-item-contents heading-link" heading-name="[[Elmwood]]">
+                                                        <span class="tree-item-title"><a data-href="Elmwood" href="Elmwood" class="internal-link" target="_blank" rel="noopener nofollow">Elmwood</a></span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a class="tree-link" href="locations/lemish/lemish-locations.html#[[Fangoth]]">
+                                                    <div class="tree-item-contents heading-link" heading-name="[[Fangoth]]">
+                                                        <span class="tree-item-title"><a data-href="Fangoth" href="Fangoth" class="internal-link" target="_blank" rel="noopener nofollow">Fangoth</a></span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a class="tree-link" href="locations/lemish/lemish-locations.html#[[Fearfold]]">
+                                                    <div class="tree-item-contents heading-link" heading-name="[[Fearfold]]">
+                                                        <span class="tree-item-title"><a data-href="Fearfold" href="Fearfold" class="internal-link" target="_blank" rel="noopener nofollow">Fearfold</a></span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a class="tree-link" href="locations/lemish/lemish-locations.html#[[Lathe]]">
+                                                    <div class="tree-item-contents heading-link" heading-name="[[Lathe]]">
+                                                        <span class="tree-item-title"><a data-href="Lathe" href="Lathe" class="internal-link" target="_blank" rel="noopener nofollow">Lathe</a></span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a class="tree-link" href="locations/lemish/lemish-locations.html#[[Pine_Rift]]">
+                                                    <div class="tree-item-contents heading-link" heading-name="[[Pine Rift]]">
+                                                        <span class="tree-item-title"><a data-href="Pine Rift" href="Pine Rift" class="internal-link" target="_blank" rel="noopener nofollow">Pine Rift</a></span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a class="tree-link" href="locations/lemish/lemish-locations.html#[[Vex]]">
+                                                    <div class="tree-item-contents heading-link" heading-name="[[Vex]]">
+                                                        <span class="tree-item-title"><a data-href="Vex" href="Vex" class="internal-link" target="_blank" rel="noopener nofollow">Vex</a></span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a class="tree-link" href="locations/lemish/lemish-locations.html#[[Walmish]]">
+                                                    <div class="tree-item-contents heading-link" heading-name="[[Walmish]]">
+                                                        <span class="tree-item-title"><a data-href="Walmish" href="Walmish" class="internal-link" target="_blank" rel="noopener nofollow">Walmish</a></span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a class="tree-link" href="locations/lemish/lemish-locations.html#[[Wayfold]]">
+                                                    <div class="tree-item-contents heading-link" heading-name="[[Wayfold]]">
+                                                        <span class="tree-item-title"><a data-href="Wayfold" href="Wayfold" class="internal-link" target="_blank" rel="noopener nofollow">Wayfold</a></span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tree-item mod-collapsible" data-depth="2">
+                                        <a class="tree-link" href="locations/lemish/lemish-locations.html#Geography">
+                                            <div class="tree-item-contents heading-link" heading-name="Geography">
+                                                <div class="collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                <span class="tree-item-title">Geography</span>
+                                            </div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children">
+                                            <div class="tree-item" data-depth="6">
+                                                <a class="tree-link" href="locations/lemish/lemish-locations.html#[[Crusher's_Bay]]">
+                                                    <div class="tree-item-contents heading-link" heading-name="[[Crusher's Bay]]">
+                                                        <span class="tree-item-title"><a data-href="Crusher's Bay" href="Crusher's Bay" class="internal-link" target="_blank" rel="noopener nofollow">Crusher's Bay</a></span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a class="tree-link" href="locations/lemish/lemish-locations.html#[[Darkwoods]]">
+                                                    <div class="tree-item-contents heading-link" heading-name="[[Darkwoods]]">
+                                                        <span class="tree-item-title"><a data-href="Darkwoods" href="Darkwoods" class="internal-link" target="_blank" rel="noopener nofollow">Darkwoods</a></span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a class="tree-link" href="locations/lemish/lemish-locations.html#[Fang_River](Locations/Lemish/Geography/Fang_River)">
+                                                    <div class="tree-item-contents heading-link" heading-name="[Fang River](Locations/Lemish/Geography/Fang River)">
+                                                        <span class="tree-item-title">[Fang River](Locations/Lemish/Geography/Fang River)</span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a class="tree-link" href="locations/lemish/lemish-locations.html#[[Godsfell_Woods]]">
+                                                    <div class="tree-item-contents heading-link" heading-name="[[Godsfell Woods]]">
+                                                        <span class="tree-item-title"><a data-href="Godsfell Woods" href="Godsfell Woods" class="internal-link" target="_blank" rel="noopener nofollow">Godsfell Woods</a></span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a class="tree-link" href="locations/lemish/lemish-locations.html#[[Order_of_Majere_Monastery]]">
+                                                    <div class="tree-item-contents heading-link" heading-name="[[Order of Majere Monastery]]">
+                                                        <span class="tree-item-title">
+                                                            <a data-href="Order of Majere Monastery" href="Order of Majere Monastery" class="internal-link" target="_blank" rel="noopener nofollow">Order of Majere Monastery</a>
+                                                        </span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a class="tree-link" href="locations/lemish/lemish-locations.html#[[Salarain_River]]">
+                                                    <div class="tree-item-contents heading-link" heading-name="[[Salarain River]]">
+                                                        <span class="tree-item-title"><a data-href="Salarain River" href="Salarain River" class="internal-link" target="_blank" rel="noopener nofollow">Salarain River</a></span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tree-item mod-collapsible" data-depth="2">
+                                        <a class="tree-link" href="locations/lemish/lemish-locations.html#Ruins">
+                                            <div class="tree-item-contents heading-link" heading-name="Ruins">
+                                                <div class="collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                <span class="tree-item-title">Ruins</span>
+                                            </div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children">
+                                            <div class="tree-item" data-depth="6">
+                                                <a class="tree-link" href="locations/lemish/lemish-locations.html#[[Aym]]">
+                                                    <div class="tree-item-contents heading-link" heading-name="[[Aym]]">
+                                                        <span class="tree-item-title"><a data-href="Aym" href="Aym" class="internal-link" target="_blank" rel="noopener nofollow">Aym</a></span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a class="tree-link" href="locations/lemish/lemish-locations.html#[[Fayd]]">
+                                                    <div class="tree-item-contents heading-link" heading-name="[[Fayd]]">
+                                                        <span class="tree-item-title"><a data-href="Fayd" href="Fayd" class="internal-link" target="_blank" rel="noopener nofollow">Fayd</a></span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a class="tree-link" href="locations/lemish/lemish-locations.html#[[Seven_Gods_Highway]]">
+                                                    <div class="tree-item-contents heading-link" heading-name="[[Seven Gods Highway]]">
+                                                        <span class="tree-item-title"><a data-href="Seven Gods Highway" href="Seven Gods Highway" class="internal-link" target="_blank" rel="noopener nofollow">Seven Gods Highway</a></span>
+                                                    </div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script defer="">
+                    let rs = document.querySelector(".sidebar-right");
+                    rs.classList.add("is-collapsed");
+                    if (window.innerWidth > 768) rs.classList.remove("is-collapsed");
+                    rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));
+                </script>
+            </div>
+        </div>
+    </body>
+</html>

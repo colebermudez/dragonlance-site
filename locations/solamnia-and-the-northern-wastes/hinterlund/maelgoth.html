@@ -307,12 +307,10 @@
         <link rel="stylesheet" href="lib/styles/theme.css" />
         <link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
         <noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css" /></noscript>
-        <link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-        <noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css" /></noscript>
         <link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
         <noscript><link rel="stylesheet" href="lib/styles/main-styles.css" /></noscript>
     </head>
-    <body class="publish css-settings-manager theme-light show-inline-title show-ribbon sizing-readable check-color check-bg wotc-beyond">
+    <body class="publish css-settings-manager theme-light show-inline-title show-ribbon check-color check-bg wotc-beyond">
         <script defer="">
             let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
             "dark" == theme ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light")) : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")),
@@ -363,14 +361,307 @@
                     <style id="MJX-CHTML-styles"></style>
                     <div class="markdown-preview-sizer markdown-preview-section">
                         <h1 class="page-title heading inline-title" id="Maelgoth"><p dir="auto">Maelgoth</p></h1>
-                        <div>
+                        <div class="el-p">
                             <p dir="auto">
-                                Maelgoth, the capital city of Hinterlund, is a sprawling fortress city that sits atop the rugged hills at the northern edge of Ansalon. As the heart of the Hinterlund, a remote and often overlooked region in
-                                the northern realms, Maelgoth has long stood as a beacon of strength and resilience in a harsh and unforgiving landscape. The city is a bastion of ancient traditions and deep-rooted independence, with its
-                                people fiercely protective of their lands and wary of outsiders. Though not as grand or prosperous as some of the southern cities of Krynn, Maelgoth holds a unique and important place in Solamnia.
+                                The city of Maelgoth has long been a thriving hub of industry and trade, it’s prominent positions next to the Vingaard River and the fertile fields to the north making it a centre for food production and home
+                                to renowned brands of wine and cheese. As a large city positioned above the river in central Solamnia, Maelgoth has also always been a staunchly defended bastion for the Knights of Solamnia – a fortress from
+                                which they can defend the north of their lands from all manner of bandits of monsters.
                             </p>
                         </div>
-                        <div class="mod-footer"></div>
+                        <div class="el-p">
+                            <p dir="auto">
+                                The coming of the Dragonarmies proved quite a shock for the people of Maelgoth, as their knightly defenders proved practically unable to resist this sudden new evil that came to their doorstep. As the Knights
+                                of Solamnia faced defeat and retreat as the Red Wing moved in, Maelgoth’s leaders hastily surrendered in order to spare the city from total destruction. Lucky for them Emperor Ariakas knew full well the
+                                importance of the city and its food production, and so made sure to capture Maelgoth and its workers intact.
+                            </p>
+                        </div>
+                        <div class="el-p">
+                            <p dir="auto">
+                                Having endured Dragonarmy occupation since the early days of the war, the civilian population has steadily become more and more pragmatic in their dealings. They have<br />
+                                come to understand that resistance only brings more death and the likely destruction of their city, and as such they have decided collectively to cooperate with the occupation. Their farmers return to the
+                                fields and their workers continue producing goods that they think will please the officers of the Dragonarmies, and further resistance is held only in the hearts of the young.
+                            </p>
+                        </div>
+                        <div class="el-h2 heading-wrapper">
+                            <h2 data-heading="Maelgoth Locations" dir="auto" class="heading" id="Maelgoth_Locations">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Maelgoth Locations
+                            </h2>
+                            <div class="heading-children">
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Perimeter Forts" dir="auto" class="heading" id="Perimeter_Forts">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Perimeter Forts
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Flanking the main gates on the north side of the city, these small forts have thick 30ft-high walls with thin 60ft-high towers on each corner each housing either a ballista or catapult . A
+                                                heavy iron gate on their inner sides, and a 15ft deep ditch surround the wall of each.
+                                            </p>
+                                        </div>
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Within each set of walls is a small castle and multiple other buildings serving as store-houses and barracks capable of supporting a population of roughly 250 soldiers and servants, with food
+                                                stores able to support its population for a siege of up to three months. Each of these buildings stands apart above ground but is connected underground by an expansive network of tunnels and
+                                                dungeons the size of each fort. A single long passage also connects the dungeons on the two forts allowing for secret movement between them.
+                                            </p>
+                                        </div>
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                It is claimed by many that the dungeons beneath the forts – despite regular use – are haunted by many spirits of soldiers, civilians and prisoners who have died below. Dragonarmy occupiers are
+                                                quickly finding this to be the case with many servants and Draconians racing out of the dungeons having seen and been frightened by an apparition.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Main Gate" dir="auto" class="heading" id="Main_Gate">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Main Gate
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Practically a small fortress in its own right, the huge double-gates can open a gap 40ft-wide, though each has a built-in hatch large enough for a single horse and rider to pass that is used
+                                                more often to allow people in and out of the city. With the gate is a short tunnel that can be blocked with three thick iron portcullises, with slots and grooves above, besides and below this
+                                                passage allowing for all manger of defensive weapons to be used against invaders. The gate is flanked by twin blockhouses 80ft high that are
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Waterfront" dir="auto" class="heading" id="Waterfront">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Waterfront
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Except for brief periods of inactivity and evacuation for times of war, the waterfront has always been the centre of commerce in Maelgoth. Sitting outside of the walls between the city and the
+                                                river, this district has a large number of ramshackle warehouses, fish canneries and smokehouses plying their trade from the river itself, as well as a healthy supply of cheap taverns,
+                                                gambling dens and flophouses. These are all arranged along the river-bank itself, and in some places juts out onto three massive stone-brick piers.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Central Square and Plaza" dir="auto" class="heading" id="Central_Square_and_Plaza">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Central Square and Plaza
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Sitting at the heart of the city is a broad plaza that has traditionally been one of the more active food markets in all of Solamnia. Farmers and fishermen from across the region have brought
+                                                their goods to this bustling market, though attendance has been significantly down since the arrival of the Dragonarmies.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Lord Mayor's Palace" dir="auto" class="heading" id="Lord_Mayor's_Palace">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Lord Mayor's Palace
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Dominating the plaza by taking up its entire southern side, the Lord Mayor’s Palace is a grand example of classical Solamnian architecture with soaring towers and strong battlements designed
+                                                both for defensive superiority and to create an imposing image on those who enter the square from the north.
+                                            </p>
+                                        </div>
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Until recently Lord Mayor Fanthalas Karango would come out of his palace overlooking the market and tour the plaza with a group of guards on a daily basis, taking the opportunity to meet and
+                                                speak with the people, but the mayor was deposed and the Dragonarmy Governor seems to have no interest in continuing this policy. It is believed that the Lord Mayor remains in the dungeons
+                                                beneath the palace, as he has not been seen since the occupation began.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Wizard's Quarter" dir="auto" class="heading" id="Wizard's_Quarter">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Wizard's Quarter
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Though the knighthood has always eschewed the use of magic and at times been wary of= mages being involved in any manner of Solamnian life, Maelgoth has allowed the south-west corner of their
+                                                city to be a home and hub for magical activity. Though it doesn’t have the prestige of the Tower at Wayreth, this city quarter contains many small schools and laboratories where research and
+                                                learning takes place, as well as multiple homes for mages and shops where they can buy alchemical materials. Mages of all robes have been allowed to continue their practice under Dragonarmy
+                                                occupation, though white-robes now often feel harassed and intimidated by new armed patrols that come through the quarter, whilst black-robes delight in newfound power and liberty to practice
+                                                whatever kinds of magic they wish n public. As a result many white- robes have chosen to leave Maelgoth and returned to the Tower at Wayreth, with only a few stubbornly staying behind to
+                                                protect their personal interests in the city. The two most famous life-long resident mages in the district are up-and-coming casters named Zandar and Hennihoya. It is often believed that they
+                                                will soon become the most powerful mages in Maelgoth and are in line to take over the respective schools and adjoining shops where each works, though much of their advancement is motivated by
+                                                a bitter rivalry based on envy and suspicion. Despite the colours of their robes, both are thought of publicly as quite spiteful and selfish.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Temples" dir="auto" class="heading" id="Temples">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Temples
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Being an old city, Maelgoth boasts nine temples dedicated to all three pantheons – Good, Neutral and even Evil. The builders of the city respected that balance was necessary between the
+                                                pantheons, though the Knights of Solamnia for obvious reasons always avoided the temples to Evil gods. All of these temples fell into disuse and disrepair during the Age of Despair, but now
+                                                the Dragonarmies have begun renovating and reinvigorating the Evil god temples, and plan new festivals to mark the completion of this work. The temples in Maelgoth include:
+                                            </p>
+                                        </div>
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Good<br />
+                                                Temple of Paladine<br />
+                                                Temple of Mishakal<br />
+                                                Temple of Kiri-Jolith<br />
+                                                Temple of Branchala
+                                            </p>
+                                        </div>
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Neutral<br />
+                                                Temple of Gilean<br />
+                                                Temple of Reorx<br />
+                                                Temple of Lunitari
+                                            </p>
+                                        </div>
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Evil<br />
+                                                Temple of Takhisis<br />
+                                                Temple of Sargonnas
+                                            </p>
+                                        </div>
+                                        <div class="mod-footer mod-ui"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -402,7 +693,75 @@
                                 <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/maelgoth.html#Maelgoth">
                                     <div class="tree-item-contents heading-link" heading-name="Maelgoth"><span class="tree-item-title">Maelgoth</span></div>
                                 </a>
-                                <div class="tree-item-children nav-folder-children"></div>
+                                <div class="tree-item-children nav-folder-children">
+                                    <div class="tree-item mod-collapsible" data-depth="2">
+                                        <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/maelgoth.html#Maelgoth_Locations">
+                                            <div class="tree-item-contents heading-link" heading-name="Maelgoth Locations">
+                                                <div class="collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                <span class="tree-item-title">Maelgoth Locations</span>
+                                            </div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children">
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/maelgoth.html#Perimeter_Forts">
+                                                    <div class="tree-item-contents heading-link" heading-name="Perimeter Forts"><span class="tree-item-title">Perimeter Forts</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/maelgoth.html#Main_Gate">
+                                                    <div class="tree-item-contents heading-link" heading-name="Main Gate"><span class="tree-item-title">Main Gate</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/maelgoth.html#Waterfront">
+                                                    <div class="tree-item-contents heading-link" heading-name="Waterfront"><span class="tree-item-title">Waterfront</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/maelgoth.html#Central_Square_and_Plaza">
+                                                    <div class="tree-item-contents heading-link" heading-name="Central Square and Plaza"><span class="tree-item-title">Central Square and Plaza</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/maelgoth.html#Lord_Mayor's_Palace">
+                                                    <div class="tree-item-contents heading-link" heading-name="Lord Mayor's Palace"><span class="tree-item-title">Lord Mayor's Palace</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/maelgoth.html#Wizard's_Quarter">
+                                                    <div class="tree-item-contents heading-link" heading-name="Wizard's Quarter"><span class="tree-item-title">Wizard's Quarter</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/solamnia-and-the-northern-wastes/hinterlund/maelgoth.html#Temples">
+                                                    <div class="tree-item-contents heading-link" heading-name="Temples"><span class="tree-item-title">Temples</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
