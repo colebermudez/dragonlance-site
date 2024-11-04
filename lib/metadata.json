@@ -1,17 +1,25 @@
 {
   "vaultName": "Dragonlance",
-  "lastExport": 1730124249353,
+  "lastExport": 1730685238264,
   "pluginVersion": "1.8.01",
   "validBodyClasses": "publish css-settings-manager theme-light show-inline-title show-ribbon check-color check-bg wotc-beyond",
   "useCustomHeadContent": false,
   "useCustomFavicon": false,
   "files": [
-    "Locations/Lemish/Cities/Lemish.md",
-    "NPCs/Abanasinian Empire/Abanasinian Empire.md",
-    "NPCs/Abanasinian Empire/Ludwig Von Aegir.md",
-    "NPCs/Abanasinian Empire/Volkhard Von Arundel.md",
-    "lib/media/ludwig.jpg",
-    "lib/media/arundel.jpg",
+    "Locations/Solamnia and the Northern Wastes/Plains of Solamnia/Cities/Relgoth.md",
+    "NPCs/Holy Kingdom of Solamnia/Cornelia Arnim.md",
+    "NPCs/Holy Kingdom of Solamnia/Felix Hugo Fraldarius.md",
+    "NPCs/Holy Kingdom of Solamnia/Gwendal Roche.md",
+    "NPCs/Holy Kingdom of Solamnia/Holy Kingdom of Solamnia.md",
+    "NPCs/Holy Kingdom of Solamnia/Ingrid Brandl Galatea.md",
+    "NPCs/Holy Kingdom of Solamnia/Rodrigue Achille Fraldarius.md",
+    "Session Notes/24. November 2nd, 2024 Siege of Relgoth.md",
+    "Session Notes/Session Notes.md",
+    "lib/media/cornelia.jpg",
+    "lib/media/felix.png",
+    "lib/media/gwendal.jpg",
+    "lib/media/ingrid.png",
+    "lib/media/rodrigue.jpg",
     "lib/fonts/94f2f163d4b698242fef.otf",
     "lib/fonts/72505e6a122c6acd5471.woff2",
     "lib/fonts/2d5198822ab091ce4305.woff2",
@@ -33,6 +41,7 @@
     "lib/styles/obsidian.css",
     "lib/styles/theme.css",
     "lib/styles/global-variable-styles.css",
+    "lib/styles/supported-plugins.css",
     "lib/styles/main-styles.css"
   ],
   "mainDependencies": [
@@ -57,143 +66,144 @@
     "lib/styles/obsidian.css",
     "lib/styles/theme.css",
     "lib/styles/global-variable-styles.css",
+    "lib/styles/supported-plugins.css",
     "lib/styles/main-styles.css"
   ],
   "fileInfo": {
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1730124249353,
+      "modifiedTime": 1730685238264,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1730124249353,
+      "modifiedTime": 1730685238264,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1730124249353,
+      "modifiedTime": 1730685238264,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1730124249353,
+      "modifiedTime": 1730685238264,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1730124249353,
+      "modifiedTime": 1730685238264,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1730124249353,
+      "modifiedTime": 1730685238264,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1730124249353,
+      "modifiedTime": 1730685238264,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1730124249353,
+      "modifiedTime": 1730685238264,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1730124249353,
+      "modifiedTime": 1730685238264,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1730124249353,
+      "modifiedTime": 1730685238264,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1730124249353,
+      "modifiedTime": 1730685238264,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1730124249353,
+      "modifiedTime": 1730685238264,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1730124249353,
+      "modifiedTime": 1730685238264,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/874d8b8e340f75575caa.svg": {
-      "modifiedTime": 1730124249353,
+      "modifiedTime": 1730685238264,
       "sourceSize": 317,
       "exportedPath": "lib/media/874d8b8e340f75575caa.svg",
       "dependencies": []
     },
     "lib/html/file-tree.html": {
-      "modifiedTime": 1730124249353,
-      "sourceSize": 5230,
+      "modifiedTime": 1730685238264,
+      "sourceSize": 8428,
       "exportedPath": "lib/html/file-tree.html",
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
-      "modifiedTime": 1730124249353,
+      "modifiedTime": 1730685238264,
       "sourceSize": 47290,
       "exportedPath": "lib/scripts/webpage.js",
       "dependencies": []
     },
     "lib/scripts/minisearch.js": {
-      "modifiedTime": 1730124249353,
+      "modifiedTime": 1730685238264,
       "sourceSize": 29422,
       "exportedPath": "lib/scripts/minisearch.js",
       "dependencies": []
     },
     "lib/media/favicon.png": {
-      "modifiedTime": 1730124249353,
+      "modifiedTime": 1730685238264,
       "sourceSize": 1105,
       "exportedPath": "lib/media/favicon.png",
       "dependencies": []
     },
     "lib/styles/obsidian.css": {
-      "modifiedTime": 1730124249353,
+      "modifiedTime": 1730685238264,
       "sourceSize": 131134,
       "exportedPath": "lib/styles/obsidian.css",
       "dependencies": []
     },
     "lib/styles/theme.css": {
-      "modifiedTime": 1730124249353,
+      "modifiedTime": 1730685238264,
       "sourceSize": 718333,
       "exportedPath": "lib/styles/theme.css",
       "dependencies": []
     },
     "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1730124249353,
+      "modifiedTime": 1730685238264,
       "sourceSize": 236,
       "exportedPath": "lib/styles/global-variable-styles.css",
       "dependencies": []
     },
     "lib/styles/supported-plugins.css": {
-      "modifiedTime": 1729544913803,
-      "sourceSize": 8552,
+      "modifiedTime": 1730685238264,
+      "sourceSize": 4360,
       "exportedPath": "lib/styles/supported-plugins.css",
       "dependencies": []
     },
     "lib/styles/main-styles.css": {
-      "modifiedTime": 1730124249353,
+      "modifiedTime": 1730685238264,
       "sourceSize": 23130,
       "exportedPath": "lib/styles/main-styles.css",
       "dependencies": []
@@ -222,44 +232,98 @@
       "exportedPath": "npcs/npc-pictures/jeritza.webp",
       "dependencies": []
     },
-    "Locations/Lemish/Cities/Lemish.md": {
-      "modifiedTime": 1730124249353,
-      "sourceSize": 4879,
-      "exportedPath": "locations/lemish/cities/lemish.html",
+    "Locations/Solamnia and the Northern Wastes/Plains of Solamnia/Cities/Relgoth.md": {
+      "modifiedTime": 1730685238264,
+      "sourceSize": 4713,
+      "exportedPath": "locations/solamnia-and-the-northern-wastes/plains-of-solamnia/cities/relgoth.html",
       "dependencies": []
     },
-    "NPCs/Abanasinian Empire/Abanasinian Empire.md": {
-      "modifiedTime": 1730124249353,
-      "sourceSize": 424,
-      "exportedPath": "npcs/abanasinian-empire/abanasinian-empire.html",
-      "dependencies": []
-    },
-    "NPCs/Abanasinian Empire/Ludwig Von Aegir.md": {
-      "modifiedTime": 1730124249353,
-      "sourceSize": 1529,
-      "exportedPath": "npcs/abanasinian-empire/ludwig-von-aegir.html",
+    "NPCs/Holy Kingdom of Solamnia/Cornelia Arnim.md": {
+      "modifiedTime": 1730685238264,
+      "sourceSize": 888,
+      "exportedPath": "npcs/holy-kingdom-of-solamnia/cornelia-arnim.html",
       "dependencies": [
-        "lib/media/ludwig.jpg"
+        "lib/media/cornelia.jpg"
       ]
     },
-    "NPCs/Abanasinian Empire/Volkhard Von Arundel.md": {
-      "modifiedTime": 1730124249353,
-      "sourceSize": 1170,
-      "exportedPath": "npcs/abanasinian-empire/volkhard-von-arundel.html",
+    "NPCs/Holy Kingdom of Solamnia/Felix Hugo Fraldarius.md": {
+      "modifiedTime": 1730685238264,
+      "sourceSize": 1155,
+      "exportedPath": "npcs/holy-kingdom-of-solamnia/felix-hugo-fraldarius.html",
       "dependencies": [
-        "lib/media/arundel.jpg"
+        "lib/media/felix.png"
       ]
     },
-    "lib/media/ludwig.jpg": {
-      "modifiedTime": 1730124249353,
-      "sourceSize": 358318,
-      "exportedPath": "lib/media/ludwig.jpg",
+    "NPCs/Holy Kingdom of Solamnia/Gwendal Roche.md": {
+      "modifiedTime": 1730685238264,
+      "sourceSize": 832,
+      "exportedPath": "npcs/holy-kingdom-of-solamnia/gwendal-roche.html",
+      "dependencies": [
+        "lib/media/gwendal.jpg"
+      ]
+    },
+    "NPCs/Holy Kingdom of Solamnia/Holy Kingdom of Solamnia.md": {
+      "modifiedTime": 1730685238264,
+      "sourceSize": 227,
+      "exportedPath": "npcs/holy-kingdom-of-solamnia/holy-kingdom-of-solamnia.html",
       "dependencies": []
     },
-    "lib/media/arundel.jpg": {
-      "modifiedTime": 1730124249353,
-      "sourceSize": 375706,
-      "exportedPath": "lib/media/arundel.jpg",
+    "NPCs/Holy Kingdom of Solamnia/Ingrid Brandl Galatea.md": {
+      "modifiedTime": 1730685238264,
+      "sourceSize": 1186,
+      "exportedPath": "npcs/holy-kingdom-of-solamnia/ingrid-brandl-galatea.html",
+      "dependencies": [
+        "lib/media/ingrid.png"
+      ]
+    },
+    "NPCs/Holy Kingdom of Solamnia/Rodrigue Achille Fraldarius.md": {
+      "modifiedTime": 1730685238264,
+      "sourceSize": 1064,
+      "exportedPath": "npcs/holy-kingdom-of-solamnia/rodrigue-achille-fraldarius.html",
+      "dependencies": [
+        "lib/media/rodrigue.jpg"
+      ]
+    },
+    "Session Notes/24. November 2nd, 2024 Siege of Relgoth.md": {
+      "modifiedTime": 1730685238264,
+      "sourceSize": 2721,
+      "exportedPath": "session-notes/24.-november-2nd,-2024-siege-of-relgoth.html",
+      "dependencies": []
+    },
+    "Session Notes/Session Notes.md": {
+      "modifiedTime": 1730685238264,
+      "sourceSize": 2008,
+      "exportedPath": "session-notes/session-notes.html",
+      "dependencies": []
+    },
+    "lib/media/cornelia.jpg": {
+      "modifiedTime": 1730685238264,
+      "sourceSize": 392130,
+      "exportedPath": "lib/media/cornelia.jpg",
+      "dependencies": []
+    },
+    "lib/media/felix.png": {
+      "modifiedTime": 1730685238264,
+      "sourceSize": 1648312,
+      "exportedPath": "lib/media/felix.png",
+      "dependencies": []
+    },
+    "lib/media/gwendal.jpg": {
+      "modifiedTime": 1730685238264,
+      "sourceSize": 385796,
+      "exportedPath": "lib/media/gwendal.jpg",
+      "dependencies": []
+    },
+    "lib/media/ingrid.png": {
+      "modifiedTime": 1730685238264,
+      "sourceSize": 1042692,
+      "exportedPath": "lib/media/ingrid.png",
+      "dependencies": []
+    },
+    "lib/media/rodrigue.jpg": {
+      "modifiedTime": 1730685238264,
+      "sourceSize": 779382,
+      "exportedPath": "lib/media/rodrigue.jpg",
       "dependencies": []
     }
   }
