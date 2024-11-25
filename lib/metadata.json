@@ -1,15 +1,18 @@
 {
   "vaultName": "Dragonlance",
-  "lastExport": 1731893826169,
+  "lastExport": 1732520550340,
   "pluginVersion": "1.8.01",
   "validBodyClasses": "publish css-settings-manager theme-light show-inline-title show-ribbon check-color check-bg wotc-beyond",
   "useCustomHeadContent": false,
   "useCustomFavicon": false,
   "files": [
-    "Krynns Vanguard/Arcadius.md",
-    "Krynns Vanguard/Krynn's Vanguard.md",
-    "Krynns Vanguard/Nebula.md",
+    "Session Notes/20. September 28th, 2024 The Darken Wood.md",
+    "Session Notes/21. October 5th, 2024 Retribution.md",
+    "Session Notes/22. October 19th, 2024 The Master Tactician.md",
+    "Session Notes/23. October 26th, 2024 Capturing Qualinost.md",
+    "Session Notes/24. November 2nd, 2024 Siege of Relgoth.md",
     "Session Notes/25. November 16th, 2024 The Silver Maiden.md",
+    "Session Notes/26. November 23rd, 2024 Raelgoth's Defeat.md",
     "Session Notes/Session Notes.md",
     "lib/fonts/94f2f163d4b698242fef.otf",
     "lib/fonts/72505e6a122c6acd5471.woff2",
@@ -62,139 +65,139 @@
   ],
   "fileInfo": {
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1731893826169,
+      "modifiedTime": 1732520550340,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1731893826169,
+      "modifiedTime": 1732520550340,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1731893826169,
+      "modifiedTime": 1732520550340,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1731893826169,
+      "modifiedTime": 1732520550340,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1731893826169,
+      "modifiedTime": 1732520550340,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1731893826169,
+      "modifiedTime": 1732520550340,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1731893826169,
+      "modifiedTime": 1732520550340,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1731893826169,
+      "modifiedTime": 1732520550340,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1731893826169,
+      "modifiedTime": 1732520550340,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1731893826169,
+      "modifiedTime": 1732520550340,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1731893826169,
+      "modifiedTime": 1732520550340,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1731893826169,
+      "modifiedTime": 1732520550340,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1731893826169,
+      "modifiedTime": 1732520550340,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/874d8b8e340f75575caa.svg": {
-      "modifiedTime": 1731893826169,
+      "modifiedTime": 1732520550340,
       "sourceSize": 317,
       "exportedPath": "lib/media/874d8b8e340f75575caa.svg",
       "dependencies": []
     },
     "lib/html/file-tree.html": {
-      "modifiedTime": 1731893826169,
-      "sourceSize": 3651,
+      "modifiedTime": 1732520550340,
+      "sourceSize": 4336,
       "exportedPath": "lib/html/file-tree.html",
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
-      "modifiedTime": 1731893826169,
+      "modifiedTime": 1732520550340,
       "sourceSize": 47290,
       "exportedPath": "lib/scripts/webpage.js",
       "dependencies": []
     },
     "lib/scripts/minisearch.js": {
-      "modifiedTime": 1731893826169,
+      "modifiedTime": 1732520550340,
       "sourceSize": 29422,
       "exportedPath": "lib/scripts/minisearch.js",
       "dependencies": []
     },
     "lib/media/favicon.png": {
-      "modifiedTime": 1731893826169,
+      "modifiedTime": 1732520550340,
       "sourceSize": 1105,
       "exportedPath": "lib/media/favicon.png",
       "dependencies": []
     },
     "lib/styles/obsidian.css": {
-      "modifiedTime": 1731893826169,
+      "modifiedTime": 1732520550340,
       "sourceSize": 131021,
       "exportedPath": "lib/styles/obsidian.css",
       "dependencies": []
     },
     "lib/styles/theme.css": {
-      "modifiedTime": 1731893826169,
+      "modifiedTime": 1732520550340,
       "sourceSize": 718333,
       "exportedPath": "lib/styles/theme.css",
       "dependencies": []
     },
     "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1731893826169,
+      "modifiedTime": 1732520550340,
       "sourceSize": 236,
       "exportedPath": "lib/styles/global-variable-styles.css",
       "dependencies": []
     },
     "lib/styles/supported-plugins.css": {
-      "modifiedTime": 1731893826169,
-      "sourceSize": 9341,
+      "modifiedTime": 1732520550340,
+      "sourceSize": 8546,
       "exportedPath": "lib/styles/supported-plugins.css",
       "dependencies": []
     },
     "lib/styles/main-styles.css": {
-      "modifiedTime": 1731893826169,
+      "modifiedTime": 1732520550340,
       "sourceSize": 23130,
       "exportedPath": "lib/styles/main-styles.css",
       "dependencies": []
@@ -224,33 +227,51 @@
       "dependencies": []
     },
     "Session Notes/Session Notes.md": {
-      "modifiedTime": 1731893826169,
-      "sourceSize": 2095,
+      "modifiedTime": 1732520550340,
+      "sourceSize": 2180,
       "exportedPath": "session-notes/session-notes.html",
       "dependencies": []
     },
-    "Krynns Vanguard/Arcadius.md": {
-      "modifiedTime": 1731893826169,
-      "sourceSize": 59,
-      "exportedPath": "krynns-vanguard/arcadius.html",
-      "dependencies": []
-    },
-    "Krynns Vanguard/Krynn's Vanguard.md": {
-      "modifiedTime": 1731893826169,
-      "sourceSize": 336,
-      "exportedPath": "krynns-vanguard/krynn's-vanguard.html",
-      "dependencies": []
-    },
-    "Krynns Vanguard/Nebula.md": {
-      "modifiedTime": 1731893826169,
-      "sourceSize": 57,
-      "exportedPath": "krynns-vanguard/nebula.html",
-      "dependencies": []
-    },
     "Session Notes/25. November 16th, 2024 The Silver Maiden.md": {
-      "modifiedTime": 1731893826169,
+      "modifiedTime": 1732520550340,
       "sourceSize": 1858,
       "exportedPath": "session-notes/25.-november-16th,-2024-the-silver-maiden.html",
+      "dependencies": []
+    },
+    "Session Notes/20. September 28th, 2024 The Darken Wood.md": {
+      "modifiedTime": 1732520550340,
+      "sourceSize": 2112,
+      "exportedPath": "session-notes/20.-september-28th,-2024-the-darken-wood.html",
+      "dependencies": []
+    },
+    "Session Notes/21. October 5th, 2024 Retribution.md": {
+      "modifiedTime": 1732520550340,
+      "sourceSize": 1086,
+      "exportedPath": "session-notes/21.-october-5th,-2024-retribution.html",
+      "dependencies": []
+    },
+    "Session Notes/22. October 19th, 2024 The Master Tactician.md": {
+      "modifiedTime": 1732520550340,
+      "sourceSize": 1395,
+      "exportedPath": "session-notes/22.-october-19th,-2024-the-master-tactician.html",
+      "dependencies": []
+    },
+    "Session Notes/23. October 26th, 2024 Capturing Qualinost.md": {
+      "modifiedTime": 1732520550340,
+      "sourceSize": 2401,
+      "exportedPath": "session-notes/23.-october-26th,-2024-capturing-qualinost.html",
+      "dependencies": []
+    },
+    "Session Notes/24. November 2nd, 2024 Siege of Relgoth.md": {
+      "modifiedTime": 1732520550340,
+      "sourceSize": 2721,
+      "exportedPath": "session-notes/24.-november-2nd,-2024-siege-of-relgoth.html",
+      "dependencies": []
+    },
+    "Session Notes/26. November 23rd, 2024 Raelgoth's Defeat.md": {
+      "modifiedTime": 1732520550340,
+      "sourceSize": 2864,
+      "exportedPath": "session-notes/26.-november-23rd,-2024-raelgoth's-defeat.html",
       "dependencies": []
     }
   }
