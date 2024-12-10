@@ -312,7 +312,7 @@
         <link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
         <noscript><link rel="stylesheet" href="lib/styles/main-styles.css" /></noscript>
     </head>
-    <body class="publish css-settings-manager theme-light show-inline-title show-ribbon sizing-readable check-color check-bg wotc-beyond">
+    <body class="publish css-settings-manager theme-light show-inline-title show-ribbon check-color check-bg wotc-beyond">
         <script defer="">
             let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
             "dark" == theme ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light")) : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")),
@@ -363,7 +363,7 @@
                     <style id="MJX-CHTML-styles"></style>
                     <div class="markdown-preview-sizer markdown-preview-section">
                         <h1 class="page-title heading inline-title" id="Session Notes"><p dir="auto">Session Notes</p></h1>
-                        <div class="heading-wrapper">
+                        <div class="el-h6 heading-wrapper">
                             <h6 data-heading="[March 23rd, 2024](1.%20March%2023rd,%202024%20The%20Dragon's%20Well)" dir="auto" class="heading" id="[March_23rd,_2024](1.%20March%2023rd,%202024%20The%20Dragon's%20Well)">
                                 <div class="heading-collapse-indicator collapse-indicator collapse-icon">
                                     <svg
@@ -381,11 +381,11 @@
                                         <path d="M3 8L12 17L21 8"></path>
                                     </svg>
                                 </div>
-                                <a class="internal-link" data-href="1. March 23rd, 2024 The Dragon's Well" href="session-notes/1.-march-23rd,-2024-the-dragon's-well.html" target="_self" rel="noopener">March 23rd, 2024</a>
+                                <a class="internal-link" data-href="1. March 23rd, 2024 The Dragon's Well" href="session-notes/1.-march-23rd,-2024-the-dragon's-well.html" target="_self" rel="noopener nofollow">March 23rd, 2024</a>
                             </h6>
                             <div class="heading-children"></div>
                         </div>
-                        <div class="heading-wrapper">
+                        <div class="el-h6 heading-wrapper">
                             <h6 data-heading="[April 6th, 2024](2.%20April%206th,%202024%20The%20Boilers)" dir="auto" class="heading" id="[April_6th,_2024](2.%20April%206th,%202024%20The%20Boilers)">
                                 <div class="heading-collapse-indicator collapse-indicator collapse-icon">
                                     <svg
@@ -403,11 +403,11 @@
                                         <path d="M3 8L12 17L21 8"></path>
                                     </svg>
                                 </div>
-                                <a class="internal-link" data-href="2. April 6th, 2024 The Boilers" href="session-notes/2.-april-6th,-2024-the-boilers.html" target="_self" rel="noopener">April 6th, 2024</a>
+                                <a class="internal-link" data-href="2. April 6th, 2024 The Boilers" href="session-notes/2.-april-6th,-2024-the-boilers.html" target="_self" rel="noopener nofollow">April 6th, 2024</a>
                             </h6>
                             <div class="heading-children"></div>
                         </div>
-                        <div class="heading-wrapper">
+                        <div class="el-h6 heading-wrapper">
                             <h6 data-heading="[April 13th, 2024](3.%20April%2013th,%202024%20Zebiom's%20Deep)" dir="auto" class="heading" id="[April_13th,_2024](3.%20April%2013th,%202024%20Zebiom's%20Deep)">
                                 <div class="heading-collapse-indicator collapse-indicator collapse-icon">
                                     <svg
@@ -425,11 +425,11 @@
                                         <path d="M3 8L12 17L21 8"></path>
                                     </svg>
                                 </div>
-                                <a class="internal-link" data-href="3. April 13th, 2024 Zebiom's Deep" href="session-notes/3.-april-13th,-2024-zebiom's-deep.html" target="_self" rel="noopener">April 13th, 2024</a>
+                                <a class="internal-link" data-href="3. April 13th, 2024 Zebiom's Deep" href="session-notes/3.-april-13th,-2024-zebiom's-deep.html" target="_self" rel="noopener nofollow">April 13th, 2024</a>
                             </h6>
                             <div class="heading-children"></div>
                         </div>
-                        <div class="heading-wrapper">
+                        <div class="el-h6 heading-wrapper">
                             <h6 data-heading="[April 20th, 2024](4.%20April%2020th,%202024%20Manic)" dir="auto" class="heading" id="[April_20th,_2024](4.%20April%2020th,%202024%20Manic)">
                                 <div class="heading-collapse-indicator collapse-indicator collapse-icon">
                                     <svg
@@ -447,11 +447,11 @@
                                         <path d="M3 8L12 17L21 8"></path>
                                     </svg>
                                 </div>
-                                <a class="internal-link" data-href="4. April 20th, 2024 Manic" href="session-notes/4.-april-20th,-2024-manic.html" target="_self" rel="noopener">April 20th, 2024</a>
+                                <a class="internal-link" data-href="4. April 20th, 2024 Manic" href="session-notes/4.-april-20th,-2024-manic.html" target="_self" rel="noopener nofollow">April 20th, 2024</a>
                             </h6>
                             <div class="heading-children"></div>
                         </div>
-                        <div class="heading-wrapper">
+                        <div class="el-h6 heading-wrapper">
                             <h6
                                 data-heading="[April 27th, 2024](5.%20April%2027th,%202024%20Gynned%20&amp;%20The%20Monastary.md)"
                                 dir="auto"
@@ -474,13 +474,13 @@
                                         <path d="M3 8L12 17L21 8"></path>
                                     </svg>
                                 </div>
-                                <a class="internal-link" data-href="5. April 27th, 2024 Gynned &amp; The Monastary.md" href="session-notes/5.-april-27th,-2024-gynned-&amp;-the-monastary.html" target="_self" rel="noopener">
+                                <a class="internal-link" data-href="5. April 27th, 2024 Gynned &amp; The Monastary.md" href="session-notes/5.-april-27th,-2024-gynned-&amp;-the-monastary.html" target="_self" rel="noopener nofollow">
                                     April 27th, 2024
                                 </a>
                             </h6>
                             <div class="heading-children"></div>
                         </div>
-                        <div class="heading-wrapper">
+                        <div class="el-h6 heading-wrapper">
                             <h6 data-heading="[May 4th, 2024](6.%20May%204th,%202024%20Three%20Houses.md)" dir="auto" class="heading" id="[May_4th,_2024](6.%20May%204th,%202024%20Three%20Houses.md)">
                                 <div class="heading-collapse-indicator collapse-indicator collapse-icon">
                                     <svg
@@ -498,11 +498,11 @@
                                         <path d="M3 8L12 17L21 8"></path>
                                     </svg>
                                 </div>
-                                <a class="internal-link" data-href="6. May 4th, 2024 Three Houses.md" href="session-notes/6.-may-4th,-2024-three-houses.html" target="_self" rel="noopener">May 4th, 2024</a>
+                                <a class="internal-link" data-href="6. May 4th, 2024 Three Houses.md" href="session-notes/6.-may-4th,-2024-three-houses.html" target="_self" rel="noopener nofollow">May 4th, 2024</a>
                             </h6>
                             <div class="heading-children"></div>
                         </div>
-                        <div class="heading-wrapper">
+                        <div class="el-h6 heading-wrapper">
                             <h6 data-heading="[May 11th, 2024](7.%20May%2011th,%202024%20The%20Red%20Canyon.md)" dir="auto" class="heading" id="[May_11th,_2024](7.%20May%2011th,%202024%20The%20Red%20Canyon.md)">
                                 <div class="heading-collapse-indicator collapse-indicator collapse-icon">
                                     <svg
@@ -520,11 +520,11 @@
                                         <path d="M3 8L12 17L21 8"></path>
                                     </svg>
                                 </div>
-                                <a class="internal-link" data-href="7. May 11th, 2024 The Red Canyon.md" href="session-notes/7.-may-11th,-2024-the-red-canyon.html" target="_self" rel="noopener">May 11th, 2024</a>
+                                <a class="internal-link" data-href="7. May 11th, 2024 The Red Canyon.md" href="session-notes/7.-may-11th,-2024-the-red-canyon.html" target="_self" rel="noopener nofollow">May 11th, 2024</a>
                             </h6>
                             <div class="heading-children"></div>
                         </div>
-                        <div class="heading-wrapper">
+                        <div class="el-h6 heading-wrapper">
                             <h6 data-heading="[May 18th, 2024](8.%20May%2018th,%202024%20Plots%20Unveiled.md)" dir="auto" class="heading" id="[May_18th,_2024](8.%20May%2018th,%202024%20Plots%20Unveiled.md)">
                                 <div class="heading-collapse-indicator collapse-indicator collapse-icon">
                                     <svg
@@ -542,11 +542,11 @@
                                         <path d="M3 8L12 17L21 8"></path>
                                     </svg>
                                 </div>
-                                <a class="internal-link" data-href="8. May 18th, 2024 Plots Unveiled.md" href="session-notes/8.-may-18th,-2024-plots-unveiled.html" target="_self" rel="noopener">May 18th, 2024</a>
+                                <a class="internal-link" data-href="8. May 18th, 2024 Plots Unveiled.md" href="session-notes/8.-may-18th,-2024-plots-unveiled.html" target="_self" rel="noopener nofollow">May 18th, 2024</a>
                             </h6>
                             <div class="heading-children"></div>
                         </div>
-                        <div class="heading-wrapper">
+                        <div class="el-h6 heading-wrapper">
                             <h6 data-heading="[May 25th, 2024](9.%20May%2025th,%202024%20Mysterious%20Figures.md)" dir="auto" class="heading" id="[May_25th,_2024](9.%20May%2025th,%202024%20Mysterious%20Figures.md)">
                                 <div class="heading-collapse-indicator collapse-indicator collapse-icon">
                                     <svg
@@ -564,11 +564,11 @@
                                         <path d="M3 8L12 17L21 8"></path>
                                     </svg>
                                 </div>
-                                <a class="internal-link" data-href="9. May 25th, 2024 Mysterious Figures.md" href="session-notes/9.-may-25th,-2024-mysterious-figures.html" target="_self" rel="noopener">May 25th, 2024</a>
+                                <a class="internal-link" data-href="9. May 25th, 2024 Mysterious Figures.md" href="session-notes/9.-may-25th,-2024-mysterious-figures.html" target="_self" rel="noopener nofollow">May 25th, 2024</a>
                             </h6>
                             <div class="heading-children"></div>
                         </div>
-                        <div class="heading-wrapper">
+                        <div class="el-h6 heading-wrapper">
                             <h6 data-heading="[June 1st, 2024](10.%20June%201st,%202024%20Connecting%20Threads.md)" dir="auto" class="heading" id="[June_1st,_2024](10.%20June%201st,%202024%20Connecting%20Threads.md)">
                                 <div class="heading-collapse-indicator collapse-indicator collapse-icon">
                                     <svg
@@ -586,11 +586,11 @@
                                         <path d="M3 8L12 17L21 8"></path>
                                     </svg>
                                 </div>
-                                <a class="internal-link" data-href="10. June 1st, 2024 Connecting Threads.md" href="session-notes/10.-june-1st,-2024-connecting-threads.html" target="_self" rel="noopener">June 1st, 2024</a>
+                                <a class="internal-link" data-href="10. June 1st, 2024 Connecting Threads.md" href="session-notes/10.-june-1st,-2024-connecting-threads.html" target="_self" rel="noopener nofollow">June 1st, 2024</a>
                             </h6>
                             <div class="heading-children"></div>
                         </div>
-                        <div class="heading-wrapper">
+                        <div class="el-h6 heading-wrapper">
                             <h6
                                 data-heading="[June 8th, 2024](11.%20June%208th,%202024%20Assault%20on%20the%20Holy%20Mausoleum.md)"
                                 dir="auto"
@@ -613,13 +613,13 @@
                                         <path d="M3 8L12 17L21 8"></path>
                                     </svg>
                                 </div>
-                                <a class="internal-link" data-href="11. June 8th, 2024 Assault on the Holy Mausoleum.md" href="session-notes/11.-june-8th,-2024-assault-on-the-holy-mausoleum.html" target="_self" rel="noopener">
+                                <a class="internal-link" data-href="11. June 8th, 2024 Assault on the Holy Mausoleum.md" href="session-notes/11.-june-8th,-2024-assault-on-the-holy-mausoleum.html" target="_self" rel="noopener nofollow">
                                     June 8th, 2024
                                 </a>
                             </h6>
                             <div class="heading-children"></div>
                         </div>
-                        <div class="heading-wrapper">
+                        <div class="el-h6 heading-wrapper">
                             <h6 data-heading="[July 6th, 2024](12.%20July%206th,%202024%20Rumors%20of%20a%20Reaper.md)" dir="auto" class="heading" id="[July_6th,_2024](12.%20July%206th,%202024%20Rumors%20of%20a%20Reaper.md)">
                                 <div class="heading-collapse-indicator collapse-indicator collapse-icon">
                                     <svg
@@ -637,11 +637,11 @@
                                         <path d="M3 8L12 17L21 8"></path>
                                     </svg>
                                 </div>
-                                <a class="internal-link" data-href="12. July 6th, 2024 Rumors of a Reaper.md" href="session-notes/12.-july-6th,-2024-rumors-of-a-reaper.html" target="_self" rel="noopener">July 6th, 2024</a>
+                                <a class="internal-link" data-href="12. July 6th, 2024 Rumors of a Reaper.md" href="session-notes/12.-july-6th,-2024-rumors-of-a-reaper.html" target="_self" rel="noopener nofollow">July 6th, 2024</a>
                             </h6>
                             <div class="heading-children"></div>
                         </div>
-                        <div class="heading-wrapper">
+                        <div class="el-h6 heading-wrapper">
                             <h6 data-heading="[July 13th, 2024](13.%20July%2013th,%202024%20The%20Empire's%20New%20Dawn.md)" dir="auto" class="heading" id="[July_13th,_2024](13.%20July%2013th,%202024%20The%20Empire's%20New%20Dawn.md)">
                                 <div class="heading-collapse-indicator collapse-indicator collapse-icon">
                                     <svg
@@ -659,11 +659,11 @@
                                         <path d="M3 8L12 17L21 8"></path>
                                     </svg>
                                 </div>
-                                <a class="internal-link" data-href="13. July 13th, 2024 The Empire's New Dawn.md" href="session-notes/13.-july-13th,-2024-the-empire's-new-dawn.html" target="_self" rel="noopener">July 13th, 2024</a>
+                                <a class="internal-link" data-href="13. July 13th, 2024 The Empire's New Dawn.md" href="session-notes/13.-july-13th,-2024-the-empire's-new-dawn.html" target="_self" rel="noopener nofollow">July 13th, 2024</a>
                             </h6>
                             <div class="heading-children"></div>
                         </div>
-                        <div class="heading-wrapper">
+                        <div class="el-h6 heading-wrapper">
                             <h6
                                 data-heading="[July 20th, 2024](14.%20July%2020th,%202024%20Assault%20in%20the%20Holy%20Tomb.md)"
                                 dir="auto"
@@ -686,11 +686,13 @@
                                         <path d="M3 8L12 17L21 8"></path>
                                     </svg>
                                 </div>
-                                <a class="internal-link" data-href="14. July 20th, 2024 Assault in the Holy Tomb.md" href="session-notes/14.-july-20th,-2024-assault-in-the-holy-tomb.html" target="_self" rel="noopener">July 20th, 2024</a>
+                                <a class="internal-link" data-href="14. July 20th, 2024 Assault in the Holy Tomb.md" href="session-notes/14.-july-20th,-2024-assault-in-the-holy-tomb.html" target="_self" rel="noopener nofollow">
+                                    July 20th, 2024
+                                </a>
                             </h6>
                             <div class="heading-children"></div>
                         </div>
-                        <div class="heading-wrapper">
+                        <div class="el-h6 heading-wrapper">
                             <h6
                                 data-heading="[July 27th, 2024](15.%20July%2027th,%202024%20Outset%20of%20a%20Power%20Struggle.md)"
                                 dir="auto"
@@ -713,13 +715,13 @@
                                         <path d="M3 8L12 17L21 8"></path>
                                     </svg>
                                 </div>
-                                <a class="internal-link" data-href="15. July 27th, 2024 Outset of a Power Struggle.md" href="session-notes/15.-july-27th,-2024-outset-of-a-power-struggle.html" target="_self" rel="noopener">
+                                <a class="internal-link" data-href="15. July 27th, 2024 Outset of a Power Struggle.md" href="session-notes/15.-july-27th,-2024-outset-of-a-power-struggle.html" target="_self" rel="noopener nofollow">
                                     July 27th, 2024
                                 </a>
                             </h6>
                             <div class="heading-children"></div>
                         </div>
-                        <div class="heading-wrapper">
+                        <div class="el-h6 heading-wrapper">
                             <h6
                                 data-heading="[August 3rd, 2024](16.%20August%203rd,%202024%20Outset%20of%20a%20Power%20Struggle%20Continued.md)"
                                 dir="auto"
@@ -747,14 +749,14 @@
                                     data-href="16. August 3rd, 2024 Outset of a Power Struggle Continued.md"
                                     href="session-notes/16.-august-3rd,-2024-outset-of-a-power-struggle-continued.html"
                                     target="_self"
-                                    rel="noopener"
+                                    rel="noopener nofollow"
                                 >
                                     August 3rd, 2024
                                 </a>
                             </h6>
                             <div class="heading-children"></div>
                         </div>
-                        <div class="heading-wrapper">
+                        <div class="el-h6 heading-wrapper">
                             <h6
                                 data-heading="[August 10th, 2024](17.%20August%2010th,%202024%20The%20City%20Without%20Light.md)"
                                 dir="auto"
@@ -777,11 +779,13 @@
                                         <path d="M3 8L12 17L21 8"></path>
                                     </svg>
                                 </div>
-                                <a class="internal-link" data-href="17. August 10th, 2024 The City Without Light.md" href="session-notes/17.-august-10th,-2024-the-city-without-light.html" target="_self" rel="noopener">August 10th, 2024</a>
+                                <a class="internal-link" data-href="17. August 10th, 2024 The City Without Light.md" href="session-notes/17.-august-10th,-2024-the-city-without-light.html" target="_self" rel="noopener nofollow">
+                                    August 10th, 2024
+                                </a>
                             </h6>
                             <div class="heading-children"></div>
                         </div>
-                        <div class="heading-wrapper">
+                        <div class="el-h6 heading-wrapper">
                             <h6
                                 data-heading="[September 7th, 2024](18.%20September%207th,%202024%20The%20Great%20Bridge%20of%20Port%20O'Call.md)"
                                 dir="auto"
@@ -804,11 +808,221 @@
                                         <path d="M3 8L12 17L21 8"></path>
                                     </svg>
                                 </div>
-                                <a class="internal-link" data-href="18. September 7th, 2024 The Great Bridge of Port O'Call.md" href="session-notes/18.-september-7th,-2024-the-great-bridge-of-port-o'call.html" target="_self" rel="noopener">
+                                <a
+                                    class="internal-link"
+                                    data-href="18. September 7th, 2024 The Great Bridge of Port O'Call.md"
+                                    href="session-notes/18.-september-7th,-2024-the-great-bridge-of-port-o'call.html"
+                                    target="_self"
+                                    rel="noopener nofollow"
+                                >
                                     September 7th, 2024
                                 </a>
                             </h6>
-                            <div class="heading-children"><div class="mod-footer"></div></div>
+                            <div class="heading-children"></div>
+                        </div>
+                        <div class="el-h6 heading-wrapper">
+                            <h6
+                                data-heading="[September 21st, 2024](19.%20September%2021st,%202024%20The%20Great%20Bridge%20of%20Port%20O'Call%20Continued.md)"
+                                dir="auto"
+                                class="heading"
+                                id="[September_21st,_2024](19.%20September%2021st,%202024%20The%20Great%20Bridge%20of%20Port%20O'Call%20Continued.md)"
+                            >
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                <a
+                                    class="internal-link"
+                                    data-href="19. September 21st, 2024 The Great Bridge of Port O'Call Continued.md"
+                                    href="session-notes/19.-september-21st,-2024-the-great-bridge-of-port-o'call-continued.html"
+                                    target="_self"
+                                    rel="noopener nofollow"
+                                >
+                                    September 21st, 2024
+                                </a>
+                            </h6>
+                            <div class="heading-children"></div>
+                        </div>
+                        <div class="el-h6 heading-wrapper">
+                            <h6 data-heading="[September 28th, 2024](20.%20September%2028th,%202024%20The%20Darken%20Wood.md)" dir="auto" class="heading" id="[September_28th,_2024](20.%20September%2028th,%202024%20The%20Darken%20Wood.md)">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                <a class="internal-link" data-href="20. September 28th, 2024 The Darken Wood.md" href="session-notes/20.-september-28th,-2024-the-darken-wood.html" target="_self" rel="noopener nofollow">
+                                    September 28th, 2024
+                                </a>
+                            </h6>
+                            <div class="heading-children"></div>
+                        </div>
+                        <div class="el-h6 heading-wrapper">
+                            <h6 data-heading="[October 5th, 2024](21.%20October%205th,%202024%20Retribution.md)" dir="auto" class="heading" id="[October_5th,_2024](21.%20October%205th,%202024%20Retribution.md)">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                <a class="internal-link" data-href="21. October 5th, 2024 Retribution.md" href="session-notes/21.-october-5th,-2024-retribution.html" target="_self" rel="noopener nofollow">October 5th, 2024</a>
+                            </h6>
+                            <div class="heading-children"></div>
+                        </div>
+                        <div class="el-h6 heading-wrapper">
+                            <h6
+                                data-heading="[October 19th, 2024](22.%20October%2019th,%202024%20The%20Master%20Tactician.md)"
+                                dir="auto"
+                                class="heading"
+                                id="[October_19th,_2024](22.%20October%2019th,%202024%20The%20Master%20Tactician.md)"
+                            >
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                <a class="internal-link" data-href="22. October 19th, 2024 The Master Tactician.md" href="session-notes/22.-october-19th,-2024-the-master-tactician.html" target="_self" rel="noopener nofollow">
+                                    October 19th, 2024
+                                </a>
+                            </h6>
+                            <div class="heading-children"></div>
+                        </div>
+                        <div class="el-h6 heading-wrapper">
+                            <h6 data-heading="[October 26th, 2024](23.%20October%2026th,%202024%20Capturing%20Qualinost.md)" dir="auto" class="heading" id="[October_26th,_2024](23.%20October%2026th,%202024%20Capturing%20Qualinost.md)">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                <a class="internal-link" data-href="23. October 26th, 2024 Capturing Qualinost.md" href="session-notes/23.-october-26th,-2024-capturing-qualinost.html" target="_self" rel="noopener nofollow">
+                                    October 26th, 2024
+                                </a>
+                            </h6>
+                            <div class="heading-children"></div>
+                        </div>
+                        <div class="el-h6 heading-wrapper">
+                            <h6 data-heading="[November 2nd, 2024](24.%20November%202nd,%202024%20Siege%20of%20Relgoth.md)" dir="auto" class="heading" id="[November_2nd,_2024](24.%20November%202nd,%202024%20Siege%20of%20Relgoth.md)">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                <a class="internal-link" data-href="24. November 2nd, 2024 Siege of Relgoth.md" href="session-notes/24.-november-2nd,-2024-siege-of-relgoth.html" target="_self" rel="noopener nofollow">November 2nd, 2024</a>
+                            </h6>
+                            <div class="heading-children"></div>
+                        </div>
+                        <div class="el-h6 heading-wrapper">
+                            <h6 data-heading="[November 16th, 2024](25.%20November%2016th,%202024%20The%20Silver%20Maiden.md)" dir="auto" class="heading" id="[November_16th,_2024](25.%20November%2016th,%202024%20The%20Silver%20Maiden.md)">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                <a class="internal-link" data-href="25. November 16th, 2024 The Silver Maiden.md" href="session-notes/25.-november-16th,-2024-the-silver-maiden.html" target="_self" rel="noopener nofollow">
+                                    November 16th, 2024
+                                </a>
+                            </h6>
+                            <div class="heading-children"></div>
+                        </div>
+                        <div class="el-h6 heading-wrapper">
+                            <h6 data-heading="[November 23rd, 2024](26.%20November%2023rd,%202024%20Raelgoth's%20Defeat.md)" dir="auto" class="heading" id="[November_23rd,_2024](26.%20November%2023rd,%202024%20Raelgoth's%20Defeat.md)">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                <a class="internal-link" data-href="26. November 23rd, 2024 Raelgoth's Defeat.md" href="session-notes/26.-november-23rd,-2024-raelgoth's-defeat.html" target="_self" rel="noopener nofollow">
+                                    November 23rd, 2024
+                                </a>
+                            </h6>
+                            <div class="heading-children"><div class="mod-footer mod-ui"></div></div>
                         </div>
                     </div>
                 </div>
@@ -846,7 +1060,7 @@
                                         <a class="tree-link" href="session-notes/session-notes.html#[March_23rd,_2024](1.%20March%2023rd,%202024%20The%20Dragon's%20Well)">
                                             <div class="tree-item-contents heading-link" heading-name="[March 23rd, 2024](1.%20March%2023rd,%202024%20The%20Dragon's%20Well)">
                                                 <span class="tree-item-title">
-                                                    <a class="internal-link" data-href="1. March 23rd, 2024 The Dragon's Well" href="1. March 23rd, 2024 The Dragon's Well" target="_blank" rel="noopener">March 23rd, 2024</a>
+                                                    <a class="internal-link" data-href="1. March 23rd, 2024 The Dragon's Well" href="1. March 23rd, 2024 The Dragon's Well" target="_blank" rel="noopener nofollow">March 23rd, 2024</a>
                                                 </span>
                                             </div>
                                         </a>
@@ -856,7 +1070,7 @@
                                         <a class="tree-link" href="session-notes/session-notes.html#[April_6th,_2024](2.%20April%206th,%202024%20The%20Boilers)">
                                             <div class="tree-item-contents heading-link" heading-name="[April 6th, 2024](2.%20April%206th,%202024%20The%20Boilers)">
                                                 <span class="tree-item-title">
-                                                    <a class="internal-link" data-href="2. April 6th, 2024 The Boilers" href="2. April 6th, 2024 The Boilers" target="_blank" rel="noopener">April 6th, 2024</a>
+                                                    <a class="internal-link" data-href="2. April 6th, 2024 The Boilers" href="2. April 6th, 2024 The Boilers" target="_blank" rel="noopener nofollow">April 6th, 2024</a>
                                                 </span>
                                             </div>
                                         </a>
@@ -866,7 +1080,7 @@
                                         <a class="tree-link" href="session-notes/session-notes.html#[April_13th,_2024](3.%20April%2013th,%202024%20Zebiom's%20Deep)">
                                             <div class="tree-item-contents heading-link" heading-name="[April 13th, 2024](3.%20April%2013th,%202024%20Zebiom's%20Deep)">
                                                 <span class="tree-item-title">
-                                                    <a class="internal-link" data-href="3. April 13th, 2024 Zebiom's Deep" href="3. April 13th, 2024 Zebiom's Deep" target="_blank" rel="noopener">April 13th, 2024</a>
+                                                    <a class="internal-link" data-href="3. April 13th, 2024 Zebiom's Deep" href="3. April 13th, 2024 Zebiom's Deep" target="_blank" rel="noopener nofollow">April 13th, 2024</a>
                                                 </span>
                                             </div>
                                         </a>
@@ -875,7 +1089,9 @@
                                     <div class="tree-item" data-depth="6">
                                         <a class="tree-link" href="session-notes/session-notes.html#[April_20th,_2024](4.%20April%2020th,%202024%20Manic)">
                                             <div class="tree-item-contents heading-link" heading-name="[April 20th, 2024](4.%20April%2020th,%202024%20Manic)">
-                                                <span class="tree-item-title"><a class="internal-link" data-href="4. April 20th, 2024 Manic" href="4. April 20th, 2024 Manic" target="_blank" rel="noopener">April 20th, 2024</a></span>
+                                                <span class="tree-item-title">
+                                                    <a class="internal-link" data-href="4. April 20th, 2024 Manic" href="4. April 20th, 2024 Manic" target="_blank" rel="noopener nofollow">April 20th, 2024</a>
+                                                </span>
                                             </div>
                                         </a>
                                         <div class="tree-item-children nav-folder-children"></div>
@@ -884,7 +1100,7 @@
                                         <a class="tree-link" href="session-notes/session-notes.html#[April_27th,_2024](5.%20April%2027th,%202024%20Gynned%20&amp;%20The%20Monastary.md)">
                                             <div class="tree-item-contents heading-link" heading-name="[April 27th, 2024](5.%20April%2027th,%202024%20Gynned%20&amp;%20The%20Monastary.md)">
                                                 <span class="tree-item-title">
-                                                    <a class="internal-link" data-href="5. April 27th, 2024 Gynned &amp; The Monastary.md" href="5. April 27th, 2024 Gynned &amp; The Monastary.md" target="_blank" rel="noopener">
+                                                    <a class="internal-link" data-href="5. April 27th, 2024 Gynned &amp; The Monastary.md" href="5. April 27th, 2024 Gynned &amp; The Monastary.md" target="_blank" rel="noopener nofollow">
                                                         April 27th, 2024
                                                     </a>
                                                 </span>
@@ -896,7 +1112,7 @@
                                         <a class="tree-link" href="session-notes/session-notes.html#[May_4th,_2024](6.%20May%204th,%202024%20Three%20Houses.md)">
                                             <div class="tree-item-contents heading-link" heading-name="[May 4th, 2024](6.%20May%204th,%202024%20Three%20Houses.md)">
                                                 <span class="tree-item-title">
-                                                    <a class="internal-link" data-href="6. May 4th, 2024 Three Houses.md" href="6. May 4th, 2024 Three Houses.md" target="_blank" rel="noopener">May 4th, 2024</a>
+                                                    <a class="internal-link" data-href="6. May 4th, 2024 Three Houses.md" href="6. May 4th, 2024 Three Houses.md" target="_blank" rel="noopener nofollow">May 4th, 2024</a>
                                                 </span>
                                             </div>
                                         </a>
@@ -906,7 +1122,7 @@
                                         <a class="tree-link" href="session-notes/session-notes.html#[May_11th,_2024](7.%20May%2011th,%202024%20The%20Red%20Canyon.md)">
                                             <div class="tree-item-contents heading-link" heading-name="[May 11th, 2024](7.%20May%2011th,%202024%20The%20Red%20Canyon.md)">
                                                 <span class="tree-item-title">
-                                                    <a class="internal-link" data-href="7. May 11th, 2024 The Red Canyon.md" href="7. May 11th, 2024 The Red Canyon.md" target="_blank" rel="noopener">May 11th, 2024</a>
+                                                    <a class="internal-link" data-href="7. May 11th, 2024 The Red Canyon.md" href="7. May 11th, 2024 The Red Canyon.md" target="_blank" rel="noopener nofollow">May 11th, 2024</a>
                                                 </span>
                                             </div>
                                         </a>
@@ -916,7 +1132,7 @@
                                         <a class="tree-link" href="session-notes/session-notes.html#[May_18th,_2024](8.%20May%2018th,%202024%20Plots%20Unveiled.md)">
                                             <div class="tree-item-contents heading-link" heading-name="[May 18th, 2024](8.%20May%2018th,%202024%20Plots%20Unveiled.md)">
                                                 <span class="tree-item-title">
-                                                    <a class="internal-link" data-href="8. May 18th, 2024 Plots Unveiled.md" href="8. May 18th, 2024 Plots Unveiled.md" target="_blank" rel="noopener">May 18th, 2024</a>
+                                                    <a class="internal-link" data-href="8. May 18th, 2024 Plots Unveiled.md" href="8. May 18th, 2024 Plots Unveiled.md" target="_blank" rel="noopener nofollow">May 18th, 2024</a>
                                                 </span>
                                             </div>
                                         </a>
@@ -926,7 +1142,7 @@
                                         <a class="tree-link" href="session-notes/session-notes.html#[May_25th,_2024](9.%20May%2025th,%202024%20Mysterious%20Figures.md)">
                                             <div class="tree-item-contents heading-link" heading-name="[May 25th, 2024](9.%20May%2025th,%202024%20Mysterious%20Figures.md)">
                                                 <span class="tree-item-title">
-                                                    <a class="internal-link" data-href="9. May 25th, 2024 Mysterious Figures.md" href="9. May 25th, 2024 Mysterious Figures.md" target="_blank" rel="noopener">May 25th, 2024</a>
+                                                    <a class="internal-link" data-href="9. May 25th, 2024 Mysterious Figures.md" href="9. May 25th, 2024 Mysterious Figures.md" target="_blank" rel="noopener nofollow">May 25th, 2024</a>
                                                 </span>
                                             </div>
                                         </a>
@@ -936,7 +1152,7 @@
                                         <a class="tree-link" href="session-notes/session-notes.html#[June_1st,_2024](10.%20June%201st,%202024%20Connecting%20Threads.md)">
                                             <div class="tree-item-contents heading-link" heading-name="[June 1st, 2024](10.%20June%201st,%202024%20Connecting%20Threads.md)">
                                                 <span class="tree-item-title">
-                                                    <a class="internal-link" data-href="10. June 1st, 2024 Connecting Threads.md" href="10. June 1st, 2024 Connecting Threads.md" target="_blank" rel="noopener">June 1st, 2024</a>
+                                                    <a class="internal-link" data-href="10. June 1st, 2024 Connecting Threads.md" href="10. June 1st, 2024 Connecting Threads.md" target="_blank" rel="noopener nofollow">June 1st, 2024</a>
                                                 </span>
                                             </div>
                                         </a>
@@ -946,7 +1162,7 @@
                                         <a class="tree-link" href="session-notes/session-notes.html#[June_8th,_2024](11.%20June%208th,%202024%20Assault%20on%20the%20Holy%20Mausoleum.md)">
                                             <div class="tree-item-contents heading-link" heading-name="[June 8th, 2024](11.%20June%208th,%202024%20Assault%20on%20the%20Holy%20Mausoleum.md)">
                                                 <span class="tree-item-title">
-                                                    <a class="internal-link" data-href="11. June 8th, 2024 Assault on the Holy Mausoleum.md" href="11. June 8th, 2024 Assault on the Holy Mausoleum.md" target="_blank" rel="noopener">
+                                                    <a class="internal-link" data-href="11. June 8th, 2024 Assault on the Holy Mausoleum.md" href="11. June 8th, 2024 Assault on the Holy Mausoleum.md" target="_blank" rel="noopener nofollow">
                                                         June 8th, 2024
                                                     </a>
                                                 </span>
@@ -958,7 +1174,7 @@
                                         <a class="tree-link" href="session-notes/session-notes.html#[July_6th,_2024](12.%20July%206th,%202024%20Rumors%20of%20a%20Reaper.md)">
                                             <div class="tree-item-contents heading-link" heading-name="[July 6th, 2024](12.%20July%206th,%202024%20Rumors%20of%20a%20Reaper.md)">
                                                 <span class="tree-item-title">
-                                                    <a class="internal-link" data-href="12. July 6th, 2024 Rumors of a Reaper.md" href="12. July 6th, 2024 Rumors of a Reaper.md" target="_blank" rel="noopener">July 6th, 2024</a>
+                                                    <a class="internal-link" data-href="12. July 6th, 2024 Rumors of a Reaper.md" href="12. July 6th, 2024 Rumors of a Reaper.md" target="_blank" rel="noopener nofollow">July 6th, 2024</a>
                                                 </span>
                                             </div>
                                         </a>
@@ -968,7 +1184,9 @@
                                         <a class="tree-link" href="session-notes/session-notes.html#[July_13th,_2024](13.%20July%2013th,%202024%20The%20Empire's%20New%20Dawn.md)">
                                             <div class="tree-item-contents heading-link" heading-name="[July 13th, 2024](13.%20July%2013th,%202024%20The%20Empire's%20New%20Dawn.md)">
                                                 <span class="tree-item-title">
-                                                    <a class="internal-link" data-href="13. July 13th, 2024 The Empire's New Dawn.md" href="13. July 13th, 2024 The Empire's New Dawn.md" target="_blank" rel="noopener">July 13th, 2024</a>
+                                                    <a class="internal-link" data-href="13. July 13th, 2024 The Empire's New Dawn.md" href="13. July 13th, 2024 The Empire's New Dawn.md" target="_blank" rel="noopener nofollow">
+                                                        July 13th, 2024
+                                                    </a>
                                                 </span>
                                             </div>
                                         </a>
@@ -978,7 +1196,7 @@
                                         <a class="tree-link" href="session-notes/session-notes.html#[July_20th,_2024](14.%20July%2020th,%202024%20Assault%20in%20the%20Holy%20Tomb.md)">
                                             <div class="tree-item-contents heading-link" heading-name="[July 20th, 2024](14.%20July%2020th,%202024%20Assault%20in%20the%20Holy%20Tomb.md)">
                                                 <span class="tree-item-title">
-                                                    <a class="internal-link" data-href="14. July 20th, 2024 Assault in the Holy Tomb.md" href="14. July 20th, 2024 Assault in the Holy Tomb.md" target="_blank" rel="noopener">
+                                                    <a class="internal-link" data-href="14. July 20th, 2024 Assault in the Holy Tomb.md" href="14. July 20th, 2024 Assault in the Holy Tomb.md" target="_blank" rel="noopener nofollow">
                                                         July 20th, 2024
                                                     </a>
                                                 </span>
@@ -990,7 +1208,7 @@
                                         <a class="tree-link" href="session-notes/session-notes.html#[July_27th,_2024](15.%20July%2027th,%202024%20Outset%20of%20a%20Power%20Struggle.md)">
                                             <div class="tree-item-contents heading-link" heading-name="[July 27th, 2024](15.%20July%2027th,%202024%20Outset%20of%20a%20Power%20Struggle.md)">
                                                 <span class="tree-item-title">
-                                                    <a class="internal-link" data-href="15. July 27th, 2024 Outset of a Power Struggle.md" href="15. July 27th, 2024 Outset of a Power Struggle.md" target="_blank" rel="noopener">
+                                                    <a class="internal-link" data-href="15. July 27th, 2024 Outset of a Power Struggle.md" href="15. July 27th, 2024 Outset of a Power Struggle.md" target="_blank" rel="noopener nofollow">
                                                         July 27th, 2024
                                                     </a>
                                                 </span>
@@ -1007,7 +1225,7 @@
                                                         data-href="16. August 3rd, 2024 Outset of a Power Struggle Continued.md"
                                                         href="16. August 3rd, 2024 Outset of a Power Struggle Continued.md"
                                                         target="_blank"
-                                                        rel="noopener"
+                                                        rel="noopener nofollow"
                                                     >
                                                         August 3rd, 2024
                                                     </a>
@@ -1020,7 +1238,7 @@
                                         <a class="tree-link" href="session-notes/session-notes.html#[August_10th,_2024](17.%20August%2010th,%202024%20The%20City%20Without%20Light.md)">
                                             <div class="tree-item-contents heading-link" heading-name="[August 10th, 2024](17.%20August%2010th,%202024%20The%20City%20Without%20Light.md)">
                                                 <span class="tree-item-title">
-                                                    <a class="internal-link" data-href="17. August 10th, 2024 The City Without Light.md" href="17. August 10th, 2024 The City Without Light.md" target="_blank" rel="noopener">
+                                                    <a class="internal-link" data-href="17. August 10th, 2024 The City Without Light.md" href="17. August 10th, 2024 The City Without Light.md" target="_blank" rel="noopener nofollow">
                                                         August 10th, 2024
                                                     </a>
                                                 </span>
@@ -1033,8 +1251,113 @@
                                             <div class="tree-item-contents heading-link" heading-name="[September 7th, 2024](18.%20September%207th,%202024%20The%20Great%20Bridge%20of%20Port%20O'Call.md)">
                                                 <span class="tree-item-title">
                                                     <a
-                                                        class="internal-link" data-href="18. September 7th, 2024 The Great Bridge of Port O'Call.md" href="18. September 7th, 2024 The Great Bridge of Port O'Call.md" target="_blank" rel="noopener">
+                                                        class="internal-link"
+                                                        data-href="18. September 7th, 2024 The Great Bridge of Port O'Call.md"
+                                                        href="18. September 7th, 2024 The Great Bridge of Port O'Call.md"
+                                                        target="_blank"
+                                                        rel="noopener nofollow"
+                                                    >
                                                         September 7th, 2024
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children"></div>
+                                    </div>
+                                    <div class="tree-item" data-depth="6">
+                                        <a class="tree-link" href="session-notes/session-notes.html#[September_21st,_2024](19.%20September%2021st,%202024%20The%20Great%20Bridge%20of%20Port%20O'Call%20Continued.md)">
+                                            <div class="tree-item-contents heading-link" heading-name="[September 21st, 2024](19.%20September%2021st,%202024%20The%20Great%20Bridge%20of%20Port%20O'Call%20Continued.md)">
+                                                <span class="tree-item-title">
+                                                    <a
+                                                        class="internal-link"
+                                                        data-href="19. September 21st, 2024 The Great Bridge of Port O'Call Continued.md"
+                                                        href="19. September 21st, 2024 The Great Bridge of Port O'Call Continued.md"
+                                                        target="_blank"
+                                                        rel="noopener nofollow"
+                                                    >
+                                                        September 21st, 2024
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children"></div>
+                                    </div>
+                                    <div class="tree-item" data-depth="6">
+                                        <a class="tree-link" href="session-notes/session-notes.html#[September_28th,_2024](20.%20September%2028th,%202024%20The%20Darken%20Wood.md)">
+                                            <div class="tree-item-contents heading-link" heading-name="[September 28th, 2024](20.%20September%2028th,%202024%20The%20Darken%20Wood.md)">
+                                                <span class="tree-item-title">
+                                                    <a class="internal-link" data-href="20. September 28th, 2024 The Darken Wood.md" href="20. September 28th, 2024 The Darken Wood.md" target="_blank" rel="noopener nofollow">
+                                                        September 28th, 2024
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children"></div>
+                                    </div>
+                                    <div class="tree-item" data-depth="6">
+                                        <a class="tree-link" href="session-notes/session-notes.html#[October_5th,_2024](21.%20October%205th,%202024%20Retribution.md)">
+                                            <div class="tree-item-contents heading-link" heading-name="[October 5th, 2024](21.%20October%205th,%202024%20Retribution.md)">
+                                                <span class="tree-item-title">
+                                                    <a class="internal-link" data-href="21. October 5th, 2024 Retribution.md" href="21. October 5th, 2024 Retribution.md" target="_blank" rel="noopener nofollow">October 5th, 2024</a>
+                                                </span>
+                                            </div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children"></div>
+                                    </div>
+                                    <div class="tree-item" data-depth="6">
+                                        <a class="tree-link" href="session-notes/session-notes.html#[October_19th,_2024](22.%20October%2019th,%202024%20The%20Master%20Tactician.md)">
+                                            <div class="tree-item-contents heading-link" heading-name="[October 19th, 2024](22.%20October%2019th,%202024%20The%20Master%20Tactician.md)">
+                                                <span class="tree-item-title">
+                                                    <a class="internal-link" data-href="22. October 19th, 2024 The Master Tactician.md" href="22. October 19th, 2024 The Master Tactician.md" target="_blank" rel="noopener nofollow">
+                                                        October 19th, 2024
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children"></div>
+                                    </div>
+                                    <div class="tree-item" data-depth="6">
+                                        <a class="tree-link" href="session-notes/session-notes.html#[October_26th,_2024](23.%20October%2026th,%202024%20Capturing%20Qualinost.md)">
+                                            <div class="tree-item-contents heading-link" heading-name="[October 26th, 2024](23.%20October%2026th,%202024%20Capturing%20Qualinost.md)">
+                                                <span class="tree-item-title">
+                                                    <a class="internal-link" data-href="23. October 26th, 2024 Capturing Qualinost.md" href="23. October 26th, 2024 Capturing Qualinost.md" target="_blank" rel="noopener nofollow">
+                                                        October 26th, 2024
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children"></div>
+                                    </div>
+                                    <div class="tree-item" data-depth="6">
+                                        <a class="tree-link" href="session-notes/session-notes.html#[November_2nd,_2024](24.%20November%202nd,%202024%20Siege%20of%20Relgoth.md)">
+                                            <div class="tree-item-contents heading-link" heading-name="[November 2nd, 2024](24.%20November%202nd,%202024%20Siege%20of%20Relgoth.md)">
+                                                <span class="tree-item-title">
+                                                    <a class="internal-link" data-href="24. November 2nd, 2024 Siege of Relgoth.md" href="24. November 2nd, 2024 Siege of Relgoth.md" target="_blank" rel="noopener nofollow">
+                                                        November 2nd, 2024
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children"></div>
+                                    </div>
+                                    <div class="tree-item" data-depth="6">
+                                        <a class="tree-link" href="session-notes/session-notes.html#[November_16th,_2024](25.%20November%2016th,%202024%20The%20Silver%20Maiden.md)">
+                                            <div class="tree-item-contents heading-link" heading-name="[November 16th, 2024](25.%20November%2016th,%202024%20The%20Silver%20Maiden.md)">
+                                                <span class="tree-item-title">
+                                                    <a class="internal-link" data-href="25. November 16th, 2024 The Silver Maiden.md" href="25. November 16th, 2024 The Silver Maiden.md" target="_blank" rel="noopener nofollow">
+                                                        November 16th, 2024
+                                                    </a>
+                                                </span>
+                                            </div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children"></div>
+                                    </div>
+                                    <div class="tree-item" data-depth="6">
+                                        <a class="tree-link" href="session-notes/session-notes.html#[November_23rd,_2024](26.%20November%2023rd,%202024%20Raelgoth's%20Defeat.md)">
+                                            <div class="tree-item-contents heading-link" heading-name="[November 23rd, 2024](26.%20November%2023rd,%202024%20Raelgoth's%20Defeat.md)">
+                                                <span class="tree-item-title">
+                                                    <a class="internal-link" data-href="26. November 23rd, 2024 Raelgoth's Defeat.md" href="26. November 23rd, 2024 Raelgoth's Defeat.md" target="_blank" rel="noopener nofollow">
+                                                        November 23rd, 2024
                                                     </a>
                                                 </span>
                                             </div>
