@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Port Balifor</title>
+        <base href="../../../" />
+        <meta id="root-path" root-path="../../../" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0" />
+        <meta charset="UTF-8" />
+        <meta name="description" content="Dragonlance-Sync - Port Balifor" />
+        <meta property="og:title" content="Port Balifor" />
+        <meta property="og:description" content="Dragonlance-Sync - Port Balifor" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="locations/balifor/settlements/port-balifor.html" />
+        <meta property="og:image" content="undefined" />
+        <meta property="og:site_name" content="Dragonlance-Sync" />
+        <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml" />
+        <script async="" id="webpage-script" src="lib/scripts/webpage.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script>
+        <script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <link rel="icon" href="lib/media/favicon.png" />
+        <script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <style>
+            body {
+                --line-width: 40em;
+                --line-width-adaptive: 40em;
+                --file-line-width: 40em;
+                --sidebar-width: min(20em, 80vw);
+                --collapse-arrow-size: 11px;
+                --tree-horizontal-spacing: 0.6em;
+                --tree-vertical-spacing: 0.6em;
+                --sidebar-margin: 12px;
+            }
+            .sidebar {
+                height: 100%;
+                min-width: calc(var(--sidebar-width) + var(--divider-width-hover));
+                max-width: calc(var(--sidebar-width) + var(--divider-width-hover));
+                font-size: 14px;
+                z-index: 10;
+                position: relative;
+                overflow: hidden;
+                transition: min-width ease-in-out, max-width ease-in-out;
+                transition-duration: 0.2s;
+                contain: size;
+            }
+            .sidebar-left {
+                left: 0;
+            }
+            .sidebar-right {
+                right: 0;
+            }
+            .sidebar.is-collapsed {
+                min-width: 0;
+                max-width: 0;
+            }
+            body.floating-sidebars .sidebar {
+                position: absolute;
+            }
+            .sidebar-content {
+                height: 100%;
+                min-width: calc(var(--sidebar-width) - var(--divider-width-hover));
+                top: 0;
+                padding: var(--sidebar-margin);
+                padding-top: 4em;
+                line-height: var(--line-height-tight);
+                background-color: var(--background-secondary);
+                transition: background-color, border-right, border-left, box-shadow;
+                transition-duration: var(--color-fade-speed);
+                transition-timing-function: ease-in-out;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+            }
+            .sidebar:not(.is-collapsed) .sidebar-content {
+                min-width: calc(max(100%, var(--sidebar-width)) - 3px);
+                max-width: calc(max(100%, var(--sidebar-width)) - 3px);
+            }
+            .sidebar-left .sidebar-content {
+                left: 0;
+                border-top-right-radius: var(--radius-l);
+                border-bottom-right-radius: var(--radius-l);
+            }
+            .sidebar-right .sidebar-content {
+                right: 0;
+                border-top-left-radius: var(--radius-l);
+                border-bottom-left-radius: var(--radius-l);
+            }
+            .sidebar:has(.sidebar-content:empty):has(.topbar-content:empty) {
+                display: none;
+            }
+            .sidebar-topbar {
+                height: 2em;
+                width: var(--sidebar-width);
+                top: var(--sidebar-margin);
+                padding-inline: var(--sidebar-margin);
+                z-index: 1;
+                position: fixed;
+                display: flex;
+                align-items: center;
+                transition: width ease-in-out;
+                transition-duration: inherit;
+            }
+            .sidebar.is-collapsed .sidebar-topbar {
+                width: calc(2.3em + var(--sidebar-margin) * 2);
+            }
+            .sidebar .sidebar-topbar.is-collapsed {
+                width: 0;
+            }
+            .sidebar-left .sidebar-topbar {
+                left: 0;
+            }
+            .sidebar-right .sidebar-topbar {
+                right: 0;
+            }
+            .topbar-content {
+                overflow: hidden;
+                overflow: clip;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                transition: inherit;
+            }
+            .sidebar.is-collapsed .topbar-content {
+                width: 0;
+                transition: inherit;
+            }
+            .clickable-icon.sidebar-collapse-icon {
+                background-color: transparent;
+                color: var(--icon-color-focused);
+                padding: 0 !important;
+                margin: 0 !important;
+                height: 100% !important;
+                width: 2.3em !important;
+                margin-inline: 0.14em !important;
+                position: absolute;
+            }
+            .sidebar-left .clickable-icon.sidebar-collapse-icon {
+                transform: rotateY(180deg);
+                right: var(--sidebar-margin);
+            }
+            .sidebar-right .clickable-icon.sidebar-collapse-icon {
+                transform: rotateY(180deg);
+                left: var(--sidebar-margin);
+            }
+            .clickable-icon.sidebar-collapse-icon svg.svg-icon {
+                width: 100%;
+                height: 100%;
+            }
+            .sidebar-section-header {
+                margin: 0 0 1em 0;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                font-weight: 600;
+            }
+            body {
+                transition: background-color var(--color-fade-speed) ease-in-out;
+            }
+            .webpage-container {
+                display: flex;
+                flex-direction: row;
+                height: 100%;
+                width: 100%;
+                align-items: stretch;
+                justify-content: center;
+            }
+            .document-container {
+                opacity: 1;
+                flex-basis: 100%;
+                max-width: 100%;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transition: opacity 0.2s ease-in-out;
+                contain: inline-size;
+            }
+            .hide {
+                opacity: 0;
+                transition: opacity 0.2s ease-in-out;
+            }
+            .document-container > .markdown-preview-view {
+                margin: var(--sidebar-margin);
+                margin-bottom: 0;
+                width: 100%;
+                width: -webkit-fill-available;
+                width: -moz-available;
+                width: fill-available;
+                background-color: var(--background-primary);
+                transition: background-color var(--color-fade-speed) ease-in-out;
+                border-top-right-radius: var(--window-radius, var(--radius-m));
+                border-top-left-radius: var(--window-radius, var(--radius-m));
+                overflow-x: hidden !important;
+                overflow-y: auto !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                contain: inline-size;
+            }
+            .document-container > .markdown-preview-view > .markdown-preview-sizer {
+                padding-bottom: 80vh !important;
+                width: 100% !important;
+                max-width: var(--line-width) !important;
+                flex-basis: var(--line-width) !important;
+                transition: background-color var(--color-fade-speed) ease-in-out;
+                contain: inline-size;
+            }
+            .markdown-rendered img:not([width]),
+            .view-content img:not([width]) {
+                max-width: 100%;
+                outline: 0;
+            }
+            .document-container > .view-content.embed {
+                display: flex;
+                padding: 1em;
+                height: 100%;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+            }
+            .document-container > .view-content.embed > * {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+            }
+            :has(> :is(.math, table)) {
+                overflow-x: auto !important;
+            }
+            .document-container > .view-content {
+                overflow-x: auto;
+                contain: content;
+                padding: 0;
+                margin: 0;
+                height: 100%;
+            }
+            .scroll-highlight {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 1000;
+                background-color: hsla(var(--color-accent-hsl), 0.25);
+                opacity: 0;
+                padding: 1em;
+                inset: 50%;
+                translate: -50% -50%;
+                border-radius: var(--radius-s);
+            }
+        </style>
+        <script defer="">
+            async function loadIncludes() {
+                if ("file:" != location.protocol) {
+                    let e = document.querySelectorAll("include");
+                    for (let t = 0; t < e.length; t++) {
+                        let o = e[t],
+                            l = o.getAttribute("src");
+                        try {
+                            const e = await fetch(l);
+                            if (!e.ok) {
+                                console.log("Could not include file: " + l), o?.remove();
+                                continue;
+                            }
+                            let t = await e.text(),
+                                n = document.createRange().createContextualFragment(t),
+                                i = Array.from(n.children);
+                            for (let e of i)
+                                e.classList.add("hide"),
+                                    (e.style.transition = "opacity 0.5s ease-in-out"),
+                                    setTimeout(() => {
+                                        e.classList.remove("hide");
+                                    }, 10);
+                            o.before(n), o.remove(), console.log("Included file: " + l);
+                        } catch (e) {
+                            o?.remove(), console.log("Could not include file: " + l, e);
+                            continue;
+                        }
+                    }
+                } else {
+                    if (document.querySelectorAll("include").length > 0) {
+                        var e = document.createElement("div");
+                        (e.id = "error"),
+                            (e.textContent = "Web server exports must be hosted on an http / web server to be viewed correctly."),
+                            (e.style.position = "fixed"),
+                            (e.style.top = "50%"),
+                            (e.style.left = "50%"),
+                            (e.style.transform = "translate(-50%, -50%)"),
+                            (e.style.fontSize = "1.5em"),
+                            (e.style.fontWeight = "bold"),
+                            (e.style.textAlign = "center"),
+                            document.body.appendChild(e),
+                            document.querySelector(".document-container")?.classList.remove("hide");
+                    }
+                }
+            }
+            document.addEventListener("DOMContentLoaded", () => {
+                loadIncludes();
+            });
+            let isFileProtocol = "file:" == location.protocol;
+            function waitLoadScripts(e, t) {
+                let o = e.map((e) => document.getElementById(e + "-script")),
+                    l = 0;
+                !(function e() {
+                    let n = o[l];
+                    l++, (n && "true" != n.getAttribute("loaded")) || (l < o.length && e()), l < o.length ? n.addEventListener("load", e) : t();
+                })();
+            }
+        </script>
+        <link rel="stylesheet" href="lib/styles/obsidian.css" />
+        <link rel="stylesheet" href="lib/styles/theme.css" />
+        <link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css" /></noscript>
+        <link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css" /></noscript>
+        <link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="lib/styles/main-styles.css" /></noscript>
+    </head>
+    <body class="publish css-settings-manager theme-light show-inline-title show-ribbon check-color check-bg wotc-beyond">
+        <script defer="">
+            let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            "dark" == theme ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light")) : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")),
+                window.innerWidth < 480
+                    ? document.body.classList.add("is-phone")
+                    : window.innerWidth < 768
+                    ? document.body.classList.add("is-tablet")
+                    : window.innerWidth < 1024
+                    ? document.body.classList.add("is-small-screen")
+                    : document.body.classList.add("is-large-screen");
+        </script>
+        <div class="webpage-container workspace">
+            <div class="sidebar-left sidebar">
+                <div class="sidebar-handle"></div>
+                <div class="sidebar-topbar">
+                    <div class="topbar-content">
+                        <label class="theme-toggle-container" for="theme_toggle">
+                            <input class="theme-toggle-input" type="checkbox" id="theme_toggle" />
+                            <div class="toggle-background"></div>
+                        </label>
+                    </div>
+                    <div class="clickable-icon sidebar-collapse-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                            <path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
+                            <path d="M10 4V20"></path>
+                            <path d="M4 7H7"></path>
+                            <path d="M4 10H7"></path>
+                            <path d="M4 13H7"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="sidebar-content">
+                    <div class="search-input-container">
+                        <input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..." />
+                        <div class="search-input-clear-button" aria-label="Clear search"></div>
+                    </div>
+                    <include src="lib/html/file-tree.html"></include>
+                </div>
+                <script defer="">
+                    let ls = document.querySelector(".sidebar-left");
+                    ls.classList.add("is-collapsed");
+                    if (window.innerWidth > 768) ls.classList.remove("is-collapsed");
+                    ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));
+                </script>
+            </div>
+            <div class="document-container markdown-reading-view hide">
+                <div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width">
+                    <style id="MJX-CHTML-styles"></style>
+                    <div class="markdown-preview-sizer markdown-preview-section">
+                        <h1 class="page-title heading inline-title" id="Port Balifor"><p dir="auto">Port Balifor</p></h1>
+                        <div class="el-p">
+                            <p dir="auto">
+                                Built in a rocky cove protected from the elements and facing out into the Bay of Balifor, this port town is a key trading hub for the Balifor region and all of the surrounding<br />
+                                areas. All kinds of people would come to trade in Port Balifor, from elves to dwarves and Kender.
+                            </p>
+                        </div>
+                        <div class="el-p">
+                            <p dir="auto">
+                                The town extends out over the water, half of Port Balifor being set out on pilings and wharves connected by narrow bridges that seem little more than alleys between tightly packed buildings.<br />
+                                Below the pilings is a network of sewers where thieves and smugglers dwell, as well as vicious monsters if the rumours are true. It is in these stone tunnels that the black market does most of it’s work.
+                                <br />
+                                The buildings on the surface are mostly made of stone and wood, and crammed quite close together.
+                            </p>
+                        </div>
+                        <div class="el-p"><p dir="auto">Ships still come and go from the harbour, and almost any piece of equipment.</p></div>
+                        <div class="el-p">
+                            <p dir="auto">
+                                High cliffs surround Port Balifor, the only way in by land being a well-trodden road from the north, and the moment anyone walks along it they become aware that this is an occupied area. Dozen of bodies hang
+                                on a crude gallows alongside the road – humans, elves and Kender who offended the new rulers of Balifor, left to rot and be picked apart by carrion birds.
+                            </p>
+                        </div>
+                        <div class="el-p">
+                            <p dir="auto">
+                                A sign written in both common and Khurish reads:<br />
+                                <em>“Such is the fate of all who oppose the black Dragonarmy.”</em>
+                            </p>
+                        </div>
+                        <div class="el-h2 heading-wrapper">
+                            <h2 data-heading="Districts" dir="auto" class="heading" id="Districts">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Districts
+                            </h2>
+                            <div class="heading-children">
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Harbor Market" dir="auto" class="heading" id="Harbor_Market">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Harbor Market
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Once one of the greatest markets in Balifor, the Harbor Market of Port Balifor is now nothing more than small gathering for khurish merchants, local fishermen and scavengers that comb through
+                                                the ruins of the towns past looking for valubles to trade here.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Gloom Town" dir="auto" class="heading" id="Gloom_Town">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Gloom Town
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Gloom Town is the southwest part of Port Balifor. This maze of crumbling buildings lining battered alleys and streets is also known as Retreat by its current residents, the afflicted kender.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="el-h2 heading-wrapper">
+                            <h2 data-heading="Buildings" dir="auto" class="heading" id="Buildings">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Buildings
+                            </h2>
+                            <div class="heading-children">
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="The Pig and Whistle" dir="auto" class="heading" id="The_Pig_and_Whistle">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        The Pig and Whistle
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                The Pig and Whistle is owned by William Sweetwater and was located in Port Balifor. The Inn was considered one of the finest in all of eastern Ansalon. The building its self was not grand but
+                                                the atmosphere and the cold brew was. The Dragonarmy officers that occupied the port did not share this view. This was because William charged them three times the regular price than the
+                                                locals or people he deemed worthy of gracing his common room. The Pig and Whistle was always looking for new entertainment to keep the locals minds off the war.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Ryke's Fine Clothiers" dir="auto" class="heading" id="Ryke's_Fine_Clothiers">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Ryke's Fine Clothiers
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Ryke’s Fine Clothiers is owned by Rykian Harberdasher and was located on the southern end Port Balifor. This shop sold anything from work to fine light armor to some of the finest clothes in
+                                                eastern Ansalon. During the Dragonarmies occupancy this shop was responsible for crafting and designing officer uniforms and tailoring armor for the Draconians of the Dark Queen's army.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Narl's Watch" dir="auto" class="heading" id="Narl's_Watch">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Narl's Watch
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Narl's Watch is ran by Swashy Gren and was located on the north side of Port Balifor near the docks. Narl's started out as a referral service for mariners and sailors looking for ships. It
+                                                soon turned into a registry for mercenaries and a shop that dealt in maps, weapons and armor.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Waverage Tavern" dir="auto" class="heading" id="Waverage_Tavern">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Waverage Tavern
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Waverage Tavern is a rundown tavern beneath the upper docks in the center of Port Balifor and owned by Feryn Venomtounge. This local watering-hole was a place native residents would steer
+                                                clear of due to the cutthroats and criminals that hung-out there. The gang Bottom Feeders ran the joint and dealt in all kinds of illegal activities. During the Dragonarmies occupancy of the
+                                                port many draconians and dragonarmy officers could be found here.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="el-h2 heading-wrapper">
+                            <h2 data-heading="Roads and Streets" dir="auto" class="heading" id="Roads_and_Streets">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Roads and Streets
+                            </h2>
+                            <div class="heading-children">
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Main Street" dir="auto" class="heading" id="Main_Street">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Main Street
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p"><p dir="auto">Main Street in Port Balifor is a new addition that hugs the coves cliff face. Many taverns, gaming houses and run down tenements line this street</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="el-h2 heading-wrapper">
+                            <h2 data-heading="City Guilds" dir="auto" class="heading" id="City_Guilds">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                City Guilds
+                            </h2>
+                            <div class="heading-children">
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Merchant's Guild" dir="auto" class="heading" id="Merchant's_Guild">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Merchant's Guild
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p"><p dir="auto">Merchant's Guild was a general guild that dealt with the trade and goods of Port Balifor before and during the War of the Lance.</p></div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Wool Merchants Guild" dir="auto" class="heading" id="Wool_Merchants_Guild">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Wool Merchants Guild
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Wool Merchants Guild of Port Balifor was a guild that dealt with the Wool and cloth goods of Port Balifor before and during the War of the Lance. This guild would of had dealing with the
+                                                Council of Merchant Guilds.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Council of Merchant Guilds" dir="auto" class="heading" id="Council_of_Merchant_Guilds">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Council of Merchant Guilds
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Council of Merchant Guilds was a group of leaders from the guilds in Port Balifor during the War of the Lance. They held meets to discuss trade matters of the port and ruled the town for the
+                                                most part. When the Dragonarmies took over the town, their meets stopped.
+                                            </p>
+                                        </div>
+                                        <div class="mod-footer mod-ui"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-right sidebar">
+                <div class="sidebar-handle"></div>
+                <div class="sidebar-topbar">
+                    <div class="topbar-content"></div>
+                    <div class="clickable-icon sidebar-collapse-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                            <path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
+                            <path d="M10 4V20"></path>
+                            <path d="M4 7H7"></path>
+                            <path d="M4 10H7"></path>
+                            <path d="M4 13H7"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="sidebar-content">
+                    <div class="graph-view-wrapper">
+                        <div class="sidebar-section-header">Interactive Graph</div>
+                        <div class="graph-view-placeholder">
+                            <div class="graph-view-container">
+                                <div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                                        <polyline points="7 7 17 7 17 17"></polyline>
+                                    </svg>
+                                </div>
+                                <canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0">
+                        <div class="tree-header">
+                            <span class="sidebar-section-header">Table Of Contents</span>
+                            <button class="clickable-icon collapse-tree-button" aria-label="Collapse All">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+                            </button>
+                        </div>
+                        <div class="tree-scroll-area tree-item-children nav-folder-children">
+                            <div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div>
+                            <div class="tree-item" data-depth="1">
+                                <a class="tree-link" href="locations/balifor/settlements/port-balifor.html#Port Balifor">
+                                    <div class="tree-item-contents heading-link" heading-name="Port Balifor"><span class="tree-item-title">Port Balifor</span></div>
+                                </a>
+                                <div class="tree-item-children nav-folder-children">
+                                    <div class="tree-item mod-collapsible" data-depth="2">
+                                        <a class="tree-link" href="locations/balifor/settlements/port-balifor.html#Districts">
+                                            <div class="tree-item-contents heading-link" heading-name="Districts">
+                                                <div class="collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                <span class="tree-item-title">Districts</span>
+                                            </div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children">
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/balifor/settlements/port-balifor.html#Harbor_Market">
+                                                    <div class="tree-item-contents heading-link" heading-name="Harbor Market"><span class="tree-item-title">Harbor Market</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/balifor/settlements/port-balifor.html#Gloom_Town">
+                                                    <div class="tree-item-contents heading-link" heading-name="Gloom Town"><span class="tree-item-title">Gloom Town</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tree-item mod-collapsible" data-depth="2">
+                                        <a class="tree-link" href="locations/balifor/settlements/port-balifor.html#Buildings">
+                                            <div class="tree-item-contents heading-link" heading-name="Buildings">
+                                                <div class="collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                <span class="tree-item-title">Buildings</span>
+                                            </div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children">
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/balifor/settlements/port-balifor.html#The_Pig_and_Whistle">
+                                                    <div class="tree-item-contents heading-link" heading-name="The Pig and Whistle"><span class="tree-item-title">The Pig and Whistle</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/balifor/settlements/port-balifor.html#Ryke's_Fine_Clothiers">
+                                                    <div class="tree-item-contents heading-link" heading-name="Ryke's Fine Clothiers"><span class="tree-item-title">Ryke's Fine Clothiers</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/balifor/settlements/port-balifor.html#Narl's_Watch">
+                                                    <div class="tree-item-contents heading-link" heading-name="Narl's Watch"><span class="tree-item-title">Narl's Watch</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/balifor/settlements/port-balifor.html#Waverage_Tavern">
+                                                    <div class="tree-item-contents heading-link" heading-name="Waverage Tavern"><span class="tree-item-title">Waverage Tavern</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tree-item mod-collapsible" data-depth="2">
+                                        <a class="tree-link" href="locations/balifor/settlements/port-balifor.html#Roads_and_Streets">
+                                            <div class="tree-item-contents heading-link" heading-name="Roads and Streets">
+                                                <div class="collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                <span class="tree-item-title">Roads and Streets</span>
+                                            </div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children">
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/balifor/settlements/port-balifor.html#Main_Street">
+                                                    <div class="tree-item-contents heading-link" heading-name="Main Street"><span class="tree-item-title">Main Street</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tree-item mod-collapsible" data-depth="2">
+                                        <a class="tree-link" href="locations/balifor/settlements/port-balifor.html#City_Guilds">
+                                            <div class="tree-item-contents heading-link" heading-name="City Guilds">
+                                                <div class="collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                <span class="tree-item-title">City Guilds</span>
+                                            </div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children">
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/balifor/settlements/port-balifor.html#Merchant's_Guild">
+                                                    <div class="tree-item-contents heading-link" heading-name="Merchant's Guild"><span class="tree-item-title">Merchant's Guild</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/balifor/settlements/port-balifor.html#Wool_Merchants_Guild">
+                                                    <div class="tree-item-contents heading-link" heading-name="Wool Merchants Guild"><span class="tree-item-title">Wool Merchants Guild</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/balifor/settlements/port-balifor.html#Council_of_Merchant_Guilds">
+                                                    <div class="tree-item-contents heading-link" heading-name="Council of Merchant Guilds"><span class="tree-item-title">Council of Merchant Guilds</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script defer="">
+                    let rs = document.querySelector(".sidebar-right");
+                    rs.classList.add("is-collapsed");
+                    if (window.innerWidth > 768) rs.classList.remove("is-collapsed");
+                    rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));
+                </script>
+            </div>
+        </div>
+    </body>
+</html>

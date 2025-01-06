@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kendermore</title>
+        <base href="../../../" />
+        <meta id="root-path" root-path="../../../" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0" />
+        <meta charset="UTF-8" />
+        <meta name="description" content="Dragonlance-Sync - Kendermore" />
+        <meta property="og:title" content="Kendermore" />
+        <meta property="og:description" content="Dragonlance-Sync - Kendermore" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="locations/goodlund/cities/kendermore.html" />
+        <meta property="og:image" content="undefined" />
+        <meta property="og:site_name" content="Dragonlance-Sync" />
+        <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml" />
+        <script async="" id="webpage-script" src="lib/scripts/webpage.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script>
+        <script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <link rel="icon" href="lib/media/favicon.png" />
+        <script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
+        <style>
+            body {
+                --line-width: 40em;
+                --line-width-adaptive: 40em;
+                --file-line-width: 40em;
+                --sidebar-width: min(20em, 80vw);
+                --collapse-arrow-size: 11px;
+                --tree-horizontal-spacing: 0.6em;
+                --tree-vertical-spacing: 0.6em;
+                --sidebar-margin: 12px;
+            }
+            .sidebar {
+                height: 100%;
+                min-width: calc(var(--sidebar-width) + var(--divider-width-hover));
+                max-width: calc(var(--sidebar-width) + var(--divider-width-hover));
+                font-size: 14px;
+                z-index: 10;
+                position: relative;
+                overflow: hidden;
+                transition: min-width ease-in-out, max-width ease-in-out;
+                transition-duration: 0.2s;
+                contain: size;
+            }
+            .sidebar-left {
+                left: 0;
+            }
+            .sidebar-right {
+                right: 0;
+            }
+            .sidebar.is-collapsed {
+                min-width: 0;
+                max-width: 0;
+            }
+            body.floating-sidebars .sidebar {
+                position: absolute;
+            }
+            .sidebar-content {
+                height: 100%;
+                min-width: calc(var(--sidebar-width) - var(--divider-width-hover));
+                top: 0;
+                padding: var(--sidebar-margin);
+                padding-top: 4em;
+                line-height: var(--line-height-tight);
+                background-color: var(--background-secondary);
+                transition: background-color, border-right, border-left, box-shadow;
+                transition-duration: var(--color-fade-speed);
+                transition-timing-function: ease-in-out;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+            }
+            .sidebar:not(.is-collapsed) .sidebar-content {
+                min-width: calc(max(100%, var(--sidebar-width)) - 3px);
+                max-width: calc(max(100%, var(--sidebar-width)) - 3px);
+            }
+            .sidebar-left .sidebar-content {
+                left: 0;
+                border-top-right-radius: var(--radius-l);
+                border-bottom-right-radius: var(--radius-l);
+            }
+            .sidebar-right .sidebar-content {
+                right: 0;
+                border-top-left-radius: var(--radius-l);
+                border-bottom-left-radius: var(--radius-l);
+            }
+            .sidebar:has(.sidebar-content:empty):has(.topbar-content:empty) {
+                display: none;
+            }
+            .sidebar-topbar {
+                height: 2em;
+                width: var(--sidebar-width);
+                top: var(--sidebar-margin);
+                padding-inline: var(--sidebar-margin);
+                z-index: 1;
+                position: fixed;
+                display: flex;
+                align-items: center;
+                transition: width ease-in-out;
+                transition-duration: inherit;
+            }
+            .sidebar.is-collapsed .sidebar-topbar {
+                width: calc(2.3em + var(--sidebar-margin) * 2);
+            }
+            .sidebar .sidebar-topbar.is-collapsed {
+                width: 0;
+            }
+            .sidebar-left .sidebar-topbar {
+                left: 0;
+            }
+            .sidebar-right .sidebar-topbar {
+                right: 0;
+            }
+            .topbar-content {
+                overflow: hidden;
+                overflow: clip;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                transition: inherit;
+            }
+            .sidebar.is-collapsed .topbar-content {
+                width: 0;
+                transition: inherit;
+            }
+            .clickable-icon.sidebar-collapse-icon {
+                background-color: transparent;
+                color: var(--icon-color-focused);
+                padding: 0 !important;
+                margin: 0 !important;
+                height: 100% !important;
+                width: 2.3em !important;
+                margin-inline: 0.14em !important;
+                position: absolute;
+            }
+            .sidebar-left .clickable-icon.sidebar-collapse-icon {
+                transform: rotateY(180deg);
+                right: var(--sidebar-margin);
+            }
+            .sidebar-right .clickable-icon.sidebar-collapse-icon {
+                transform: rotateY(180deg);
+                left: var(--sidebar-margin);
+            }
+            .clickable-icon.sidebar-collapse-icon svg.svg-icon {
+                width: 100%;
+                height: 100%;
+            }
+            .sidebar-section-header {
+                margin: 0 0 1em 0;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                font-weight: 600;
+            }
+            body {
+                transition: background-color var(--color-fade-speed) ease-in-out;
+            }
+            .webpage-container {
+                display: flex;
+                flex-direction: row;
+                height: 100%;
+                width: 100%;
+                align-items: stretch;
+                justify-content: center;
+            }
+            .document-container {
+                opacity: 1;
+                flex-basis: 100%;
+                max-width: 100%;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transition: opacity 0.2s ease-in-out;
+                contain: inline-size;
+            }
+            .hide {
+                opacity: 0;
+                transition: opacity 0.2s ease-in-out;
+            }
+            .document-container > .markdown-preview-view {
+                margin: var(--sidebar-margin);
+                margin-bottom: 0;
+                width: 100%;
+                width: -webkit-fill-available;
+                width: -moz-available;
+                width: fill-available;
+                background-color: var(--background-primary);
+                transition: background-color var(--color-fade-speed) ease-in-out;
+                border-top-right-radius: var(--window-radius, var(--radius-m));
+                border-top-left-radius: var(--window-radius, var(--radius-m));
+                overflow-x: hidden !important;
+                overflow-y: auto !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                contain: inline-size;
+            }
+            .document-container > .markdown-preview-view > .markdown-preview-sizer {
+                padding-bottom: 80vh !important;
+                width: 100% !important;
+                max-width: var(--line-width) !important;
+                flex-basis: var(--line-width) !important;
+                transition: background-color var(--color-fade-speed) ease-in-out;
+                contain: inline-size;
+            }
+            .markdown-rendered img:not([width]),
+            .view-content img:not([width]) {
+                max-width: 100%;
+                outline: 0;
+            }
+            .document-container > .view-content.embed {
+                display: flex;
+                padding: 1em;
+                height: 100%;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+            }
+            .document-container > .view-content.embed > * {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+            }
+            :has(> :is(.math, table)) {
+                overflow-x: auto !important;
+            }
+            .document-container > .view-content {
+                overflow-x: auto;
+                contain: content;
+                padding: 0;
+                margin: 0;
+                height: 100%;
+            }
+            .scroll-highlight {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 1000;
+                background-color: hsla(var(--color-accent-hsl), 0.25);
+                opacity: 0;
+                padding: 1em;
+                inset: 50%;
+                translate: -50% -50%;
+                border-radius: var(--radius-s);
+            }
+        </style>
+        <script defer="">
+            async function loadIncludes() {
+                if ("file:" != location.protocol) {
+                    let e = document.querySelectorAll("include");
+                    for (let t = 0; t < e.length; t++) {
+                        let o = e[t],
+                            l = o.getAttribute("src");
+                        try {
+                            const e = await fetch(l);
+                            if (!e.ok) {
+                                console.log("Could not include file: " + l), o?.remove();
+                                continue;
+                            }
+                            let t = await e.text(),
+                                n = document.createRange().createContextualFragment(t),
+                                i = Array.from(n.children);
+                            for (let e of i)
+                                e.classList.add("hide"),
+                                    (e.style.transition = "opacity 0.5s ease-in-out"),
+                                    setTimeout(() => {
+                                        e.classList.remove("hide");
+                                    }, 10);
+                            o.before(n), o.remove(), console.log("Included file: " + l);
+                        } catch (e) {
+                            o?.remove(), console.log("Could not include file: " + l, e);
+                            continue;
+                        }
+                    }
+                } else {
+                    if (document.querySelectorAll("include").length > 0) {
+                        var e = document.createElement("div");
+                        (e.id = "error"),
+                            (e.textContent = "Web server exports must be hosted on an http / web server to be viewed correctly."),
+                            (e.style.position = "fixed"),
+                            (e.style.top = "50%"),
+                            (e.style.left = "50%"),
+                            (e.style.transform = "translate(-50%, -50%)"),
+                            (e.style.fontSize = "1.5em"),
+                            (e.style.fontWeight = "bold"),
+                            (e.style.textAlign = "center"),
+                            document.body.appendChild(e),
+                            document.querySelector(".document-container")?.classList.remove("hide");
+                    }
+                }
+            }
+            document.addEventListener("DOMContentLoaded", () => {
+                loadIncludes();
+            });
+            let isFileProtocol = "file:" == location.protocol;
+            function waitLoadScripts(e, t) {
+                let o = e.map((e) => document.getElementById(e + "-script")),
+                    l = 0;
+                !(function e() {
+                    let n = o[l];
+                    l++, (n && "true" != n.getAttribute("loaded")) || (l < o.length && e()), l < o.length ? n.addEventListener("load", e) : t();
+                })();
+            }
+        </script>
+        <link rel="stylesheet" href="lib/styles/obsidian.css" />
+        <link rel="stylesheet" href="lib/styles/theme.css" />
+        <link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css" /></noscript>
+        <link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css" /></noscript>
+        <link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+        <noscript><link rel="stylesheet" href="lib/styles/main-styles.css" /></noscript>
+    </head>
+    <body class="publish css-settings-manager theme-light show-inline-title show-ribbon check-color check-bg wotc-beyond">
+        <script defer="">
+            let theme = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            "dark" == theme ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light")) : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")),
+                window.innerWidth < 480
+                    ? document.body.classList.add("is-phone")
+                    : window.innerWidth < 768
+                    ? document.body.classList.add("is-tablet")
+                    : window.innerWidth < 1024
+                    ? document.body.classList.add("is-small-screen")
+                    : document.body.classList.add("is-large-screen");
+        </script>
+        <div class="webpage-container workspace">
+            <div class="sidebar-left sidebar">
+                <div class="sidebar-handle"></div>
+                <div class="sidebar-topbar">
+                    <div class="topbar-content">
+                        <label class="theme-toggle-container" for="theme_toggle">
+                            <input class="theme-toggle-input" type="checkbox" id="theme_toggle" />
+                            <div class="toggle-background"></div>
+                        </label>
+                    </div>
+                    <div class="clickable-icon sidebar-collapse-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                            <path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
+                            <path d="M10 4V20"></path>
+                            <path d="M4 7H7"></path>
+                            <path d="M4 10H7"></path>
+                            <path d="M4 13H7"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="sidebar-content">
+                    <div class="search-input-container">
+                        <input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..." />
+                        <div class="search-input-clear-button" aria-label="Clear search"></div>
+                    </div>
+                    <include src="lib/html/file-tree.html"></include>
+                </div>
+                <script defer="">
+                    let ls = document.querySelector(".sidebar-left");
+                    ls.classList.add("is-collapsed");
+                    if (window.innerWidth > 768) ls.classList.remove("is-collapsed");
+                    ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));
+                </script>
+            </div>
+            <div class="document-container markdown-reading-view hide">
+                <div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width">
+                    <style id="MJX-CHTML-styles"></style>
+                    <div class="markdown-preview-sizer markdown-preview-section">
+                        <h1 class="page-title heading inline-title" id="Kendermore"><p dir="auto">Kendermore</p></h1>
+                        <div class="el-p"><p dir="auto">Kendermore is the name of the forest city of the Kender race in the early books of the Dragonlance series. Later in the series, several subraces of Kender were introduced.</p></div>
+                        <div class="el-p">
+                            <p dir="auto">
+                                Kendermore was founded, according to the Kender, near a place that they refer to as "
+                                <a data-href="The Ruins" href="locations/goodlund/ruins/the-ruins.html" class="internal-link" target="_self" rel="noopener nofollow">The Ruins</a>" which are supposedly the ruins of one of the missing Towers
+                                of High Sorcery.
+                            </p>
+                        </div>
+                        <div class="el-h2 heading-wrapper">
+                            <h2 data-heading="History" dir="auto" class="heading" id="History">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                History
+                            </h2>
+                            <div class="heading-children">
+                                <div class="el-p"><p dir="auto">The governing body of Kendermore is the Kendermore Council, led by the Mayor of Kendermore.</p></div>
+                            </div>
+                        </div>
+                        <div class="el-h2 heading-wrapper">
+                            <h2 data-heading="Buildings" dir="auto" class="heading" id="Buildings">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Buildings
+                            </h2>
+                            <div class="heading-children">
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Bertie's House" dir="auto" class="heading" id="Bertie's_House">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Bertie's House
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p"><p dir="auto">Bertie's House was a house located in Kendermore, and owned by Bertie. It was located right on the eastern part of the city on Right Way.</p></div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Big Rock" dir="auto" class="heading" id="Big_Rock">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Big Rock
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p"><p dir="auto">Big Rock was a large rock located in Kendermore. As of 352 AC it was located just east of Main Street and south of Tornado Alley.</p></div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Cat Fishing Hole" dir="auto" class="heading" id="Cat_Fishing_Hole">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Cat Fishing Hole
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p"><p dir="auto">Cat Fishing Hole was located in Kendermore at least by 352 AC, and was just west of Strawberry Boulevard and north of Tornado Alley.</p></div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Giant Hamster Emporium" dir="auto" class="heading" id="Giant_Hamster_Emporium">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Giant Hamster Emporium
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p"><p dir="auto">Giant Hamster Emporium was an emporium located in Kendermore in 352 AC. It was located on the far western edge of the city, just west of Square Circle.</p></div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Gnome Asylum" dir="auto" class="heading" id="Gnome_Asylum">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Gnome Asylum
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p"><p dir="auto">Gnome Asylum was located in in the city of Kendermore in 352 AC. It was at the northwest intersection of Tornado Alley and Straight Street.</p></div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Kendermore City Hall" dir="auto" class="heading" id="Kendermore_City_Hall">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Kendermore City Hall
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                The Kendermore City Hall, or simply known as City Hall, is the head goverment building in Kendermore. This is where the Kendermore Council meets, and the Mayor of Kendermore sits upon his
+                                                Bench of Authority. Built sometime prior to 246 AC, this is a four story tall building is located in the center of the city with a road leading right up to the western wall. It has many rooms
+                                                in it that houses all the city's public works and government offices. As you climb higher up the building, the less and less done the building looks.
+                                            </p>
+                                        </div>
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                The first floor contains two grand ball rooms, with anything of value long been stripped from it. The second floor contains the council chamber, and is basically done except for one of the
+                                                exterior walls of the council chamber missing. The third floor has rooms, but none of those rooms have any doors, while the fourth floor is mostly exposed beams, window frames, and the
+                                                occasional interior wall.
+                                            </p>
+                                        </div>
+                                        <div class="el-p">
+                                            <p dir="auto">When the city hall was first built, there was no central staircase, but ten years after the building was built, an interior stairway spiraled upward in an ever decreasing circle.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Kendermore Palace" dir="auto" class="heading" id="Kendermore_Palace">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Kendermore Palace
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                The Kendermore Palace was a large, beautiful, completely finished three story building located in the kender city of Kendermore, that has two winding staircases in it. When approaching the
+                                                entrance, there is a long, cool reflecting pool stretched out before the steps that lead up to the building. The pool is edged with expertly shaped topiary garden, with hedges cut in the forms
+                                                of animals. The Spadestomper family were the ones taking care of the palace grounds, with Bigelow Spadestomper being the last known in 346 AC.
+                                            </p>
+                                        </div>
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Unlike most cities, the palace was not the seat of power or government for Kendermore. Instead, it was were prisoners were kept. Those who committed crimes would be forced to stay in the
+                                                Palace.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="el-h2 heading-wrapper">
+                            <h2 data-heading="Roads and Streets" dir="auto" class="heading" id="Roads_and_Streets">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Roads and Streets
+                            </h2>
+                            <div class="heading-children">
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Dead End Lane" dir="auto" class="heading" id="Dead_End_Lane">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Dead End Lane
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Dead End Lane was a very small street in Kendermore located in northeast part of the city. Prior to Tornado Alley being formed, it was a longer street, but once the tornado the struck the city
+                                                did its destruction, the street became much shorter.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Direct Route Drive" dir="auto" class="heading" id="Direct_Route_Drive">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Direct Route Drive
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Direct Route Drive was a street in Kendermore located in the northeastern part of the city. Unlike its name, the street was anything but a direct route, starting at a entrance to the city
+                                                before becoming a bit loop.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Dizzy Court" dir="auto" class="heading" id="Dizzy_Court">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Dizzy Court
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">Dizzy Court was a small street in Kendermore located in the western part of the city. The road starts at Tornado Alley and then spins in a circle before it dead ends.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Duck Stop Road" dir="auto" class="heading" id="Duck_Stop_Road">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Duck Stop Road
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p"><p dir="auto">Duck Stop Road was a road in Kendermore located in the northern part of the city. It started at the edge of the city, and ended at an unnamed road.</p></div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Elderberry Avenue" dir="auto" class="heading" id="Elderberry_Avenue">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Elderberry Avenue
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Elderberry Avenue was a street in Kendermore located in the southern and central part of the city. It started at Tornado Alley, and winds south before it dead ends, with several other unnamed
+                                                roads running into it.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Jam Avenue" dir="auto" class="heading" id="Jam_Avenue">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Jam Avenue
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Jam Avenue was a street in Kendermore located in the southwest part of the city. It starts at the city entrance in the southwest, and runs into the city before joining with Strawberry
+                                                Boulevard. Mulberry Street ends at it.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Magic Road" dir="auto" class="heading" id="Magic_Road">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Magic Road
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p"><p dir="auto">Magic Road was a small road in the northwest corner of Kendermore. It crossed Wrong Way and had a very small number of buildings on it.</p></div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Main Street" dir="auto" class="heading" id="Main_Street">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Main Street
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p"><p dir="auto">Main Street in Kendermore started in the eastern part of the city at Tornado Alley and ended at a dead end. Taffy Lane ends at the middle of its route.</p></div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Mulberry Street" dir="auto" class="heading" id="Mulberry_Street">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Mulberry Street
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Mulberry Street was a street in Kendermore located in the western part of Kendermore. It starts at Strawberry Boulevard and ends at Jam Avenue, with other unnamed streets that run into it.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Right Way" dir="auto" class="heading" id="Right_Way">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Right Way
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p"><p dir="auto">Right Way was a street located in eastern part of Kendermore that started at the cities edge and ended at Tornado Alley.</p></div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Short Cut Boulevard" dir="auto" class="heading" id="Short_Cut_Boulevard">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Short Cut Boulevard
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Short Cut Boulevard was a street in Kendermore located in the south central part of the city. It started at the edge of the city, and went north, ending at Tornado Alley. Other smaller streets
+                                                ran into it also.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Square Circle" dir="auto" class="heading" id="Square_Circle">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Square Circle
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Square Circle was a street in Kendermore located in the northwestern part of the city. The street started at Tornado Alley and went in a circle and connected with Straight Street.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Straight Street" dir="auto" class="heading" id="Straight_Street">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Straight Street
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Straight Street, also known as Bildor's Boulevard and Bottleneck Avenue, was one of many streets located in the city of Kendermore. Unlike its name, the street was far from being straight.
+                                                Winding from Elderberry Avenue and crossing Tornado Alley in the middle of the city, before winding back and ending at the western end of the city back on Tornado Alley.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Strawberry Boulevard" dir="auto" class="heading" id="Strawberry_Boulevard">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Strawberry Boulevard
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Strawberry Boulevard, also called Strawberry Street, was a street in Kendermore located in the southwestern part of the city. It started at Tornado Alley and runs into Jam Avenue, and Mulberry
+                                                Street runs into the street also.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Taffy Lane" dir="auto" class="heading" id="Taffy_Lane">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Taffy Lane
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p"><p dir="auto">Was a road in Kendermore that started in the southeast edge of the city and traveled northwest into town, ending at Main Street.</p></div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Tornado Alley" dir="auto" class="heading" id="Tornado_Alley">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Tornado Alley
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Tornado Alley was a road that ran straight east to west through Kendermore. The road was created when an actual tornado ran through the city, destroying everything in its path. Rather than
+                                                rebuilding it, the kender there simply just made it the main road through town. Many roads cross or end at this road, along with many buildings located a long it including the Kendermore City
+                                                Hall.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Wrong Way" dir="auto" class="heading" id="Wrong_Way">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Wrong Way
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p"><p dir="auto">Wrong Way was a street in Kendermore located in the northern part of the city. It ran East from Magic Road to Duck Stop Road.</p></div>
+                                        <div class="mod-footer mod-ui"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-right sidebar">
+                <div class="sidebar-handle"></div>
+                <div class="sidebar-topbar">
+                    <div class="topbar-content"></div>
+                    <div class="clickable-icon sidebar-collapse-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                            <path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path>
+                            <path d="M10 4V20"></path>
+                            <path d="M4 7H7"></path>
+                            <path d="M4 10H7"></path>
+                            <path d="M4 13H7"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="sidebar-content">
+                    <div class="graph-view-wrapper">
+                        <div class="sidebar-section-header">Interactive Graph</div>
+                        <div class="graph-view-placeholder">
+                            <div class="graph-view-container">
+                                <div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
+                                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                                        <polyline points="7 7 17 7 17 17"></polyline>
+                                    </svg>
+                                </div>
+                                <canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0">
+                        <div class="tree-header">
+                            <span class="sidebar-section-header">Table Of Contents</span>
+                            <button class="clickable-icon collapse-tree-button" aria-label="Collapse All">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
+                            </button>
+                        </div>
+                        <div class="tree-scroll-area tree-item-children nav-folder-children">
+                            <div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div>
+                            <div class="tree-item" data-depth="1">
+                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Kendermore">
+                                    <div class="tree-item-contents heading-link" heading-name="Kendermore"><span class="tree-item-title">Kendermore</span></div>
+                                </a>
+                                <div class="tree-item-children nav-folder-children">
+                                    <div class="tree-item" data-depth="2">
+                                        <a class="tree-link" href="locations/goodlund/cities/kendermore.html#History">
+                                            <div class="tree-item-contents heading-link" heading-name="History"><span class="tree-item-title">History</span></div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children"></div>
+                                    </div>
+                                    <div class="tree-item mod-collapsible" data-depth="2">
+                                        <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Buildings">
+                                            <div class="tree-item-contents heading-link" heading-name="Buildings">
+                                                <div class="collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                <span class="tree-item-title">Buildings</span>
+                                            </div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children">
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Bertie's_House">
+                                                    <div class="tree-item-contents heading-link" heading-name="Bertie's House"><span class="tree-item-title">Bertie's House</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Big_Rock">
+                                                    <div class="tree-item-contents heading-link" heading-name="Big Rock"><span class="tree-item-title">Big Rock</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Cat_Fishing_Hole">
+                                                    <div class="tree-item-contents heading-link" heading-name="Cat Fishing Hole"><span class="tree-item-title">Cat Fishing Hole</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Giant_Hamster_Emporium">
+                                                    <div class="tree-item-contents heading-link" heading-name="Giant Hamster Emporium"><span class="tree-item-title">Giant Hamster Emporium</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Gnome_Asylum">
+                                                    <div class="tree-item-contents heading-link" heading-name="Gnome Asylum"><span class="tree-item-title">Gnome Asylum</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Kendermore_City_Hall">
+                                                    <div class="tree-item-contents heading-link" heading-name="Kendermore City Hall"><span class="tree-item-title">Kendermore City Hall</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Kendermore_Palace">
+                                                    <div class="tree-item-contents heading-link" heading-name="Kendermore Palace"><span class="tree-item-title">Kendermore Palace</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tree-item mod-collapsible" data-depth="2">
+                                        <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Roads_and_Streets">
+                                            <div class="tree-item-contents heading-link" heading-name="Roads and Streets">
+                                                <div class="collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                <span class="tree-item-title">Roads and Streets</span>
+                                            </div>
+                                        </a>
+                                        <div class="tree-item-children nav-folder-children">
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Dead_End_Lane">
+                                                    <div class="tree-item-contents heading-link" heading-name="Dead End Lane"><span class="tree-item-title">Dead End Lane</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Direct_Route_Drive">
+                                                    <div class="tree-item-contents heading-link" heading-name="Direct Route Drive"><span class="tree-item-title">Direct Route Drive</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Dizzy_Court">
+                                                    <div class="tree-item-contents heading-link" heading-name="Dizzy Court"><span class="tree-item-title">Dizzy Court</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Duck_Stop_Road">
+                                                    <div class="tree-item-contents heading-link" heading-name="Duck Stop Road"><span class="tree-item-title">Duck Stop Road</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Elderberry_Avenue">
+                                                    <div class="tree-item-contents heading-link" heading-name="Elderberry Avenue"><span class="tree-item-title">Elderberry Avenue</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Jam_Avenue">
+                                                    <div class="tree-item-contents heading-link" heading-name="Jam Avenue"><span class="tree-item-title">Jam Avenue</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Magic_Road">
+                                                    <div class="tree-item-contents heading-link" heading-name="Magic Road"><span class="tree-item-title">Magic Road</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Main_Street">
+                                                    <div class="tree-item-contents heading-link" heading-name="Main Street"><span class="tree-item-title">Main Street</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Mulberry_Street">
+                                                    <div class="tree-item-contents heading-link" heading-name="Mulberry Street"><span class="tree-item-title">Mulberry Street</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Right_Way">
+                                                    <div class="tree-item-contents heading-link" heading-name="Right Way"><span class="tree-item-title">Right Way</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Short_Cut_Boulevard">
+                                                    <div class="tree-item-contents heading-link" heading-name="Short Cut Boulevard"><span class="tree-item-title">Short Cut Boulevard</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Square_Circle">
+                                                    <div class="tree-item-contents heading-link" heading-name="Square Circle"><span class="tree-item-title">Square Circle</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Straight_Street">
+                                                    <div class="tree-item-contents heading-link" heading-name="Straight Street"><span class="tree-item-title">Straight Street</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Strawberry_Boulevard">
+                                                    <div class="tree-item-contents heading-link" heading-name="Strawberry Boulevard"><span class="tree-item-title">Strawberry Boulevard</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Taffy_Lane">
+                                                    <div class="tree-item-contents heading-link" heading-name="Taffy Lane"><span class="tree-item-title">Taffy Lane</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Tornado_Alley">
+                                                    <div class="tree-item-contents heading-link" heading-name="Tornado Alley"><span class="tree-item-title">Tornado Alley</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a class="tree-link" href="locations/goodlund/cities/kendermore.html#Wrong_Way">
+                                                    <div class="tree-item-contents heading-link" heading-name="Wrong Way"><span class="tree-item-title">Wrong Way</span></div>
+                                                </a>
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script defer="">
+                    let rs = document.querySelector(".sidebar-right");
+                    rs.classList.add("is-collapsed");
+                    if (window.innerWidth > 768) rs.classList.remove("is-collapsed");
+                    rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
