@@ -15,14 +15,8 @@
         <meta property="og:site_name" content="Dragonlance-Sync" />
         <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml" />
         <script async="" id="webpage-script" src="lib/scripts/webpage.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
-        <script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script>
-        <script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
-        <script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
-        <script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
-        <script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
         <script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
         <link rel="icon" href="lib/media/favicon.png" />
-        <script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload='this.onload=null;this.setAttribute("loaded", "true")'></script>
         <style>
             body {
                 --line-width: 40em;
@@ -332,7 +326,6 @@
         </script>
         <div class="webpage-container workspace">
             <div class="sidebar-left sidebar">
-                <div class="sidebar-handle"></div>
                 <div class="sidebar-topbar">
                     <div class="topbar-content">
                         <label class="theme-toggle-container" for="theme_toggle">
@@ -355,7 +348,6 @@
                         <input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..." />
                         <div class="search-input-clear-button" aria-label="Clear search"></div>
                     </div>
-                    <include src="lib/html/file-tree.html"></include>
                 </div>
                 <script defer="">
                     let ls = document.querySelector(".sidebar-left");
@@ -441,7 +433,6 @@
                 </div>
             </div>
             <div class="sidebar-right sidebar">
-                <div class="sidebar-handle"></div>
                 <div class="sidebar-topbar">
                     <div class="topbar-content"></div>
                     <div class="clickable-icon sidebar-collapse-icon">
@@ -454,53 +445,7 @@
                         </svg>
                     </div>
                 </div>
-                <div class="sidebar-content">
-                    <div class="graph-view-wrapper">
-                        <div class="sidebar-section-header">Interactive Graph</div>
-                        <div class="graph-view-placeholder">
-                            <div class="graph-view-container">
-                                <div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon">
-                                        <line x1="7" y1="17" x2="17" y2="7"></line>
-                                        <polyline points="7 7 17 7 17 17"></polyline>
-                                    </svg>
-                                </div>
-                                <canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0">
-                        <div class="tree-header">
-                            <span class="sidebar-section-header">Table Of Contents</span>
-                            <button class="clickable-icon collapse-tree-button" aria-label="Collapse All">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg>
-                            </button>
-                        </div>
-                        <div class="tree-scroll-area tree-item-children nav-folder-children">
-                            <div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div>
-                            <div class="tree-item" data-depth="1">
-                                <a class="tree-link" href="session-notes/30.-january-4th,-2025-the-search.html#30. January 4th, 2025 The Search">
-                                    <div
-                                        class="tree-item-contents heading-link"
-                                        heading-name="
-January 4th, 2025 The Search
-"
-                                    >
-                                        <span class="tree-item-title">January 4th, 2025 The Search</span>
-                                    </div>
-                                </a>
-                                <div class="tree-item-children nav-folder-children">
-                                    <div class="tree-item" data-depth="2">
-                                        <a class="tree-link" href="session-notes/30.-january-4th,-2025-the-search.html#Holmswelt_6-13,_360_A.C.">
-                                            <div class="tree-item-contents heading-link" heading-name="Holmswelt 6-13, 360 A.C."><span class="tree-item-title">Holmswelt 6-13, 360 A.C.</span></div>
-                                        </a>
-                                        <div class="tree-item-children nav-folder-children"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="sidebar-content"></div>
                 <script defer="">
                     let rs = document.querySelector(".sidebar-right");
                     rs.classList.add("is-collapsed");

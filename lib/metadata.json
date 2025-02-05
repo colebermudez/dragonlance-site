@@ -1,16 +1,17 @@
 {
   "vaultName": "Dragonlance-Sync",
-  "lastExport": 1738012132122,
+  "lastExport": 1738777745811,
   "pluginVersion": "1.8.01",
   "validBodyClasses": "publish css-settings-manager theme-light show-inline-title show-ribbon check-color check-bg wotc-beyond",
   "useCustomHeadContent": false,
   "useCustomFavicon": false,
   "files": [
+    "Session Notes/30. January 4th, 2025 The Search.md",
     "Session Notes/31. January 11th, 2025 Ominous Winds.md",
     "Session Notes/32. January 18th, 2025 The Creatures Below.md",
     "Session Notes/33. January 25th, 2025 The Eternal Altar.md",
+    "Session Notes/34. February 1st, 2025 Than-Khal's Secrets.md",
     "Session Notes/Session Notes.md",
-    "lib/scripts/graph-wasm.wasm",
     "lib/fonts/94f2f163d4b698242fef.otf",
     "lib/fonts/72505e6a122c6acd5471.woff2",
     "lib/fonts/2d5198822ab091ce4305.woff2",
@@ -24,17 +25,10 @@
     "lib/fonts/52ac8f3034507f1d9e53.ttf",
     "lib/fonts/05b618077343fbbd92b7.ttf",
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
-    "lib/media/874d8b8e340f75575caa.svg",
-    "lib/html/file-tree.html",
+    "lib/media/6155340132a851f6089e.svg",
     "lib/scripts/webpage.js",
-    "lib/scripts/graph-view.js",
-    "lib/scripts/graph-wasm.js",
-    "lib/scripts/graph-render-worker.js",
-    "lib/scripts/tinycolor.js",
-    "lib/scripts/pixi.js",
     "lib/scripts/minisearch.js",
     "lib/media/favicon.png",
-    "lib/scripts/graph-data.js",
     "lib/styles/obsidian.css",
     "lib/styles/theme.css",
     "lib/styles/global-variable-styles.css",
@@ -42,7 +36,6 @@
     "lib/styles/main-styles.css"
   ],
   "mainDependencies": [
-    "lib/scripts/graph-wasm.wasm",
     "lib/fonts/94f2f163d4b698242fef.otf",
     "lib/fonts/72505e6a122c6acd5471.woff2",
     "lib/fonts/2d5198822ab091ce4305.woff2",
@@ -56,17 +49,10 @@
     "lib/fonts/52ac8f3034507f1d9e53.ttf",
     "lib/fonts/05b618077343fbbd92b7.ttf",
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
-    "lib/media/874d8b8e340f75575caa.svg",
-    "lib/html/file-tree.html",
+    "lib/media/6155340132a851f6089e.svg",
     "lib/scripts/webpage.js",
-    "lib/scripts/graph-view.js",
-    "lib/scripts/graph-wasm.js",
-    "lib/scripts/graph-render-worker.js",
-    "lib/scripts/tinycolor.js",
-    "lib/scripts/pixi.js",
     "lib/scripts/minisearch.js",
     "lib/media/favicon.png",
-    "lib/scripts/graph-data.js",
     "lib/styles/obsidian.css",
     "lib/styles/theme.css",
     "lib/styles/global-variable-styles.css",
@@ -75,79 +61,79 @@
   ],
   "fileInfo": {
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1738012132122,
+      "modifiedTime": 1738777745811,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1738012132122,
+      "modifiedTime": 1738777745811,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1738012132122,
+      "modifiedTime": 1738777745811,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1738012132122,
+      "modifiedTime": 1738777745811,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1738012132122,
+      "modifiedTime": 1738777745811,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1738012132122,
+      "modifiedTime": 1738777745811,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1738012132122,
+      "modifiedTime": 1738777745811,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1738012132122,
+      "modifiedTime": 1738777745811,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1738012132122,
+      "modifiedTime": 1738777745811,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1738012132122,
+      "modifiedTime": 1738777745811,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1738012132122,
+      "modifiedTime": 1738777745811,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1738012132122,
+      "modifiedTime": 1738777745811,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1738012132122,
+      "modifiedTime": 1738777745811,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
@@ -165,49 +151,49 @@
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
-      "modifiedTime": 1738012132122,
+      "modifiedTime": 1738777745811,
       "sourceSize": 47290,
       "exportedPath": "lib/scripts/webpage.js",
       "dependencies": []
     },
     "lib/scripts/minisearch.js": {
-      "modifiedTime": 1738012132122,
+      "modifiedTime": 1738777745811,
       "sourceSize": 29422,
       "exportedPath": "lib/scripts/minisearch.js",
       "dependencies": []
     },
     "lib/media/favicon.png": {
-      "modifiedTime": 1738012132122,
+      "modifiedTime": 1738777745811,
       "sourceSize": 1105,
       "exportedPath": "lib/media/favicon.png",
       "dependencies": []
     },
     "lib/styles/obsidian.css": {
-      "modifiedTime": 1738012132122,
-      "sourceSize": 131021,
+      "modifiedTime": 1738777745811,
+      "sourceSize": 137228,
       "exportedPath": "lib/styles/obsidian.css",
       "dependencies": []
     },
     "lib/styles/theme.css": {
-      "modifiedTime": 1738012132122,
+      "modifiedTime": 1738777745811,
       "sourceSize": 718333,
       "exportedPath": "lib/styles/theme.css",
       "dependencies": []
     },
     "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1738012132122,
-      "sourceSize": 236,
+      "modifiedTime": 1738777745811,
+      "sourceSize": 262,
       "exportedPath": "lib/styles/global-variable-styles.css",
       "dependencies": []
     },
     "lib/styles/supported-plugins.css": {
-      "modifiedTime": 1738012132122,
+      "modifiedTime": 1738777745811,
       "sourceSize": 4354,
       "exportedPath": "lib/styles/supported-plugins.css",
       "dependencies": []
     },
     "lib/styles/main-styles.css": {
-      "modifiedTime": 1738012132122,
+      "modifiedTime": 1738777745811,
       "sourceSize": 23130,
       "exportedPath": "lib/styles/main-styles.css",
       "dependencies": []
@@ -279,27 +265,45 @@
       "dependencies": []
     },
     "Session Notes/31. January 11th, 2025 Ominous Winds.md": {
-      "modifiedTime": 1738012132122,
+      "modifiedTime": 1738777745811,
       "sourceSize": 2582,
       "exportedPath": "session-notes/31.-january-11th,-2025-ominous-winds.html",
       "dependencies": []
     },
     "Session Notes/Session Notes.md": {
-      "modifiedTime": 1738012132122,
-      "sourceSize": 2801,
+      "modifiedTime": 1738777745811,
+      "sourceSize": 2887,
       "exportedPath": "session-notes/session-notes.html",
       "dependencies": []
     },
     "Session Notes/32. January 18th, 2025 The Creatures Below.md": {
-      "modifiedTime": 1738012132122,
-      "sourceSize": 2441,
+      "modifiedTime": 1738777745811,
+      "sourceSize": 2472,
       "exportedPath": "session-notes/32.-january-18th,-2025-the-creatures-below.html",
       "dependencies": []
     },
     "Session Notes/33. January 25th, 2025 The Eternal Altar.md": {
-      "modifiedTime": 1738012132122,
-      "sourceSize": 3326,
+      "modifiedTime": 1738777745811,
+      "sourceSize": 3357,
       "exportedPath": "session-notes/33.-january-25th,-2025-the-eternal-altar.html",
+      "dependencies": []
+    },
+    "Session Notes/30. January 4th, 2025 The Search.md": {
+      "modifiedTime": 1738777745811,
+      "sourceSize": 1976,
+      "exportedPath": "session-notes/30.-january-4th,-2025-the-search.html",
+      "dependencies": []
+    },
+    "Session Notes/34. February 1st, 2025 Than-Khal's Secrets.md": {
+      "modifiedTime": 1738777745811,
+      "sourceSize": 3040,
+      "exportedPath": "session-notes/34.-february-1st,-2025-than-khal's-secrets.html",
+      "dependencies": []
+    },
+    "lib/media/6155340132a851f6089e.svg": {
+      "modifiedTime": 1738777745811,
+      "sourceSize": 315,
+      "exportedPath": "lib/media/6155340132a851f6089e.svg",
       "dependencies": []
     }
   }
