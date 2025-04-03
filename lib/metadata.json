@@ -1,11 +1,15 @@
 {
   "vaultName": "Dragonlance-Sync",
-  "lastExport": 1743177260584,
+  "lastExport": 1743718898085,
   "pluginVersion": "1.8.01",
   "validBodyClasses": "publish css-settings-manager theme-light show-inline-title show-ribbon check-color check-bg wotc-beyond",
   "useCustomHeadContent": false,
   "useCustomFavicon": false,
   "files": [
+    "Session Notes/37. March 1st, 2025 The Stolen Artifact.md",
+    "Session Notes/38. March 9th, 2025 Infiltrating Icereach Castle.md",
+    "Session Notes/39. March 22nd, 2025 Defeating The White Dragonarmy.md",
+    "Session Notes/40. March 29th, 2025 Next  Steps.md",
     "Session Notes/Session Notes.md",
     "lib/fonts/94f2f163d4b698242fef.otf",
     "lib/fonts/72505e6a122c6acd5471.woff2",
@@ -56,79 +60,79 @@
   ],
   "fileInfo": {
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1743177260584,
+      "modifiedTime": 1743718898085,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1743177260584,
+      "modifiedTime": 1743718898085,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1743177260584,
+      "modifiedTime": 1743718898085,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1743177260584,
+      "modifiedTime": 1743718898085,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1743177260584,
+      "modifiedTime": 1743718898085,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1743177260584,
+      "modifiedTime": 1743718898085,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1743177260584,
+      "modifiedTime": 1743718898085,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1743177260584,
+      "modifiedTime": 1743718898085,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1743177260584,
+      "modifiedTime": 1743718898085,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1743177260584,
+      "modifiedTime": 1743718898085,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1743177260584,
+      "modifiedTime": 1743718898085,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1743177260584,
+      "modifiedTime": 1743718898085,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1743177260584,
+      "modifiedTime": 1743718898085,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
@@ -146,49 +150,49 @@
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
-      "modifiedTime": 1743177260584,
+      "modifiedTime": 1743718898085,
       "sourceSize": 47290,
       "exportedPath": "lib/scripts/webpage.js",
       "dependencies": []
     },
     "lib/scripts/minisearch.js": {
-      "modifiedTime": 1743177260584,
+      "modifiedTime": 1743718898085,
       "sourceSize": 29422,
       "exportedPath": "lib/scripts/minisearch.js",
       "dependencies": []
     },
     "lib/media/favicon.png": {
-      "modifiedTime": 1743177260584,
+      "modifiedTime": 1743718898085,
       "sourceSize": 1105,
       "exportedPath": "lib/media/favicon.png",
       "dependencies": []
     },
     "lib/styles/obsidian.css": {
-      "modifiedTime": 1743177260584,
+      "modifiedTime": 1743718898085,
       "sourceSize": 137466,
       "exportedPath": "lib/styles/obsidian.css",
       "dependencies": []
     },
     "lib/styles/theme.css": {
-      "modifiedTime": 1743177260584,
+      "modifiedTime": 1743718898085,
       "sourceSize": 718333,
       "exportedPath": "lib/styles/theme.css",
       "dependencies": []
     },
     "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1743177260584,
+      "modifiedTime": 1743718898085,
       "sourceSize": 262,
       "exportedPath": "lib/styles/global-variable-styles.css",
       "dependencies": []
     },
     "lib/styles/supported-plugins.css": {
-      "modifiedTime": 1743177260584,
-      "sourceSize": 4354,
+      "modifiedTime": 1743718898085,
+      "sourceSize": 5200,
       "exportedPath": "lib/styles/supported-plugins.css",
       "dependencies": []
     },
     "lib/styles/main-styles.css": {
-      "modifiedTime": 1743177260584,
+      "modifiedTime": 1743718898085,
       "sourceSize": 23130,
       "exportedPath": "lib/styles/main-styles.css",
       "dependencies": []
@@ -260,15 +264,39 @@
       "dependencies": []
     },
     "Session Notes/Session Notes.md": {
-      "modifiedTime": 1743177260584,
-      "sourceSize": 3324,
+      "modifiedTime": 1743718898085,
+      "sourceSize": 3397,
       "exportedPath": "session-notes/session-notes.html",
       "dependencies": []
     },
     "lib/media/6155340132a851f6089e.svg": {
-      "modifiedTime": 1743177260584,
+      "modifiedTime": 1743718898085,
       "sourceSize": 315,
       "exportedPath": "lib/media/6155340132a851f6089e.svg",
+      "dependencies": []
+    },
+    "Session Notes/37. March 1st, 2025 The Stolen Artifact.md": {
+      "modifiedTime": 1743718898085,
+      "sourceSize": 2933,
+      "exportedPath": "session-notes/37.-march-1st,-2025-the-stolen-artifact.html",
+      "dependencies": []
+    },
+    "Session Notes/38. March 9th, 2025 Infiltrating Icereach Castle.md": {
+      "modifiedTime": 1743718898085,
+      "sourceSize": 1749,
+      "exportedPath": "session-notes/38.-march-9th,-2025-infiltrating-icereach-castle.html",
+      "dependencies": []
+    },
+    "Session Notes/39. March 22nd, 2025 Defeating The White Dragonarmy.md": {
+      "modifiedTime": 1743718898085,
+      "sourceSize": 7456,
+      "exportedPath": "session-notes/39.-march-22nd,-2025-defeating-the-white-dragonarmy.html",
+      "dependencies": []
+    },
+    "Session Notes/40. March 29th, 2025 Next  Steps.md": {
+      "modifiedTime": 1743718898085,
+      "sourceSize": 1501,
+      "exportedPath": "session-notes/40.-march-29th,-2025-next-steps.html",
       "dependencies": []
     }
   }
