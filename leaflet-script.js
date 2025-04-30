@@ -21,11 +21,11 @@ let map = L.map("map", {
 });
 
 // coordinate array with popup text
-let points = [
-  [1750,990, "Garreg Mach Monatery"],
-  [1675,1025, "The Monolith"],
-  [1300,1625, "Current Location"],
-];
+//let points = [
+//  [1750,990, "Garreg Mach Monatery"],
+//  [1675,1025, "The Monolith"],
+//  [1300,1625, "Current Location"],
+//];
 
 // Used to load and display a single image over
 // specific bounds of the map. Extends `Layer`.
