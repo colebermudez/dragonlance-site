@@ -1,0 +1,1974 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Southern Ergoth Locations</title>
+        <base href="../../" />
+        <meta id="root-path" root-path="../../" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <meta charset="UTF-8" />
+        <meta name="description" content="Dragonlance - Southern Ergoth Locations" />
+        <meta property="og:title" content="Southern Ergoth Locations" />
+        <meta property="og:description" content="Dragonlance - Southern Ergoth Locations" />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:url"
+            content="https://krynns-vanguard.com/locations/southern-ergoth/southern-ergoth-locations.html"
+        />
+        <meta property="og:image" content="undefined" />
+        <meta property="og:site_name" content="Dragonlance" />
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="RSS Feed"
+            href="https://krynns-vanguard.com/lib/rss.xml"
+        />
+        <script
+            async=""
+            id="webpage-script"
+            src="lib/scripts/webpage.js"
+            onload='this.onload=null;this.setAttribute("loaded", "true")'
+        ></script>
+        <script
+            async=""
+            id="minisearch-script"
+            src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js"
+            onload='this.onload=null;this.setAttribute("loaded", "true")'
+        ></script>
+        <link rel="icon" href="lib/media/favicon.png" />
+        <style>
+            body {
+                --line-width: 40em;
+                --line-width-adaptive: 40em;
+                --file-line-width: 40em;
+                --sidebar-width: min(20em, 80vw);
+                --collapse-arrow-size: 11px;
+                --tree-horizontal-spacing: 0.6em;
+                --tree-vertical-spacing: 0.6em;
+                --sidebar-margin: 12px;
+            }
+            .sidebar {
+                height: 100%;
+                min-width: calc(var(--sidebar-width) + var(--divider-width-hover));
+                max-width: calc(var(--sidebar-width) + var(--divider-width-hover));
+                font-size: 14px;
+                z-index: 10;
+                position: relative;
+                overflow: hidden;
+                transition:
+                    min-width ease-in-out,
+                    max-width ease-in-out;
+                transition-duration: 0.2s;
+                contain: size;
+            }
+            .sidebar-left {
+                left: 0;
+            }
+            .sidebar-right {
+                right: 0;
+            }
+            .sidebar.is-collapsed {
+                min-width: 0;
+                max-width: 0;
+            }
+            body.floating-sidebars .sidebar {
+                position: absolute;
+            }
+            .sidebar-content {
+                height: 100%;
+                min-width: calc(var(--sidebar-width) - var(--divider-width-hover));
+                top: 0;
+                padding: var(--sidebar-margin);
+                padding-top: 4em;
+                line-height: var(--line-height-tight);
+                background-color: var(--background-secondary);
+                transition: background-color, border-right, border-left, box-shadow;
+                transition-duration: var(--color-fade-speed);
+                transition-timing-function: ease-in-out;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+            }
+            .sidebar:not(.is-collapsed) .sidebar-content {
+                min-width: calc(max(100%, var(--sidebar-width)) - 3px);
+                max-width: calc(max(100%, var(--sidebar-width)) - 3px);
+            }
+            .sidebar-left .sidebar-content {
+                left: 0;
+                border-top-right-radius: var(--radius-l);
+                border-bottom-right-radius: var(--radius-l);
+            }
+            .sidebar-right .sidebar-content {
+                right: 0;
+                border-top-left-radius: var(--radius-l);
+                border-bottom-left-radius: var(--radius-l);
+            }
+            .sidebar:has(.sidebar-content:empty):has(.topbar-content:empty) {
+                display: none;
+            }
+            .sidebar-topbar {
+                height: 2em;
+                width: var(--sidebar-width);
+                top: var(--sidebar-margin);
+                padding-inline: var(--sidebar-margin);
+                z-index: 1;
+                position: fixed;
+                display: flex;
+                align-items: center;
+                transition: width ease-in-out;
+                transition-duration: inherit;
+            }
+            .sidebar.is-collapsed .sidebar-topbar {
+                width: calc(2.3em + var(--sidebar-margin) * 2);
+            }
+            .sidebar .sidebar-topbar.is-collapsed {
+                width: 0;
+            }
+            .sidebar-left .sidebar-topbar {
+                left: 0;
+            }
+            .sidebar-right .sidebar-topbar {
+                right: 0;
+            }
+            .topbar-content {
+                overflow: hidden;
+                overflow: clip;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                transition: inherit;
+            }
+            .sidebar.is-collapsed .topbar-content {
+                width: 0;
+                transition: inherit;
+            }
+            .clickable-icon.sidebar-collapse-icon {
+                background-color: transparent;
+                color: var(--icon-color-focused);
+                padding: 0 !important;
+                margin: 0 !important;
+                height: 100% !important;
+                width: 2.3em !important;
+                margin-inline: 0.14em !important;
+                position: absolute;
+            }
+            .sidebar-left .clickable-icon.sidebar-collapse-icon {
+                transform: rotateY(180deg);
+                right: var(--sidebar-margin);
+            }
+            .sidebar-right .clickable-icon.sidebar-collapse-icon {
+                transform: rotateY(180deg);
+                left: var(--sidebar-margin);
+            }
+            .clickable-icon.sidebar-collapse-icon svg.svg-icon {
+                width: 100%;
+                height: 100%;
+            }
+            .sidebar-section-header {
+                margin: 0 0 1em 0;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                font-weight: 600;
+            }
+            body {
+                transition: background-color var(--color-fade-speed) ease-in-out;
+            }
+            .webpage-container {
+                display: flex;
+                flex-direction: row;
+                height: 100%;
+                width: 100%;
+                align-items: stretch;
+                justify-content: center;
+            }
+            .document-container {
+                opacity: 1;
+                flex-basis: 100%;
+                max-width: 100%;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                transition: opacity 0.2s ease-in-out;
+                contain: inline-size;
+            }
+            .hide {
+                opacity: 0;
+                transition: opacity 0.2s ease-in-out;
+            }
+            .document-container > .markdown-preview-view {
+                margin: var(--sidebar-margin);
+                margin-bottom: 0;
+                width: 100%;
+                width: -webkit-fill-available;
+                width: -moz-available;
+                width: fill-available;
+                background-color: var(--background-primary);
+                transition: background-color var(--color-fade-speed) ease-in-out;
+                border-top-right-radius: var(--window-radius, var(--radius-m));
+                border-top-left-radius: var(--window-radius, var(--radius-m));
+                overflow-x: hidden !important;
+                overflow-y: auto !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                contain: inline-size;
+            }
+            .document-container > .markdown-preview-view > .markdown-preview-sizer {
+                padding-bottom: 80vh !important;
+                width: 100% !important;
+                max-width: var(--line-width) !important;
+                flex-basis: var(--line-width) !important;
+                transition: background-color var(--color-fade-speed) ease-in-out;
+                contain: inline-size;
+            }
+            .markdown-rendered img:not([width]),
+            .view-content img:not([width]) {
+                max-width: 100%;
+                outline: 0;
+            }
+            .document-container > .view-content.embed {
+                display: flex;
+                padding: 1em;
+                height: 100%;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+            }
+            .document-container > .view-content.embed > * {
+                max-width: 100%;
+                max-height: 100%;
+                object-fit: contain;
+            }
+            :has(> :is(.math, table)) {
+                overflow-x: auto !important;
+            }
+            .document-container > .view-content {
+                overflow-x: auto;
+                contain: content;
+                padding: 0;
+                margin: 0;
+                height: 100%;
+            }
+            .scroll-highlight {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
+                z-index: 1000;
+                background-color: hsla(var(--color-accent-hsl), 0.25);
+                opacity: 0;
+                padding: 1em;
+                inset: 50%;
+                translate: -50% -50%;
+                border-radius: var(--radius-s);
+            }
+        </style>
+        <script defer="">
+            async function loadIncludes() {
+                if ("file:" != location.protocol) {
+                    let e = document.querySelectorAll("include");
+                    for (let t = 0; t < e.length; t++) {
+                        let o = e[t],
+                            l = o.getAttribute("src");
+                        try {
+                            const e = await fetch(l);
+                            if (!e.ok) {
+                                console.log("Could not include file: " + l), o?.remove();
+                                continue;
+                            }
+                            let t = await e.text(),
+                                n = document.createRange().createContextualFragment(t),
+                                i = Array.from(n.children);
+                            for (let e of i)
+                                e.classList.add("hide"),
+                                    (e.style.transition = "opacity 0.5s ease-in-out"),
+                                    setTimeout(() => {
+                                        e.classList.remove("hide");
+                                    }, 10);
+                            o.before(n), o.remove(), console.log("Included file: " + l);
+                        } catch (e) {
+                            o?.remove(), console.log("Could not include file: " + l, e);
+                            continue;
+                        }
+                    }
+                } else {
+                    if (document.querySelectorAll("include").length > 0) {
+                        var e = document.createElement("div");
+                        (e.id = "error"),
+                            (e.textContent =
+                                "Web server exports must be hosted on an http / web server to be viewed correctly."),
+                            (e.style.position = "fixed"),
+                            (e.style.top = "50%"),
+                            (e.style.left = "50%"),
+                            (e.style.transform = "translate(-50%, -50%)"),
+                            (e.style.fontSize = "1.5em"),
+                            (e.style.fontWeight = "bold"),
+                            (e.style.textAlign = "center"),
+                            document.body.appendChild(e),
+                            document.querySelector(".document-container")?.classList.remove("hide");
+                    }
+                }
+            }
+            document.addEventListener("DOMContentLoaded", () => {
+                loadIncludes();
+            });
+            let isFileProtocol = "file:" == location.protocol;
+            function waitLoadScripts(e, t) {
+                let o = e.map((e) => document.getElementById(e + "-script")),
+                    l = 0;
+                !(function e() {
+                    let n = o[l];
+                    l++,
+                        (n && "true" != n.getAttribute("loaded")) || (l < o.length && e()),
+                        l < o.length ? n.addEventListener("load", e) : t();
+                })();
+            }
+        </script>
+        <link rel="stylesheet" href="lib/styles/obsidian.css" />
+        <link rel="stylesheet" href="lib/styles/theme.css" />
+        <link
+            rel="preload"
+            href="lib/styles/global-variable-styles.css"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
+        />
+        <noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css" /></noscript>
+        <link
+            rel="preload"
+            href="lib/styles/supported-plugins.css"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
+        />
+        <noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css" /></noscript>
+        <link
+            rel="preload"
+            href="lib/styles/main-styles.css"
+            as="style"
+            onload="this.onload=null;this.rel='stylesheet'"
+        />
+        <noscript><link rel="stylesheet" href="lib/styles/main-styles.css" /></noscript>
+    </head>
+    <body
+        class="publish css-settings-manager theme-light show-inline-title show-ribbon check-color check-bg wotc-beyond"
+    >
+        <script defer="">
+            let theme =
+                localStorage.getItem("theme") ||
+                (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            "dark" == theme
+                ? (document.body.classList.add("theme-dark"), document.body.classList.remove("theme-light"))
+                : (document.body.classList.add("theme-light"), document.body.classList.remove("theme-dark")),
+                window.innerWidth < 480
+                    ? document.body.classList.add("is-phone")
+                    : window.innerWidth < 768
+                      ? document.body.classList.add("is-tablet")
+                      : window.innerWidth < 1024
+                        ? document.body.classList.add("is-small-screen")
+                        : document.body.classList.add("is-large-screen");
+        </script>
+        <div class="webpage-container workspace">
+            <div class="sidebar-left sidebar">
+                <div class="sidebar-handle"></div>
+                <div class="sidebar-topbar">
+                    <div class="topbar-content">
+                        <label class="theme-toggle-container" for="theme_toggle"
+                            ><input class="theme-toggle-input" type="checkbox" id="theme_toggle" />
+                            <div class="toggle-background"></div
+                        ></label>
+                    </div>
+                    <div class="clickable-icon sidebar-collapse-icon">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="100%"
+                            height="100%"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="3"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="svg-icon"
+                        >
+                            <path
+                                d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"
+                            ></path>
+                            <path d="M10 4V20"></path>
+                            <path d="M4 7H7"></path>
+                            <path d="M4 10H7"></path>
+                            <path d="M4 13H7"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="sidebar-content">
+                    <div class="search-input-container">
+                        <input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..." />
+                        <div class="search-input-clear-button" aria-label="Clear search"></div>
+                    </div>
+                    <include src="lib/html/file-tree.html"></include>
+                </div>
+                <script defer="">
+                    let ls = document.querySelector(".sidebar-left");
+                    ls.classList.add("is-collapsed");
+                    if (window.innerWidth > 768) ls.classList.remove("is-collapsed");
+                    ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));
+                </script>
+            </div>
+            <div class="document-container markdown-reading-view hide">
+                <div
+                    class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"
+                >
+                    <style id="MJX-CHTML-styles"></style>
+                    <div class="markdown-preview-sizer markdown-preview-section">
+                        <h1 class="page-title heading inline-title" id="Southern Ergoth Locations">
+                            <p dir="auto">Southern Ergoth Locations</p>
+                        </h1>
+                        <div class="el-p">
+                            <p dir="auto">
+                                Southern Ergoth is an island located west of Ansalon and south of Northern Ergoth that
+                                was created when the Cataclysm tore Ergoth in two. Southern Ergoth stretches about 250
+                                miles from north to south. The major geographical features of Southern Ergoth are the
+                                Sirrion Sea that surrounds the island, the Straits of Algoni that separate it from
+                                Ansalon, Morgash Lake which is just north of the capital city of Daltigoth, the Last
+                                Gaard Mountains running down the center of Southern Ergoth with Foghaven Vale in the
+                                mountains, Harkun Bay on the southern coastline, Plains of Tothen located in the
+                                southwestern coastline, Plains of Kri on the southern coastline, and the River Ergot
+                                located in the northeast. Most of the central and eastern half of Southern Ergoth is a
+                                now a frozen wasteland.
+                            </p>
+                        </div>
+                        <div class="el-h2 heading-wrapper">
+                            <h2 data-heading="History" dir="auto" class="heading" id="History">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                History
+                            </h2>
+                            <div class="heading-children">
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Cataclysm" dir="auto" class="heading" id="Cataclysm">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Cataclysm
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                Northern and Southern Ergoth both broke away from Ansalon during the
+                                                Cataclysm and the two nations soon severed ties, formally destroying the
+                                                old Empire of Ergoth.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="el-h3 heading-wrapper">
+                                    <h3 data-heading="Age of Despair" dir="auto" class="heading" id="Age_of_Despair">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        Age of Despair
+                                    </h3>
+                                    <div class="heading-children">
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                In the years following the Cataclysm, Southern Ergoth has had a close
+                                                working relationship with Northern Ergoth, trying to restore the Empire.
+                                                Southern Ergoth has been ruled from Daltigoth by regents appointed by
+                                                the Redic Dynasty. The forests of Southern Ergoth became the homeland
+                                                for the Kagonesti Elves.
+                                            </p>
+                                        </div>
+                                        <div class="el-p">
+                                            <p dir="auto">
+                                                During the War of the Lance, the elves of Qualinesti and Silvanesti
+                                                moved their people to Southern Ergoth to escape from the invading
+                                                Dragonarmies. They enslaved the Kagonesti to build them cities while in
+                                                exile. The Dragonarmies invaded Southern Ergoth and gained control over
+                                                much of the island during the war.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="el-h2 heading-wrapper">
+                            <h2 data-heading="Locations" dir="auto" class="heading" id="Locations">
+                                <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="svg-icon right-triangle"
+                                    >
+                                        <path d="M3 8L12 17L21 8"></path>
+                                    </svg>
+                                </div>
+                                Locations
+                            </h2>
+                            <div class="heading-children">
+                                <div class="el-h6 heading-wrapper">
+                                    <h6
+                                        data-heading="[[Castle Eastwatch]]"
+                                        dir="auto"
+                                        class="heading"
+                                        id="[[Castle_Eastwatch]]"
+                                    >
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            data-href="Castle Eastwatch"
+                                            href="locations/southern-ergoth/castle-eastwatch.html"
+                                            class="internal-link"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >Castle Eastwatch</a
+                                        >
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Dalevil]]" dir="auto" class="heading" id="[[Dalevil]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            data-href="Dalevil"
+                                            href="locations/southern-ergoth/dalevil.html"
+                                            class="internal-link"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >Dalevil</a
+                                        >
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Daligoth]]" dir="auto" class="heading" id="[[Daligoth]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            data-href="Daligoth"
+                                            href="locations/southern-ergoth/daligoth.html"
+                                            class="internal-link"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >Daligoth</a
+                                        >
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Dead Plains]]" dir="auto" class="heading" id="[[Dead_Plains]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            data-href="Dead Plains"
+                                            href="locations/southern-ergoth/dead-plains.html"
+                                            class="internal-link"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >Dead Plains</a
+                                        >
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Eastport]]" dir="auto" class="heading" id="[[Eastport]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            data-href="Eastport"
+                                            href="locations/southern-ergoth/eastport.html"
+                                            class="internal-link"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >Eastport</a
+                                        >
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6
+                                        data-heading="[[Elfrealms in Exile]]"
+                                        dir="auto"
+                                        class="heading"
+                                        id="[[Elfrealms_in_Exile]]"
+                                    >
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            data-href="Elfrealms in Exile"
+                                            href="locations/southern-ergoth/elfrealms-in-exile.html"
+                                            class="internal-link"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >Elfrealms in Exile</a
+                                        >
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6
+                                        data-heading="[[Foghaven Vale]]"
+                                        dir="auto"
+                                        class="heading"
+                                        id="[[Foghaven_Vale]]"
+                                    >
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            data-href="Foghaven Vale"
+                                            href="locations/southern-ergoth/foghaven-vale.html"
+                                            class="internal-link"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >Foghaven Vale</a
+                                        >
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6
+                                        data-heading="[[Ghostly Citadel]]"
+                                        dir="auto"
+                                        class="heading"
+                                        id="[[Ghostly_Citadel]]"
+                                    >
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            data-href="Ghostly Citadel"
+                                            href="locations/southern-ergoth/ghostly-citadel.html"
+                                            class="internal-link"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >Ghostly Citadel</a
+                                        >
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Green Gate]]" dir="auto" class="heading" id="[[Green_Gate]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            data-href="Green Gate"
+                                            href="locations/southern-ergoth/green-gate.html"
+                                            class="internal-link"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >Green Gate</a
+                                        >
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Harkun Bay]]" dir="auto" class="heading" id="[[Harkun_Bay]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            data-href="Harkun Bay"
+                                            href="locations/southern-ergoth/harkun-bay.html"
+                                            class="internal-link"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >Harkun Bay</a
+                                        >
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Khimel]]" dir="auto" class="heading" id="[[Khimel]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            data-href="Khimel"
+                                            href="locations/southern-ergoth/khimel.html"
+                                            class="internal-link"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >Khimel</a
+                                        >
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Maygarth]]" dir="auto" class="heading" id="[[Maygarth]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            data-href="Maygarth"
+                                            href="locations/southern-ergoth/maygarth.html"
+                                            class="internal-link"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >Maygarth</a
+                                        >
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Pontigoth]]" dir="auto" class="heading" id="[[Pontigoth]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            data-href="Pontigoth"
+                                            href="locations/southern-ergoth/pontigoth.html"
+                                            class="internal-link"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >Pontigoth</a
+                                        >
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Rain]]" dir="auto" class="heading" id="[[Rain]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            data-href="Rain"
+                                            href="locations/southern-ergoth/rain.html"
+                                            class="internal-link"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >Rain</a
+                                        >
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6
+                                        data-heading="[[Road of Time]]"
+                                        dir="auto"
+                                        class="heading"
+                                        id="[[Road_of_Time]]"
+                                    >
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            data-href="Road of Time"
+                                            href="locations/southern-ergoth/road-of-time.html"
+                                            class="internal-link"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >Road of Time</a
+                                        >
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Serval]]" dir="auto" class="heading" id="[[Serval]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            data-href="Serval"
+                                            href="locations/southern-ergoth/serval.html"
+                                            class="internal-link"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >Serval</a
+                                        >
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Silvamori]]" dir="auto" class="heading" id="[[Silvamori]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            data-href="Silvamori"
+                                            href="locations/southern-ergoth/silvamori.html"
+                                            class="internal-link"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >Silvamori</a
+                                        >
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Sun]]" dir="auto" class="heading" id="[[Sun]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            data-href="Sun"
+                                            href="locations/southern-ergoth/sun.html"
+                                            class="internal-link"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >Sun</a
+                                        >
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[The Blade]]" dir="auto" class="heading" id="[[The_Blade]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            data-href="The Blade"
+                                            href="locations/southern-ergoth/the-blade.html"
+                                            class="internal-link"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >The Blade</a
+                                        >
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Varvil]]" dir="auto" class="heading" id="[[Varvil]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            data-href="Varvil"
+                                            href="locations/southern-ergoth/varvil.html"
+                                            class="internal-link"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >Varvil</a
+                                        >
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Vocalion]]" dir="auto" class="heading" id="[[Vocalion]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            data-href="Vocalion"
+                                            href="locations/southern-ergoth/vocalion.html"
+                                            class="internal-link"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >Vocalion</a
+                                        >
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Welmet]]" dir="auto" class="heading" id="[[Welmet]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            data-href="Welmet"
+                                            href="locations/southern-ergoth/welmet.html"
+                                            class="internal-link"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >Welmet</a
+                                        >
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6 data-heading="[[Zaygoth]]" dir="auto" class="heading" id="[[Zaygoth]]">
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            data-href="Zaygoth"
+                                            href="locations/southern-ergoth/zaygoth.html"
+                                            class="internal-link"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >Zaygoth</a
+                                        >
+                                    </h6>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h6 heading-wrapper">
+                                    <h6
+                                        data-heading="[[Zhea Harbour]]"
+                                        dir="auto"
+                                        class="heading"
+                                        id="[[Zhea_Harbour]]"
+                                    >
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            data-href="Zhea Harbour"
+                                            href="locations/southern-ergoth/zhea-harbour.html"
+                                            class="internal-link"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >Zhea Harbour</a
+                                        >
+                                    </h6>
+                                    <div class="heading-children"><div class="mod-footer mod-ui"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-right sidebar">
+                <div class="sidebar-handle"></div>
+                <div class="sidebar-topbar">
+                    <div class="topbar-content"></div>
+                    <div class="clickable-icon sidebar-collapse-icon">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="100%"
+                            height="100%"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="3"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="svg-icon"
+                        >
+                            <path
+                                d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"
+                            ></path>
+                            <path d="M10 4V20"></path>
+                            <path d="M4 7H7"></path>
+                            <path d="M4 10H7"></path>
+                            <path d="M4 13H7"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="sidebar-content">
+                    <div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0">
+                        <div class="tree-header">
+                            <span class="sidebar-section-header">Table Of Contents</span
+                            ><button class="clickable-icon collapse-tree-button" aria-label="Collapse All">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                ></svg>
+                            </button>
+                        </div>
+                        <div class="tree-scroll-area tree-item-children nav-folder-children">
+                            <div
+                                class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed"
+                                style="display: none"
+                            ></div>
+                            <div class="tree-item" data-depth="1">
+                                <a
+                                    class="tree-link"
+                                    href="locations/southern-ergoth/southern-ergoth-locations.html#Southern Ergoth Locations"
+                                    ><div
+                                        class="tree-item-contents heading-link"
+                                        heading-name="Southern Ergoth Locations"
+                                    >
+                                        <span class="tree-item-title">Southern Ergoth Locations</span>
+                                    </div></a
+                                >
+                                <div class="tree-item-children nav-folder-children">
+                                    <div class="tree-item mod-collapsible" data-depth="2">
+                                        <a
+                                            class="tree-link"
+                                            href="locations/southern-ergoth/southern-ergoth-locations.html#History"
+                                            ><div class="tree-item-contents heading-link" heading-name="History">
+                                                <div class="collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                <span class="tree-item-title">History</span>
+                                            </div></a
+                                        >
+                                        <div class="tree-item-children nav-folder-children">
+                                            <div class="tree-item" data-depth="3">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#Cataclysm"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="Cataclysm"
+                                                    >
+                                                        <span class="tree-item-title">Cataclysm</span>
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="3">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#Age_of_Despair"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="Age of Despair"
+                                                    >
+                                                        <span class="tree-item-title">Age of Despair</span>
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tree-item mod-collapsible" data-depth="2">
+                                        <a
+                                            class="tree-link"
+                                            href="locations/southern-ergoth/southern-ergoth-locations.html#Locations"
+                                            ><div class="tree-item-contents heading-link" heading-name="Locations">
+                                                <div class="collapse-icon">
+                                                    <svg
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                        width="24"
+                                                        height="24"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        class="svg-icon right-triangle"
+                                                    >
+                                                        <path d="M3 8L12 17L21 8"></path>
+                                                    </svg>
+                                                </div>
+                                                <span class="tree-item-title">Locations</span>
+                                            </div></a
+                                        >
+                                        <div class="tree-item-children nav-folder-children">
+                                            <div class="tree-item" data-depth="6">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#[[Castle_Eastwatch]]"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="[[Castle Eastwatch]]"
+                                                    >
+                                                        <span class="tree-item-title"
+                                                            ><a
+                                                                data-href="Castle Eastwatch"
+                                                                href="Castle Eastwatch"
+                                                                class="internal-link"
+                                                                target="_blank"
+                                                                rel="noopener nofollow"
+                                                                >Castle Eastwatch</a
+                                                            ></span
+                                                        >
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#[[Dalevil]]"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="[[Dalevil]]"
+                                                    >
+                                                        <span class="tree-item-title"
+                                                            ><a
+                                                                data-href="Dalevil"
+                                                                href="Dalevil"
+                                                                class="internal-link"
+                                                                target="_blank"
+                                                                rel="noopener nofollow"
+                                                                >Dalevil</a
+                                                            ></span
+                                                        >
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#[[Daligoth]]"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="[[Daligoth]]"
+                                                    >
+                                                        <span class="tree-item-title"
+                                                            ><a
+                                                                data-href="Daligoth"
+                                                                href="Daligoth"
+                                                                class="internal-link"
+                                                                target="_blank"
+                                                                rel="noopener nofollow"
+                                                                >Daligoth</a
+                                                            ></span
+                                                        >
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#[[Dead_Plains]]"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="[[Dead Plains]]"
+                                                    >
+                                                        <span class="tree-item-title"
+                                                            ><a
+                                                                data-href="Dead Plains"
+                                                                href="Dead Plains"
+                                                                class="internal-link"
+                                                                target="_blank"
+                                                                rel="noopener nofollow"
+                                                                >Dead Plains</a
+                                                            ></span
+                                                        >
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#[[Eastport]]"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="[[Eastport]]"
+                                                    >
+                                                        <span class="tree-item-title"
+                                                            ><a
+                                                                data-href="Eastport"
+                                                                href="Eastport"
+                                                                class="internal-link"
+                                                                target="_blank"
+                                                                rel="noopener nofollow"
+                                                                >Eastport</a
+                                                            ></span
+                                                        >
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#[[Elfrealms_in_Exile]]"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="[[Elfrealms in Exile]]"
+                                                    >
+                                                        <span class="tree-item-title"
+                                                            ><a
+                                                                data-href="Elfrealms in Exile"
+                                                                href="Elfrealms in Exile"
+                                                                class="internal-link"
+                                                                target="_blank"
+                                                                rel="noopener nofollow"
+                                                                >Elfrealms in Exile</a
+                                                            ></span
+                                                        >
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#[[Foghaven_Vale]]"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="[[Foghaven Vale]]"
+                                                    >
+                                                        <span class="tree-item-title"
+                                                            ><a
+                                                                data-href="Foghaven Vale"
+                                                                href="Foghaven Vale"
+                                                                class="internal-link"
+                                                                target="_blank"
+                                                                rel="noopener nofollow"
+                                                                >Foghaven Vale</a
+                                                            ></span
+                                                        >
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#[[Ghostly_Citadel]]"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="[[Ghostly Citadel]]"
+                                                    >
+                                                        <span class="tree-item-title"
+                                                            ><a
+                                                                data-href="Ghostly Citadel"
+                                                                href="Ghostly Citadel"
+                                                                class="internal-link"
+                                                                target="_blank"
+                                                                rel="noopener nofollow"
+                                                                >Ghostly Citadel</a
+                                                            ></span
+                                                        >
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#[[Green_Gate]]"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="[[Green Gate]]"
+                                                    >
+                                                        <span class="tree-item-title"
+                                                            ><a
+                                                                data-href="Green Gate"
+                                                                href="Green Gate"
+                                                                class="internal-link"
+                                                                target="_blank"
+                                                                rel="noopener nofollow"
+                                                                >Green Gate</a
+                                                            ></span
+                                                        >
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#[[Harkun_Bay]]"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="[[Harkun Bay]]"
+                                                    >
+                                                        <span class="tree-item-title"
+                                                            ><a
+                                                                data-href="Harkun Bay"
+                                                                href="Harkun Bay"
+                                                                class="internal-link"
+                                                                target="_blank"
+                                                                rel="noopener nofollow"
+                                                                >Harkun Bay</a
+                                                            ></span
+                                                        >
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#[[Khimel]]"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="[[Khimel]]"
+                                                    >
+                                                        <span class="tree-item-title"
+                                                            ><a
+                                                                data-href="Khimel"
+                                                                href="Khimel"
+                                                                class="internal-link"
+                                                                target="_blank"
+                                                                rel="noopener nofollow"
+                                                                >Khimel</a
+                                                            ></span
+                                                        >
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#[[Maygarth]]"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="[[Maygarth]]"
+                                                    >
+                                                        <span class="tree-item-title"
+                                                            ><a
+                                                                data-href="Maygarth"
+                                                                href="Maygarth"
+                                                                class="internal-link"
+                                                                target="_blank"
+                                                                rel="noopener nofollow"
+                                                                >Maygarth</a
+                                                            ></span
+                                                        >
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#[[Pontigoth]]"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="[[Pontigoth]]"
+                                                    >
+                                                        <span class="tree-item-title"
+                                                            ><a
+                                                                data-href="Pontigoth"
+                                                                href="Pontigoth"
+                                                                class="internal-link"
+                                                                target="_blank"
+                                                                rel="noopener nofollow"
+                                                                >Pontigoth</a
+                                                            ></span
+                                                        >
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#[[Rain]]"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="[[Rain]]"
+                                                    >
+                                                        <span class="tree-item-title"
+                                                            ><a
+                                                                data-href="Rain"
+                                                                href="Rain"
+                                                                class="internal-link"
+                                                                target="_blank"
+                                                                rel="noopener nofollow"
+                                                                >Rain</a
+                                                            ></span
+                                                        >
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#[[Road_of_Time]]"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="[[Road of Time]]"
+                                                    >
+                                                        <span class="tree-item-title"
+                                                            ><a
+                                                                data-href="Road of Time"
+                                                                href="Road of Time"
+                                                                class="internal-link"
+                                                                target="_blank"
+                                                                rel="noopener nofollow"
+                                                                >Road of Time</a
+                                                            ></span
+                                                        >
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#[[Serval]]"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="[[Serval]]"
+                                                    >
+                                                        <span class="tree-item-title"
+                                                            ><a
+                                                                data-href="Serval"
+                                                                href="Serval"
+                                                                class="internal-link"
+                                                                target="_blank"
+                                                                rel="noopener nofollow"
+                                                                >Serval</a
+                                                            ></span
+                                                        >
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#[[Silvamori]]"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="[[Silvamori]]"
+                                                    >
+                                                        <span class="tree-item-title"
+                                                            ><a
+                                                                data-href="Silvamori"
+                                                                href="Silvamori"
+                                                                class="internal-link"
+                                                                target="_blank"
+                                                                rel="noopener nofollow"
+                                                                >Silvamori</a
+                                                            ></span
+                                                        >
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#[[Sun]]"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="[[Sun]]"
+                                                    >
+                                                        <span class="tree-item-title"
+                                                            ><a
+                                                                data-href="Sun"
+                                                                href="Sun"
+                                                                class="internal-link"
+                                                                target="_blank"
+                                                                rel="noopener nofollow"
+                                                                >Sun</a
+                                                            ></span
+                                                        >
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#[[The_Blade]]"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="[[The Blade]]"
+                                                    >
+                                                        <span class="tree-item-title"
+                                                            ><a
+                                                                data-href="The Blade"
+                                                                href="The Blade"
+                                                                class="internal-link"
+                                                                target="_blank"
+                                                                rel="noopener nofollow"
+                                                                >The Blade</a
+                                                            ></span
+                                                        >
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#[[Varvil]]"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="[[Varvil]]"
+                                                    >
+                                                        <span class="tree-item-title"
+                                                            ><a
+                                                                data-href="Varvil"
+                                                                href="Varvil"
+                                                                class="internal-link"
+                                                                target="_blank"
+                                                                rel="noopener nofollow"
+                                                                >Varvil</a
+                                                            ></span
+                                                        >
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#[[Vocalion]]"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="[[Vocalion]]"
+                                                    >
+                                                        <span class="tree-item-title"
+                                                            ><a
+                                                                data-href="Vocalion"
+                                                                href="Vocalion"
+                                                                class="internal-link"
+                                                                target="_blank"
+                                                                rel="noopener nofollow"
+                                                                >Vocalion</a
+                                                            ></span
+                                                        >
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#[[Welmet]]"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="[[Welmet]]"
+                                                    >
+                                                        <span class="tree-item-title"
+                                                            ><a
+                                                                data-href="Welmet"
+                                                                href="Welmet"
+                                                                class="internal-link"
+                                                                target="_blank"
+                                                                rel="noopener nofollow"
+                                                                >Welmet</a
+                                                            ></span
+                                                        >
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#[[Zaygoth]]"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="[[Zaygoth]]"
+                                                    >
+                                                        <span class="tree-item-title"
+                                                            ><a
+                                                                data-href="Zaygoth"
+                                                                href="Zaygoth"
+                                                                class="internal-link"
+                                                                target="_blank"
+                                                                rel="noopener nofollow"
+                                                                >Zaygoth</a
+                                                            ></span
+                                                        >
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                            <div class="tree-item" data-depth="6">
+                                                <a
+                                                    class="tree-link"
+                                                    href="locations/southern-ergoth/southern-ergoth-locations.html#[[Zhea_Harbour]]"
+                                                    ><div
+                                                        class="tree-item-contents heading-link"
+                                                        heading-name="[[Zhea Harbour]]"
+                                                    >
+                                                        <span class="tree-item-title"
+                                                            ><a
+                                                                data-href="Zhea Harbour"
+                                                                href="Zhea Harbour"
+                                                                class="internal-link"
+                                                                target="_blank"
+                                                                rel="noopener nofollow"
+                                                                >Zhea Harbour</a
+                                                            ></span
+                                                        >
+                                                    </div></a
+                                                >
+                                                <div class="tree-item-children nav-folder-children"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script defer="">
+                    let rs = document.querySelector(".sidebar-right");
+                    rs.classList.add("is-collapsed");
+                    if (window.innerWidth > 768) rs.classList.remove("is-collapsed");
+                    rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
