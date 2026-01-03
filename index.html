@@ -9,43 +9,23 @@
             content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0"
         />
         <meta charset="UTF-8" />
-        <meta name="description" content="Dragonlance-Sync - Dragonlance - Home" />
+        <meta name="description" content="Dragonlance - Dragonlance - Home" />
         <meta property="og:title" content="Dragonlance - Home" />
-        <meta property="og:description" content="Dragonlance-Sync - Dragonlance - Home" />
+        <meta property="og:description" content="Dragonlance - Dragonlance - Home" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="dragonlance-home.html" />
+        <meta property="og:url" content="https://krynns-vanguard.com/dragonlance-home.html" />
         <meta property="og:image" content="undefined" />
-        <meta property="og:site_name" content="Dragonlance-Sync" />
-        <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml" />
+        <meta property="og:site_name" content="Dragonlance" />
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="RSS Feed"
+            href="https://krynns-vanguard.com/lib/rss.xml"
+        />
         <script
             async=""
             id="webpage-script"
             src="lib/scripts/webpage.js"
-            onload='this.onload=null;this.setAttribute("loaded", "true")'
-        ></script>
-        <script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script>
-        <script
-            async=""
-            id="graph-wasm-script"
-            src="lib/scripts/graph-wasm.js"
-            onload='this.onload=null;this.setAttribute("loaded", "true")'
-        ></script>
-        <script
-            async=""
-            id="graph-render-worker-script"
-            src="lib/scripts/graph-render-worker.js"
-            onload='this.onload=null;this.setAttribute("loaded", "true")'
-        ></script>
-        <script
-            async=""
-            id="tinycolor-script"
-            src="lib/scripts/tinycolor.js"
-            onload='this.onload=null;this.setAttribute("loaded", "true")'
-        ></script>
-        <script
-            async=""
-            id="pixi-script"
-            src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js"
             onload='this.onload=null;this.setAttribute("loaded", "true")'
         ></script>
         <script
@@ -55,12 +35,6 @@
             onload='this.onload=null;this.setAttribute("loaded", "true")'
         ></script>
         <link rel="icon" href="lib/media/favicon.png" />
-        <script
-            async=""
-            id="graph-data-script"
-            src="lib/scripts/graph-data.js"
-            onload='this.onload=null;this.setAttribute("loaded", "true")'
-        ></script>
         <style>
             body {
                 --line-width: 40em;
@@ -1498,6 +1472,40 @@
                                             >Solamnia and the Northern Wastes</a
                                         >
                                     </h2>
+                                    <div class="heading-children"></div>
+                                </div>
+                                <div class="el-h2 heading-wrapper">
+                                    <h2
+                                        data-heading="[Southern Ergoth](Locations/Southern%20Ergoth/Southern%20Ergoth%20Locations.md)"
+                                        dir="auto"
+                                        class="heading"
+                                        id="[Southern_Ergoth](Locations/Southern%20Ergoth/Southern%20Ergoth%20Locations.md)"
+                                    >
+                                        <div class="heading-collapse-indicator collapse-indicator collapse-icon">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="24"
+                                                height="24"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                class="svg-icon right-triangle"
+                                            >
+                                                <path d="M3 8L12 17L21 8"></path>
+                                            </svg>
+                                        </div>
+                                        <a
+                                            class="internal-link"
+                                            data-href="Locations/Southern Ergoth/Southern Ergoth Locations.md"
+                                            href="locations/southern-ergoth/southern-ergoth-locations.html"
+                                            target="_self"
+                                            rel="noopener nofollow"
+                                            >Southern Ergoth</a
+                                        >
+                                    </h2>
                                     <div class="heading-children"><div class="mod-footer mod-ui"></div></div>
                                 </div>
                             </div>
@@ -1533,36 +1541,6 @@
                     </div>
                 </div>
                 <div class="sidebar-content">
-                    <div class="graph-view-wrapper">
-                        <div class="sidebar-section-header">Interactive Graph</div>
-                        <div class="graph-view-placeholder">
-                            <div class="graph-view-container">
-                                <div
-                                    class="graph-icon graph-expand"
-                                    role="button"
-                                    aria-label="Expand"
-                                    data-tooltip-position="top"
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        class="svg-icon"
-                                    >
-                                        <line x1="7" y1="17" x2="17" y2="7"></line>
-                                        <polyline points="7 7 17 7 17 17"></polyline>
-                                    </svg>
-                                </div>
-                                <canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
-                            </div>
-                        </div>
-                    </div>
                     <div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0">
                         <div class="tree-header">
                             <span class="sidebar-section-header">Table Of Contents</span
@@ -2045,6 +2023,28 @@
                                                         target="_blank"
                                                         rel="noopener nofollow"
                                                         >Solamnia and the Northern Wastes</a
+                                                    ></span
+                                                >
+                                            </div></a
+                                        >
+                                        <div class="tree-item-children nav-folder-children"></div>
+                                    </div>
+                                    <div class="tree-item" data-depth="2">
+                                        <a
+                                            class="tree-link"
+                                            href="dragonlance-home.html#[Southern_Ergoth](Locations/Southern%20Ergoth/Southern%20Ergoth%20Locations.md)"
+                                            ><div
+                                                class="tree-item-contents heading-link"
+                                                heading-name="[Southern Ergoth](Locations/Southern%20Ergoth/Southern%20Ergoth%20Locations.md)"
+                                            >
+                                                <span class="tree-item-title"
+                                                    ><a
+                                                        class="internal-link"
+                                                        data-href="Locations/Southern Ergoth/Southern Ergoth Locations.md"
+                                                        href="Locations/Southern Ergoth/Southern Ergoth Locations.md"
+                                                        target="_blank"
+                                                        rel="noopener nofollow"
+                                                        >Southern Ergoth</a
                                                     ></span
                                                 >
                                             </div></a
