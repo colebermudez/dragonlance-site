@@ -1,27 +1,20 @@
 {
   "vaultName": "Dragonlance",
-  "lastExport": 1767651766174,
+  "lastExport": 1770071279529,
   "pluginVersion": "1.8.01",
   "validBodyClasses": "publish css-settings-manager theme-light show-inline-title show-ribbon check-color check-bg wotc-beyond",
   "useCustomHeadContent": false,
   "useCustomFavicon": false,
   "files": [
+    "Session Notes/63. January 10th-30th, 2026 The Verdant Oblivion.md",
     "Session Notes/Session Notes.md",
-    "lib/fonts/94f2f163d4b698242fef.otf",
-    "lib/fonts/72505e6a122c6acd5471.woff2",
-    "lib/fonts/2d5198822ab091ce4305.woff2",
-    "lib/fonts/c8ba52b05a9ef10f4758.woff2",
-    "lib/fonts/cb10ffd7684cd9836a05.woff2",
-    "lib/fonts/293fd13dbca5a3e450ef.woff2",
-    "lib/fonts/085cb93e613ba3d40d2b.woff2",
-    "lib/fonts/b5f0f109bc88052d4000.woff2",
-    "lib/fonts/cbe0ae49c52c920fd563.woff2",
-    "lib/fonts/535a6cf662596b3bd6a6.woff2",
     "lib/fonts/70cc7ff27245e82ad414.ttf",
     "lib/fonts/454577c22304619db035.ttf",
     "lib/fonts/52ac8f3034507f1d9e53.ttf",
     "lib/fonts/05b618077343fbbd92b7.ttf",
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+    "lib/fonts/c504db5c06caaf7cdfba.woff2",
+    "lib/fonts/01dcbad1bac635f9c9cd.woff2",
     "lib/media/6155340132a851f6089e.svg",
     "lib/html/file-tree.html",
     "lib/scripts/webpage.js",
@@ -34,21 +27,13 @@
     "lib/styles/main-styles.css"
   ],
   "mainDependencies": [
-    "lib/fonts/94f2f163d4b698242fef.otf",
-    "lib/fonts/72505e6a122c6acd5471.woff2",
-    "lib/fonts/2d5198822ab091ce4305.woff2",
-    "lib/fonts/c8ba52b05a9ef10f4758.woff2",
-    "lib/fonts/cb10ffd7684cd9836a05.woff2",
-    "lib/fonts/293fd13dbca5a3e450ef.woff2",
-    "lib/fonts/085cb93e613ba3d40d2b.woff2",
-    "lib/fonts/b5f0f109bc88052d4000.woff2",
-    "lib/fonts/cbe0ae49c52c920fd563.woff2",
-    "lib/fonts/535a6cf662596b3bd6a6.woff2",
     "lib/fonts/70cc7ff27245e82ad414.ttf",
     "lib/fonts/454577c22304619db035.ttf",
     "lib/fonts/52ac8f3034507f1d9e53.ttf",
     "lib/fonts/05b618077343fbbd92b7.ttf",
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
+    "lib/fonts/c504db5c06caaf7cdfba.woff2",
+    "lib/fonts/01dcbad1bac635f9c9cd.woff2",
     "lib/media/6155340132a851f6089e.svg",
     "lib/html/file-tree.html",
     "lib/scripts/webpage.js",
@@ -110,31 +95,31 @@
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1767651766174,
+      "modifiedTime": 1770071279529,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1767651766174,
+      "modifiedTime": 1770071279529,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1767651766174,
+      "modifiedTime": 1770071279529,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1767651766174,
+      "modifiedTime": 1770071279529,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1767651766174,
+      "modifiedTime": 1770071279529,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
@@ -146,55 +131,55 @@
       "dependencies": []
     },
     "lib/html/file-tree.html": {
-      "modifiedTime": 1767651766174,
-      "sourceSize": 1636,
+      "modifiedTime": 1770071279529,
+      "sourceSize": 2038,
       "exportedPath": "lib/html/file-tree.html",
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
-      "modifiedTime": 1767651766174,
+      "modifiedTime": 1770071279529,
       "sourceSize": 47290,
       "exportedPath": "lib/scripts/webpage.js",
       "dependencies": []
     },
     "lib/scripts/minisearch.js": {
-      "modifiedTime": 1767651766174,
+      "modifiedTime": 1770071279529,
       "sourceSize": 29422,
       "exportedPath": "lib/scripts/minisearch.js",
       "dependencies": []
     },
     "lib/media/favicon.png": {
-      "modifiedTime": 1767651766174,
+      "modifiedTime": 1770071279529,
       "sourceSize": 1105,
       "exportedPath": "lib/media/favicon.png",
       "dependencies": []
     },
     "lib/styles/obsidian.css": {
-      "modifiedTime": 1767651766174,
-      "sourceSize": 172835,
+      "modifiedTime": 1770071279529,
+      "sourceSize": 179785,
       "exportedPath": "lib/styles/obsidian.css",
       "dependencies": []
     },
     "lib/styles/theme.css": {
-      "modifiedTime": 1767651766174,
+      "modifiedTime": 1770071279529,
       "sourceSize": 718333,
       "exportedPath": "lib/styles/theme.css",
       "dependencies": []
     },
     "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1767651766174,
+      "modifiedTime": 1770071279529,
       "sourceSize": 262,
       "exportedPath": "lib/styles/global-variable-styles.css",
       "dependencies": []
     },
     "lib/styles/supported-plugins.css": {
-      "modifiedTime": 1767651766174,
+      "modifiedTime": 1770071279529,
       "sourceSize": 3947,
       "exportedPath": "lib/styles/supported-plugins.css",
       "dependencies": []
     },
     "lib/styles/main-styles.css": {
-      "modifiedTime": 1767651766174,
+      "modifiedTime": 1770071279529,
       "sourceSize": 23130,
       "exportedPath": "lib/styles/main-styles.css",
       "dependencies": []
@@ -266,7 +251,7 @@
       "dependencies": []
     },
     "lib/media/6155340132a851f6089e.svg": {
-      "modifiedTime": 1767651766174,
+      "modifiedTime": 1770071279529,
       "sourceSize": 315,
       "exportedPath": "lib/media/6155340132a851f6089e.svg",
       "dependencies": []
@@ -284,9 +269,27 @@
       "dependencies": []
     },
     "Session Notes/Session Notes.md": {
-      "modifiedTime": 1767651766174,
-      "sourceSize": 5302,
+      "modifiedTime": 1770071279529,
+      "sourceSize": 5497,
       "exportedPath": "session-notes/session-notes.html",
+      "dependencies": []
+    },
+    "Session Notes/63. January 10th-30th, 2026 The Verdant Oblivion.md": {
+      "modifiedTime": 1770071279529,
+      "sourceSize": 1716,
+      "exportedPath": "session-notes/63.-january-10th-30th,-2026-the-verdant-oblivion.html",
+      "dependencies": []
+    },
+    "lib/fonts/c504db5c06caaf7cdfba.woff2": {
+      "modifiedTime": 1770071279529,
+      "sourceSize": 352240,
+      "exportedPath": "lib/fonts/c504db5c06caaf7cdfba.woff2",
+      "dependencies": []
+    },
+    "lib/fonts/01dcbad1bac635f9c9cd.woff2": {
+      "modifiedTime": 1770071279529,
+      "sourceSize": 387976,
+      "exportedPath": "lib/fonts/01dcbad1bac635f9c9cd.woff2",
       "dependencies": []
     }
   }
