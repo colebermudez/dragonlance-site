@@ -1,12 +1,12 @@
 {
   "vaultName": "Dragonlance",
-  "lastExport": 1770071279529,
+  "lastExport": 1772665098620,
   "pluginVersion": "1.8.01",
   "validBodyClasses": "publish css-settings-manager theme-light show-inline-title show-ribbon check-color check-bg wotc-beyond",
   "useCustomHeadContent": false,
   "useCustomFavicon": false,
   "files": [
-    "Session Notes/63. January 10th-30th, 2026 The Verdant Oblivion.md",
+    "Session Notes/64. February 21st, 2026 The Journey to the Dragon Isles.md",
     "Session Notes/Session Notes.md",
     "lib/fonts/70cc7ff27245e82ad414.ttf",
     "lib/fonts/454577c22304619db035.ttf",
@@ -95,31 +95,31 @@
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1770071279529,
+      "modifiedTime": 1772665098620,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1770071279529,
+      "modifiedTime": 1772665098620,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1770071279529,
+      "modifiedTime": 1772665098620,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1770071279529,
+      "modifiedTime": 1772665098620,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1770071279529,
+      "modifiedTime": 1772665098620,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
@@ -131,55 +131,55 @@
       "dependencies": []
     },
     "lib/html/file-tree.html": {
-      "modifiedTime": 1770071279529,
-      "sourceSize": 2038,
+      "modifiedTime": 1772665098620,
+      "sourceSize": 2052,
       "exportedPath": "lib/html/file-tree.html",
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
-      "modifiedTime": 1770071279529,
+      "modifiedTime": 1772665098620,
       "sourceSize": 47290,
       "exportedPath": "lib/scripts/webpage.js",
       "dependencies": []
     },
     "lib/scripts/minisearch.js": {
-      "modifiedTime": 1770071279529,
+      "modifiedTime": 1772665098620,
       "sourceSize": 29422,
       "exportedPath": "lib/scripts/minisearch.js",
       "dependencies": []
     },
     "lib/media/favicon.png": {
-      "modifiedTime": 1770071279529,
+      "modifiedTime": 1772665098620,
       "sourceSize": 1105,
       "exportedPath": "lib/media/favicon.png",
       "dependencies": []
     },
     "lib/styles/obsidian.css": {
-      "modifiedTime": 1770071279529,
-      "sourceSize": 179785,
+      "modifiedTime": 1772665098620,
+      "sourceSize": 176592,
       "exportedPath": "lib/styles/obsidian.css",
       "dependencies": []
     },
     "lib/styles/theme.css": {
-      "modifiedTime": 1770071279529,
+      "modifiedTime": 1772665098620,
       "sourceSize": 718333,
       "exportedPath": "lib/styles/theme.css",
       "dependencies": []
     },
     "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1770071279529,
+      "modifiedTime": 1772665098620,
       "sourceSize": 262,
       "exportedPath": "lib/styles/global-variable-styles.css",
       "dependencies": []
     },
     "lib/styles/supported-plugins.css": {
-      "modifiedTime": 1770071279529,
-      "sourceSize": 3947,
+      "modifiedTime": 1772665098620,
+      "sourceSize": 5018,
       "exportedPath": "lib/styles/supported-plugins.css",
       "dependencies": []
     },
     "lib/styles/main-styles.css": {
-      "modifiedTime": 1770071279529,
+      "modifiedTime": 1772665098620,
       "sourceSize": 23130,
       "exportedPath": "lib/styles/main-styles.css",
       "dependencies": []
@@ -251,7 +251,7 @@
       "dependencies": []
     },
     "lib/media/6155340132a851f6089e.svg": {
-      "modifiedTime": 1770071279529,
+      "modifiedTime": 1772665098620,
       "sourceSize": 315,
       "exportedPath": "lib/media/6155340132a851f6089e.svg",
       "dependencies": []
@@ -269,27 +269,27 @@
       "dependencies": []
     },
     "Session Notes/Session Notes.md": {
-      "modifiedTime": 1770071279529,
-      "sourceSize": 5497,
+      "modifiedTime": 1772665098620,
+      "sourceSize": 5599,
       "exportedPath": "session-notes/session-notes.html",
       "dependencies": []
     },
-    "Session Notes/63. January 10th-30th, 2026 The Verdant Oblivion.md": {
-      "modifiedTime": 1770071279529,
-      "sourceSize": 1716,
-      "exportedPath": "session-notes/63.-january-10th-30th,-2026-the-verdant-oblivion.html",
-      "dependencies": []
-    },
     "lib/fonts/c504db5c06caaf7cdfba.woff2": {
-      "modifiedTime": 1770071279529,
+      "modifiedTime": 1772665098620,
       "sourceSize": 352240,
       "exportedPath": "lib/fonts/c504db5c06caaf7cdfba.woff2",
       "dependencies": []
     },
     "lib/fonts/01dcbad1bac635f9c9cd.woff2": {
-      "modifiedTime": 1770071279529,
+      "modifiedTime": 1772665098620,
       "sourceSize": 387976,
       "exportedPath": "lib/fonts/01dcbad1bac635f9c9cd.woff2",
+      "dependencies": []
+    },
+    "Session Notes/64. February 21st, 2026 The Journey to the Dragon Isles.md": {
+      "modifiedTime": 1772665098620,
+      "sourceSize": 2537,
+      "exportedPath": "session-notes/64.-february-21st,-2026-the-journey-to-the-dragon-isles.html",
       "dependencies": []
     }
   }
