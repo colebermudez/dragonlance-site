@@ -1,13 +1,37 @@
 {
   "vaultName": "Dragonlance",
-  "lastExport": 1772665098620,
+  "lastExport": 1772736068619,
   "pluginVersion": "1.8.01",
   "validBodyClasses": "publish css-settings-manager theme-light show-inline-title show-ribbon check-color check-bg wotc-beyond",
   "useCustomHeadContent": false,
   "useCustomFavicon": false,
   "files": [
-    "Session Notes/64. February 21st, 2026 The Journey to the Dragon Isles.md",
+    "Locations/Dragon Isles/Alarl.md",
+    "Locations/Dragon Isles/Berann.md",
+    "Locations/Dragon Isles/Dragon Isles.md",
+    "Locations/Dragon Isles/Heart.md",
+    "Locations/Dragon Isles/Jaentharth.md",
+    "Locations/Dragon Isles/Mind.md",
+    "Locations/Dragon Isles/Misty Isle.md",
+    "Locations/Dragon Isles/Tayol.md",
+    "Locations/Dragon Isles/Winged Majesty.md",
+    "NPCs/Dragon Isles Council/Auri.md",
+    "NPCs/Dragon Isles Council/Karef.md",
+    "NPCs/Dragon Isles Council/Maris.md",
+    "NPCs/Dragon Isles Council/Serelyn.md",
+    "NPCs/Dragon Isles Council/Veyrin.md",
+    "NPCs/NPC Pictures/Dragon Isles Council/Auri.png",
+    "NPCs/NPC Pictures/Dragon Isles Council/Karef.png",
+    "NPCs/NPC Pictures/Dragon Isles Council/Maris.png",
+    "NPCs/NPC Pictures/Dragon Isles Council/Serelyn.png",
+    "NPCs/NPC Pictures/Dragon Isles Council/Veyrin.png",
+    "Session Notes/64. February 28th, 2026 The Scales of Silence.md",
     "Session Notes/Session Notes.md",
+    "lib/media/auri.png",
+    "lib/media/karef.png",
+    "lib/media/maris.png",
+    "lib/media/serelyn.png",
+    "lib/media/veyrin.png",
     "lib/fonts/70cc7ff27245e82ad414.ttf",
     "lib/fonts/454577c22304619db035.ttf",
     "lib/fonts/52ac8f3034507f1d9e53.ttf",
@@ -23,7 +47,6 @@
     "lib/styles/obsidian.css",
     "lib/styles/theme.css",
     "lib/styles/global-variable-styles.css",
-    "lib/styles/supported-plugins.css",
     "lib/styles/main-styles.css"
   ],
   "mainDependencies": [
@@ -42,7 +65,6 @@
     "lib/styles/obsidian.css",
     "lib/styles/theme.css",
     "lib/styles/global-variable-styles.css",
-    "lib/styles/supported-plugins.css",
     "lib/styles/main-styles.css"
   ],
   "fileInfo": {
@@ -95,31 +117,31 @@
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1772665098620,
+      "modifiedTime": 1772736068619,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1772665098620,
+      "modifiedTime": 1772736068619,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1772665098620,
+      "modifiedTime": 1772736068619,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1772665098620,
+      "modifiedTime": 1772736068619,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1772665098620,
+      "modifiedTime": 1772736068619,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
@@ -131,43 +153,43 @@
       "dependencies": []
     },
     "lib/html/file-tree.html": {
-      "modifiedTime": 1772665098620,
-      "sourceSize": 2052,
+      "modifiedTime": 1772736068619,
+      "sourceSize": 12377,
       "exportedPath": "lib/html/file-tree.html",
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
-      "modifiedTime": 1772665098620,
+      "modifiedTime": 1772736068619,
       "sourceSize": 47290,
       "exportedPath": "lib/scripts/webpage.js",
       "dependencies": []
     },
     "lib/scripts/minisearch.js": {
-      "modifiedTime": 1772665098620,
+      "modifiedTime": 1772736068619,
       "sourceSize": 29422,
       "exportedPath": "lib/scripts/minisearch.js",
       "dependencies": []
     },
     "lib/media/favicon.png": {
-      "modifiedTime": 1772665098620,
+      "modifiedTime": 1772736068619,
       "sourceSize": 1105,
       "exportedPath": "lib/media/favicon.png",
       "dependencies": []
     },
     "lib/styles/obsidian.css": {
-      "modifiedTime": 1772665098620,
-      "sourceSize": 176592,
+      "modifiedTime": 1772736068619,
+      "sourceSize": 179606,
       "exportedPath": "lib/styles/obsidian.css",
       "dependencies": []
     },
     "lib/styles/theme.css": {
-      "modifiedTime": 1772665098620,
+      "modifiedTime": 1772736068619,
       "sourceSize": 718333,
       "exportedPath": "lib/styles/theme.css",
       "dependencies": []
     },
     "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1772665098620,
+      "modifiedTime": 1772736068619,
       "sourceSize": 262,
       "exportedPath": "lib/styles/global-variable-styles.css",
       "dependencies": []
@@ -179,7 +201,7 @@
       "dependencies": []
     },
     "lib/styles/main-styles.css": {
-      "modifiedTime": 1772665098620,
+      "modifiedTime": 1772736068619,
       "sourceSize": 23130,
       "exportedPath": "lib/styles/main-styles.css",
       "dependencies": []
@@ -251,7 +273,7 @@
       "dependencies": []
     },
     "lib/media/6155340132a851f6089e.svg": {
-      "modifiedTime": 1772665098620,
+      "modifiedTime": 1772736068619,
       "sourceSize": 315,
       "exportedPath": "lib/media/6155340132a851f6089e.svg",
       "dependencies": []
@@ -275,21 +297,175 @@
       "dependencies": []
     },
     "lib/fonts/c504db5c06caaf7cdfba.woff2": {
-      "modifiedTime": 1772665098620,
+      "modifiedTime": 1772736068619,
       "sourceSize": 352240,
       "exportedPath": "lib/fonts/c504db5c06caaf7cdfba.woff2",
       "dependencies": []
     },
     "lib/fonts/01dcbad1bac635f9c9cd.woff2": {
-      "modifiedTime": 1772665098620,
+      "modifiedTime": 1772736068619,
       "sourceSize": 387976,
       "exportedPath": "lib/fonts/01dcbad1bac635f9c9cd.woff2",
       "dependencies": []
     },
-    "Session Notes/64. February 21st, 2026 The Journey to the Dragon Isles.md": {
-      "modifiedTime": 1772665098620,
-      "sourceSize": 2537,
-      "exportedPath": "session-notes/64.-february-21st,-2026-the-journey-to-the-dragon-isles.html",
+    "Locations/Dragon Isles/Alarl.md": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 1422,
+      "exportedPath": "locations/dragon-isles/alarl.html",
+      "dependencies": []
+    },
+    "Locations/Dragon Isles/Berann.md": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 818,
+      "exportedPath": "locations/dragon-isles/berann.html",
+      "dependencies": []
+    },
+    "Locations/Dragon Isles/Dragon Isles.md": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 956,
+      "exportedPath": "locations/dragon-isles/dragon-isles.html",
+      "dependencies": []
+    },
+    "Locations/Dragon Isles/Heart.md": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 1044,
+      "exportedPath": "locations/dragon-isles/heart.html",
+      "dependencies": []
+    },
+    "Locations/Dragon Isles/Jaentharth.md": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 945,
+      "exportedPath": "locations/dragon-isles/jaentharth.html",
+      "dependencies": []
+    },
+    "Locations/Dragon Isles/Mind.md": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 1296,
+      "exportedPath": "locations/dragon-isles/mind.html",
+      "dependencies": []
+    },
+    "Locations/Dragon Isles/Misty Isle.md": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 910,
+      "exportedPath": "locations/dragon-isles/misty-isle.html",
+      "dependencies": []
+    },
+    "Locations/Dragon Isles/Tayol.md": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 691,
+      "exportedPath": "locations/dragon-isles/tayol.html",
+      "dependencies": []
+    },
+    "Locations/Dragon Isles/Winged Majesty.md": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 355,
+      "exportedPath": "locations/dragon-isles/winged-majesty.html",
+      "dependencies": []
+    },
+    "NPCs/Dragon Isles Council/Auri.md": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 588,
+      "exportedPath": "npcs/dragon-isles-council/auri.html",
+      "dependencies": [
+        "lib/media/auri.png"
+      ]
+    },
+    "NPCs/Dragon Isles Council/Karef.md": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 624,
+      "exportedPath": "npcs/dragon-isles-council/karef.html",
+      "dependencies": [
+        "lib/media/karef.png"
+      ]
+    },
+    "NPCs/Dragon Isles Council/Maris.md": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 548,
+      "exportedPath": "npcs/dragon-isles-council/maris.html",
+      "dependencies": [
+        "lib/media/maris.png"
+      ]
+    },
+    "NPCs/Dragon Isles Council/Serelyn.md": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 637,
+      "exportedPath": "npcs/dragon-isles-council/serelyn.html",
+      "dependencies": [
+        "lib/media/serelyn.png"
+      ]
+    },
+    "NPCs/Dragon Isles Council/Veyrin.md": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 529,
+      "exportedPath": "npcs/dragon-isles-council/veyrin.html",
+      "dependencies": [
+        "lib/media/veyrin.png"
+      ]
+    },
+    "NPCs/NPC Pictures/Dragon Isles Council/Auri.png": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 2417027,
+      "exportedPath": "npcs/npc-pictures/dragon-isles-council/auri.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Dragon Isles Council/Karef.png": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 2523340,
+      "exportedPath": "npcs/npc-pictures/dragon-isles-council/karef.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Dragon Isles Council/Maris.png": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 2391573,
+      "exportedPath": "npcs/npc-pictures/dragon-isles-council/maris.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Dragon Isles Council/Serelyn.png": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 2487212,
+      "exportedPath": "npcs/npc-pictures/dragon-isles-council/serelyn.png",
+      "dependencies": []
+    },
+    "NPCs/NPC Pictures/Dragon Isles Council/Veyrin.png": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 2321657,
+      "exportedPath": "npcs/npc-pictures/dragon-isles-council/veyrin.png",
+      "dependencies": []
+    },
+    "Session Notes/64. February 28th, 2026 The Scales of Silence.md": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 5552,
+      "exportedPath": "session-notes/64.-february-28th,-2026-the-scales-of-silence.html",
+      "dependencies": []
+    },
+    "lib/media/auri.png": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 2417027,
+      "exportedPath": "lib/media/auri.png",
+      "dependencies": []
+    },
+    "lib/media/karef.png": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 2523340,
+      "exportedPath": "lib/media/karef.png",
+      "dependencies": []
+    },
+    "lib/media/maris.png": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 2391573,
+      "exportedPath": "lib/media/maris.png",
+      "dependencies": []
+    },
+    "lib/media/serelyn.png": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 2487212,
+      "exportedPath": "lib/media/serelyn.png",
+      "dependencies": []
+    },
+    "lib/media/veyrin.png": {
+      "modifiedTime": 1772736068619,
+      "sourceSize": 2321657,
+      "exportedPath": "lib/media/veyrin.png",
       "dependencies": []
     }
   }
